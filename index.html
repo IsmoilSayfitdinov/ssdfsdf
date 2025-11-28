@@ -41,7 +41,7 @@
       <!-- Navbar -->
       <nav
         id="navbar"
-        class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-sm border-b border-[#E5E7EB]/50 transition-all duration-300 shadow-sm"
+        class="fixed top-0 backdrop-blur-3xl left-0 right-0 z-40 border-b border-[#E5E7EB]/50 transition-all duration-300 shadow-sm w-full max-h-[76px] h-full"
       >
         <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
           <div class="flex items-center justify-between h-16 sm:h-20">
@@ -836,6 +836,7 @@
           </div>
         </div>
       </section>
+
       <section
         class="relative bg-gradient-to-b from-[#FAFBFC] to-white py-20 px-6 overflow-hidden"
       >
@@ -881,63 +882,65 @@
             <div class="carousel-track">
               <div class="carousel-slide">
                 <div
-                  class="bg-white h-[600px] rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center relative"
+                  class="bg-white rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center justify-between h-full relative"
                 >
-                  <div
-                    class="text-[14px] bg-[#FF8C42] text-white px-3 py-2 rounded-full mb-3"
-                    style="transform: rotate(5deg)"
-                  >
-                    ⭐ Forbes 30U30
-                  </div>
-                  <div
-                    class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
-                  >
-                    <img
-                      src="https://media.licdn.com/dms/image/v2/D4D03AQE2HpodLRR_yw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1664372399413?e=1766016000&v=beta&t=58bAvG3iIJtVyRJeX-cg2lHZuTscn6v78_9GHlcsY5o"
-                      alt="Vikram Singh"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3
-                    class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
-                  >
-                    Vikram Singh
-                  </h3>
-                  <div
-                    class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
-                  >
-                    OfBusiness || Forbes 30U30 || FMS || Farmer
-                  </div>
-                  <div class="text-[14px] text-[#6B7280] mb-3">
-                    OfBusiness (India)
-                  </div>
-                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
-                    Scaled OfBusiness to $1B+ GMV with expertise in B2B fintech,
-                    procurement automation, and digital lending.
-                  </p>
-                  <ul class="text-left w-full space-y-1 mb-4">
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="text-[14px] bg-[#FF8C42] text-white px-3 py-2 rounded-full mb-3"
+                      style="transform: rotate(5deg)"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>$1B+ GMV scaled</span>
-                    </li>
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                      ⭐ Forbes 30U30
+                    </div>
+                    <div
+                      class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>B2B fintech expert</span>
-                    </li>
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQE2HpodLRR_yw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1664372399413?e=1766016000&v=beta&t=58bAvG3iIJtVyRJeX-cg2lHZuTscn6v78_9GHlcsY5o"
+                        alt="Vikram Singh"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3
+                      class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>Supply chain financing</span>
-                    </li>
-                  </ul>
+                      Vikram Singh
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
+                    >
+                      OfBusiness || Forbes 30U30 || FMS || Farmer
+                    </div>
+                    <div class="text-[14px] text-[#6B7280] mb-3">
+                      OfBusiness (India)
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      Scaled OfBusiness to $1B+ GMV with expertise in B2B
+                      fintech, procurement automation, and digital lending.
+                    </p>
+                    <ul class="text-left w-full space-y-1 mb-4">
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>$1B+ GMV scaled</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>B2B fintech expert</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>Supply chain financing</span>
+                      </li>
+                    </ul>
+                  </div>
                   <a
                     href="https://www.linkedin.com/in/vikram-singh-a347b554/"
                     class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 flex itecms-center justify-center gap-5"
@@ -954,66 +957,68 @@
               </div>
               <div class="carousel-slide">
                 <div
-                  class="bg-white h-[600px] rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center relative"
+                  class="bg-white rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center justify-between h-full relative"
                 >
-                  <div
-                    class="text-[14px] bg-[#FF8C42] text-white px-3 py-2 rounded-full mb-3"
-                    style="transform: rotate(5deg)"
-                  >
-                    ⚡ 5K+ Suppliers
-                  </div>
-                  <div
-                    class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
-                  >
-                    <img
-                      src="https://media.licdn.com/dms/image/v2/D4D03AQHKKcjUml0McQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1694691031259?e=1766016000&v=beta&t=Ca30IPHohI7MUyDSPyuXbdIPU5dHkuVQ9q1fG538FB8"
-                      alt="Rahim Khan"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3
-                    class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
-                  >
-                    A Rahim khan
-                  </h3>
-                  <div
-                    class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
-                  >
-                    SW One Platform Ltd | Supply Chain and Operations Generative
-                    AI
-                  </div>
-                  <div class="text-[14px] text-[#6B7280] mb-3">
-                    JSW One (India)
-                  </div>
-                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
-                    With over two years of experience as a Key Account
-                    Specialist at Bestseller India, I ensure timely and
-                    efficient delivery and payment reconciliation for the orders
-                    from the pan-India warehouse to the end partners.
-                  </p>
-                  <ul class="text-left w-full space-y-1 mb-4">
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="text-[14px] bg-[#FF8C42] text-white px-3 py-2 rounded-full mb-3"
+                      style="transform: rotate(5deg)"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>5,000+ suppliers managed</span>
-                    </li>
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                      ⚡ 5K+ Suppliers
+                    </div>
+                    <div
+                      class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>Real-time tracking expert</span>
-                    </li>
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQHKKcjUml0McQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1694691031259?e=1766016000&v=beta&t=Ca30IPHohI7MUyDSPyuXbdIPU5dHkuVQ9q1fG538FB8"
+                        alt="Rahim Khan"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3
+                      class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>Delivery optimization</span>
-                    </li>
-                  </ul>
+                      A Rahim khan
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
+                    >
+                      JSW One Platform Ltd | Supply Chain and Operations
+                      Generative AI
+                    </div>
+                    <div class="text-[14px] text-[#6B7280] mb-3">
+                      JSW One (India)
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      With over two years of experience as a Key Account
+                      Specialist at Bestseller India, I ensure timely and
+                      efficient delivery and payment reconciliation for the
+                      orders from the pan-India warehouse to the end partners.
+                    </p>
+                    <ul class="text-left w-full space-y-1 mb-4">
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>5,000+ suppliers managed</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>Real-time tracking expert</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>Delivery optimization</span>
+                      </li>
+                    </ul>
+                  </div>
                   <a
                     href="https://www.linkedin.com/in/arahimkhan287/"
                     class="text-[14px] flex items-center jufcenter gap-5 text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200"
@@ -1030,7 +1035,7 @@
               </div>
               <div class="carousel-slide">
                 <div
-                  class="bg-white h-[600px] rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center relative"
+                  class="bg-white rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center relative"
                 >
                   <div
                     class="text-[14px] bg-[#FF8C42] text-white px-3 py-2 rounded-full mb-3"
@@ -1106,62 +1111,63 @@
               </div>
               <div class="carousel-slide">
                 <div
-                  class="bg-white h-[600px] rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center relative"
+                  class="bg-white rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center justify-between h-full relative"
                 >
-                  <div
-                    class="text-[14px] bg-[#FF8C42] text-white px-3 py-2 rounded-full mb-3"
-                    style="transform: rotate(5deg)"
-                  >
-                    🎯 Data Analysis
-                  </div>
-                  <div
-                    class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
-                  >
-                    <img
-                      src="https://media.licdn.com/dms/image/v2/D4D03AQG7lZiIxoIbWg/profile-displayphoto-shrink_200_200/B4DZRBdyPQHYAY-/0/1736265116217?e=1766016000&v=beta&t=QpsxVd1jnQyP_ePHhbr5S_cIkTSOrlkH8OYK27Hs958"
-                      alt="Malay Harsha"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3
-                    class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
-                  >
-                    Daniil Demitrov
-                  </h3>
-                  <div
-                    class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
-                  >
-                    Advisory Board | Head of Marketing
-                  </div>
-                  <div class="text-[14px] text-[#6B7280] mb-3">JSW One</div>
-                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
-                    Head of Product Analytics at Fintech, 1+ billion market
-                    valuation | 7+ years in Data Analysis, Data Science and
-                    Research | Mentor, Educator
-                  </p>
-                  <ul class="text-left w-full space-y-1 mb-4">
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="text-[14px] bg-[#FF8C42] text-white px-3 py-2 rounded-full mb-3"
+                      style="transform: rotate(5deg)"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>18 years SaaS growth</span>
-                    </li>
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                      🎯 Data Analysis
+                    </div>
+                    <div
+                      class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>0→10K users in 2 years</span>
-                    </li>
-                    <li
-                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
-                      style="opacity: 1; transform: none"
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQG7lZiIxoIbWg/profile-displayphoto-shrink_200_200/B4DZRBdyPQHYAY-/0/1736265116217?e=1766016000&v=beta&t=QpsxVd1jnQyP_ePHhbr5S_cIkTSOrlkH8OYK27Hs958"
+                        alt="Malay Harsha"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3
+                      class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
                     >
-                      <span class="text-[#10B981] mr-2">✓</span
-                      ><span>Marketplace flywheels</span>
-                    </li>
-                  </ul>
+                      Daniil Demitrov
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
+                    >
+                      Advisory Board | Head of Marketing
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      Head of Product Analytics at Fintech, 1+ billion market
+                      valuation | 7+ years in Data Analysis, Data Science and
+                      Research | Mentor, Educator
+                    </p>
+                    <ul class="text-left w-full space-y-1 mb-4">
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>18 years SaaS growth</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>0→10K users in 2 years</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>Marketplace flywheels</span>
+                      </li>
+                    </ul>
+                  </div>
 
                   <a
                     href="https://www.linkedin.com/in/daniil-demitrov/"
@@ -1181,6 +1187,7 @@
           </div>
         </div>
       </section>
+
       <section
         id="problem"
         class="relative bg-gradient-to-b from-white to-[#FAFBFC] py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
@@ -1502,6 +1509,7 @@
           </div>
         </div>
       </section>
+
       <section
         id="solution"
         class="relative bg-gradient-to-b from-[#FAFBFC] via-white to-[#F3F4FF] py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
@@ -1974,6 +1982,7 @@
           </div>
         </div>
       </section>
+
       <section
         class="relative bg-gradient-to-b from-white via-[#FAFBFC] to-[#F3F4FF] py-24 px-6 overflow-hidden"
       >
@@ -2206,6 +2215,7 @@
           </div>
         </div>
       </section>
+
       <section class="bg-white py-20 px-6 overflow-hidden">
         <div class="max-w-[1200px] mx-auto">
           <div class="text-center mb-16" style="opacity: 1; transform: none">
@@ -2611,6 +2621,7 @@
           </div>
         </div>
       </section>
+
       <section
         id="team"
         class="relative bg-gradient-to-b from-white via-[#FAFBFC] to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
@@ -2663,7 +2674,7 @@
             <div class="carousel-track">
               <div class="carousel-slide">
                 <div
-                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center justify-between text-center"
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center h-full justify-between text-center"
                 >
                   <div class="flex flex-col items-center text-center h-full">
                     <div
@@ -2707,7 +2718,7 @@
               </div>
               <div class="carousel-slide">
                 <div
-                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center text-center justify-between"
+                  class="bg-white h-full border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center text-center justify-between"
                 >
                   <div class="flex flex-col items-center text-center h-full">
                     <div
@@ -2751,29 +2762,33 @@
               </div>
               <div class="carousel-slide">
                 <div
-                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center text-center"
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col h-full items-center justify-between text-center"
                 >
-                  <div
-                    class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
-                  >
-                    <img
-                      src="https://avatars.githubusercontent.com/u/132925394?v=4"
-                      alt="Ismoil Sayfitdinov"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
-                    Ismoil Sayfitdinov
-                  </h3>
-                  <div class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]">
-                    Mobile &amp; Full-Stack Developer
-                  </div>
-                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
-                    3+ years building production mobile apps with React Native
-                    and React, UX implementation expertise.
-                  </p>
-                  <div class="text-[12px] text-[#6B7280]">
-                    React, React Native, TypeScript, Mobile Development, UX
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://avatars.githubusercontent.com/u/132925394?v=4"
+                        alt="Ismoil Sayfitdinov"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
+                      Ismoil Sayfitdinov
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]"
+                    >
+                      Mobile &amp; Full-Stack Developer
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      3+ years building production mobile apps with React Native
+                      and React, UX implementation expertise.
+                    </p>
+                    <div class="text-[12px] text-[#6B7280]">
+                      React, React Native, TypeScript, Mobile Development, UX
+                    </div>
                   </div>
                   <a
                     href="#"
@@ -2790,7 +2805,7 @@
               </div>
               <div class="carousel-slide">
                 <div
-                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center text-center"
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col h-full items-center text-center"
                 >
                   <div class="flex flex-col items-center text-center h-full">
                     <div
@@ -2834,29 +2849,33 @@
               </div>
               <div class="carousel-slide">
                 <div
-                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center text-center"
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex h-full flex-col items-center justify-between text-center"
                 >
-                  <div
-                    class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
-                  >
-                    <img
-                      src="https://www.shutterstock.com/image-photo/attractive-female-designer-points-whiteboard-260nw-2560812771.jpg"
-                      alt="Aziza Sharopova"
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                  <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
-                    Aziza Sharopova
-                  </h3>
-                  <div class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]">
-                    Product Designer
-                  </div>
-                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
-                    UI/UX design specialist with 1+ year creating functional and
-                    beautiful interfaces for B2B products.
-                  </p>
-                  <div class="text-[12px] text-[#6B7280]">
-                    UI/UX Design, Figma, Product Design, User Research
+                  <div class="flex h-full flex-col items-center h-full">
+                    <div
+                      class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://www.shutterstock.com/image-photo/attractive-female-designer-points-whiteboard-260nw-2560812771.jpg"
+                        alt="Aziza Sharopova"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
+                      Aziza Sharopova
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]"
+                    >
+                      Product Designer
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      UI/UX design specialist with 1+ year creating functional
+                      and beautiful interfaces for B2B products.
+                    </p>
+                    <div class="text-[12px] text-[#6B7280]">
+                      UI/UX Design, Figma, Product Design, User Research
+                    </div>
                   </div>
                   <a
                     href="#"
@@ -2875,6 +2894,7 @@
           </div>
         </div>
       </section>
+
       <section class="bg-white py-20 px-6 overflow-hidden">
         <div class="max-w-[1200px] mx-auto">
           <div class="text-center mb-16" style="opacity: 1; transform: none">
@@ -3115,410 +3135,7 @@
         </div>
       </section>
       <!-- Testimonials Carousel Section -->
-      <section
-        class="relative bg-gradient-to-b from-white via-[#FAFBFC] to-white py-20 px-6 overflow-hidden"
-      >
-        <!-- Background Pattern -->
-        <div class="absolute inset-0 opacity-[0.04] pointer-events-none">
-          <div
-            class="absolute inset-0"
-            style="
-              background-image: radial-gradient(
-                circle at 2px 2px,
-                #02066f 1px,
-                transparent 0
-              );
-              background-size: 50px 50px;
-              animation: patternMove 25s linear infinite;
-            "
-          ></div>
-        </div>
 
-        <div class="max-w-[1200px] mx-auto relative z-10">
-          <div class="text-center mb-16" style="opacity: 1; transform: none">
-            <h2
-              class="text-[clamp(32px,4vw,48px)] leading-[1.3] tracking-[-0.5px] mb-4 text-[#1F2937] md:text-[36px] sm:text-[28px]"
-            >
-              What Our Partners Say
-            </h2>
-            <p class="text-[18px] text-[#6B7280] max-w-[600px] mx-auto">
-              Real feedback from builders and suppliers using MetOneX
-            </p>
-          </div>
-
-          <!-- Testimonials Carousel -->
-          <div class="infinite-carousel testimonials-carousel">
-            <div class="carousel-track">
-              <!-- Testimonial 1 -->
-              <div class="carousel-slide">
-                <div
-                  class="bg-white rounded-2xl p-8 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col h-full"
-                >
-                  <div class="flex items-center gap-1 mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                  </div>
-                  <p
-                    class="text-[16px] text-[#374151] leading-[1.7] mb-6 flex-grow"
-                  >
-                    "MetOneX saved us 4 days per order. We used to make 15+
-                    phone calls, now it's done in 30 minutes. Game changer for
-                    our construction projects."
-                  </p>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-12 h-12 rounded-full bg-gradient-to-br from-[#02066F] to-[#FF8C42] flex items-center justify-center text-white font-bold text-[18px]"
-                    >
-                      AS
-                    </div>
-                    <div>
-                      <div class="text-[16px] font-semibold text-[#1F2937]">
-                        Akmal Sobirov
-                      </div>
-                      <div class="text-[14px] text-[#6B7280]">
-                        Project Manager, Tashkent Builders
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 2 -->
-              <div class="carousel-slide">
-                <div
-                  class="bg-white rounded-2xl p-8 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col h-full"
-                >
-                  <div class="flex items-center gap-1 mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                  </div>
-                  <p
-                    class="text-[16px] text-[#374151] leading-[1.7] mb-6 flex-grow"
-                  >
-                    "As a supplier, MetOneX helped us reach 3x more builders.
-                    The AI matching is incredible - we get qualified leads, not
-                    random calls."
-                  </p>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF8C42] to-[#02066F] flex items-center justify-center text-white font-bold text-[18px]"
-                    >
-                      MR
-                    </div>
-                    <div>
-                      <div class="text-[16px] font-semibold text-[#1F2937]">
-                        Mirzo Rahimov
-                      </div>
-                      <div class="text-[14px] text-[#6B7280]">
-                        CEO, Steel Supplies Co.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 3 -->
-              <div class="carousel-slide">
-                <div
-                  class="bg-white rounded-2xl p-8 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col h-full"
-                >
-                  <div class="flex items-center gap-1 mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                  </div>
-                  <p
-                    class="text-[16px] text-[#374151] leading-[1.7] mb-6 flex-grow"
-                  >
-                    "The escrow payment system gives us confidence. We know
-                    we'll get paid on time. This is the future of B2B
-                    construction."
-                  </p>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-12 h-12 rounded-full bg-gradient-to-br from-[#02066F] to-[#FF8C42] flex items-center justify-center text-white font-bold text-[18px]"
-                    >
-                      SK
-                    </div>
-                    <div>
-                      <div class="text-[16px] font-semibold text-[#1F2937]">
-                        Sanjar Karimov
-                      </div>
-                      <div class="text-[14px] text-[#6B7280]">
-                        Director, Cement Distributors Ltd.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Testimonial 4 -->
-              <div class="carousel-slide">
-                <div
-                  class="bg-white rounded-2xl p-8 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col h-full"
-                >
-                  <div class="flex items-center gap-1 mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="#FF8C42"
-                      class="lucide lucide-star"
-                    >
-                      <polygon
-                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
-                      ></polygon>
-                    </svg>
-                  </div>
-                  <p
-                    class="text-[16px] text-[#374151] leading-[1.7] mb-6 flex-grow"
-                  >
-                    "30 minutes vs 5 days. That's the difference MetOneX makes.
-                    Our procurement team loves it. Highly recommended!"
-                  </p>
-                  <div class="flex items-center gap-4">
-                    <div
-                      class="w-12 h-12 rounded-full bg-gradient-to-br from-[#FF8C42] to-[#02066F] flex items-center justify-center text-white font-bold text-[18px]"
-                    >
-                      DT
-                    </div>
-                    <div>
-                      <div class="text-[16px] font-semibold text-[#1F2937]">
-                        Dilshod Toshmatov
-                      </div>
-                      <div class="text-[14px] text-[#6B7280]">
-                        CFO, Mega Construction Group
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <section
         id="contact"
         class="relative py-24 px-6 overflow-hidden"
@@ -3532,6 +3149,23 @@
           transform: none;
         "
       >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.08] pointer-events-none">
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: repeating-conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0deg,
+                #e7e7e7 3deg,
+                transparent 4deg,
+                transparent 10deg
+              );
+              background-size: 100px 100px;
+            "
+          ></div>
+        </div>
+
         <div
           class="absolute inset-0 opacity-[0.08]"
           style="
@@ -3664,6 +3298,7 @@
           </div>
         </div>
       </section>
+
       <footer class="bg-[#0F172A] py-5 px-6">
         <div class="max-w-[1200px] mx-auto text-center">
           <p class="text-[12px] text-white/50">© 2025 MetOneX</p>
@@ -4107,43 +3742,10 @@
       }
 
       /* Navbar scroll blur effect */
-      .navbar-scrolled {
-        background: rgba(255, 255, 255, 0.95) !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
-        box-shadow: 0 4px 24px rgba(2, 6, 111, 0.1) !important;
-        border-bottom-color: rgba(229, 231, 235, 0.8) !important;
-      }
     </style>
 
     <script>
-      // Navbar scroll blur effect
-      function initNavbarScroll() {
-        const navbar = document.getElementById("navbar");
-
-        if (!navbar) return;
-
-        window.addEventListener("scroll", function () {
-          const scrollY = window.pageYOffset || window.scrollY;
-
-          if (scrollY > 50) {
-            navbar.classList.add("navbar-scrolled");
-            navbar.style.backdropFilter = "blur(20px)";
-            navbar.style.webkitBackdropFilter = "blur(20px)";
-          } else {
-            navbar.classList.remove("navbar-scrolled");
-            navbar.style.backdropFilter = "blur(8px)";
-            navbar.style.webkitBackdropFilter = "blur(8px)";
-          }
-        });
-      }
-
-      // Initialize on DOM ready
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initNavbarScroll);
-      } else {
-        initNavbarScroll();
-      }
+      // Navbar scroll blur effect - moved to app.js
     </script>
     <script src="app.js"></script>
   </body>

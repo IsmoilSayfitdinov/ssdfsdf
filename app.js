@@ -260,45 +260,13 @@ style.textContent = `
         
         .carousel-slide {
           flex: 0 0 auto;
-          width: 100%;
-          max-width: 320px;
-          height: 600px;
-          display: flex;
+          width: calc((100% - 96px) / 4);
+          max-width: 390px;
           transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-        
-        .carousel-slide > div {
-          width: 100%;
-          height: 100%;
-          display: flex;
-          flex-direction: column;
         }
         
         .carousel-slide:hover {
           transform: translateY(-5px);
-        }
-        
-        /* Ensure all carousel cards have same height and proper spacing */
-        .carousel-slide .bg-white {
-          height: 100%;
-          min-height: 600px;
-        }
-        
-        /* Make sure flex items distribute properly */
-        .carousel-slide .bg-white.flex-col {
-          justify-content: flex-start;
-        }
-        
-        /* Ensure ul and p elements don't overflow */
-        .carousel-slide ul,
-        .carousel-slide p {
-          flex-shrink: 1;
-          overflow: hidden;
-        }
-        
-        /* Make connect button stay at bottom */
-        .carousel-slide a[href="#"] {
-          margin-top: auto;
         }
         
         /* Infinite scroll animation - seamless loop */
@@ -331,7 +299,7 @@ style.textContent = `
         /* Responsive */
         @media (max-width: 1280px) {
           .carousel-slide {
-            width: 100%;
+            width: calc((100% - 64px) / 3);
             max-width: 350px;
           }
         }
@@ -356,56 +324,8 @@ style.textContent = `
         @media (max-width: 640px) {
           .carousel-slide {
             width: 100%;
-            max-width: 320px;
+            max-width: 100%;
           }
-        }
-        
-        /* Development Timeline Line Animations */
-        .timeline-line {
-          position: relative;
-          overflow: hidden;
-        }
-        
-        .timeline-line::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 0;
-          background: inherit;
-          opacity: 0;
-          transition: height 2s ease-out, opacity 0.5s ease-out;
-        }
-        
-        .timeline-line.animate::after {
-          height: 100%;
-          opacity: 1;
-          animation: timelineLineFill 2s ease-out forwards;
-        }
-        
-        @keyframes timelineLineFill {
-          0% {
-            height: 0;
-            opacity: 0.3;
-          }
-          50% {
-            opacity: 0.8;
-          }
-          100% {
-            height: 100%;
-            opacity: 1;
-          }
-        }
-        
-        /* Glow effect on animated line */
-        .timeline-line.animate {
-          box-shadow: 0 0 10px rgba(2, 6, 111, 0.4);
-          transition: box-shadow 0.5s ease;
-        }
-        
-        .timeline-line[style*="rgb(255, 140, 66)"].animate {
-          box-shadow: 0 0 10px rgba(255, 140, 66, 0.4);
         }
         
         /* Banner Cards Animations */
@@ -728,62 +648,49 @@ function initializeSwipersOnce() {
   }
 }
 
-// Development Timeline Line Animation
-function initTimelineLineAnimation() {
-  // Find timeline section
-  const timelineSection = Array.from(document.querySelectorAll("section")).find(
-    (section) => section.textContent?.includes("Development Timeline")
-  );
+// Navbar blur effect on scroll
+function initNavbarBlur() {
+  const navbar = document.getElementById("navbar");
+  if (!navbar) {
+    console.error("Navbar element not found!");
+    return;
+  }
 
-  if (!timelineSection) return;
+  console.log("Navbar found, initializing blur effect...");
 
-  // Find all timeline lines (divs with background style and h-full class)
-  const allDivs = timelineSection.querySelectorAll("div");
-  const timelineLines = Array.from(allDivs).filter((div) => {
-    const classes = div.className || "";
-    const style = div.getAttribute("style") || "";
-    return (
-      classes.includes("h-full") &&
-      classes.includes("mt-2") &&
-      style.includes("background")
-    );
-  });
+  // Set initial background
+  navbar.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+  navbar.style.backdropFilter = "blur(8px)";
+  navbar.style.webkitBackdropFilter = "blur(8px)";
 
-  if (timelineLines.length === 0) return;
+  const handleScroll = () => {
+    const scrollY =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      window.scrollY;
 
-  console.log(`Found ${timelineLines.length} timeline lines`);
-
-  // Add timeline-line class to all lines
-  timelineLines.forEach((line) => {
-    line.classList.add("timeline-line");
-  });
-
-  // Intersection Observer for timeline lines
-  const timelineObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          const line = entry.target;
-          const delay = index * 300; // Stagger animation: 0ms, 300ms
-
-          setTimeout(() => {
-            line.classList.add("animate");
-          }, delay);
-
-          timelineObserver.unobserve(line);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px",
+    if (scrollY > 50) {
+      navbar.classList.add("navbar-scrolled");
+      navbar.style.backdropFilter = "blur(20px)";
+      navbar.style.webkitBackdropFilter = "blur(20px)";
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 0.95)";
+      navbar.style.boxShadow = "0 4px 24px rgba(2, 6, 111, 0.1)";
+    } else {
+      navbar.classList.remove("navbar-scrolled");
+      navbar.style.backdropFilter = "blur(8px)";
+      navbar.style.webkitBackdropFilter = "blur(8px)";
+      navbar.style.backgroundColor = "rgba(255, 255, 255, 0.8)";
+      navbar.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.05)";
     }
-  );
+  };
 
-  // Observe all timeline lines
-  timelineLines.forEach((line) => {
-    timelineObserver.observe(line);
-  });
+  // Add scroll listener
+  window.addEventListener("scroll", handleScroll, { passive: true });
+
+  // Initial check
+  handleScroll();
+
+  console.log("Navbar blur initialized successfully");
 }
 
 // DOM yuklanganda
@@ -794,7 +701,7 @@ if (document.readyState === "loading") {
     initBannerCardsAnimation();
     initBannerBackgroundAnimations();
     initializeCarousels();
-    initTimelineLineAnimation();
+    initNavbarBlur();
   });
 } else {
   updateProgressBar();
@@ -802,7 +709,7 @@ if (document.readyState === "loading") {
   initBannerCardsAnimation();
   initBannerBackgroundAnimations();
   initializeCarousels();
-  initTimelineLineAnimation();
+  initNavbarBlur();
 }
 
 // Sayt to'liq yuklanganda
@@ -1063,7 +970,9 @@ function initTechStackSelect() {
       filterButtons.forEach((btn) => {
         btn.classList.remove(
           "active",
-          "bg-[#374151]",
+          "bg-gradient-to-r",
+          "from-[#02066F]",
+          "to-[#FF8C42]",
           "hover:shadow-[0_4px_12px_rgba(2,6,111,0.3)]"
         );
         btn.classList.add(
@@ -1082,7 +991,9 @@ function initTechStackSelect() {
 
       this.classList.add(
         "active",
-        "bg-[#374151]",
+        "bg-gradient-to-r",
+        "from-[#02066F]",
+        "to-[#FF8C42]",
         "text-white",
         "hover:shadow-[0_4px_12px_rgba(2,6,111,0.3)]"
       );
