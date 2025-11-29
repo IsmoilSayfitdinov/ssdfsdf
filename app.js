@@ -299,21 +299,21 @@ style.textContent = `
         /* Responsive */
         @media (max-width: 1280px) {
           .carousel-slide {
-            width: calc((100% - 64px) / 3);
+            width: 350px;
             max-width: 350px;
           }
         }
         
         @media (max-width: 1024px) {
           .carousel-slide {
-            width: calc((100% - 48px) / 2);
+            width: 400px;
             max-width: 400px;
           }
         }
         
         @media (max-width: 768px) {
           .carousel-slide {
-            width: calc((100% - 40px) / 1.5);
+            width: 450px;
             max-width: 450px;
           }
           .carousel-track {
