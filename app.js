@@ -323,8 +323,8 @@ style.textContent = `
         
         @media (max-width: 640px) {
           .carousel-slide {
-            width: 100%;
-            max-width: 100%;
+            width: 320px;
+            max-width: 320px;
           }
         }
         
