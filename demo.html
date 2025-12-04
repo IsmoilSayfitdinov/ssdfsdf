@@ -1030,6 +1030,97 @@
         border-color: rgba(59, 130, 246, 0.5);
       }
 
+      /* Highlight Text - 30 daqiqaga - Muhim Matn (o'lcham o'zgarmasdan) */
+      .highlight-text {
+        background: linear-gradient(
+          135deg,
+          #2563eb 0%,
+          #3b82f6 50%,
+          #1e3a8a 100%
+        );
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-weight: inherit;
+        position: relative;
+        display: inline-block;
+        animation: highlight-shimmer 2s linear infinite;
+        padding: 0 8px;
+      }
+
+      .highlight-text::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 12px);
+        height: calc(100% + 8px);
+        background: linear-gradient(
+          135deg,
+          rgba(37, 99, 235, 0.15),
+          rgba(59, 130, 246, 0.15)
+        );
+        border-radius: 12px;
+        z-index: -1;
+        filter: blur(10px);
+        animation: highlight-pulse 2s ease-in-out infinite;
+      }
+
+      .highlight-text::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 8px);
+        height: calc(100% + 4px);
+        border: 2px solid rgba(37, 99, 235, 0.3);
+        border-radius: 10px;
+        z-index: -2;
+        box-shadow: 0 0 15px rgba(37, 99, 235, 0.3),
+          inset 0 0 15px rgba(59, 130, 246, 0.15);
+        animation: highlight-border 3s ease-in-out infinite;
+      }
+
+      @keyframes highlight-shimmer {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes highlight-pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes highlight-border {
+        0%,
+        100% {
+          border-color: rgba(37, 99, 235, 0.3);
+          box-shadow: 0 0 15px rgba(37, 99, 235, 0.3),
+            inset 0 0 15px rgba(59, 130, 246, 0.15);
+        }
+        50% {
+          border-color: rgba(59, 130, 246, 0.5);
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.4),
+            inset 0 0 20px rgba(37, 99, 235, 0.25);
+        }
+      }
+
       /* Scroll Progress Bar */
       #scroll-progress {
         position: fixed;
@@ -1212,7 +1303,7 @@
           <!-- Inner Glow -->
           <div
             class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full opacity-20 animate-pulse-slow"
-          ></div>
+            ></div>
         </div>
 
         <!-- Loading Text with Shimmer Effect -->
@@ -1253,15 +1344,15 @@
               animation: float-up 3s ease-in-out infinite;
               animation-delay: 0s;
             "
-          ></div>
-          <div
+            ></div>
+            <div
             class="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full opacity-60"
             style="
               animation: float-up 3s ease-in-out infinite;
               animation-delay: 0.5s;
             "
-          ></div>
-          <div
+            ></div>
+            <div
             class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white rounded-full opacity-60"
             style="
               animation: float-up 3s ease-in-out infinite;
@@ -1274,7 +1365,7 @@
               animation: float-up 3s ease-in-out infinite;
               animation-delay: 1.5s;
             "
-          ></div>
+            ></div>
         </div>
       </div>
     </div>
@@ -1313,24 +1404,27 @@
           <div class="flex items-center justify-between">
             <a
               href="index.html"
-              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all hover:bg-[#F3F4F6] h-9 px-4 py-2 gap-2 text-[#374151] hover:text-[#02066F]"
+              class="inline-flex items-center text-[#374151] text-[20px] justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all hover:bg-[#F3F4F6] h-9 px-4 py-2 gap-2 text-[#374151] hover:text-[#02066F]"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="m12 19-7-7 7-7"></path>
-                <path d="M19 12H5"></path>
-              </svg>
-              Orqaga
+              MetOneX
             </a>
+            
+            <!-- Language Selector -->
+            <div class="flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-[#374151]">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+              <select
+                id="language-selector"
+                class="bg-white border-2 border-[#E5E7EB] rounded-lg px-4 py-2 text-sm font-medium text-[#374151] hover:border-[#2563EB] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 transition-all cursor-pointer"
+              >
+                <option value="uz">🇺🇿 O'zbek</option>
+                <option value="ru">🇷🇺 Русский</option>
+                <option value="en">🇬🇧 English</option>
+              </select>
+            </div>
           </div>
         </div>
       </header>
@@ -1415,7 +1509,7 @@
           <!-- Animated SVG Lines with Multiple Paths -->
           <svg
             class="absolute inset-0 w-full h-full opacity-15"
-            xmlns="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
               <linearGradient
@@ -1463,14 +1557,14 @@
               d="M0,100 Q250,50 500,100 T1000,100 L1200,100"
               stroke="url(#bannerLineGradient1)"
               stroke-width="2"
-              fill="none"
+                fill="none"
               class="animate-float"
               style="animation-duration: 8s"
             />
             <path
               d="M0,300 Q300,250 600,300 T1200,300 L1400,300"
               stroke="url(#bannerLineGradient2)"
-              stroke-width="2"
+                stroke-width="2"
               fill="none"
               class="animate-float"
               style="animation-duration: 10s; animation-delay: 1s"
@@ -1499,7 +1593,7 @@
               class="animate-float"
               style="animation-duration: 11s; animation-delay: 1.5s"
             />
-          </svg>
+              </svg>
 
           <!-- Floating Geometric Shapes with Rotation -->
           <div
@@ -1554,7 +1648,7 @@
               animation: shimmer-wave 4s linear infinite;
             "
           ></div>
-        </div>
+          </div>
 
         <div class="container mx-auto px-4 max-w-7xl relative z-10">
           <div class="text-center space-y-8 scroll-reveal">
@@ -1566,10 +1660,7 @@
             >
               Qurilish materiallarini topish va yetkazib beruvchilar bilan
               bog'lanishni
-              <span
-                class="bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent"
-                >30 daqiqaga</span
-              >
+              <span class="highlight-text">30 daqiqaga</span>
               qisqartiring
             </h1>
 
@@ -1789,57 +1880,57 @@
         <div class="container mx-auto px-4 max-w-7xl relative z-10">
           <div
             class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300 scroll-reveal"
+        >
+          <!-- Card Header - Kong.ai Style -->
+          <div
+            class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
           >
-            <!-- Card Header - Kong.ai Style -->
-            <div
-              class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
-            >
-              <div class="flex items-center gap-4">
-                <div
-                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-2xl font-black text-[#02066F]">Video</h3>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card Content -->
-            <div>
+            <div class="flex items-center gap-4">
               <div
-                class="aspect-video rounded-2xl overflow-hidden relative shadow-2xl border-2 border-[#E5E7EB] bg-black"
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
               >
-                <iframe
-                  class="w-full h-full"
-                  src="https://www.youtube.com/embed/NNS5Piu-EII"
-                  title="MetOneX Demo Video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                  loading="lazy"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
                 >
-                </iframe>
+                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+              </div>
+              <div>
+                  <h3 class="text-2xl font-black text-[#02066F]">Video</h3>
               </div>
             </div>
           </div>
-        </div>
-        <!-- Demo Video Card -->
 
-        <!-- Benefits Section - Kong.ai Style -->
+          <!-- Card Content -->
+          <div>
+            <div
+              class="aspect-video rounded-2xl overflow-hidden relative shadow-2xl border-2 border-[#E5E7EB] bg-black"
+            >
+              <iframe
+                class="w-full h-full"
+                  src="https://www.youtube.com/embed/NNS5Piu-EII"
+                title="MetOneX Demo Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+                >
+                </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Demo Video Card -->
+
+      <!-- Benefits Section - Kong.ai Style -->
         <div
           class="relative bg-gradient-to-br mt-20 from-white via-[#F8FAFF] to-[#F0F4FF] py-20 overflow-hidden"
         >
@@ -2048,117 +2139,115 @@
             <div class="text-center mb-16 scroll-reveal">
               <h2
                 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#02066F] mb-6 leading-tight"
-              >
-                Eski usul va yangi AI usuli bilan xayrlashing
-              </h2>
-              <p
-                class="text-xl sm:text-2xl text-[#6B7280] max-w-4xl mx-auto leading-relaxed"
-              >
-                Qurilish materiallarini topish va yetkazib beruvchilar bilan
-                bog'lanish jarayoni endi o'zgardi. AI texnologiyasi bilan 30
-                daqiqada natija oling.
-              </p>
+            >
+              Eski usul va yangi AI usuli bilan xayrlashing
+            </h2>
+            <p
+              class="text-xl sm:text-2xl text-[#6B7280] max-w-4xl mx-auto leading-relaxed"
+            >
+              Qurilish materiallarini topish va yetkazib beruvchilar bilan
+              bog'lanish jarayoni endi o'zgardi. AI texnologiyasi bilan 30
+              daqiqada natija oling.
+            </p>
+          </div>
+
+          <!-- Comparison Section -->
+            <div class="grid md:grid-cols-2 gap-8 scroll-reveal">
+            <!-- Old Way -->
+            <div
+              class="bg-white rounded-3xl p-10 border-2 border-red-200 shadow-2xl hover:shadow-3xl transition-all duration-300"
+            >
+              <div class="flex items-center gap-4 mb-8">
+                <h3 class="text-3xl font-black text-red-600">Eski Usul</h3>
+              </div>
+              <ul class="space-y-5 text-left mb-8">
+                <li class="flex items-start gap-4">
+                  <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                  <span class="text-[#374151] text-lg font-medium"
+                    >Qimmat copywriter va dizaynerlarni yollash</span
+                  >
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                  <span class="text-[#374151] text-lg font-medium"
+                    >Kunlar yoki haftalar kutish</span
+                  >
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                  <span class="text-[#374151] text-lg font-medium"
+                    >Ko'p vaqt va mablag' sarflash</span
+                  >
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                  <span class="text-[#374151] text-lg font-medium"
+                    >3-5 kun kutish vaqt</span
+                  >
+                </li>
+              </ul>
+              <div class="pt-8 border-t-2 border-red-200">
+                <p class="text-red-600 font-black text-xl">
+                    VAQT VA MABLAG' YO'QOTISH
+                </p>
+              </div>
             </div>
 
-            <!-- Comparison Section -->
-            <div class="grid md:grid-cols-2 gap-8 scroll-reveal">
-              <!-- Old Way -->
+            <!-- New Way -->
+            <div
+                class="bg-gradient-to-br from-[#02066F] to-[#1e40af] rounded-3xl p-10 text-white shadow-2xl transform hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
+            >
               <div
-                class="bg-white rounded-3xl p-10 border-2 border-red-200 shadow-2xl hover:shadow-3xl transition-all duration-300"
-              >
+                class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+              ></div>
+              <div class="relative z-10">
                 <div class="flex items-center gap-4 mb-8">
-                  <h3 class="text-3xl font-black text-red-600">Eski Usul</h3>
+                  <h3 class="text-3xl font-black">MetOneX AI Usuli</h3>
                 </div>
                 <ul class="space-y-5 text-left mb-8">
                   <li class="flex items-start gap-4">
-                    <span class="text-red-500 text-2xl mt-0.5">✗</span>
-                    <span class="text-[#374151] text-lg font-medium"
-                      >Qimmat copywriter va dizaynerlarni yollash</span
+                    <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                      >✓</span
+                    >
+                    <span class="text-lg font-medium"
+                      >AI yordamida materiallarni topish</span
                     >
                   </li>
                   <li class="flex items-start gap-4">
-                    <span class="text-red-500 text-2xl mt-0.5">✗</span>
-                    <span class="text-[#374151] text-lg font-medium"
-                      >Kunlar yoki haftalar kutish</span
+                    <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                      >✓</span
+                    >
+                    <span class="text-lg font-medium"
+                      >30 daqiqada natija olish</span
                     >
                   </li>
                   <li class="flex items-start gap-4">
-                    <span class="text-red-500 text-2xl mt-0.5">✗</span>
-                    <span class="text-[#374151] text-lg font-medium"
-                      >Ko'p vaqt va mablag' sarflash</span
+                    <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                      >✓</span
+                    >
+                    <span class="text-lg font-medium"
+                      >Vaqt va mablag'ni tejash</span
                     >
                   </li>
                   <li class="flex items-start gap-4">
-                    <span class="text-red-500 text-2xl mt-0.5">✗</span>
-                    <span class="text-[#374151] text-lg font-medium"
-                      >3-5 kun kutish vaqt</span
+                    <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                      >✓</span
+                    >
+                    <span class="text-lg font-medium"
+                      >Real vaqtda natijalar</span
                     >
                   </li>
                 </ul>
-                <div class="pt-8 border-t-2 border-red-200">
-                  <p class="text-red-600 font-black text-xl">
-                    🔥 VAQT VA MABLAG' YO'QOTISH
-                  </p>
-                </div>
-              </div>
-
-              <!-- New Way -->
-              <div
-                class="bg-gradient-to-br from-[#02066F] to-[#1e40af] rounded-3xl p-10 text-white shadow-2xl transform hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
-              >
-                <div
-                  class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
-                ></div>
-                <div class="relative z-10">
-                  <div class="flex items-center gap-4 mb-8">
-                    <h3 class="text-3xl font-black">MetOneX AI Usuli</h3>
-                  </div>
-                  <ul class="space-y-5 text-left mb-8">
-                    <li class="flex items-start gap-4">
-                      <span class="text-green-300 text-2xl mt-0.5 font-bold"
-                        >✓</span
-                      >
-                      <span class="text-lg font-medium"
-                        >AI yordamida materiallarni topish</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-4">
-                      <span class="text-green-300 text-2xl mt-0.5 font-bold"
-                        >✓</span
-                      >
-                      <span class="text-lg font-medium"
-                        >30 daqiqada natija olish</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-4">
-                      <span class="text-green-300 text-2xl mt-0.5 font-bold"
-                        >✓</span
-                      >
-                      <span class="text-lg font-medium"
-                        >Vaqt va mablag'ni tejash</span
-                      >
-                    </li>
-                    <li class="flex items-start gap-4">
-                      <span class="text-green-300 text-2xl mt-0.5 font-bold"
-                        >✓</span
-                      >
-                      <span class="text-lg font-medium"
-                        >Real vaqtda natijalar</span
-                      >
-                    </li>
-                  </ul>
-                  <div class="pt-8 border-t-2 border-white/20">
-                    <p class="font-black text-xl">
-                      🤑 REKORD NATIJALAR VA PROFIT
-                    </p>
-                  </div>
+                <div class="pt-8 border-t-2 border-white/20">
+                    <p class="font-black text-xl">REKORD NATIJALAR VA PROFIT</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Stats Section - Kong.ai Style -->
+      <!-- Stats Section - Kong.ai Style -->
         <div
           class="relative bg-gradient-to-br from-[#F0F4FF] via-white to-[#F8FAFF] py-20 overflow-hidden"
         >
@@ -2360,67 +2449,67 @@
               "
             ></div>
           </div>
-          <div class="container mx-auto px-4 max-w-7xl">
-            <div class="text-center mb-12">
-              <h2
+        <div class="container mx-auto px-4 max-w-7xl">
+          <div class="text-center mb-12">
+            <h2
                 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#02066F] mb-4"
-              >
-                MetOneX bilan nima olasiz?
-              </h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              <div
+            >
+              MetOneX bilan nima olasiz?
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div
                 class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center scroll-reveal"
-              >
-                <div
+            >
+              <div
                   class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
-                >
+              >
                   <span class="counter-number" data-target="30">0</span>
-                </div>
+              </div>
                 <div class="text-2xl font-black text-[#374151] mb-2">
                   Daqiqada
                 </div>
-                <div class="text-base text-[#6B7280] font-medium">
+              <div class="text-base text-[#6B7280] font-medium">
                   Xarid jarayoni tugaydi
-                </div>
               </div>
+            </div>
+            <div
+              class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
+            >
               <div
-                class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
-              >
-                <div
                   class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
-                >
-                  AI
-                </div>
-                <div class="text-2xl font-black text-[#374151] mb-2">
-                  Texnologiya
-                </div>
-                <div class="text-base text-[#6B7280] font-medium">
-                  GPT-4 va Machine Learning
-                </div>
-              </div>
-              <div
-                class="bg-white flex items-center justify-between flex-col rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
               >
-                <div
+                AI
+              </div>
+              <div class="text-2xl font-black text-[#374151] mb-2">
+                Texnologiya
+              </div>
+              <div class="text-base text-[#6B7280] font-medium">
+                GPT-4 va Machine Learning
+              </div>
+            </div>
+            <div
+                class="bg-white flex items-center justify-between flex-col rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
+            >
+              <div
                   class="text-7xl sm:text-6xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
-                >
-                  Launched
-                </div>
-                <div>
+              >
+                Launched
+              </div>
+              <div>
                   <div class="text-2xl font-black text-[#374151] mb-2">
                     Holat
                   </div>
-                  <div class="text-base text-[#6B7280] font-medium">
-                    Ishlayotgan versiya
-                  </div>
-                </div>
+              <div class="text-base text-[#6B7280] font-medium">
+                Ishlayotgan versiya
+              </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Main Content Section -->
+      <!-- Main Content Section -->
         <div
           class="relative bg-gradient-to-br pb-16 pt-20 from-[#F8FAFF] via-white to-[#F0F4FF] overflow-hidden"
         >
@@ -2571,23 +2660,59 @@
             </svg>
           </div>
           <div class="container mx-auto px-4 max-w-7xl relative z-10">
-            <div class="space-y-16">
-              <!-- Loyiha Tavsifi Card -->
+          <div class="space-y-16">
+            <!-- Loyiha Tavsifi Card -->
+            <div
+              class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+            >
+              <!-- Card Header - Kong.ai Style -->
               <div
-                class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+                class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
               >
-                <!-- Card Header - Kong.ai Style -->
-                <div
-                  class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
-                >
-                  <div class="flex items-center gap-4">
-                    <div
+                <div class="flex items-center gap-4">
+                  <div
                       class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"
+                      ></path>
+                      <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                    </svg>
+                  </div>
+                  <div>
+                      <h3 class="text-2xl font-black text-[#02066F]">
+                      Loyiha Tavsifi
+                    </h3>
+                    <p class="text-[#6B7280] font-medium">
+                      Texnik va biznes ma'lumotlar
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="space-y-8">
+                <!-- Videoda ko'rsatilgan funksiyalar -->
+                <div class="scroll-reveal">
+                  <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
+                        width="32"
+                        height="32"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="white"
@@ -2595,699 +2720,126 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       >
-                        <path
-                          d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"
-                        ></path>
-                        <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
                       </svg>
                     </div>
-                    <div>
-                      <h3 class="text-2xl font-black text-[#02066F]">
-                        Loyiha Tavsifi
-                      </h3>
-                      <p class="text-[#6B7280] font-medium">
-                        Texnik va biznes ma'lumotlar
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Card Content -->
-                <div class="space-y-8">
-                  <!-- Videoda ko'rsatilgan funksiyalar -->
-                  <div class="scroll-reveal">
-                    <div class="flex items-center gap-4 mb-8">
-                      <div
-                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="32"
-                          height="32"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                        </svg>
-                      </div>
                       <h3 class="text-3xl font-black text-[#02066F]">
-                        Videoda ko'rsatilgan funksiyalar
-                      </h3>
-                    </div>
-                    <div
-                      class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
-                    >
-                      <div class="space-y-5">
-                        <div
-                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
-                        >
-                          <div
-                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="20"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="white"
-                              stroke-width="2.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                          </div>
-                          <div class="flex-1">
-                            <p class="text-[#02066F] font-black text-lg mb-2">
-                              AI yordamida qurilish materiallarini qidirish
-                            </p>
-                            <p
-                              class="text-[#6B7280] text-sm leading-relaxed font-medium"
-                            >
-                              Real vaqtda materiallarni topish va narxlarni
-                              taqqoslash
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
-                        >
-                          <div
-                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="20"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="white"
-                              stroke-width="2.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                          </div>
-                          <div class="flex-1">
-                            <p class="text-[#02066F] font-black text-lg mb-2">
-                              Yetkazib beruvchilar bilan real vaqtda aloqa
-                            </p>
-                            <p
-                              class="text-[#6B7280] text-sm leading-relaxed font-medium"
-                            >
-                              Avtomatik matnlashtirish va xabarlarni boshqarish
-                            </p>
-                          </div>
-                        </div>
-                        <div
-                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
-                        >
-                          <div
-                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="20"
-                              height="20"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="white"
-                              stroke-width="2.5"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                          </div>
-                          <div class="flex-1">
-                            <p class="text-[#02066F] font-black text-lg mb-2">
-                              Buyurtmalarni boshqarish va kuzatish
-                            </p>
-                            <p
-                              class="text-[#6B7280] text-sm leading-relaxed font-medium"
-                            >
-                              Real vaqtda buyurtma holatini kuzatish va
-                              boshqarish
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                      Videoda ko'rsatilgan funksiyalar
+                    </h3>
                   </div>
-
-                  <!-- Muammo va Yechim -->
-                  <div class="scroll-reveal">
-                    <div class="flex items-center gap-4 mb-6">
-                      <div
-                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="28"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 2v20M2 12h20"></path>
-                        </svg>
-                      </div>
-                      <h3 class="text-3xl font-black text-[#02066F]">
-                        Muammo va Yechim
-                      </h3>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6">
-                      <div
-                        class="bg-gradient-to-br from-[#FEF2F2] to-white rounded-2xl p-8 border-2 border-l-4 border-l-[#DC2626] border-[#E5E7EB] shadow-xl hover:shadow-2xl transition-all duration-300"
-                      >
-                        <div class="flex items-center gap-3 mb-5">
-                          <div
-                            class="w-12 h-12 rounded-xl bg-[#DC2626] flex items-center justify-center"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="white"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <circle cx="12" cy="12" r="10"></circle>
-                              <line x1="12" y1="8" x2="12" y2="12"></line>
-                              <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                            </svg>
-                          </div>
-                          <p class="text-xl font-black text-[#DC2626]">
-                            Muammo
-                          </p>
-                        </div>
-                        <p
-                          class="text-base text-[#374151] leading-relaxed font-medium"
-                        >
-                          Qurilish sohasida materiallar topish va yetkazib
-                          beruvchilar bilan bog'lanish 3-5 kun vaqt oladi. Bu
-                          esa loyihalarning kechikishiga va qo'shimcha
-                          xarajatlarga olib keladi.
-                        </p>
-                      </div>
-                      <div
-                        class="bg-gradient-to-br from-[#F0FDF4] to-white rounded-2xl p-8 border-2 border-l-4 border-l-[#16A34A] border-[#E5E7EB] shadow-xl hover:shadow-2xl transition-all duration-300"
-                      >
-                        <div class="flex items-center gap-3 mb-5">
-                          <div
-                            class="w-12 h-12 rounded-xl bg-[#16A34A] flex items-center justify-center"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="white"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                          </div>
-                          <p class="text-xl font-black text-[#16A34A]">
-                            Yechim
-                          </p>
-                        </div>
-                        <p
-                          class="text-base text-[#374151] leading-relaxed font-medium"
-                        >
-                          MetOneX AI texnologiyasidan foydalanib, qurilish
-                          materiallarini topish va yetkazib beruvchilar bilan
-                          bog'lanish jarayonini 30 daqiqaga qisqartiradi. Bu esa
-                          vaqt va mablag'ni tejashga yordam beradi.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Texnologiyalar va AI Yechmlar -->
-                  <div class="scroll-reveal">
-                    <div class="flex items-center gap-4 mb-6">
-                      <div
-                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="28"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                          <path d="M2 17l10 5 10-5"></path>
-                          <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                      </div>
-                      <h3 class="text-3xl font-black text-[#02066F]">
-                        Texnologiyalar va AI Yechmlar
-                      </h3>
-                    </div>
-                    <div class="space-y-6">
-                      <div
-                        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4"
-                      >
-                        <div
-                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
-                        >
-                          <div
-                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
-                          >
-                            <span class="text-white font-black text-lg">R</span>
-                          </div>
-                          <p class="text-sm font-black text-[#02066F]">React</p>
-                        </div>
-                        <div
-                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
-                        >
-                          <div
-                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
-                          >
-                            <span class="text-white font-black text-lg"
-                              >TS</span
-                            >
-                          </div>
-                          <p class="text-sm font-black text-[#02066F]">
-                            TypeScript
-                          </p>
-                        </div>
-                        <div
-                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
-                        >
-                          <div
-                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
-                          >
-                            <span class="text-white font-black text-lg"
-                              >TC</span
-                            >
-                          </div>
-                          <p class="text-sm font-black text-[#02066F]">
-                            Tailwind CSS
-                          </p>
-                        </div>
-                        <div
-                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
-                        >
-                          <div
-                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
-                          >
-                            <span class="text-white font-black text-lg">N</span>
-                          </div>
-                          <p class="text-sm font-black text-[#02066F]">
-                            Node.js
-                          </p>
-                        </div>
-                        <div
-                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
-                        >
-                          <div
-                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
-                          >
-                            <span class="text-white font-black text-lg"
-                              >PG</span
-                            >
-                          </div>
-                          <p class="text-sm font-black text-[#02066F]">
-                            PostgreSQL
-                          </p>
-                        </div>
-                        <div
-                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
-                        >
-                          <div
-                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
-                          >
-                            <span class="text-white font-black text-lg"
-                              >AI</span
-                            >
-                          </div>
-                          <p class="text-sm font-black text-[#02066F]">
-                            OpenAI API
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
-                      >
-                        <div class="flex items-start gap-4">
-                          <div
-                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="white"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                            >
-                              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                              <path d="M2 17l10 5 10-5"></path>
-                              <path d="M2 12l10 5 10-5"></path>
-                            </svg>
-                          </div>
-                          <div class="flex-1">
-                            <p class="text-lg font-black text-[#02066F] mb-3">
-                              AI Integratsiyasi
-                            </p>
-                            <p
-                              class="text-base text-[#374151] leading-relaxed font-medium"
-                            >
-                              Platforma GPT-4 API yordamida foydalanuvchi
-                              so'rovlarini tahlil qiladi, materiallarni
-                              avtomatik qidiradi va eng yaxshi takliflarni
-                              tavsiya qiladi. Machine Learning modellari
-                              narxlarni bashorat qilish va yetkazib
-                              beruvchilarni baholash uchun ishlatiladi.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Loyiha Holati va Rejalar -->
-                  <div class="scroll-reveal">
-                    <div class="flex items-center gap-4 mb-6">
-                      <div
-                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="28"
-                          height="28"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                        </svg>
-                      </div>
-                      <h3 class="text-3xl font-black text-[#02066F]">
-                        Loyiha Holati va Rejalar
-                      </h3>
-                    </div>
-                    <div class="space-y-6">
-                      <div
-                        class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
-                      >
-                        <p class="text-lg font-black text-[#02066F] mb-6">
-                          Hozirgi holat:
-                        </p>
-                        <div class="flex flex-wrap gap-3">
-                          <span
-                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
-                            >Idea</span
-                          >
-                          <span
-                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
-                            >Prototype</span
-                          >
-
-                          <span
-                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
-                            >MVP</span
-                          >
-                          <span
-                            class="px-5 py-3 rounded-xl text-sm font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] text-white border-2 border-transparent shadow-lg"
-                            >Launched</span
-                          >
-                        </div>
-                      </div>
-                      <div
-                        class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
-                      >
-                        <p class="text-lg font-black text-[#02066F] mb-6">
-                          Keyingi qadamlar:
-                        </p>
-                        <ul class="space-y-4">
-                          <li
-                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
-                          >
-                            <div
-                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
-                            >
-                              <span class="text-white text-base font-black"
-                                >1</span
-                              >
-                            </div>
-                            <div class="flex-1">
-                              <p class="text-base font-bold text-[#374151]">
-                                Foydalanuvchilar sonini oshirish va marketing
-                                strategiyasini amalga oshirish
-                              </p>
-                            </div>
-                          </li>
-                          <li
-                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
-                          >
-                            <div
-                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
-                            >
-                              <span class="text-white text-base font-black"
-                                >2</span
-                              >
-                            </div>
-                            <div class="flex-1">
-                              <p class="text-base font-bold text-[#374151]">
-                                AI algoritmlarini yaxshilash va personalizatsiya
-                                funksiyalarini qo'shish
-                              </p>
-                            </div>
-                          </li>
-                          <li
-                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
-                          >
-                            <div
-                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
-                            >
-                              <span class="text-white text-base font-black"
-                                >3</span
-                              >
-                            </div>
-                            <div class="flex-1">
-                              <p class="text-base font-bold text-[#374151]">
-                                Mobil ilovani chiqarish va xalqaro bozorga
-                                chiqish
-                              </p>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-slot="card"
-                class="demo-card bg-white flex flex-col gap-6 rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
-              >
-                <div
-                  data-slot="card-header"
-                  class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
-                ></div>
-                <div
-                  data-slot="card-content"
-                  class="px-6 [&amp;:last-child]:pb-6"
-                >
                   <div
-                    class="bg-gradient-to-br from-[#02066F] via-[#1e40af] to-[#0f172a] rounded-2xl p-10 text-white relative overflow-hidden shadow-2xl"
+                    class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
                   >
-                    <!-- Background decorative elements -->
-                    <div
-                      class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
-                    ></div>
-                    <div
-                      class="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-2xl"
-                    ></div>
-
-                    <div class="relative z-10 text-center space-y-8">
-                      <!-- Icon -->
+                    <div class="space-y-5">
                       <div
-                        class="w-24 h-24 mx-auto rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center icon-bounce shadow-2xl"
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
                       >
                         <div
-                          class="w-full h-full flex items-center justify-center"
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="48"
-                            height="48"
+                            width="20"
+                            height="20"
                             viewBox="0 0 24 24"
                             fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
+                            stroke="white"
+                            stroke-width="2.5"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                            class="text-white"
                           >
-                            <path
-                              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                            ></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                            <polyline points="20 6 9 17 4 12"></polyline>
                           </svg>
                         </div>
+                        <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                            AI yordamida qurilish materiallarini qidirish
+                          </p>
+                          <p
+                            class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                          >
+                            Real vaqtda materiallarni topish va narxlarni
+                            taqqoslash
+                          </p>
+                        </div>
                       </div>
-
-                      <!-- Title and Description -->
-                      <div>
-                        <h3 class="text-3xl font-black mb-3">
-                          Ishlayotgan Ilova
-                        </h3>
-                        <p
-                          class="text-white/90 text-lg max-w-lg mx-auto leading-relaxed"
-                        >
-                          MetOneX platformasini sinab ko'ring va barcha
-                          funksiyalarni o'zingiz tekshiring
-                        </p>
-                      </div>
-
-                      <!-- CTA Button -->
-                      <a
-                        href="https://metonex.uz/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center gap-3 bg-white text-[#02066F] px-10 py-5 rounded-xl font-black text-xl hover:bg-[#F3F4F6] transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105"
+                      <div
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        >
-                          <path
-                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                          ></path>
-                          <polyline points="15 3 21 3 21 9"></polyline>
-                          <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                        Ilovani Ochish
-                      </a>
-
-                      <!-- Credentials -->
-                      <div class="pt-8 border-t border-white/20">
-                        <p
-                          class="text-sm font-bold mb-5 text-white/90 uppercase tracking-wide"
-                        >
-                          Agar avtorizatsiya kerak bo'lsa:
-                        </p>
                         <div
-                          class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-md mx-auto"
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
                         >
-                          <div class="flex flex-col items-center gap-4">
-                            <div
-                              class="flex items-center gap-3 w-full justify-center"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="text-white/80"
-                              >
-                                <path
-                                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                                ></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                              </svg>
-                              <span class="text-base text-white font-semibold"
-                                ><span class="text-white/70">Email:</span>
-                                demo@metonex.com</span
-                              >
-                            </div>
-                            <div
-                              class="flex items-center gap-3 w-full justify-center"
-                            >
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="text-white/80"
-                              >
-                                <rect
-                                  x="3"
-                                  y="11"
-                                  width="18"
-                                  height="11"
-                                  rx="2"
-                                  ry="2"
-                                ></rect>
-                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                              </svg>
-                              <span class="text-base text-white font-semibold"
-                                ><span class="text-white/70">Parol:</span>
-                                demo123</span
-                              >
-                            </div>
-                          </div>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                            Yetkazib beruvchilar bilan real vaqtda aloqa
+                          </p>
+                          <p
+                            class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                          >
+                            Avtomatik matnlashtirish va xabarlarni boshqarish
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
+                      >
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                            Buyurtmalarni boshqarish va kuzatish
+                          </p>
+                          <p
+                            class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                          >
+                              Real vaqtda buyurtma holatini kuzatish va
+                              boshqarish
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- Bonus Funksiyalar Card -->
-              <div
-                class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
-              >
-                <!-- Card Header - Kong.ai Style -->
-                <div
-                  class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
-                >
-                  <div class="flex items-center gap-4">
+
+                <!-- Muammo va Yechim -->
+                <div class="scroll-reveal">
+                  <div class="flex items-center gap-4 mb-6">
                     <div
-                      class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
+                        width="28"
+                        height="28"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="white"
@@ -3295,76 +2847,25 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       >
-                        <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
-                        <path d="M18 17V9"></path>
-                        <path d="M13 17V5"></path>
-                        <path d="M8 17v-3"></path>
+                        <path d="M12 2v20M2 12h20"></path>
                       </svg>
                     </div>
-                    <div>
-                      <h3 class="text-2xl font-black text-[#02066F]">
-                        API Funksiyalar
-                      </h3>
-                      <p class="text-[#6B7280] font-medium">
-                        Qo'shimcha ballar uchun
-                      </p>
-                    </div>
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                      Muammo va Yechim
+                    </h3>
                   </div>
-                </div>
-
-                <!-- Card Content -->
-                <div>
-                  <div
-                    dir="ltr"
-                    data-orientation="horizontal"
-                    data-slot="tabs"
-                    class="flex flex-col gap-2 w-full"
-                  >
+                  <div class="grid md:grid-cols-2 gap-6">
                     <div
-                      role="tablist"
-                      aria-orientation="horizontal"
-                      data-slot="tabs-list"
-                      class="bg-gradient-to-r from-[#F0F4FF] to-white h-12 items-center justify-center rounded-xl p-1 grid w-full grid-cols-1 border-2 border-[#E5E7EB]"
-                      tabindex="0"
-                      data-orientation="horizontal"
-                      style="outline: none"
+                      class="bg-gradient-to-br from-[#FEF2F2] to-white rounded-2xl p-8 border-2 border-l-4 border-l-[#DC2626] border-[#E5E7EB] shadow-xl hover:shadow-2xl transition-all duration-300"
                     >
-                      <button
-                        type="button"
-                        class="text-center text-[#374151] inline-flex h-full flex-1 items-center justify-center rounded-lg px-4 py-2 text-base font-bold whitespace-nowrap transition-all duration-300 hover:bg-white/50 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-5 gap-2"
-                      >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="24"
-                          height="24"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          class="lucide lucide-code-xml size-4"
-                          aria-hidden="false"
-                        >
-                          <path d="m18 16 4-4-4-4"></path>
-                          <path d="m6 8-4 4 4 4"></path>
-                          <path d="m14.5 4-5 16"></path></svg
-                        >API Access
-                      </button>
-                    </div>
-                  </div>
-                  <div class="flex-1 outline-none space-y-4 mt-6">
-                    <div
-                      class="p-6 bg-gradient-to-br from-[#F0F4FF] to-white rounded-xl border-2 border-[#E5E7EB] shadow-sm"
-                    >
-                      <div class="flex items-start gap-3">
+                      <div class="flex items-center gap-3 mb-5">
                         <div
-                          class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                          class="w-12 h-12 rounded-xl bg-[#DC2626] flex items-center justify-center"
                         >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
+                            width="24"
+                            height="24"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="white"
@@ -3372,31 +2873,434 @@
                             stroke-linecap="round"
                             stroke-linejoin="round"
                           >
-                            <path d="m18 16 4-4-4-4"></path>
-                            <path d="m6 8-4 4 4 4"></path>
-                            <path d="m14.5 4-5 16"></path>
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                          </svg>
+                        </div>
+                          <p class="text-xl font-black text-[#DC2626]">
+                            Muammo
+                          </p>
+                      </div>
+                      <p
+                        class="text-base text-[#374151] leading-relaxed font-medium"
+                      >
+                        Qurilish sohasida materiallar topish va yetkazib
+                          beruvchilar bilan bog'lanish 3-5 kun vaqt oladi. Bu
+                          esa loyihalarning kechikishiga va qo'shimcha
+                          xarajatlarga olib keladi.
+                      </p>
+                    </div>
+                    <div
+                      class="bg-gradient-to-br from-[#F0FDF4] to-white rounded-2xl p-8 border-2 border-l-4 border-l-[#16A34A] border-[#E5E7EB] shadow-xl hover:shadow-2xl transition-all duration-300"
+                    >
+                      <div class="flex items-center gap-3 mb-5">
+                        <div
+                          class="w-12 h-12 rounded-xl bg-[#16A34A] flex items-center justify-center"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                          <p class="text-xl font-black text-[#16A34A]">
+                            Yechim
+                          </p>
+                      </div>
+                      <p
+                        class="text-base text-[#374151] leading-relaxed font-medium"
+                      >
+                        MetOneX AI texnologiyasidan foydalanib, qurilish
+                        materiallarini topish va yetkazib beruvchilar bilan
+                        bog'lanish jarayonini 30 daqiqaga qisqartiradi. Bu esa
+                        vaqt va mablag'ni tejashga yordam beradi.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Texnologiyalar va AI Yechmlar -->
+                <div class="scroll-reveal">
+                  <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                      </svg>
+                    </div>
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                      Texnologiyalar va AI Yechmlar
+                    </h3>
+                  </div>
+                  <div class="space-y-6">
+                    <div
+                      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4"
+                    >
+                      <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                      >
+                        <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                        >
+                          <span class="text-white font-black text-lg">R</span>
+                        </div>
+                          <p class="text-sm font-black text-[#02066F]">React</p>
+                      </div>
+                      <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                      >
+                        <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                        >
+                            <span class="text-white font-black text-lg"
+                              >TS</span
+                            >
+                        </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                          TypeScript
+                        </p>
+                      </div>
+                      <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                      >
+                        <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                        >
+                            <span class="text-white font-black text-lg"
+                              >TC</span
+                            >
+                        </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                          Tailwind CSS
+                        </p>
+                      </div>
+                      <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                      >
+                        <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                        >
+                          <span class="text-white font-black text-lg">N</span>
+                        </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                            Node.js
+                          </p>
+                      </div>
+                      <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                      >
+                        <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                        >
+                            <span class="text-white font-black text-lg"
+                              >PG</span
+                            >
+                        </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                          PostgreSQL
+                        </p>
+                      </div>
+                      <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                      >
+                        <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                        >
+                            <span class="text-white font-black text-lg"
+                              >AI</span
+                            >
+                        </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                          OpenAI API
+                        </p>
+                      </div>
+                    </div>
+                    <div
+                      class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                    >
+                      <div class="flex items-start gap-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
                           </svg>
                         </div>
                         <div class="flex-1">
-                          <p class="text-base font-bold text-[#02066F] mb-2">
-                            API Access Funksiyasi
+                            <p class="text-lg font-black text-[#02066F] mb-3">
+                            AI Integratsiyasi
                           </p>
-                          <p class="text-sm text-[#374151] leading-relaxed">
-                            Loyihangiz API'sini test qilish va integratsiya
-                            qilish imkoniyati. RESTful API yoki GraphQL
-                            ishlatishingiz mumkin.
+                          <p
+                            class="text-base text-[#374151] leading-relaxed font-medium"
+                          >
+                            Platforma GPT-4 API yordamida foydalanuvchi
+                              so'rovlarini tahlil qiladi, materiallarni
+                              avtomatik qidiradi va eng yaxshi takliflarni
+                              tavsiya qiladi. Machine Learning modellari
+                              narxlarni bashorat qilish va yetkazib
+                              beruvchilarni baholash uchun ishlatiladi.
                           </p>
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+
+                <!-- Loyiha Holati va Rejalar -->
+                <div class="scroll-reveal">
+                  <div class="flex items-center gap-4 mb-6">
                     <div
-                      class="bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white rounded-2xl p-8 border-2 border-transparent shadow-2xl"
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
                     >
-                      <div class="space-y-6">
-                        <!-- Swagger URL Section -->
-                        <div>
-                          <h4
-                            class="text-xl font-black mb-4 flex items-center gap-2"
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                      Loyiha Holati va Rejalar
+                    </h3>
+                  </div>
+                  <div class="space-y-6">
+                    <div
+                      class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                    >
+                        <p class="text-lg font-black text-[#02066F] mb-6">
+                        Hozirgi holat:
+                      </p>
+                      <div class="flex flex-wrap gap-3">
+                        <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                          >Idea</span
+                        >
+                        <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                          >Prototype</span
+                        >
+
+                        <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                          >MVP</span
+                        >
+                        <span
+                            class="px-5 py-3 rounded-xl text-sm font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] text-white border-2 border-transparent shadow-lg"
+                          >Launched</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                    >
+                        <p class="text-lg font-black text-[#02066F] mb-6">
+                        Keyingi qadamlar:
+                      </p>
+                      <ul class="space-y-4">
+                        <li
+                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                        >
+                          <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                          >
+                            <span class="text-white text-base font-black"
+                              >1</span
+                            >
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-base font-bold text-[#374151]">
+                              Foydalanuvchilar sonini oshirish va marketing
+                              strategiyasini amalga oshirish
+                            </p>
+                          </div>
+                        </li>
+                        <li
+                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                        >
+                          <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                          >
+                            <span class="text-white text-base font-black"
+                              >2</span
+                            >
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-base font-bold text-[#374151]">
+                              AI algoritmlarini yaxshilash va personalizatsiya
+                              funksiyalarini qo'shish
+                            </p>
+                          </div>
+                        </li>
+                        <li
+                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                        >
+                          <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                          >
+                            <span class="text-white text-base font-black"
+                              >3</span
+                            >
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-base font-bold text-[#374151]">
+                                Mobil ilovani chiqarish va xalqaro bozorga
+                                chiqish
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-slot="card"
+              class="demo-card bg-white flex flex-col gap-6 rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+            >
+              <div
+                data-slot="card-header"
+                class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
+              ></div>
+              <div
+                data-slot="card-content"
+                class="px-6 [&amp;:last-child]:pb-6"
+              >
+                <div
+                    class="bg-gradient-to-br from-[#02066F] via-[#1e40af] to-[#0f172a] rounded-2xl p-10 text-white relative overflow-hidden shadow-2xl"
+                >
+                  <!-- Background decorative elements -->
+                  <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+                  ></div>
+                  <div
+                    class="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-2xl"
+                  ></div>
+
+                  <div class="relative z-10 text-center space-y-8">
+                    <!-- Icon -->
+                    <div
+                      class="w-24 h-24 mx-auto rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center icon-bounce shadow-2xl"
+                    >
+                      <div
+                        class="w-full h-full flex items-center justify-center"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="text-white"
+                        >
+                          <path
+                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                          ></path>
+                          <polyline points="15 3 21 3 21 9"></polyline>
+                          <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <!-- Title and Description -->
+                    <div>
+                      <h3 class="text-3xl font-black mb-3">
+                        Ishlayotgan Ilova
+                      </h3>
+                      <p
+                        class="text-white/90 text-lg max-w-lg mx-auto leading-relaxed"
+                      >
+                        MetOneX platformasini sinab ko'ring va barcha
+                        funksiyalarni o'zingiz tekshiring
+                      </p>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a
+                      href="https://metonex.uz/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-3 bg-white text-[#02066F] px-10 py-5 rounded-xl font-black text-xl hover:bg-[#F3F4F6] transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                        ></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Ilovani Ochish
+                    </a>
+
+                    <!-- Credentials -->
+                    <div class="pt-8 border-t border-white/20">
+                      <p
+                        class="text-sm font-bold mb-5 text-white/90 uppercase tracking-wide"
+                      >
+                        Agar avtorizatsiya kerak bo'lsa:
+                      </p>
+                      <div
+                        class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-md mx-auto"
+                      >
+                        <div class="flex flex-col items-center gap-4">
+                          <div
+                            class="flex items-center gap-3 w-full justify-center"
                           >
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -3408,70 +3312,254 @@
                               stroke-width="2"
                               stroke-linecap="round"
                               stroke-linejoin="round"
+                              class="text-white/80"
                             >
                               <path
-                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
                               ></path>
-                              <polyline points="15 3 21 3 21 9"></polyline>
-                              <line x1="10" y1="14" x2="21" y2="3"></line>
+                              <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
-                            Swagger API Documentation
-                          </h4>
+                            <span class="text-base text-white font-semibold"
+                              ><span class="text-white/70">Email:</span>
+                              demo@metonex.com</span
+                            >
+                          </div>
                           <div
-                            class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+                            class="flex items-center gap-3 w-full justify-center"
                           >
-                            <div class="space-y-4 mt-4">
-                              <div>
-                                <label
-                                  class="block text-sm font-semibold mb-2 text-white/90"
-                                  >Swagger URL:</label
-                                >
-                                <div class="flex gap-2">
-                                  <input
-                                    type="text"
-                                    id="swagger-url"
-                                    placeholder="https://dev.metonex.uz/"
-                                    value="https://dev.metonex.uz/"
-                                    class="flex-1 px-4 py-3 rounded-lg bg-white/10 border-2 border-white/30 text-white placeholder-white/60 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/50"
-                                  />
-                                  <a
-                                    href="https://dev.metonex.uz/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="text-white/80"
+                            >
+                              <rect
+                                x="3"
+                                y="11"
+                                width="18"
+                                height="11"
+                                rx="2"
+                                ry="2"
+                              ></rect>
+                              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span class="text-base text-white font-semibold"
+                              ><span class="text-white/70">Parol:</span>
+                              demo123</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Bonus Funksiyalar Card -->
+            <div
+              class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+            >
+              <!-- Card Header - Kong.ai Style -->
+              <div
+                class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                      class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                      <path d="M18 17V9"></path>
+                      <path d="M13 17V5"></path>
+                      <path d="M8 17v-3"></path>
+                    </svg>
+                  </div>
+                  <div>
+                      <h3 class="text-2xl font-black text-[#02066F]">
+                      API Funksiyalar
+                    </h3>
+                    <p class="text-[#6B7280] font-medium">
+                      Qo'shimcha ballar uchun
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Content -->
+              <div>
+                <div
+                  dir="ltr"
+                  data-orientation="horizontal"
+                  data-slot="tabs"
+                  class="flex flex-col gap-2 w-full"
+                >
+                  <div
+                    role="tablist"
+                    aria-orientation="horizontal"
+                    data-slot="tabs-list"
+                    class="bg-gradient-to-r from-[#F0F4FF] to-white h-12 items-center justify-center rounded-xl p-1 grid w-full grid-cols-1 border-2 border-[#E5E7EB]"
+                    tabindex="0"
+                    data-orientation="horizontal"
+                    style="outline: none"
+                  >
+                    <button
+                      type="button"
+                      class="text-center text-[#374151] inline-flex h-full flex-1 items-center justify-center rounded-lg px-4 py-2 text-base font-bold whitespace-nowrap transition-all duration-300 hover:bg-white/50 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-5 gap-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-code-xml size-4"
+                        aria-hidden="false"
+                      >
+                        <path d="m18 16 4-4-4-4"></path>
+                        <path d="m6 8-4 4 4 4"></path>
+                        <path d="m14.5 4-5 16"></path></svg
+                      >API Access
+                    </button>
+                  </div>
+                </div>
+                <div class="flex-1 outline-none space-y-4 mt-6">
+                  <div
+                    class="p-6 bg-gradient-to-br from-[#F0F4FF] to-white rounded-xl border-2 border-[#E5E7EB] shadow-sm"
+                  >
+                    <div class="flex items-start gap-3">
+                      <div
+                          class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="m18 16 4-4-4-4"></path>
+                          <path d="m6 8-4 4 4 4"></path>
+                          <path d="m14.5 4-5 16"></path>
+                        </svg>
+                      </div>
+                      <div class="flex-1">
+                          <p class="text-base font-bold text-[#02066F] mb-2">
+                          API Access Funksiyasi
+                        </p>
+                        <p class="text-sm text-[#374151] leading-relaxed">
+                            Loyihangiz API'sini test qilish va integratsiya
+                            qilish imkoniyati. RESTful API yoki GraphQL
+                            ishlatishingiz mumkin.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                      class="bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white rounded-2xl p-8 border-2 border-transparent shadow-2xl"
+                  >
+                    <div class="space-y-6">
+                      <!-- Swagger URL Section -->
+                      <div>
+                        <h4
+                          class="text-xl font-black mb-4 flex items-center gap-2"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path
+                              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                            ></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                          </svg>
+                          Swagger API Documentation
+                        </h4>
+                        <div
+                          class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+                        >
+                          <div class="space-y-4 mt-4">
+                            <div>
+                              <label
+                                class="block text-sm font-semibold mb-2 text-white/90"
+                                >Swagger URL:</label
+                              >
+                              <div class="flex gap-2">
+                                <input
+                                  type="text"
+                                  id="swagger-url"
+                                  placeholder="https://dev.metonex.uz/"
+                                  value="https://dev.metonex.uz/"
+                                  class="flex-1 px-4 py-3 rounded-lg bg-white/10 border-2 border-white/30 text-white placeholder-white/60 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                                />
+                                <a
+                                  href="https://dev.metonex.uz/"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
                                     class="bg-white text-[#02066F] px-6 py-3 rounded-lg font-bold hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 whitespace-nowrap"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
                                   >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="18"
-                                      height="18"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                    >
-                                      <path
-                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
-                                      ></path>
-                                      <polyline
-                                        points="15 3 21 3 21 9"
-                                      ></polyline>
+                                    <path
+                                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    ></path>
+                                    <polyline
+                                      points="15 3 21 3 21 9"
+                                    ></polyline>
                                       <line
                                         x1="10"
                                         y1="14"
                                         x2="21"
                                         y2="3"
                                       ></line>
-                                    </svg>
-                                    Ochish
-                                  </a>
-                                </div>
-                                <p class="text-xs text-white/70 mt-2">
-                                  API dokumentatsiyasini ko'rish va test qilish
-                                  uchun Swagger URL
-                                </p>
+                                  </svg>
+                                  Ochish
+                                </a>
                               </div>
+                              <p class="text-xs text-white/70 mt-2">
+                                API dokumentatsiyasini ko'rish va test qilish
+                                uchun Swagger URL
+                              </p>
                             </div>
                           </div>
                         </div>
@@ -3483,9 +3571,10 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Footer Section - Kong.ai Style -->
-        <footer
+      <!-- Footer Section - Kong.ai Style -->
+      <footer
           class="relative bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white py-12 mt-20 overflow-hidden"
         >
           <!-- Beautiful Background Decorations -->
@@ -3540,118 +3629,118 @@
             ></div>
           </div>
           <div class="container mx-auto px-4 max-w-7xl relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <!-- Brand Section -->
-              <div>
-                <h3 class="text-2xl font-black mb-4">MetOneX</h3>
-                <p class="text-white/80 text-sm leading-relaxed">
-                  AI yordamida qurilish materiallarini topish va yetkazib
-                  beruvchilar bilan bog'lanishni 30 daqiqaga qisqartiring.
-                </p>
-              </div>
-
-              <!-- Quick Links -->
-              <div>
-                <h4 class="text-lg font-bold mb-4">Tezkor Havolalar</h4>
-                <ul class="space-y-2">
-                  <li>
-                    <a
-                      href="index.html"
-                      class="text-white/80 hover:text-white transition-colors text-sm"
-                      >Bosh Sahifa</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="demo.html"
-                      class="text-white/80 hover:text-white transition-colors text-sm"
-                      >Demo</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="text-white/80 hover:text-white transition-colors text-sm"
-                      >Haqida</a
-                    >
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Contact -->
-              <div>
-                <h4 class="text-lg font-bold mb-4">Bog'lanish</h4>
-                <ul class="space-y-2 text-sm text-white/80">
-                  <li class="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                      ></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    demo@metonex.com
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-                      ></path>
-                    </svg>
-                    +998 XX XXX XX XX
-                  </li>
-                </ul>
-              </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Brand Section -->
+            <div>
+              <h3 class="text-2xl font-black mb-4">MetOneX</h3>
+              <p class="text-white/80 text-sm leading-relaxed">
+                AI yordamida qurilish materiallarini topish va yetkazib
+                beruvchilar bilan bog'lanishni 30 daqiqaga qisqartiring.
+              </p>
             </div>
 
-            <!-- Bottom Bar -->
-            <div
-              class="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between"
-            >
-              <p class="text-white/60 text-sm">
-                © 2024 MetOneX. Barcha huquqlar himoyalangan.
-              </p>
-              <div class="flex items-center gap-4 mt-4 md:mt-0">
-                <a
-                  href="#"
-                  class="text-white/60 hover:text-white transition-colors text-sm"
-                  >Maxfiylik</a
-                >
-                <span class="text-white/40">|</span>
-                <a
-                  href="#"
-                  class="text-white/60 hover:text-white transition-colors text-sm"
-                  >Shartlar</a
-                >
-                <span class="text-white/40">|</span>
-                <a
-                  href="#"
-                  class="text-white/60 hover:text-white transition-colors text-sm"
-                  >Yordam</a
-                >
-              </div>
+            <!-- Quick Links -->
+            <div>
+              <h4 class="text-lg font-bold mb-4">Tezkor Havolalar</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="index.html"
+                    class="text-white/80 hover:text-white transition-colors text-sm"
+                    >Bosh Sahifa</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="demo.html"
+                    class="text-white/80 hover:text-white transition-colors text-sm"
+                    >Demo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-white/80 hover:text-white transition-colors text-sm"
+                    >Haqida</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h4 class="text-lg font-bold mb-4">Bog'lanish</h4>
+              <ul class="space-y-2 text-sm text-white/80">
+                <li class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  demo@metonex.com
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                  +998 XX XXX XX XX
+                </li>
+              </ul>
             </div>
           </div>
-        </footer>
+
+          <!-- Bottom Bar -->
+          <div
+            class="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between"
+          >
+            <p class="text-white/60 text-sm">
+              © 2024 MetOneX. Barcha huquqlar himoyalangan.
+            </p>
+            <div class="flex items-center gap-4 mt-4 md:mt-0">
+              <a
+                href="#"
+                class="text-white/60 hover:text-white transition-colors text-sm"
+                >Maxfiylik</a
+              >
+              <span class="text-white/40">|</span>
+              <a
+                href="#"
+                class="text-white/60 hover:text-white transition-colors text-sm"
+                >Shartlar</a
+              >
+              <span class="text-white/40">|</span>
+              <a
+                href="#"
+                class="text-white/60 hover:text-white transition-colors text-sm"
+                >Yordam</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
       </div>
     </div>
 
@@ -3838,13 +3927,13 @@
                     <div
                       class="bg-white/20 backdrop-blur-sm rounded-2xl p-5 border-2 border-white/30 shadow-lg max-w-md mx-auto"
                     >
-                      <p
+                    <p
                         class="text-base leading-relaxed font-medium text-white mb-4"
-                      >
+                    >
                         Salom! 👋 Yordam kerakmi? Men MetOneX AI Assistant.
-                        Quyidagi savollardan birini tanlang yoki o'zingiz savol
-                        bering.
-                      </p>
+                      Quyidagi savollardan birini tanlang yoki o'zingiz savol
+                      bering.
+                    </p>
                     </div>
                   </div>
                 </div>
@@ -4296,16 +4385,42 @@
       );
 
       const chatbotResponses = {
-        "Loyihangiz nima qiladi?":
-          "MetOneX AI yordamida qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish muammosini hal qiladi. Platforma real vaqtda materiallarni topadi, narxlarni taqqoslaydi va eng yaxshi takliflarni tavsiya qiladi. 3-5 kunlik jarayonni 30 daqiqaga qisqartiradi.",
-        "Kimlar uchun mo'ljallangan?":
-          "MetOneX qurilish sohasida faoliyat yuritayotgan barcha uchun yaratilgan: quruvchilar, qurilish kompaniyalari, dizaynerlar va qurilish materiallarini qidirish muammosiga duch kelayotgan har qanday shaxs yoki tashkilot. Platforma B2B va B2C segmentlarida ishlaydi.",
-        "Qanday texnologiya ishlatilgan?":
-          "MetOneX zamonaviy texnologiyalar yig'indisidan foydalanadi: React.js va TypeScript frontend uchun, Node.js backend uchun, PostgreSQL ma'lumotlar bazasi, GPT-4 API AI funksiyalari uchun, va Machine Learning modellari narxlarni bashorat qilish va yetkazib beruvchilarni baholash uchun.",
-        "Narx qanday?":
-          "MetOneX platformasi foydalanish uchun to'liq bepul. Siz materiallarni qidirish, narxlarni taqqoslash va yetkazib beruvchilar bilan bog'lanish imkoniyatiga ega bo'lasiz. Faqat muvaffaqiyatli xaridlar uchun kichik komissiya olinadi. Hech qanday yashirin to'lovlar yo'q.",
-        "Qanday ishlaydi?":
-          "MetOneX ishlash jarayoni juda oddiy: 1) Material nomini yoki turini kiriting, 2) AI avtomatik ravishda barcha mavjud variantlarni topadi, 3) Narxlarni taqqoslang va eng yaxshi taklifni tanlang, 4) Yetkazib beruvchi bilan real vaqtda bog'laning, 5) Buyurtma qiling. Barchasi 30 daqiqada!",
+        uz: {
+          "Loyihangiz nima qiladi?":
+            "MetOneX AI yordamida qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish muammosini hal qiladi. Platforma real vaqtda materiallarni topadi, narxlarni taqqoslaydi va eng yaxshi takliflarni tavsiya qiladi. 3-5 kunlik jarayonni 30 daqiqaga qisqartiradi.",
+          "Kimlar uchun mo'ljallangan?":
+            "MetOneX qurilish sohasida faoliyat yuritayotgan barcha uchun yaratilgan: quruvchilar, qurilish kompaniyalari, dizaynerlar va qurilish materiallarini qidirish muammosiga duch kelayotgan har qanday shaxs yoki tashkilot. Platforma B2B va B2C segmentlarida ishlaydi.",
+          "Qanday texnologiya ishlatilgan?":
+            "MetOneX zamonaviy texnologiyalar yig'indisidan foydalanadi: React.js va TypeScript frontend uchun, Node.js backend uchun, PostgreSQL ma'lumotlar bazasi, GPT-4 API AI funksiyalari uchun, va Machine Learning modellari narxlarni bashorat qilish va yetkazib beruvchilarni baholash uchun.",
+          "Narx qanday?":
+            "MetOneX platformasi foydalanish uchun to'liq bepul. Siz materiallarni qidirish, narxlarni taqqoslash va yetkazib beruvchilar bilan bog'lanish imkoniyatiga ega bo'lasiz. Faqat muvaffaqiyatli xaridlar uchun kichik komissiya olinadi. Hech qanday yashirin to'lovlar yo'q.",
+          "Qanday ishlaydi?":
+            "MetOneX ishlash jarayoni juda oddiy: 1) Material nomini yoki turini kiriting, 2) AI avtomatik ravishda barcha mavjud variantlarni topadi, 3) Narxlarni taqqoslang va eng yaxshi taklifni tanlang, 4) Yetkazib beruvchi bilan real vaqtda bog'laning, 5) Buyurtma qiling. Barchasi 30 daqiqada!",
+        },
+        ru: {
+          "Что делает ваш проект?":
+            "MetOneX решает проблему поиска строительных материалов и связи с поставщиками с помощью ИИ. Платформа находит материалы в реальном времени, сравнивает цены и рекомендует лучшие предложения. Сокращает процесс с 3-5 дней до 30 минут.",
+          "Для кого это предназначено?":
+            "MetOneX создан для всех, кто работает в строительной отрасли: строители, строительные компании, дизайнеры и любое лицо или организация, сталкивающееся с проблемой поиска строительных материалов. Платформа работает в сегментах B2B и B2C.",
+          "Какая технология используется?":
+            "MetOneX использует современный набор технологий: React.js и TypeScript для frontend, Node.js для backend, PostgreSQL для базы данных, GPT-4 API для функций ИИ, и модели машинного обучения для прогнозирования цен и оценки поставщиков.",
+          "Какая цена?":
+            "Платформа MetOneX полностью бесплатна для использования. Вы можете искать материалы, сравнивать цены и связываться с поставщиками. Взимается небольшая комиссия только за успешные покупки. Никаких скрытых платежей нет.",
+          "Как это работает?":
+            "Процесс работы MetOneX очень прост: 1) Введите название или тип материала, 2) ИИ автоматически найдет все доступные варианты, 3) Сравните цены и выберите лучшее предложение, 4) Свяжитесь с поставщиком в реальном времени, 5) Сделайте заказ. Все за 30 минут!",
+        },
+        en: {
+          "What does your project do?":
+            "MetOneX solves the problem of finding construction materials and connecting with suppliers using AI. The platform finds materials in real-time, compares prices and recommends the best offers. Reduces the process from 3-5 days to 30 minutes.",
+          "Who is it for?":
+            "MetOneX is created for everyone working in the construction industry: builders, construction companies, designers and any person or organization facing the problem of finding construction materials. The platform works in B2B and B2C segments.",
+          "What technology is used?":
+            "MetOneX uses a modern set of technologies: React.js and TypeScript for frontend, Node.js for backend, PostgreSQL for database, GPT-4 API for AI functions, and Machine Learning models for price prediction and supplier evaluation.",
+          "What is the price?":
+            "MetOneX platform is completely free to use. You can search for materials, compare prices and connect with suppliers. A small commission is charged only for successful purchases. No hidden payments.",
+          "How does it work?":
+            "MetOneX workflow is very simple: 1) Enter material name or type, 2) AI automatically finds all available options, 3) Compare prices and choose the best offer, 4) Connect with supplier in real-time, 5) Place order. All in 30 minutes!",
+        },
       };
 
       function openChatbotModal() {
@@ -4316,12 +4431,12 @@
         // Trigger animation
         setTimeout(() => {
           if (chatbotBackdrop) {
-            chatbotBackdrop.classList.remove("opacity-0");
-            chatbotBackdrop.classList.add("opacity-100");
+          chatbotBackdrop.classList.remove("opacity-0");
+          chatbotBackdrop.classList.add("opacity-100");
           }
           if (chatbotModalContent) {
-            chatbotModalContent.classList.remove("translate-x-full");
-            chatbotModalContent.classList.add("translate-x-0");
+          chatbotModalContent.classList.remove("translate-x-full");
+          chatbotModalContent.classList.add("translate-x-0");
           }
 
           // Scroll to top when opening
@@ -4337,12 +4452,12 @@
       function closeChatbotModal() {
         if (!chatbotModal) return;
         if (chatbotBackdrop) {
-          chatbotBackdrop.classList.remove("opacity-100");
-          chatbotBackdrop.classList.add("opacity-0");
+        chatbotBackdrop.classList.remove("opacity-100");
+        chatbotBackdrop.classList.add("opacity-0");
         }
         if (chatbotModalContent) {
-          chatbotModalContent.classList.remove("translate-x-0");
-          chatbotModalContent.classList.add("translate-x-full");
+        chatbotModalContent.classList.remove("translate-x-0");
+        chatbotModalContent.classList.add("translate-x-full");
         }
 
         setTimeout(() => {
@@ -4472,9 +4587,14 @@
 
             // Add bot response after delay
             setTimeout(() => {
-              const response =
-                chatbotResponses[question] ||
-                "Kechirasiz, men hali bunday savolga javob bera olmayman. Iltimos, quyidagi savollardan birini tanlang.";
+              const lang = currentLanguage || "uz";
+              const responses = chatbotResponses[lang] || chatbotResponses["uz"];
+              const defaultResponses = {
+                uz: "Kechirasiz, men hali bunday savolga javob bera olmayman. Iltimos, quyidagi savollardan birini tanlang.",
+                ru: "Извините, я пока не могу ответить на этот вопрос. Пожалуйста, выберите один из вопросов ниже.",
+                en: "Sorry, I can't answer this question yet. Please choose one of the questions below."
+              };
+              const response = responses[question] || defaultResponses[lang] || defaultResponses["uz"];
               addChatMessage(response, false);
             }, 600);
           }
@@ -4943,6 +5063,967 @@
       } else {
         console.log("✨ All improvements loaded successfully!");
       }
+
+      // ========== 14. Language Translation System ==========
+      const translations = {
+        uz: {
+          "loading": "Yuklanmoqda...",
+          "title": "Qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanishni",
+          "highlight": "30 daqiqaga",
+          "subtitle": "qisqartiring",
+          "description": "AI yordamida qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish. 10 soniyadan keyin siz yuzlab materiallarni topasiz.",
+          "welcome": "Saytga xush kelibsiz! 🎉",
+          "video": "Video",
+          "oldWay": "Eski Usul",
+          "newWay": "MetOneX AI Usuli",
+          "oldWay1": "Qimmat copywriter va dizaynerlarni yollash",
+          "oldWay2": "Kunlar yoki haftalar kutish",
+          "oldWay3": "Ko'p vaqt va mablag' sarflash",
+          "oldWay4": "3-5 kun kutish vaqt",
+          "oldWayResult": "VAQT VA MABLAG' YO'QOTISH",
+          "newWay1": "AI yordamida materiallarni topish",
+          "newWay2": "30 daqiqada natija olish",
+          "newWay3": "Vaqt va mablag'ni tejash",
+          "newWay4": "Real vaqtda natijalar",
+          "newWayResult": "REKORD NATIJALAR VA PROFIT",
+          "benefitsTitle": "Eski usul va yangi AI usuli bilan xayrlashing",
+          "benefitsDesc": "Qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish jarayoni endi o'zgardi. AI texnologiyasi bilan 30 daqiqada natija oling.",
+          "statsTitle": "MetOneX bilan nima olasiz?",
+          "stats1": "Daqiqada",
+          "stats1Desc": "Xarid jarayoni tugaydi",
+          "stats2": "Texnologiya",
+          "stats2Desc": "GPT-4 va Machine Learning",
+          "stats3": "Holat",
+          "stats3Desc": "Ishlayotgan versiya",
+          "projectTitle": "Loyiha Tavsifi",
+          "projectSubtitle": "Texnik va biznes ma'lumotlar",
+          "videoFeatures": "Videoda ko'rsatilgan funksiyalar",
+          "feature1": "AI yordamida qurilish materiallarini qidirish",
+          "feature1Desc": "Real vaqtda materiallarni topish va narxlarni taqqoslash",
+          "feature2": "Yetkazib beruvchilar bilan real vaqtda aloqa",
+          "feature2Desc": "Avtomatik matnlashtirish va xabarlarni boshqarish",
+          "feature3": "Buyurtmalarni boshqarish va kuzatish",
+          "feature3Desc": "Real vaqtda buyurtma holatini kuzatish va boshqarish",
+          "problemTitle": "Muammo va Yechim",
+          "problem": "Muammo",
+          "problemDesc": "Qurilish sohasida materiallar topish va yetkazib beruvchilar bilan bog'lanish 3-5 kun vaqt oladi. Bu esa loyihalarning kechikishiga va qo'shimcha xarajatlarga olib keladi.",
+          "solution": "Yechim",
+          "solutionDesc": "MetOneX AI texnologiyasidan foydalanib, qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish jarayonini 30 daqiqaga qisqartiradi. Bu esa vaqt va mablag'ni tejashga yordam beradi.",
+          "techTitle": "Texnologiyalar va AI Yechmlar",
+          "aiIntegration": "AI Integratsiyasi",
+          "aiIntegrationDesc": "Platforma GPT-4 API yordamida foydalanuvchi so'rovlarini tahlil qiladi, materiallarni avtomatik qidiradi va eng yaxshi takliflarni tavsiya qiladi. Machine Learning modellari narxlarni bashorat qilish va yetkazib beruvchilarni baholash uchun ishlatiladi.",
+          "statusTitle": "Loyiha Holati va Rejalar",
+          "currentStatus": "Hozirgi holat:",
+          "nextSteps": "Keyingi qadamlar:",
+          "step1": "Foydalanuvchilar sonini oshirish va marketing strategiyasini amalga oshirish",
+          "step2": "AI algoritmlarini yaxshilash va personalizatsiya funksiyalarini qo'shish",
+          "step3": "Mobil ilovani chiqarish va xalqaro bozorga chiqish",
+          "appTitle": "Ishlayotgan Ilova",
+          "appDesc": "MetOneX platformasini sinab ko'ring va barcha funksiyalarni o'zingiz tekshiring",
+          "openApp": "Ilovani Ochish",
+          "authNeeded": "Agar avtorizatsiya kerak bo'lsa:",
+          "apiTitle": "API Funksiyalar",
+          "apiSubtitle": "Qo'shimcha ballar uchun",
+          "apiFeature": "API Access Funksiyasi",
+          "apiFeatureDesc": "Loyihangiz API'sini test qilish va integratsiya qilish imkoniyati. RESTful API yoki GraphQL ishlatishingiz mumkin.",
+          "swaggerTitle": "Swagger API Documentation",
+          "swaggerUrl": "Swagger URL:",
+          "openSwagger": "Ochish",
+          "swaggerDesc": "API dokumentatsiyasini ko'rish va test qilish uchun Swagger URL",
+          "footerDesc": "AI yordamida qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanishni 30 daqiqaga qisqartiring.",
+          "quickLinks": "Tezkor Havolalar",
+          "home": "Bosh Sahifa",
+          "demo": "Demo",
+          "about": "Haqida",
+          "contact": "Bog'lanish",
+          "copyright": "© 2024 MetOneX. Barcha huquqlar himoyalangan.",
+          "privacy": "Maxfiylik",
+          "terms": "Shartlar",
+          "help": "Yordam",
+          "chatbotTitle": "MetOneX AI Assistant",
+          "chatbotOnline": "Onlayn va tayyor",
+          "chatbotClose": "Yopish",
+          "chatbotWelcome": "Salom! 👋 Yordam kerakmi? Men MetOneX AI Assistant. Quyidagi savollardan birini tanlang yoki o'zingiz savol bering.",
+          "quickQuestions": "Tezkor savollar:",
+          "q1": "Loyihangiz nima qiladi?",
+          "q2": "Kimlar uchun mo'ljallangan?",
+          "q3": "Qanday texnologiya ishlatilgan?",
+          "q4": "Narx qanday?",
+          "q5": "Qanday ishlaydi?",
+          "email": "Email:",
+          "password": "Parol:",
+          "launched": "Launched",
+          "idea": "Idea",
+          "prototype": "Prototype",
+          "mvp": "MVP",
+          "hello": "Salom! 👋",
+          "react": "React",
+          "typescript": "TypeScript",
+          "tailwind": "Tailwind CSS",
+          "nodejs": "Node.js",
+          "postgresql": "PostgreSQL",
+          "openai": "OpenAI API"
+        },
+        ru: {
+          "loading": "Загрузка...",
+          "title": "Поиск строительных материалов и связь с поставщиками",
+          "highlight": "за 30 минут",
+          "subtitle": "сократите",
+          "description": "Поиск строительных материалов и связь с поставщиками с помощью ИИ. Через 10 секунд вы найдете сотни материалов.",
+          "welcome": "Добро пожаловать на сайт! 🎉",
+          "video": "Видео",
+          "oldWay": "Старый Способ",
+          "newWay": "Метод MetOneX AI",
+          "oldWay1": "Нанять дорогих копирайтеров и дизайнеров",
+          "oldWay2": "Ждать дни или недели",
+          "oldWay3": "Тратить много времени и денег",
+          "oldWay4": "3-5 дней ожидания",
+          "oldWayResult": "ПОТЕРЯ ВРЕМЕНИ И ДЕНЕГ",
+          "newWay1": "Поиск материалов с помощью ИИ",
+          "newWay2": "Получить результат за 30 минут",
+          "newWay3": "Экономия времени и денег",
+          "newWay4": "Результаты в реальном времени",
+          "newWayResult": "РЕКОРДНЫЕ РЕЗУЛЬТАТЫ И ПРИБЫЛЬ",
+          "benefitsTitle": "Попрощайтесь со старым способом и новым методом ИИ",
+          "benefitsDesc": "Процесс поиска строительных материалов и связи с поставщиками изменился. Получите результат за 30 минут с технологией ИИ.",
+          "statsTitle": "Что вы получите с MetOneX?",
+          "stats1": "Минут",
+          "stats1Desc": "Процесс покупки завершается",
+          "stats2": "Технология",
+          "stats2Desc": "GPT-4 и Machine Learning",
+          "stats3": "Статус",
+          "stats3Desc": "Рабочая версия",
+          "projectTitle": "Описание Проекта",
+          "projectSubtitle": "Техническая и бизнес информация",
+          "videoFeatures": "Функции, показанные в видео",
+          "feature1": "Поиск строительных материалов с помощью ИИ",
+          "feature1Desc": "Поиск материалов в реальном времени и сравнение цен",
+          "feature2": "Связь с поставщиками в реальном времени",
+          "feature2Desc": "Автоматическое общение и управление сообщениями",
+          "feature3": "Управление и отслеживание заказов",
+          "feature3Desc": "Отслеживание и управление статусом заказа в реальном времени",
+          "problemTitle": "Проблема и Решение",
+          "problem": "Проблема",
+          "problemDesc": "Поиск материалов и связь с поставщиками в строительной отрасли занимает 3-5 дней. Это приводит к задержкам проектов и дополнительным расходам.",
+          "solution": "Решение",
+          "solutionDesc": "MetOneX использует технологию ИИ, чтобы сократить процесс поиска строительных материалов и связи с поставщиками до 30 минут. Это помогает сэкономить время и деньги.",
+          "techTitle": "Технологии и ИИ Решения",
+          "aiIntegration": "Интеграция ИИ",
+          "aiIntegrationDesc": "Платформа анализирует запросы пользователей с помощью GPT-4 API, автоматически ищет материалы и рекомендует лучшие предложения. Модели машинного обучения используются для прогнозирования цен и оценки поставщиков.",
+          "statusTitle": "Статус Проекта и Планы",
+          "currentStatus": "Текущий статус:",
+          "nextSteps": "Следующие шаги:",
+          "step1": "Увеличение числа пользователей и реализация маркетинговой стратегии",
+          "step2": "Улучшение алгоритмов ИИ и добавление функций персонализации",
+          "step3": "Запуск мобильного приложения и выход на международный рынок",
+          "appTitle": "Рабочее Приложение",
+          "appDesc": "Попробуйте платформу MetOneX и проверьте все функции самостоятельно",
+          "openApp": "Открыть Приложение",
+          "authNeeded": "Если требуется авторизация:",
+          "apiTitle": "API Функции",
+          "apiSubtitle": "Для дополнительных баллов",
+          "apiFeature": "Функция API Access",
+          "apiFeatureDesc": "Возможность тестирования и интеграции API вашего проекта. Вы можете использовать RESTful API или GraphQL.",
+          "swaggerTitle": "Swagger API Документация",
+          "swaggerUrl": "Swagger URL:",
+          "openSwagger": "Открыть",
+          "swaggerDesc": "Swagger URL для просмотра и тестирования API документации",
+          "footerDesc": "Сократите поиск строительных материалов и связь с поставщиками до 30 минут с помощью ИИ.",
+          "quickLinks": "Быстрые Ссылки",
+          "home": "Главная",
+          "demo": "Демо",
+          "about": "О нас",
+          "contact": "Контакты",
+          "copyright": "© 2024 MetOneX. Все права защищены.",
+          "privacy": "Конфиденциальность",
+          "terms": "Условия",
+          "help": "Помощь",
+          "chatbotTitle": "MetOneX AI Помощник",
+          "chatbotOnline": "Онлайн и готов",
+          "chatbotClose": "Закрыть",
+          "chatbotWelcome": "Привет! 👋 Нужна помощь? Я MetOneX AI Помощник. Выберите один из вопросов ниже или задайте свой вопрос.",
+          "quickQuestions": "Быстрые вопросы:",
+          "q1": "Что делает ваш проект?",
+          "q2": "Для кого это предназначено?",
+          "q3": "Какая технология используется?",
+          "q4": "Какая цена?",
+          "q5": "Как это работает?"
+        },
+        en: {
+          "loading": "Loading...",
+          "title": "Find construction materials and connect with suppliers",
+          "highlight": "in 30 minutes",
+          "subtitle": "reduce",
+          "description": "Find construction materials and connect with suppliers with AI. In 10 seconds you will find hundreds of materials.",
+          "welcome": "Welcome to the site! 🎉",
+          "video": "Video",
+          "oldWay": "Old Way",
+          "newWay": "MetOneX AI Method",
+          "oldWay1": "Hire expensive copywriters and designers",
+          "oldWay2": "Wait days or weeks",
+          "oldWay3": "Spend a lot of time and money",
+          "oldWay4": "3-5 days waiting time",
+          "oldWayResult": "TIME AND MONEY LOSS",
+          "newWay1": "Find materials with AI",
+          "newWay2": "Get results in 30 minutes",
+          "newWay3": "Save time and money",
+          "newWay4": "Real-time results",
+          "newWayResult": "RECORD RESULTS AND PROFIT",
+          "benefitsTitle": "Say goodbye to the old way and the new AI method",
+          "benefitsDesc": "The process of finding construction materials and connecting with suppliers has changed. Get results in 30 minutes with AI technology.",
+          "statsTitle": "What do you get with MetOneX?",
+          "stats1": "Minutes",
+          "stats1Desc": "Purchase process completes",
+          "stats2": "Technology",
+          "stats2Desc": "GPT-4 and Machine Learning",
+          "stats3": "Status",
+          "stats3Desc": "Working version",
+          "projectTitle": "Project Description",
+          "projectSubtitle": "Technical and business information",
+          "videoFeatures": "Features shown in video",
+          "feature1": "Search construction materials with AI",
+          "feature1Desc": "Find materials in real-time and compare prices",
+          "feature2": "Real-time communication with suppliers",
+          "feature2Desc": "Automatic messaging and message management",
+          "feature3": "Order management and tracking",
+          "feature3Desc": "Track and manage order status in real-time",
+          "problemTitle": "Problem and Solution",
+          "problem": "Problem",
+          "problemDesc": "Finding materials and connecting with suppliers in the construction industry takes 3-5 days. This leads to project delays and additional costs.",
+          "solution": "Solution",
+          "solutionDesc": "MetOneX uses AI technology to reduce the process of finding construction materials and connecting with suppliers to 30 minutes. This helps save time and money.",
+          "techTitle": "Technologies and AI Solutions",
+          "aiIntegration": "AI Integration",
+          "aiIntegrationDesc": "The platform analyzes user requests using GPT-4 API, automatically searches for materials and recommends the best offers. Machine Learning models are used to predict prices and evaluate suppliers.",
+          "statusTitle": "Project Status and Plans",
+          "currentStatus": "Current status:",
+          "nextSteps": "Next steps:",
+          "step1": "Increase user base and implement marketing strategy",
+          "step2": "Improve AI algorithms and add personalization features",
+          "step3": "Launch mobile app and enter international market",
+          "appTitle": "Working Application",
+          "appDesc": "Try the MetOneX platform and check all features yourself",
+          "openApp": "Open Application",
+          "authNeeded": "If authorization is required:",
+          "apiTitle": "API Functions",
+          "apiSubtitle": "For additional points",
+          "apiFeature": "API Access Function",
+          "apiFeatureDesc": "Ability to test and integrate your project's API. You can use RESTful API or GraphQL.",
+          "swaggerTitle": "Swagger API Documentation",
+          "swaggerUrl": "Swagger URL:",
+          "openSwagger": "Open",
+          "swaggerDesc": "Swagger URL to view and test API documentation",
+          "footerDesc": "Reduce finding construction materials and connecting with suppliers to 30 minutes with AI.",
+          "quickLinks": "Quick Links",
+          "home": "Home",
+          "demo": "Demo",
+          "about": "About",
+          "contact": "Contact",
+          "copyright": "© 2024 MetOneX. All rights reserved.",
+          "privacy": "Privacy",
+          "terms": "Terms",
+          "help": "Help",
+          "chatbotTitle": "MetOneX AI Assistant",
+          "chatbotOnline": "Online and ready",
+          "chatbotClose": "Close",
+          "chatbotWelcome": "Hello! 👋 Need help? I'm MetOneX AI Assistant. Choose one of the questions below or ask your own question.",
+          "quickQuestions": "Quick questions:",
+          "q1": "What does your project do?",
+          "q2": "Who is it for?",
+          "q3": "What technology is used?",
+          "q4": "What is the price?",
+          "q5": "How does it work?",
+          "email": "Email:",
+          "password": "Password:",
+          "launched": "Launched",
+          "idea": "Idea",
+          "prototype": "Prototype",
+          "mvp": "MVP",
+          "hello": "Hello! 👋",
+          "react": "React",
+          "typescript": "TypeScript",
+          "tailwind": "Tailwind CSS",
+          "nodejs": "Node.js",
+          "postgresql": "PostgreSQL",
+          "openai": "OpenAI API"
+        },
+        ru: {
+          "loading": "Загрузка...",
+          "title": "Поиск строительных материалов и связь с поставщиками",
+          "highlight": "за 30 минут",
+          "subtitle": "сократите",
+          "description": "Поиск строительных материалов и связь с поставщиками с помощью ИИ. Через 10 секунд вы найдете сотни материалов.",
+          "welcome": "Добро пожаловать на сайт! 🎉",
+          "video": "Видео",
+          "oldWay": "Старый Способ",
+          "newWay": "Метод MetOneX AI",
+          "oldWay1": "Нанять дорогих копирайтеров и дизайнеров",
+          "oldWay2": "Ждать дни или недели",
+          "oldWay3": "Тратить много времени и денег",
+          "oldWay4": "3-5 дней ожидания",
+          "oldWayResult": "ПОТЕРЯ ВРЕМЕНИ И ДЕНЕГ",
+          "newWay1": "Поиск материалов с помощью ИИ",
+          "newWay2": "Получить результат за 30 минут",
+          "newWay3": "Экономия времени и денег",
+          "newWay4": "Результаты в реальном времени",
+          "newWayResult": "РЕКОРДНЫЕ РЕЗУЛЬТАТЫ И ПРИБЫЛЬ",
+          "benefitsTitle": "Попрощайтесь со старым способом и новым методом ИИ",
+          "benefitsDesc": "Процесс поиска строительных материалов и связи с поставщиками изменился. Получите результат за 30 минут с технологией ИИ.",
+          "statsTitle": "Что вы получите с MetOneX?",
+          "stats1": "Минут",
+          "stats1Desc": "Процесс покупки завершается",
+          "stats2": "Технология",
+          "stats2Desc": "GPT-4 и Machine Learning",
+          "stats3": "Статус",
+          "stats3Desc": "Рабочая версия",
+          "projectTitle": "Описание Проекта",
+          "projectSubtitle": "Техническая и бизнес информация",
+          "videoFeatures": "Функции, показанные в видео",
+          "feature1": "Поиск строительных материалов с помощью ИИ",
+          "feature1Desc": "Поиск материалов в реальном времени и сравнение цен",
+          "feature2": "Связь с поставщиками в реальном времени",
+          "feature2Desc": "Автоматическое общение и управление сообщениями",
+          "feature3": "Управление и отслеживание заказов",
+          "feature3Desc": "Отслеживание и управление статусом заказа в реальном времени",
+          "problemTitle": "Проблема и Решение",
+          "problem": "Проблема",
+          "problemDesc": "Поиск материалов и связь с поставщиками в строительной отрасли занимает 3-5 дней. Это приводит к задержкам проектов и дополнительным расходам.",
+          "solution": "Решение",
+          "solutionDesc": "MetOneX использует технологию ИИ, чтобы сократить процесс поиска строительных материалов и связи с поставщиками до 30 минут. Это помогает сэкономить время и деньги.",
+          "techTitle": "Технологии и ИИ Решения",
+          "aiIntegration": "Интеграция ИИ",
+          "aiIntegrationDesc": "Платформа анализирует запросы пользователей с помощью GPT-4 API, автоматически ищет материалы и рекомендует лучшие предложения. Модели машинного обучения используются для прогнозирования цен и оценки поставщиков.",
+          "statusTitle": "Статус Проекта и Планы",
+          "currentStatus": "Текущий статус:",
+          "nextSteps": "Следующие шаги:",
+          "step1": "Увеличение числа пользователей и реализация маркетинговой стратегии",
+          "step2": "Улучшение алгоритмов ИИ и добавление функций персонализации",
+          "step3": "Запуск мобильного приложения и выход на международный рынок",
+          "appTitle": "Рабочее Приложение",
+          "appDesc": "Попробуйте платформу MetOneX и проверьте все функции самостоятельно",
+          "openApp": "Открыть Приложение",
+          "authNeeded": "Если требуется авторизация:",
+          "apiTitle": "API Функции",
+          "apiSubtitle": "Для дополнительных баллов",
+          "apiFeature": "Функция API Access",
+          "apiFeatureDesc": "Возможность тестирования и интеграции API вашего проекта. Вы можете использовать RESTful API или GraphQL.",
+          "swaggerTitle": "Swagger API Документация",
+          "swaggerUrl": "Swagger URL:",
+          "openSwagger": "Открыть",
+          "swaggerDesc": "Swagger URL для просмотра и тестирования API документации",
+          "footerDesc": "Сократите поиск строительных материалов и связь с поставщиками до 30 минут с помощью ИИ.",
+          "quickLinks": "Быстрые Ссылки",
+          "home": "Главная",
+          "demo": "Демо",
+          "about": "О нас",
+          "contact": "Контакты",
+          "copyright": "© 2024 MetOneX. Все права защищены.",
+          "privacy": "Конфиденциальность",
+          "terms": "Условия",
+          "help": "Помощь",
+          "chatbotTitle": "MetOneX AI Помощник",
+          "chatbotOnline": "Онлайн и готов",
+          "chatbotClose": "Закрыть",
+          "chatbotWelcome": "Привет! 👋 Нужна помощь? Я MetOneX AI Помощник. Выберите один из вопросов ниже или задайте свой вопрос.",
+          "quickQuestions": "Быстрые вопросы:",
+          "q1": "Что делает ваш проект?",
+          "q2": "Для кого это предназначено?",
+          "q3": "Какая технология используется?",
+          "q4": "Какая цена?",
+          "q5": "Как это работает?",
+          "email": "Email:",
+          "password": "Пароль:",
+          "launched": "Запущен",
+          "idea": "Идея",
+          "prototype": "Прототип",
+          "mvp": "MVP",
+          "hello": "Привет! 👋",
+          "react": "React",
+          "typescript": "TypeScript",
+          "tailwind": "Tailwind CSS",
+          "nodejs": "Node.js",
+          "postgresql": "PostgreSQL",
+          "openai": "OpenAI API"
+        }
+      };
+
+      let currentLanguage = localStorage.getItem("language") || "uz";
+
+      function translatePage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem("language", lang);
+        
+        const t = translations[lang];
+        if (!t) return;
+
+        // Translate main title (banner section) - More specific selector
+        const titleElement = document.querySelector("h1.text-5xl.sm\\:text-6xl.lg\\:text-7xl");
+        if (!titleElement) {
+          const altTitle = document.querySelector("h1.text-5xl");
+          if (altTitle) {
+            altTitle.innerHTML = `
+              ${t.title}
+              <span class="highlight-text">${t.highlight}</span>
+              ${t.subtitle}
+            `;
+          }
+        } else {
+          titleElement.innerHTML = `
+              ${t.title}
+              <span class="highlight-text">${t.highlight}</span>
+              ${t.subtitle}
+            `;
+        }
+
+        // Translate subtitle (banner section) - More specific
+        const subtitleElements = document.querySelectorAll("p.text-xl.sm\\:text-2xl");
+        subtitleElements.forEach((subtitleElement) => {
+          const text = subtitleElement.textContent.trim();
+          if (text.includes("AI yordamida") || text.includes("Поиск строительных") || text.includes("Find construction")) {
+            subtitleElement.textContent = t.description;
+          }
+        });
+        
+        // Also check other subtitle elements
+        document.querySelectorAll("p.text-xl").forEach((subtitleElement) => {
+          const text = subtitleElement.textContent.trim();
+          if (text.includes("AI yordamida") || text.includes("Поиск строительных") || text.includes("Find construction")) {
+            subtitleElement.textContent = t.description;
+          }
+        });
+
+        // Translate loading text
+        const loadingText = document.getElementById("loading-text");
+        if (loadingText) {
+          loadingText.textContent = t.loading;
+        }
+
+        // Translate Video section
+        const videoTitle = document.querySelector("h3.text-2xl");
+        if (videoTitle && (videoTitle.textContent.includes("Video") || videoTitle.textContent.includes("Видео"))) {
+          videoTitle.textContent = t.video;
+        }
+
+        // Translate Benefits section - More comprehensive
+        document.querySelectorAll("h2").forEach((h2) => {
+          const titleText = h2.textContent.trim();
+          if (titleText === "Eski usul va yangi AI usuli bilan xayrlashing" || titleText === "Попрощайтесь со старым способом и новым методом ИИ" || titleText === "Say goodbye to the old way and the new AI method") {
+            h2.textContent = t.benefitsTitle;
+          } else if (titleText === "MetOneX bilan nima olasiz?" || titleText === "Что вы получите с MetOneX?" || titleText === "What do you get with MetOneX?") {
+            h2.textContent = t.statsTitle;
+          }
+        });
+
+        document.querySelectorAll("p.text-xl").forEach((p) => {
+          const descText = p.textContent.trim();
+          if (descText === "Qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish jarayoni endi o'zgardi. AI texnologiyasi bilan 30 daqiqada natija oling." || descText === "Процесс поиска строительных материалов и связи с поставщиками изменился. Получите результат за 30 минут с технологией ИИ." || descText === "The process of finding construction materials and connecting with suppliers has changed. Get results in 30 minutes with AI technology.") {
+            p.textContent = t.benefitsDesc;
+          }
+        });
+
+        // Translate Old Way / New Way section
+        const oldWayTitle = document.querySelector("h3.text-3xl.text-red-600");
+        if (oldWayTitle && (oldWayTitle.textContent.includes("Eski Usul") || oldWayTitle.textContent.includes("Старый") || oldWayTitle.textContent.includes("Old Way"))) {
+          oldWayTitle.textContent = t.oldWay;
+        }
+
+        const newWayTitle = document.querySelector("h3.text-3xl.font-black");
+        if (newWayTitle && (newWayTitle.textContent.includes("MetOneX AI") || newWayTitle.textContent.includes("Метод MetOneX") || newWayTitle.textContent.includes("MetOneX AI Method"))) {
+          newWayTitle.textContent = t.newWay;
+        }
+
+        // Translate list items
+        document.querySelectorAll("span.text-\\[\\#374151\\]").forEach((span) => {
+          const text = span.textContent.trim();
+          if (text === "Qimmat copywriter va dizaynerlarni yollash" || text === "Нанять дорогих копирайтеров" || text === "Hire expensive copywriters") {
+            span.textContent = t.oldWay1;
+          } else if (text === "Kunlar yoki haftalar kutish" || text === "Ждать дни или недели" || text === "Wait days or weeks") {
+            span.textContent = t.oldWay2;
+          } else if (text === "Ko'p vaqt va mablag' sarflash" || text === "Тратить много времени и денег" || text === "Spend a lot of time and money") {
+            span.textContent = t.oldWay3;
+          } else if (text === "3-5 kun kutish vaqt" || text === "3-5 дней ожидания" || text === "3-5 days waiting time") {
+            span.textContent = t.oldWay4;
+          } else if (text === "AI yordamida materiallarni topish" || text === "Поиск материалов с помощью ИИ" || text === "Find materials with AI") {
+            span.textContent = t.newWay1;
+          } else if (text === "30 daqiqada natija olish" || text === "Получить результат за 30 минут" || text === "Get results in 30 minutes") {
+            span.textContent = t.newWay2;
+          } else if (text === "Vaqt va mablag'ni tejash" || text === "Экономия времени и денег" || text === "Save time and money") {
+            span.textContent = t.newWay3;
+          } else if (text === "Real vaqtda natijalar" || text === "Результаты в реальном времени" || text === "Real-time results") {
+            span.textContent = t.newWay4;
+          }
+        });
+
+        // Translate result texts
+        document.querySelectorAll("p.text-red-600, p.font-black.text-xl").forEach((p) => {
+          const text = p.textContent.trim();
+          if (text === "VAQT VA MABLAG' YO'QOTISH" || text === "ПОТЕРЯ ВРЕМЕНИ И ДЕНЕГ" || text === "TIME AND MONEY LOSS") {
+            p.textContent = t.oldWayResult;
+          } else if (text === "REKORD NATIJALAR VA PROFIT" || text === "РЕКОРДНЫЕ РЕЗУЛЬТАТЫ И ПРИБЫЛЬ" || text === "RECORD RESULTS AND PROFIT") {
+            p.textContent = t.newWayResult;
+          }
+        });
+
+        // Translate Stats section
+        document.querySelectorAll("div.text-2xl.font-black").forEach((div) => {
+          const text = div.textContent.trim();
+          if (text === "Daqiqada" || text === "Минут" || text === "Minutes") {
+            div.textContent = t.stats1;
+          } else if (text === "Texnologiya" || text === "Технология" || text === "Technology") {
+            div.textContent = t.stats2;
+          } else if (text === "Holat" || text === "Статус" || text === "Status") {
+            div.textContent = t.stats3;
+          }
+        });
+
+        document.querySelectorAll("div.text-base.text-\\[\\#6B7280\\]").forEach((div) => {
+          const text = div.textContent.trim();
+          if (text === "Xarid jarayoni tugaydi" || text === "Процесс покупки завершается" || text === "Purchase process completes") {
+            div.textContent = t.stats1Desc;
+          } else if (text === "GPT-4 va Machine Learning" || text === "GPT-4 и Machine Learning" || text === "GPT-4 and Machine Learning") {
+            div.textContent = t.stats2Desc;
+          } else if (text === "Ishlayotgan versiya" || text === "Рабочая версия" || text === "Working version") {
+            div.textContent = t.stats3Desc;
+          }
+        });
+
+        // Translate Project Description section - More comprehensive
+        document.querySelectorAll("h3").forEach((h3) => {
+          const titleText = h3.textContent.trim();
+          if (titleText === "Loyiha Tavsifi" || titleText === "Описание Проекта" || titleText === "Project Description") {
+            h3.textContent = t.projectTitle;
+          } else if (titleText === "Muammo va Yechim" || titleText === "Проблема и Решение" || titleText === "Problem and Solution") {
+            h3.textContent = t.problemTitle;
+          } else if (titleText === "Texnologiyalar va AI Yechmlar" || titleText === "Технологии и ИИ Решения" || titleText === "Technologies and AI Solutions") {
+            h3.textContent = t.techTitle;
+          } else if (titleText === "Loyiha Holati va Rejalar" || titleText === "Статус Проекта и Планы" || titleText === "Project Status and Plans") {
+            h3.textContent = t.statusTitle;
+          } else if (titleText === "Ishlayotgan Ilova" || titleText === "Рабочее Приложение" || titleText === "Working Application") {
+            h3.textContent = t.appTitle;
+          } else if (titleText === "API Funksiyalar" || titleText === "API Функции" || titleText === "API Functions") {
+            h3.textContent = t.apiTitle;
+          }
+        });
+
+        const projectSubtitle = document.querySelector("p.text-\\[\\#6B7280\\].font-medium");
+        if (projectSubtitle && (projectSubtitle.textContent.includes("Texnik va biznes") || projectSubtitle.textContent.includes("Техническая") || projectSubtitle.textContent.includes("Technical"))) {
+          projectSubtitle.textContent = t.projectSubtitle;
+        }
+
+        // Translate Features
+        const videoFeaturesTitle = document.querySelector("h3.text-3xl.font-black.text-\\[\\#02066F\\]");
+        if (videoFeaturesTitle && (videoFeaturesTitle.textContent.includes("Videoda ko'rsatilgan") || videoFeaturesTitle.textContent.includes("Функции, показанные") || videoFeaturesTitle.textContent.includes("Features shown"))) {
+          videoFeaturesTitle.textContent = t.videoFeatures;
+        }
+
+        // Translate feature items
+        document.querySelectorAll("p.text-\\[\\#02066F\\].font-black.text-lg").forEach((p) => {
+          const text = p.textContent.trim();
+          if (text.includes("AI yordamida qurilish") || text.includes("Поиск строительных") || text.includes("Search construction")) {
+            p.textContent = t.feature1;
+          } else if (text.includes("Yetkazib beruvchilar bilan") || text.includes("Связь с поставщиками") || text.includes("Real-time communication")) {
+            p.textContent = t.feature2;
+          } else if (text.includes("Buyurtmalarni boshqarish") || text.includes("Управление и отслеживание") || text.includes("Order management")) {
+            p.textContent = t.feature3;
+          }
+        });
+
+        document.querySelectorAll("p.text-\\[\\#6B7280\\].text-sm").forEach((p) => {
+          const text = p.textContent.trim();
+          if (text.includes("Real vaqtda materiallarni topish") || text.includes("Поиск материалов в реальном времени") || text.includes("Find materials in real-time")) {
+            p.textContent = t.feature1Desc;
+          } else if (text.includes("Avtomatik matnlashtirish") || text.includes("Автоматическое общение") || text.includes("Automatic messaging")) {
+            p.textContent = t.feature2Desc;
+          } else if (text.includes("Real vaqtda buyurtma holatini") || text.includes("Отслеживание и управление") || text.includes("Track and manage")) {
+            p.textContent = t.feature3Desc;
+          }
+        });
+
+        // Translate Problem and Solution - Already handled above
+
+        document.querySelectorAll("p.text-xl.font-black").forEach((p) => {
+          const text = p.textContent.trim();
+          if (text === "Muammo" || text === "Проблема" || text === "Problem") {
+            p.textContent = t.problem;
+          } else if (text === "Yechim" || text === "Решение" || text === "Solution") {
+            p.textContent = t.solution;
+          }
+        });
+
+        document.querySelectorAll("p.text-base.text-\\[\\#374151\\]").forEach((p) => {
+          const text = p.textContent.trim();
+          if (text.includes("Qurilish sohasida materiallar topish") || text.includes("Поиск материалов и связь") || text.includes("Finding materials and connecting")) {
+            p.textContent = t.problemDesc;
+          } else if (text.includes("MetOneX AI texnologiyasidan") || text.includes("MetOneX использует технологию") || text.includes("MetOneX uses AI technology")) {
+            p.textContent = t.solutionDesc;
+          }
+        });
+
+        // Translate Technologies section - Already handled above
+
+        const aiIntegrationTitle = document.querySelector("p.text-lg.font-black.text-\\[\\#02066F\\]");
+        if (aiIntegrationTitle && (aiIntegrationTitle.textContent.includes("AI Integratsiyasi") || aiIntegrationTitle.textContent.includes("Интеграция ИИ") || aiIntegrationTitle.textContent.includes("AI Integration"))) {
+          aiIntegrationTitle.textContent = t.aiIntegration;
+        }
+
+        const aiIntegrationDesc = document.querySelector("p.text-base.text-\\[\\#374151\\]");
+        if (aiIntegrationDesc && (aiIntegrationDesc.textContent.includes("Platforma GPT-4 API") || aiIntegrationDesc.textContent.includes("Платформа анализирует") || aiIntegrationDesc.textContent.includes("The platform analyzes"))) {
+          aiIntegrationDesc.textContent = t.aiIntegrationDesc;
+        }
+
+        // Translate Status section - Already handled above
+
+        document.querySelectorAll("p.text-lg.font-black.text-\\[\\#02066F\\]").forEach((p) => {
+          const text = p.textContent.trim();
+          if (text.includes("Hozirgi holat") || text.includes("Текущий статус") || text.includes("Current status")) {
+            p.textContent = t.currentStatus;
+          } else if (text.includes("Keyingi qadamlar") || text.includes("Следующие шаги") || text.includes("Next steps")) {
+            p.textContent = t.nextSteps;
+          }
+        });
+
+        document.querySelectorAll("p.text-base.font-bold.text-\\[\\#374151\\]").forEach((p) => {
+          const text = p.textContent.trim();
+          if (text.includes("Foydalanuvchilar sonini oshirish") || text.includes("Увеличение числа пользователей") || text.includes("Increase user base")) {
+            p.textContent = t.step1;
+          } else if (text.includes("AI algoritmlarini yaxshilash") || text.includes("Улучшение алгоритмов ИИ") || text.includes("Improve AI algorithms")) {
+            p.textContent = t.step2;
+          } else if (text.includes("Mobil ilovani chiqarish") || text.includes("Запуск мобильного приложения") || text.includes("Launch mobile app")) {
+            p.textContent = t.step3;
+          }
+        });
+
+        // Translate App section - Already handled above
+
+        const appDesc = document.querySelector("p.text-white\\/90.text-lg");
+        if (appDesc && (appDesc.textContent.includes("MetOneX platformasini sinab") || appDesc.textContent.includes("Попробуйте платформу") || appDesc.textContent.includes("Try the MetOneX platform"))) {
+          appDesc.textContent = t.appDesc;
+        }
+
+        const openAppBtn = document.querySelector("a[href='https://metonex.uz/']");
+        if (openAppBtn && (openAppBtn.textContent.includes("Ilovani Ochish") || openAppBtn.textContent.includes("Открыть Приложение") || openAppBtn.textContent.includes("Open Application"))) {
+          openAppBtn.textContent = t.openApp;
+        }
+
+        const authNeeded = document.querySelector("p.text-sm.font-bold");
+        if (authNeeded && (authNeeded.textContent.includes("Agar avtorizatsiya") || authNeeded.textContent.includes("Если требуется авторизация") || authNeeded.textContent.includes("If authorization is required"))) {
+          authNeeded.textContent = t.authNeeded;
+        }
+
+        // Translate API section - Already handled above
+
+        const apiSubtitle = document.querySelector("p.text-\\[\\#6B7280\\].font-medium");
+        if (apiSubtitle && (apiSubtitle.textContent.includes("Qo'shimcha ballar") || apiSubtitle.textContent.includes("Для дополнительных баллов") || apiSubtitle.textContent.includes("For additional points"))) {
+          apiSubtitle.textContent = t.apiSubtitle;
+        }
+
+        const apiFeatureTitle = document.querySelector("p.text-base.font-bold.text-\\[\\#02066F\\]");
+        if (apiFeatureTitle && (apiFeatureTitle.textContent.includes("API Access Funksiyasi") || apiFeatureTitle.textContent.includes("Функция API Access") || apiFeatureTitle.textContent.includes("API Access Function"))) {
+          apiFeatureTitle.textContent = t.apiFeature;
+        }
+
+        const apiFeatureDesc = document.querySelector("p.text-sm.text-\\[\\#374151\\]");
+        if (apiFeatureDesc && (apiFeatureDesc.textContent.includes("Loyihangiz API'sini test") || apiFeatureDesc.textContent.includes("Возможность тестирования") || apiFeatureDesc.textContent.includes("Ability to test"))) {
+          apiFeatureDesc.textContent = t.apiFeatureDesc;
+        }
+
+        const swaggerTitle = document.querySelector("h4.text-xl.font-black");
+        if (swaggerTitle && (swaggerTitle.textContent.includes("Swagger API") || swaggerTitle.textContent.includes("Swagger API"))) {
+          swaggerTitle.textContent = t.swaggerTitle;
+        }
+
+        const swaggerUrlLabel = document.querySelector("label.block.text-sm");
+        if (swaggerUrlLabel && (swaggerUrlLabel.textContent.includes("Swagger URL") || swaggerUrlLabel.textContent.includes("Swagger URL"))) {
+          swaggerUrlLabel.textContent = t.swaggerUrl;
+        }
+
+        const openSwaggerBtn = document.querySelector("a[href='https://dev.metonex.uz/']");
+        if (openSwaggerBtn && (openSwaggerBtn.textContent.includes("Ochish") || openSwaggerBtn.textContent.includes("Открыть") || openSwaggerBtn.textContent.includes("Open"))) {
+          openSwaggerBtn.textContent = t.openSwagger;
+        }
+
+        const swaggerDesc = document.querySelector("p.text-xs.text-white\\/70");
+        if (swaggerDesc && (swaggerDesc.textContent.includes("API dokumentatsiyasini") || swaggerDesc.textContent.includes("Swagger URL для просмотра") || swaggerDesc.textContent.includes("Swagger URL to view"))) {
+          swaggerDesc.textContent = t.swaggerDesc;
+        }
+
+        // Translate Footer
+        const footerDesc = document.querySelector("p.text-white\\/80.text-sm");
+        if (footerDesc && (footerDesc.textContent.includes("AI yordamida qurilish") || footerDesc.textContent.includes("Сократите поиск") || footerDesc.textContent.includes("Reduce finding"))) {
+          footerDesc.textContent = t.footerDesc;
+        }
+
+        const quickLinksTitle = document.querySelector("h4.text-lg.font-bold");
+        if (quickLinksTitle && (quickLinksTitle.textContent.includes("Tezkor Havolalar") || quickLinksTitle.textContent.includes("Быстрые Ссылки") || quickLinksTitle.textContent.includes("Quick Links"))) {
+          quickLinksTitle.textContent = t.quickLinks;
+        }
+
+        const contactTitle = document.querySelectorAll("h4.text-lg.font-bold");
+        contactTitle.forEach((h4) => {
+          if (h4.textContent.includes("Bog'lanish") || h4.textContent.includes("Контакты") || h4.textContent.includes("Contact")) {
+            h4.textContent = t.contact;
+          }
+        });
+
+        document.querySelectorAll("a[href='index.html']").forEach((a) => {
+          if (a.textContent.includes("Bosh Sahifa") || a.textContent.includes("Главная") || a.textContent.includes("Home")) {
+            a.textContent = t.home;
+          }
+        });
+
+        document.querySelectorAll("a[href='demo.html']").forEach((a) => {
+          if (a.textContent.includes("Demo") || a.textContent.includes("Демо") || a.textContent.includes("Demo")) {
+            a.textContent = t.demo;
+          }
+        });
+
+        document.querySelectorAll("a[href='#']").forEach((a) => {
+          const text = a.textContent.trim();
+          if (text === "Haqida" || text === "О нас" || text === "About") {
+            a.textContent = t.about;
+          } else if (text === "Maxfiylik" || text === "Конфиденциальность" || text === "Privacy") {
+            a.textContent = t.privacy;
+          } else if (text === "Shartlar" || text === "Условия" || text === "Terms") {
+            a.textContent = t.terms;
+          } else if (text === "Yordam" || text === "Помощь" || text === "Help") {
+            a.textContent = t.help;
+          }
+        });
+
+        const copyright = document.querySelector("p.text-white\\/60.text-sm");
+        if (copyright && (copyright.textContent.includes("© 2024 MetOneX") || copyright.textContent.includes("© 2024 MetOneX"))) {
+          copyright.textContent = t.copyright;
+        }
+
+        // Translate Chatbot
+        const chatbotTitle = document.querySelector("h3.text-xl.font-black");
+        if (chatbotTitle && (chatbotTitle.textContent.includes("MetOneX AI Assistant") || chatbotTitle.textContent.includes("MetOneX AI Помощник") || chatbotTitle.textContent.includes("MetOneX AI Assistant"))) {
+          chatbotTitle.textContent = t.chatbotTitle;
+        }
+
+        const chatbotOnline = document.querySelector("div.text-xs.text-white\\/70");
+        if (chatbotOnline && (chatbotOnline.textContent.includes("Onlayn va tayyor") || chatbotOnline.textContent.includes("Онлайн и готов") || chatbotOnline.textContent.includes("Online and ready"))) {
+          chatbotOnline.textContent = t.chatbotOnline;
+        }
+
+        const chatbotCloseBtn = document.getElementById("chatbot-close-btn");
+        if (chatbotCloseBtn && chatbotCloseBtn.getAttribute("aria-label")) {
+          chatbotCloseBtn.setAttribute("aria-label", lang === "uz" ? "Yopish" : lang === "ru" ? "Закрыть" : "Close");
+        }
+
+        const chatbotWelcome = document.querySelector("p.text-base.leading-relaxed.font-medium.text-white");
+        if (chatbotWelcome && (chatbotWelcome.textContent.includes("Salom! 👋 Yordam kerakmi") || chatbotWelcome.textContent.includes("Привет! 👋 Нужна помощь") || chatbotWelcome.textContent.includes("Hello! 👋 Need help"))) {
+          chatbotWelcome.textContent = t.chatbotWelcome;
+        }
+
+        const quickQuestionsTitle = document.querySelector("p.text-sm.text-white\\/90.mb-4");
+        if (quickQuestionsTitle && (quickQuestionsTitle.textContent.includes("Tezkor savollar") || quickQuestionsTitle.textContent.includes("Быстрые вопросы") || quickQuestionsTitle.textContent.includes("Quick questions"))) {
+          quickQuestionsTitle.textContent = t.quickQuestions;
+        }
+
+        document.querySelectorAll("button.chatbot-modal-question-btn span").forEach((span) => {
+          const text = span.textContent.trim();
+          if (text === "Loyihangiz nima qiladi?" || text === "Что делает ваш проект?" || text === "What does your project do?") {
+            span.textContent = t.q1;
+          } else if (text === "Kimlar uchun mo'ljallangan?" || text === "Для кого это предназначено?" || text === "Who is it for?") {
+            span.textContent = t.q2;
+          } else if (text === "Qanday texnologiya ishlatilgan?" || text === "Какая технология используется?" || text === "What technology is used?") {
+            span.textContent = t.q3;
+          } else if (text === "Narx qanday?" || text === "Какая цена?" || text === "What is the price?") {
+            span.textContent = t.q4;
+          } else if (text === "Qanday ishlaydi?" || text === "Как это работает?" || text === "How does it work?") {
+            span.textContent = t.q5;
+          }
+        });
+
+        // Update select value
+        const languageSelector = document.getElementById("language-selector");
+        if (languageSelector) {
+          languageSelector.value = lang;
+        }
+
+        // Translate Email and Password labels - More comprehensive
+        document.querySelectorAll("span").forEach((span) => {
+          const text = span.textContent.trim();
+          if (text === "Email:" || text === "Email:") {
+            span.textContent = t.email;
+          } else if (text === "Parol:" || text === "Пароль:" || text === "Password:") {
+            span.textContent = t.password;
+          }
+        });
+
+        // Translate Launched text - More comprehensive
+        document.querySelectorAll("div").forEach((div) => {
+          const text = div.textContent.trim();
+          if (text === "Launched" && div.classList.contains("text-7xl") || div.classList.contains("text-6xl")) {
+            div.textContent = t.launched;
+          }
+        });
+
+        // Translate status badges - More comprehensive
+        document.querySelectorAll("span").forEach((span) => {
+          const text = span.textContent.trim();
+          if (text === "Idea" || text === "Идея" || text === "Idea") {
+            if (span.classList.contains("px-5") || span.classList.contains("py-3")) {
+              span.textContent = t.idea;
+            }
+          } else if (text === "Prototype" || text === "Прототип" || text === "Prototype") {
+            if (span.classList.contains("px-5") || span.classList.contains("py-3")) {
+              span.textContent = t.prototype;
+            }
+          } else if (text === "MVP" || text === "MVP") {
+            if (span.classList.contains("px-5") || span.classList.contains("py-3")) {
+              span.textContent = t.mvp;
+            }
+          } else if (text === "Launched" || text === "Запущен") {
+            if (span.classList.contains("px-5") || span.classList.contains("py-3")) {
+              span.textContent = t.launched;
+            }
+          }
+        });
+
+        // Translate Hello message in chatbot - More comprehensive
+        document.querySelectorAll("span").forEach((span) => {
+          const text = span.textContent.trim();
+          if ((text === "Salom! 👋" || text === "Привет! 👋" || text === "Hello! 👋") && span.classList.contains("text-sm") && span.classList.contains("font-bold")) {
+            span.textContent = t.hello;
+          }
+        });
+
+        // Translate technology names - More comprehensive
+        document.querySelectorAll("p").forEach((p) => {
+          const text = p.textContent.trim();
+          if (text === "React" && p.classList.contains("text-sm") && p.classList.contains("font-black")) {
+            p.textContent = t.react;
+          } else if (text === "TypeScript" && p.classList.contains("text-sm") && p.classList.contains("font-black")) {
+            p.textContent = t.typescript;
+          } else if (text === "Tailwind CSS" && p.classList.contains("text-sm") && p.classList.contains("font-black")) {
+            p.textContent = t.tailwind;
+          } else if (text === "Node.js" && p.classList.contains("text-sm") && p.classList.contains("font-black")) {
+            p.textContent = t.nodejs;
+          } else if (text === "PostgreSQL" && p.classList.contains("text-sm") && p.classList.contains("font-black")) {
+            p.textContent = t.postgresql;
+          } else if (text === "OpenAI API" && p.classList.contains("text-sm") && p.classList.contains("font-black")) {
+            p.textContent = t.openai;
+          }
+        });
+
+        // Update document language attribute
+        document.documentElement.lang = lang;
+      }
+      
+      // Helper function to translate all text content more comprehensively
+      function translateAllText(lang) {
+        const t = translations[lang];
+        if (!t) return;
+        
+        // Get all elements with text content
+        const allElements = document.querySelectorAll('*');
+        
+        allElements.forEach((el) => {
+          // Skip script and style tags
+          if (el.tagName === 'SCRIPT' || el.tagName === 'STYLE') return;
+          
+          // Skip if element has children (we'll process children separately)
+          if (el.children.length > 0) return;
+          
+          const text = el.textContent.trim();
+          
+          // Translate based on exact matches
+          const translationMap = {
+            'Qurilish materiallarini topish va yetkazib beruvchilar bilan bog\'lanishni': t.title,
+            'AI yordamida qurilish materiallarini topish va yetkazib beruvchilar bilan bog\'lanish. 10 soniyadan keyin siz yuzlab materiallarni topasiz.': t.description,
+            'Eski usul va yangi AI usuli bilan xayrlashing': t.benefitsTitle,
+            'Qurilish materiallarini topish va yetkazib beruvchilar bilan bog\'lanish jarayoni endi o\'zgardi. AI texnologiyasi bilan 30 daqiqada natija oling.': t.benefitsDesc,
+            'MetOneX bilan nima olasiz?': t.statsTitle,
+            'Video': t.video,
+            'Eski Usul': t.oldWay,
+            'MetOneX AI Usuli': t.newWay,
+            'Qimmat copywriter va dizaynerlarni yollash': t.oldWay1,
+            'Kunlar yoki haftalar kutish': t.oldWay2,
+            'Ko\'p vaqt va mablag\' sarflash': t.oldWay3,
+            '3-5 kun kutish vaqt': t.oldWay4,
+            'AI yordamida materiallarni topish': t.newWay1,
+            '30 daqiqada natija olish': t.newWay2,
+            'Vaqt va mablag\'ni tejash': t.newWay3,
+            'Real vaqtda natijalar': t.newWay4,
+            'VAQT VA MABLAG\' YO\'QOTISH': t.oldWayResult,
+            'REKORD NATIJALAR VA PROFIT': t.newWayResult,
+            'Daqiqada': t.stats1,
+            'Texnologiya': t.stats2,
+            'Holat': t.stats3,
+            'Xarid jarayoni tugaydi': t.stats1Desc,
+            'GPT-4 va Machine Learning': t.stats2Desc,
+            'Ishlayotgan versiya': t.stats3Desc,
+            'Loyiha Tavsifi': t.projectTitle,
+            'Texnik va biznes ma\'lumotlar': t.projectSubtitle,
+            'Videoda ko\'rsatilgan funksiyalar': t.videoFeatures,
+            'AI yordamida qurilish materiallarini qidirish': t.feature1,
+            'Real vaqtda materiallarni topish va narxlarni taqqoslash': t.feature1Desc,
+            'Yetkazib beruvchilar bilan real vaqtda aloqa': t.feature2,
+            'Avtomatik matnlashtirish va xabarlarni boshqarish': t.feature2Desc,
+            'Buyurtmalarni boshqarish va kuzatish': t.feature3,
+            'Real vaqtda buyurtma holatini kuzatish va boshqarish': t.feature3Desc,
+            'Muammo va Yechim': t.problemTitle,
+            'Muammo': t.problem,
+            'Yechim': t.solution,
+            'Texnologiyalar va AI Yechmlar': t.techTitle,
+            'AI Integratsiyasi': t.aiIntegration,
+            'Loyiha Holati va Rejalar': t.statusTitle,
+            'Hozirgi holat:': t.currentStatus,
+            'Keyingi qadamlar:': t.nextSteps,
+            'Ishlayotgan Ilova': t.appTitle,
+            'MetOneX platformasini sinab ko\'ring va barcha funksiyalarni o\'zingiz tekshiring': t.appDesc,
+            'Ilovani Ochish': t.openApp,
+            'Agar avtorizatsiya kerak bo\'lsa:': t.authNeeded,
+            'Email:': t.email,
+            'Parol:': t.password,
+            'API Funksiyalar': t.apiTitle,
+            'Qo\'shimcha ballar uchun': t.apiSubtitle,
+            'API Access Funksiyasi': t.apiFeature,
+            'Swagger API Documentation': t.swaggerTitle,
+            'Swagger URL:': t.swaggerUrl,
+            'Ochish': t.openSwagger,
+            'MetOneX': t.chatbotTitle.split(' ')[0],
+            'Tezkor Havolalar': t.quickLinks,
+            'Bosh Sahifa': t.home,
+            'Demo': t.demo,
+            'Haqida': t.about,
+            'Bog\'lanish': t.contact,
+            'Maxfiylik': t.privacy,
+            'Shartlar': t.terms,
+            'Yordam': t.help,
+            '© 2024 MetOneX. Barcha huquqlar himoyalangan.': t.copyright
+          };
+          
+          if (translationMap[text] && el.textContent === text) {
+            el.textContent = translationMap[text];
+          }
+        });
+      }
+
+      // Initialize language selector
+      document.addEventListener("DOMContentLoaded", function () {
+        const languageSelector = document.getElementById("language-selector");
+        if (languageSelector) {
+          languageSelector.value = currentLanguage;
+          translatePage(currentLanguage);
+          translateAllText(currentLanguage);
+
+          languageSelector.addEventListener("change", function (e) {
+            translatePage(e.target.value);
+            translateAllText(e.target.value);
+          });
+        }
+      });
+      
+      // Also translate on window load to catch all content
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          translatePage(currentLanguage);
+          translateAllText(currentLanguage);
+        }, 500);
+      });
     </script>
 
     <script src="app.js"></script>
