@@ -117,6 +117,87 @@
         }
       }
 
+      /* MetOneX Carousel Styles */
+      .infinite-carousel {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+      
+      .carousel-track {
+        display: flex;
+        gap: 24px;
+        will-change: transform;
+        width: max-content;
+      }
+      
+      .carousel-slide {
+        flex: 0 0 auto;
+        min-width: 300px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      
+      .carousel-slide:hover {
+        transform: translateY(-5px);
+      }
+      
+      /* Infinite scroll animation - seamless loop */
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      
+      .metonex-carousel .carousel-track {
+        animation: scroll 20s linear infinite;
+      }
+      
+      /* Pause on hover */
+      .infinite-carousel:hover .carousel-track {
+        animation-play-state: paused;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .carousel-slide {
+          min-width: 280px;
+        }
+        .carousel-track {
+          gap: 16px;
+        }
+      }
+      
+      @media (max-width: 640px) {
+        .carousel-slide {
+          min-width: 250px;
+        }
+      }
+
+      /* FAQ Section Styles */
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+      }
+      
+      .faq-item.active .faq-answer {
+        display: block;
+        animation: fadeInDown 0.3s ease-out;
+      }
+      
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       /* Loading Screen Animations - Professional Business Style */
       @keyframes spin {
         from {
@@ -1327,6 +1408,43 @@
           >
             Yuklanmoqda...
           </h2>
+          
+          <!-- Construction Theme Icons -->
+          <div class="flex items-center justify-center gap-8 mt-8 mb-6">
+            <!-- Hammer Icon -->
+            <div class="construction-icon" style="animation-delay: 0s;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
+                <path d="M15 12l-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0-.83-.83-.83-2.17 0-3L12 9"></path>
+                <path d="M17.64 15L22 10.64"></path>
+                <path d="M20.91 11.7l-1.25-1.25L8.61 21l-5.4-5.4 8.06-8.06 1.25 1.25"></path>
+                <path d="M16 8l2-2"></path>
+              </svg>
+            </div>
+            
+            <!-- Building Icon -->
+            <div class="construction-icon" style="animation-delay: 0.2s;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"></path>
+                <path d="M6 12h12"></path>
+                <path d="M6 8h12"></path>
+                <path d="M6 16h12"></path>
+                <path d="M10 2v4"></path>
+                <path d="M14 2v4"></path>
+              </svg>
+            </div>
+            
+            <!-- Tools Icon -->
+            <div class="construction-icon" style="animation-delay: 0.4s;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="animate-bounce">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Construction Theme Text -->
+          <p class="text-white/80 text-lg font-medium mt-4">
+            Qurilish materiallarini tayyorlayapmiz...
+          </p>
 
           <!-- Animated Dots -->
           <div class="flex items-center justify-center gap-3 mt-6">
@@ -1878,52 +1996,32 @@
         </div>
 
         <div class="container mx-auto px-4 max-w-7xl relative z-10">
-          <div
-            class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300 scroll-reveal"
-        >
-          <!-- Card Header - Kong.ai Style -->
-          <div
-            class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
-          >
-            <div class="flex items-center gap-4">
-              <div
-                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                </svg>
-              </div>
-              <div>
-                  <h3 class="text-2xl font-black text-[#02066F]">Video</h3>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Content -->
-          <div>
-            <div
-              class="aspect-video rounded-2xl overflow-hidden relative shadow-2xl border-2 border-[#E5E7EB] bg-black"
-            >
+          <!-- Video Player Section - Kong.ai Style -->
+          <div class="relative scroll-reveal">
+            <!-- Video Container -->
+            <div class="relative aspect-video overflow-hidden bg-black rounded-2xl">
               <iframe
                 class="w-full h-full"
-                  src="https://www.youtube.com/embed/NNS5Piu-EII"
+                src="https://www.youtube.com/embed/NNS5Piu-EII"
                 title="MetOneX Demo Video"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
                 loading="lazy"
-                >
-                </iframe>
+              ></iframe>
+              
+            
+            </div>
+            
+            <!-- Video Progress Bar (like Kong.ai) -->
+             <div  class="w-full flex items-center justify-center mt-20 mb-20 cursor-pointer">
+                   <button 
+                     id="scroll-to-app-btn"
+                     onclick="scrollToWorkingApp()"
+                     class="bg-gradient-to-br from-[#2563EB] w-[350px] text-white h-[60px] to-[#3B82F6] font-bold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                   >
+                     Hozir boshlang
+                   </button>              
             </div>
           </div>
         </div>
@@ -3249,7 +3347,7 @@
                     </div>
 
                     <!-- Title and Description -->
-                    <div>
+                    <div id="working-app-section">
                       <h3 class="text-3xl font-black mb-3">
                         Ishlayotgan Ilova
                       </h3>
@@ -3573,9 +3671,188 @@
         </div>
       </div>
 
+      <!-- MetOneX Carousel Section - Advertisement Style -->
+      <div class="relative bg-gradient-to-br from-[#02066F] via-[#1e40af] to-[#2563EB] py-16 mt-20 overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="absolute top-0 left-0 w-full h-full opacity-10" style="
+            background-image: 
+              linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+          "></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+          <div class="infinite-carousel metonex-carousel">
+            <div class="carousel-track">
+              <!-- Slide 1 -->
+              <div class="carousel-slide">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20 text-white text-center min-w-[300px]">
+                  <h3 class="text-3xl font-black mb-3">MetOneX</h3>
+                  <p class="text-lg opacity-90">AI yordamida qurilish materiallarini topish</p>
+                </div>
+              </div>
+              
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20 text-white text-center min-w-[300px]">
+                  <h3 class="text-3xl font-black mb-3">30 daqiqada</h3>
+                  <p class="text-lg opacity-90">Materiallarni topish va buyurtma berish</p>
+                </div>
+              </div>
+              
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20 text-white text-center min-w-[300px]">
+                  <h3 class="text-3xl font-black mb-3">Real vaqtda</h3>
+                  <p class="text-lg opacity-90">Yetkazib beruvchilar bilan bog'lanish</p>
+                </div>
+              </div>
+              
+              <!-- Slide 4 -->
+              <div class="carousel-slide">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20 text-white text-center min-w-[300px]">
+                  <h3 class="text-3xl font-black mb-3">Bepul</h3>
+                  <p class="text-lg opacity-90">Platforma to'liq bepul foydalanish</p>
+                </div>
+              </div>
+              
+              <!-- Slide 5 -->
+              <div class="carousel-slide">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20 text-white text-center min-w-[300px]">
+                  <h3 class="text-3xl font-black mb-3">AI Texnologiya</h3>
+                  <p class="text-lg opacity-90">GPT-4 va Machine Learning</p>
+                </div>
+              </div>
+              
+              <!-- Slide 6 -->
+              <div class="carousel-slide">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border-2 border-white/20 text-white text-center min-w-[300px]">
+                  <h3 class="text-3xl font-black mb-3">1000+ Material</h3>
+                  <p class="text-lg opacity-90">Keng assortiment qurilish materiallari</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="relative bg-gradient-to-br from-white via-[#F8FAFF] to-[#F0F4FF] py-20 mt-20 overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="absolute top-10 right-20 w-96 h-96 bg-gradient-to-br from-[#2563EB]/10 to-[#3B82F6]/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-10 left-20 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/8 to-[#2563EB]/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 max-w-4xl relative z-10">
+          <div class="text-center mb-12 scroll-reveal">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#02066F] mb-6">
+              Tez-tez beriladigan savollar
+            </h2>
+            <p class="text-xl text-[#6B7280] max-w-2xl mx-auto">
+              MetOneX platformasi haqida ko'p so'raladigan savollar va javoblar
+            </p>
+          </div>
+
+          <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">MetOneX qanday ishlaydi?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  MetOneX AI texnologiyasidan foydalanib, siz material nomini yoki turini kiriting. AI avtomatik ravishda barcha mavjud variantlarni topadi, narxlarni taqqoslaydi va eng yaxshi takliflarni tavsiya qiladi. Keyin yetkazib beruvchi bilan real vaqtda bog'lanib, buyurtma berishingiz mumkin.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">MetOneX qancha vaqt tejaladi?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  An'anaviy usulda qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish 3-5 kun vaqt oladi. MetOneX yordamida bu jarayon atigi 30 daqiqaga qisqaradi. Bu esa 95% vaqt tejalash demakdir.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">MetOneX bepulmi?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  Ha, MetOneX platformasi foydalanish uchun to'liq bepul. Siz materiallarni qidirish, narxlarni taqqoslash va yetkazib beruvchilar bilan bog'lanish imkoniyatiga ega bo'lasiz. Faqat muvaffaqiyatli xaridlar uchun kichik komissiya olinadi. Hech qanday yashirin to'lovlar yo'q.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">Qanday materiallar mavjud?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  MetOneX platformasida barcha turdagi qurilish materiallari mavjud: sement, g'isht, beton, metall, yog'och, izolyatsiya materiallari, elektr materiallari, sanitariya mahsulotlari va boshqalar. Platforma doimiy ravishda yangilanib boriladi va yangi materiallar qo'shiladi.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">Yetkazib beruvchilar bilan qanday bog'lanish mumkin?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  MetOneX platformasida yetkazib beruvchilar bilan real vaqtda bog'lanish imkoniyati mavjud. Siz materialni tanlaganingizdan so'ng, platforma orqali to'g'ridan-to'g'ri yetkazib beruvchi bilan aloqa qilishingiz mumkin. Avtomatik matnlashtirish va xabarlarni boshqarish funksiyalari ham mavjud.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">MetOneX qayerda ishlaydi?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  MetOneX hozirda O'zbekiston bo'ylab ishlaydi va tez orada boshqa mamlakatlarga ham kengaytiriladi. Platforma web-versiyada va mobil ilovada mavjud. Siz istalgan joydan va istalgan vaqtda foydalanishingiz mumkin.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Footer Section - Kong.ai Style -->
       <footer
-          class="relative bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white py-12 mt-20 overflow-hidden"
+          class="relative bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white py-12  overflow-hidden"
         >
           <!-- Beautiful Background Decorations -->
           <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -4351,17 +4628,49 @@
         observer.observe(el);
       });
 
+      // FAQ Accordion Functionality
+      function initFAQ() {
+        document.querySelectorAll(".faq-question").forEach((question) => {
+          question.addEventListener("click", function () {
+            const faqItem = this.closest(".faq-item");
+            const isActive = faqItem.classList.contains("active");
+            
+            // Close all FAQ items
+            document.querySelectorAll(".faq-item").forEach((item) => {
+              item.classList.remove("active");
+              const answer = item.querySelector(".faq-answer");
+              if (answer) {
+                answer.classList.add("hidden");
+              }
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+              faqItem.classList.add("active");
+              const answer = faqItem.querySelector(".faq-answer");
+              if (answer) {
+                answer.classList.remove("hidden");
+              }
+            }
+          });
+        });
+      }
+
       // Initialize all functions after DOM ready - Optimized
       if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", function () {
           initScrollProgress();
           initNavbarScroll();
           initCustomCursor();
+          initMetOneXCarousel();
+          initFAQ();
         });
       } else {
         initScrollProgress();
         initNavbarScroll();
         initCustomCursor();
+        initMetOneXCarousel();
+        initFAQ();
       }
 
       // Chatbot Modal Functionality
@@ -6017,12 +6326,35 @@
         }
       });
       
+      // Scroll to Working Application section
+      function scrollToWorkingApp() {
+        const appSection = document.getElementById("working-app-section");
+        if (appSection) {
+          appSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          // Fallback: Find by text content
+          const allH3 = document.querySelectorAll("h3.text-3xl.font-black");
+          allH3.forEach((h3) => {
+            const text = h3.textContent.trim();
+            if (text.includes("Ishlayotgan Ilova") || text.includes("Рабочее Приложение") || text.includes("Working Application")) {
+              h3.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        }
+      }
+
       // Also translate on window load to catch all content
       window.addEventListener("load", function () {
         setTimeout(() => {
           translatePage(currentLanguage);
           translateAllText(currentLanguage);
         }, 500);
+        
+        // Add click handler for scroll button
+        const scrollBtn = document.getElementById("scroll-to-app-btn");
+        if (scrollBtn) {
+          scrollBtn.addEventListener("click", scrollToWorkingApp);
+        }
       });
     </script>
 
