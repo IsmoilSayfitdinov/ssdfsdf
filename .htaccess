@@ -1,0 +1,4 @@
+# Rewrite rule for /demo to demo.html
+RewriteEngine On
+RewriteRule ^demo$ demo.html [L]
+

@@ -1,0 +1,4952 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI-powered construction marketplace connecting builders with verified suppliers in 30 minutes. Transform the $3.3 trillion construction market."
+    />
+    <meta
+      name="keywords"
+      content="construction, marketplace, AI, suppliers, builders, B2B, construction materials"
+    />
+    <meta name="author" content="MetOneX" />
+    <meta
+      property="og:title"
+      content="MetOneX - AI-Powered Construction Marketplace"
+    />
+    <meta
+      property="og:description"
+      content="AI-powered matching connects builders with verified suppliers in 30 minutes—not 3-5 days."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <title>MetOneX - AI-Powered Construction Marketplace</title>
+    <style>
+      body {
+        font-family: "Arimo", sans-serif;
+      }
+
+      /* Performance Optimizations */
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* GPU Acceleration for Animations */
+      .animate-float,
+      .banner-shape-rotate,
+      .banner-glow-pulse,
+      .banner-particle,
+      .scroll-reveal {
+        will-change: transform, opacity;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+
+      /* Optimize Background Animations */
+      .banner-gradient-shift,
+      .gradient-animated {
+        will-change: background-position;
+      }
+
+      /* Reduce Repaints */
+      .demo-card,
+      .btn-gradient {
+        will-change: transform;
+      }
+
+      /* Grid Pattern Background */
+      .bg-grid-pattern {
+        background-image: linear-gradient(
+            to right,
+            rgba(2, 6, 111, 0.1) 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, rgba(2, 6, 111, 0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      /* Animatsiyalar */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* Loading Screen Animations - Professional Business Style */
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse-ring {
+        0% {
+          transform: translate(-50%, -50%) scale(0.8);
+          opacity: 1;
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.1);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      @keyframes float-up {
+        0% {
+          transform: translateY(0) scale(0.8);
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(-20px) scale(1);
+        }
+        100% {
+          transform: translateY(-50px) scale(0.6);
+          opacity: 0;
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+
+      @keyframes dots-bounce {
+        0%,
+        80%,
+        100% {
+          transform: scale(0);
+          opacity: 0.5;
+        }
+        40% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-top-color: white;
+        border-right-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      .loading-pulse-ring {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 3px solid rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      .loading-pulse-ring:nth-child(1) {
+        width: 100px;
+        height: 100px;
+        animation-delay: 0s;
+      }
+
+      .loading-pulse-ring:nth-child(2) {
+        width: 140px;
+        height: 140px;
+        border-width: 2px;
+        animation-delay: 0.5s;
+      }
+
+      .loading-pulse-ring:nth-child(3) {
+        width: 180px;
+        height: 180px;
+        border-width: 2px;
+        animation-delay: 1s;
+      }
+
+      .loading-dot {
+        width: 12px;
+        height: 12px;
+        background: white;
+        border-radius: 50%;
+        display: inline-block;
+        animation: dots-bounce 1.4s ease-in-out infinite;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      .loading-dot:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .loading-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .loading-dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      #loading-screen {
+        animation: fadeOut 0.5s ease-out forwards;
+        animation-delay: 2.5s;
+      }
+
+      #main-content {
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-pulse-slow {
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      .gradient-animated {
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+      }
+
+      /* Banner Beautiful Animations */
+      @keyframes float-up-down {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-30px) rotate(5deg);
+        }
+      }
+
+      @keyframes rotate-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.1);
+        }
+      }
+
+      @keyframes shimmer-wave {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      @keyframes particles-float {
+        0% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(50px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes gradient-rotate {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .banner-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        border-radius: 50%;
+        animation: particles-float 15s linear infinite;
+        box-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+      }
+
+      .banner-shape-rotate {
+        animation: rotate-slow 20s linear infinite;
+      }
+
+      .banner-glow-pulse {
+        animation: pulse-glow 4s ease-in-out infinite;
+      }
+
+      .banner-gradient-shift {
+        background-size: 200% 200%;
+        /* Animation removed for performance */
+      }
+
+      /* ========== IMPROVEMENTS - All New Features ========== */
+
+      /* 1. Smooth Scroll Behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* 2. Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 150px;
+        right: 54px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #1e3a8a, #2563eb, #3b82f6);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+      }
+
+      .scroll-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .scroll-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.6);
+      }
+
+      /* 3. Toast Notifications */
+      .toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10001;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .toast {
+        min-width: 300px;
+        padding: 16px 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: toastSlideIn 0.3s ease;
+        border-left: 4px solid;
+      }
+
+      .toast.success {
+        border-left-color: #10b981;
+      }
+
+      .toast.error {
+        border-left-color: #ef4444;
+      }
+
+      .toast.info {
+        border-left-color: #3b82f6;
+      }
+
+      .toast.warning {
+        border-left-color: #f59e0b;
+      }
+
+      @keyframes toastSlideIn {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes toastSlideOut {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+      }
+
+      .toast.hide {
+        animation: toastSlideOut 0.3s ease forwards;
+      }
+
+      /* 4. Skeleton Loaders */
+      .skeleton {
+        background: linear-gradient(
+          90deg,
+          #f0f0f0 25%,
+          #e0e0e0 50%,
+          #f0f0f0 75%
+        );
+        background-size: 200% 100%;
+        animation: skeleton-loading 1.5s ease-in-out infinite;
+        border-radius: 8px;
+      }
+
+      @keyframes skeleton-loading {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      /* 5. Number Counter Animation */
+      .counter-number {
+        display: inline-block;
+        font-weight: 900;
+      }
+
+      /* 6. Glassmorphism Effect */
+      .glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .glass-dark {
+        background: rgba(30, 58, 138, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(37, 99, 235, 0.2);
+      }
+
+      /* 7. Button Ripple Effect */
+      .ripple {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ripple::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .ripple:active::after {
+        width: 300px;
+        height: 300px;
+      }
+
+      /* 8. Form Animations */
+      .form-group {
+        position: relative;
+        margin-bottom: 24px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background: white;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .form-label {
+        position: absolute;
+        left: 16px;
+        top: 12px;
+        color: #6b7280;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        background: white;
+        padding: 0 4px;
+      }
+
+      .form-input:focus + .form-label,
+      .form-input:not(:placeholder-shown) + .form-label {
+        top: -10px;
+        left: 12px;
+        font-size: 12px;
+        color: #2563eb;
+        font-weight: 600;
+      }
+
+      /* 9. Image Zoom Effect */
+      .image-zoom {
+        overflow: hidden;
+        border-radius: 12px;
+      }
+
+      .image-zoom img {
+        transition: transform 0.5s ease;
+        will-change: transform;
+        transform: translateZ(0);
+      }
+
+      .image-zoom:hover img {
+        transform: scale(1.1) translateZ(0);
+      }
+
+      /* 10. Parallax Effect */
+      .parallax {
+        transform: translateZ(0);
+        will-change: transform;
+      }
+
+      /* 11. Text Typing Animation */
+      .typing-text {
+        overflow: hidden;
+        border-right: 2px solid;
+        white-space: nowrap;
+        animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #2563eb;
+        }
+      }
+
+      /* 12. 3D Card Effects */
+      .card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        perspective: 1000px;
+      }
+
+      .card-3d:hover {
+        transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
+      }
+
+      /* 13. Tooltip */
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip .tooltip-text {
+        visibility: hidden;
+        width: 200px;
+        background-color: #1e3a8a;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        padding: 8px 12px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .tooltip .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #1e3a8a transparent transparent transparent;
+      }
+
+      .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* 14. Loading States */
+      .btn-loading {
+        position: relative;
+        pointer-events: none;
+        opacity: 0.7;
+      }
+
+      .btn-loading::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        margin-left: -8px;
+        margin-top: -8px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 0.8s linear infinite;
+      }
+
+      /* 15. Text Reveal on Scroll */
+      .text-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .text-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 16. Dark Mode Support */
+      @media (prefers-color-scheme: dark) {
+        .dark-mode-auto {
+          background: #0f172a;
+          color: #f1f5f9;
+        }
+      }
+
+      /* 17. Reduced Motion Support */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* Card hover effects */
+      .demo-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .demo-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .demo-card:hover::before {
+        left: 100%;
+      }
+
+      .demo-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(2, 6, 111, 0.15);
+      }
+
+      /* Video container */
+      .video-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+      }
+
+      .video-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(2, 6, 111, 0.08) 0%,
+          rgba(30, 64, 175, 0.08) 50%,
+          rgba(2, 6, 111, 0.08) 100%
+        );
+        pointer-events: none;
+      }
+
+      /* Tech stack cards */
+      .tech-card {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .tech-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        border-color: #1e40af;
+        box-shadow: 0 8px 20px rgba(2, 6, 111, 0.15);
+      }
+
+      /* Chatbot messages */
+      .chat-message {
+        animation: fadeInUp 0.3s ease-out;
+      }
+
+      /* Robot Avatar Animations - Futuristic White Robot */
+      @keyframes robotFloat {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      @keyframes robotHandWave {
+        0%,
+        100% {
+          transform: rotate(0deg) translateY(0px);
+        }
+        25% {
+          transform: rotate(20deg) translateY(-3px);
+        }
+        50% {
+          transform: rotate(-15deg) translateY(-2px);
+        }
+        75% {
+          transform: rotate(10deg) translateY(-1px);
+        }
+      }
+
+      @keyframes robotMouth {
+        0%,
+        100% {
+          width: 24px;
+          height: 10px;
+          border-radius: 0 0 12px 12px;
+        }
+        50% {
+          width: 28px;
+          height: 14px;
+          border-radius: 0 0 14px 14px;
+        }
+      }
+
+      @keyframes robotWave {
+        0%,
+        100% {
+          transform: rotate(0deg) translateY(0px);
+        }
+        25% {
+          transform: rotate(25deg) translateY(-5px);
+        }
+        50% {
+          transform: rotate(-20deg) translateY(-3px);
+        }
+        75% {
+          transform: rotate(15deg) translateY(-2px);
+        }
+      }
+
+      @keyframes robotGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
+            0 0 40px rgba(59, 130, 246, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(59, 130, 246, 0.8),
+            0 0 60px rgba(59, 130, 246, 0.5);
+        }
+      }
+
+      .robot-avatar {
+        animation: robotFloat 3s ease-in-out infinite;
+      }
+
+      .robot-hand-left {
+        animation: robotHandWave 2s ease-in-out infinite;
+        transform-origin: top center;
+      }
+
+      .robot-hand-right {
+        animation: robotWave 2s ease-in-out infinite 0.5s;
+        transform-origin: top center;
+      }
+
+      .robot-speech-bubble {
+        animation: fadeInUp 0.5s ease-out;
+      }
+
+      @keyframes robotFadeOut {
+        from {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: scale(0.8) translateY(-20px);
+        }
+      }
+
+      @keyframes robotFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8) translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .robot-fade-out {
+        animation: robotFadeOut 0.5s ease-out forwards;
+      }
+
+      .robot-fade-in {
+        animation: robotFadeIn 0.6s ease-out forwards;
+      }
+
+      .robot-mouth {
+        animation: robotMouth 1.5s ease-in-out infinite;
+      }
+
+      .robot-speaking .robot-mouth {
+        animation: robotMouth 0.6s ease-in-out infinite;
+      }
+
+      .robot-glow-ring {
+        animation: robotGlow 2s ease-in-out infinite;
+      }
+
+      /* Scroll animations */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Icon animations */
+      .icon-bounce {
+        display: inline-block;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* Custom Cursor - Beautiful Design */
+      .custom-cursor {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #2563eb;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%) translateZ(0);
+        transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+        mix-blend-mode: difference;
+        will-change: transform;
+        backface-visibility: hidden;
+        left: 0;
+        top: 0;
+      }
+
+      .custom-cursor-dot {
+        width: 6px;
+        height: 6px;
+        background: #3b82f6;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%) translateZ(0);
+        transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+        mix-blend-mode: difference;
+        will-change: transform;
+        backface-visibility: hidden;
+        left: 0;
+        top: 0;
+      }
+
+      .custom-cursor-trail {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(37, 99, 235, 0.3);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%) translateZ(0);
+        transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+        mix-blend-mode: difference;
+        will-change: transform;
+        backface-visibility: hidden;
+        left: 0;
+        top: 0;
+      }
+
+      .custom-cursor.hover {
+        width: 50px;
+        height: 50px;
+        border-color: #3b82f6;
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .custom-cursor-dot.hover {
+        width: 8px;
+        height: 8px;
+        background: #2563eb;
+      }
+
+      .custom-cursor-trail.hover {
+        width: 60px;
+        height: 60px;
+        border-color: rgba(59, 130, 246, 0.5);
+      }
+
+      /* Scroll Progress Bar */
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(to right, #2563eb, #3b82f6, #1e3a8a);
+        z-index: 10000;
+        transition: width 0.1s ease;
+        box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+      }
+
+      /* Navbar Styles - Beautiful Design */
+      header {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+
+      header.scrolled {
+        background: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+        border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+      }
+
+      /* Scroll Reveal Animations */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: linear-gradient(to bottom, #f8faff, #ffffff);
+        border-left: 1px solid rgba(37, 99, 235, 0.1);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #2563eb, #3b82f6, #1e3a8a);
+        border-radius: 10px;
+        border: 2px solid #f8faff;
+        box-shadow: inset 0 0 6px rgba(37, 99, 235, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #3b82f6, #2563eb, #3b82f6);
+        box-shadow: inset 0 0 8px rgba(59, 130, 246, 0.5);
+        transform: scaleX(1.1);
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #2563eb #f8faff;
+      }
+
+      /* Button hover effects - Professional Business Design */
+      .btn-gradient {
+        background: linear-gradient(
+          135deg,
+          #02066f 0%,
+          #1e40af 50%,
+          #02066f 100%
+        );
+        background-size: 200% 200%;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-gradient.ripple {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-gradient::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn-gradient:hover::before {
+        left: 100%;
+      }
+
+      .btn-gradient:hover {
+        background-position: right center;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(2, 6, 111, 0.3);
+      }
+
+      /* Badge styles - Professional Business Design */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        background: linear-gradient(
+          135deg,
+          #02066f 0%,
+          #1e40af 50%,
+          #02066f 100%
+        );
+        color: white;
+        box-shadow: 0 2px 8px rgba(2, 6, 111, 0.2);
+      }
+
+      /* Code block styling */
+      .code-block {
+        position: relative;
+        overflow-x: auto;
+      }
+
+      .code-block::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #02066f, #1e40af, #02066f);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Screen - Professional Business Style -->
+    <div
+      id="loading-screen"
+      class="fixed inset-0 z-[9999] bg-gradient-to-br from-[#1E3A8A] via-[#2563EB] to-[#3B82F6] flex items-center justify-center"
+    >
+      <div class="text-center relative">
+        <!-- Pulse Rings Animation -->
+        <div
+          class="relative flex items-center justify-center mb-12"
+          style="width: 200px; height: 200px; margin: 0 auto"
+        >
+          <div
+            class="loading-pulse-ring absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          ></div>
+          <div
+            class="loading-pulse-ring absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          ></div>
+          <div
+            class="loading-pulse-ring absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          ></div>
+
+          <!-- Spinning Circle -->
+          <div
+            class="loading-spinner absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          ></div>
+
+          <!-- Inner Glow -->
+          <div
+            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-white rounded-full opacity-20 animate-pulse-slow"
+          ></div>
+        </div>
+
+        <!-- Loading Text with Shimmer Effect -->
+        <div class="text-white relative">
+          <h2
+            class="text-4xl font-black mb-6 tracking-tight"
+            id="loading-text"
+            style="
+              background: linear-gradient(
+                90deg,
+                #ffffff 0%,
+                rgba(255, 255, 255, 0.8) 50%,
+                #ffffff 100%
+              );
+              background-size: 200% 100%;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              background-clip: text;
+              animation: shimmer 2s linear infinite;
+            "
+          >
+            Yuklanmoqda...
+          </h2>
+
+          <!-- Animated Dots -->
+          <div class="flex items-center justify-center gap-3 mt-6">
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+            <div class="loading-dot"></div>
+          </div>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div
+            class="absolute top-1/4 left-1/4 w-2 h-2 bg-white rounded-full opacity-60"
+            style="
+              animation: float-up 3s ease-in-out infinite;
+              animation-delay: 0s;
+            "
+          ></div>
+          <div
+            class="absolute top-1/3 right-1/4 w-2 h-2 bg-white rounded-full opacity-60"
+            style="
+              animation: float-up 3s ease-in-out infinite;
+              animation-delay: 0.5s;
+            "
+          ></div>
+          <div
+            class="absolute bottom-1/4 left-1/3 w-2 h-2 bg-white rounded-full opacity-60"
+            style="
+              animation: float-up 3s ease-in-out infinite;
+              animation-delay: 1s;
+            "
+          ></div>
+          <div
+            class="absolute bottom-1/3 right-1/3 w-2 h-2 bg-white rounded-full opacity-60"
+            style="
+              animation: float-up 3s ease-in-out infinite;
+              animation-delay: 1.5s;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+    <!-- ChatBot Floating Button - Must be direct child of body, outside any transform containers -->
+    <div
+      id="open-chatbot-from-card"
+      class="fixed right-10 bottom-16 z-[9998] px-6 py-5 bg-gradient-to-r from-[#2563EB] to-[#3B82F6] text-white font-bold hover:shadow-lg transition-all duration-300 flex items-center rounded-full justify-center gap-2 shadow-2xl hover:scale-105 cursor-pointer"
+      aria-label="ChatBot ochish"
+      style="box-shadow: 0 10px 40px rgba(37, 99, 235, 0.4)"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"
+        ></path>
+      </svg>
+    </div>
+    <div id="main-content">
+      <!-- Scroll Progress Bar -->
+      <div id="scroll-progress"></div>
+
+      <header
+        id="navbar"
+        class="border-b bg-white/90 backdrop-blur-xl sticky top-0 z-40 shadow-sm transition-all duration-300"
+      >
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between">
+            <a
+              href="index.html"
+              class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all hover:bg-[#F3F4F6] h-9 px-4 py-2 gap-2 text-[#374151] hover:text-[#02066F]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="m12 19-7-7 7-7"></path>
+                <path d="M19 12H5"></path>
+              </svg>
+              Orqaga
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section - Kong.ai Style -->
+      <div
+        class="relative overflow-hidden bg-gradient-to-br from-[#F8FAFF] via-white to-[#F0F4FF] py-16 sm:py-24 banner-gradient-shift"
+        style="
+          background: linear-gradient(
+            135deg,
+            #f8faff 0%,
+            #ffffff 25%,
+            #f0f4ff 50%,
+            #ffffff 75%,
+            #f8faff 100%
+          );
+        "
+      >
+        <!-- Beautiful Background Decorations -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <!-- Animated Gradient Orbs with Glow -->
+          <div
+            class="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-[#2563EB]/25 to-[#3B82F6]/15 rounded-full blur-3xl banner-glow-pulse"
+            style="animation-delay: 0s"
+          ></div>
+          <div
+            class="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/20 to-[#2563EB]/15 rounded-full blur-3xl banner-glow-pulse"
+            style="animation-delay: 1s"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/4 w-64 h-64 bg-gradient-to-br from-[#3B82F6]/18 to-[#2563EB]/12 rounded-full blur-2xl banner-glow-pulse"
+            style="animation-delay: 2s"
+          ></div>
+          <div
+            class="absolute top-1/3 right-1/3 w-72 h-72 bg-gradient-to-br from-[#1E3A8A]/15 to-[#3B82F6]/10 rounded-full blur-3xl banner-glow-pulse"
+            style="animation-delay: 0.5s"
+          ></div>
+          <div
+            class="absolute bottom-1/3 right-1/4 w-56 h-56 bg-gradient-to-br from-[#2563EB]/20 to-[#1E3A8A]/12 rounded-full blur-2xl banner-glow-pulse"
+            style="animation-delay: 1.5s"
+          ></div>
+
+          <!-- Animated Mesh Gradient Background -->
+          <div
+            class="absolute inset-0 opacity-40"
+            style="
+              background-image: radial-gradient(
+                  circle at 20% 30%,
+                  rgba(37, 99, 235, 0.15) 0%,
+                  transparent 50%
+                ),
+                radial-gradient(
+                  circle at 80% 70%,
+                  rgba(59, 130, 246, 0.15) 0%,
+                  transparent 50%
+                ),
+                radial-gradient(
+                  circle at 50% 50%,
+                  rgba(30, 58, 138, 0.1) 0%,
+                  transparent 50%
+                ),
+                radial-gradient(
+                  circle at 10% 80%,
+                  rgba(37, 99, 235, 0.12) 0%,
+                  transparent 50%
+                ),
+                radial-gradient(
+                  circle at 90% 20%,
+                  rgba(59, 130, 246, 0.12) 0%,
+                  transparent 50%
+                );
+              background-size: 200% 200%;
+            "
+          ></div>
+
+          <!-- Grid Pattern Overlay -->
+          <div
+            class="absolute inset-0 bg-grid-pattern opacity-20"
+            style="animation: shimmer-wave 3s linear infinite"
+          ></div>
+
+          <!-- Animated SVG Lines with Multiple Paths -->
+          <svg
+            class="absolute inset-0 w-full h-full opacity-15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient
+                id="bannerLineGradient1"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #2563eb; stop-opacity: 0.4"
+                />
+                <stop
+                  offset="50%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.6"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #2563eb; stop-opacity: 0.4"
+                />
+              </linearGradient>
+              <linearGradient
+                id="bannerLineGradient2"
+                x1="0%"
+                y1="100%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.3"
+                />
+                <stop
+                  offset="50%"
+                  style="stop-color: #1e3a8a; stop-opacity: 0.5"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.3"
+                />
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,100 Q250,50 500,100 T1000,100 L1200,100"
+              stroke="url(#bannerLineGradient1)"
+              stroke-width="2"
+              fill="none"
+              class="animate-float"
+              style="animation-duration: 8s"
+            />
+            <path
+              d="M0,300 Q300,250 600,300 T1200,300 L1400,300"
+              stroke="url(#bannerLineGradient2)"
+              stroke-width="2"
+              fill="none"
+              class="animate-float"
+              style="animation-duration: 10s; animation-delay: 1s"
+            />
+            <path
+              d="M0,500 Q200,450 400,500 T800,500 L1000,500"
+              stroke="url(#bannerLineGradient1)"
+              stroke-width="2"
+              fill="none"
+              class="animate-float"
+              style="animation-duration: 12s; animation-delay: 2s"
+            />
+            <path
+              d="M0,200 Q400,150 800,200 T1600,200"
+              stroke="url(#bannerLineGradient2)"
+              stroke-width="1.5"
+              fill="none"
+              class="animate-float"
+              style="animation-duration: 9s; animation-delay: 0.5s"
+            />
+            <path
+              d="M0,400 Q350,350 700,400 T1400,400"
+              stroke="url(#bannerLineGradient1)"
+              stroke-width="1.5"
+              fill="none"
+              class="animate-float"
+              style="animation-duration: 11s; animation-delay: 1.5s"
+            />
+          </svg>
+
+          <!-- Floating Geometric Shapes with Rotation -->
+          <div
+            class="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-[#2563EB]/25 rounded-lg transform rotate-45 banner-shape-rotate"
+            style="box-shadow: 0 0 30px rgba(37, 99, 235, 0.3)"
+          ></div>
+          <div
+            class="absolute bottom-1/4 left-1/4 w-24 h-24 border-2 border-[#3B82F6]/25 rounded-full animate-float"
+            style="
+              animation-duration: 10s;
+              animation-delay: 1s;
+              box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+            "
+          ></div>
+          <div
+            class="absolute top-1/2 right-1/3 w-20 h-20 border-2 border-[#1E3A8A]/20 transform rotate-12 banner-shape-rotate"
+            style="
+              animation-duration: 15s;
+              animation-delay: 2s;
+              box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+            "
+          ></div>
+          <div
+            class="absolute top-1/5 left-1/3 w-16 h-16 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45 animate-float"
+            style="
+              animation-duration: 8s;
+              animation-delay: 0.5s;
+              box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+            "
+          ></div>
+          <div
+            class="absolute bottom-1/5 right-1/5 w-28 h-28 border-2 border-[#3B82F6]/20 rounded-full banner-shape-rotate"
+            style="
+              animation-duration: 18s;
+              animation-delay: 1.5s;
+              box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+            "
+          ></div>
+
+          <!-- Floating Particles - Removed for performance -->
+
+          <!-- Shimmer Effect Overlay -->
+          <div
+            class="absolute inset-0 opacity-5"
+            style="
+              background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                transparent 100%
+              );
+              animation: shimmer-wave 4s linear infinite;
+            "
+          ></div>
+        </div>
+
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+          <div class="text-center space-y-8 scroll-reveal">
+            <!-- Badge with Emoji -->
+
+            <!-- Main Title - Kong.ai Style -->
+            <h1
+              class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[1.1] text-[#02066F]"
+            >
+              Qurilish materiallarini topish va yetkazib beruvchilar bilan
+              bog'lanishni
+              <span
+                class="bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent"
+                >30 daqiqaga</span
+              >
+              qisqartiring
+            </h1>
+
+            <!-- Subtitle -->
+            <p
+              class="text-xl sm:text-2xl text-[#374151] max-w-4xl mx-auto leading-relaxed font-medium"
+            >
+              AI yordamida qurilish materiallarini topish va yetkazib
+              beruvchilar bilan bog'lanish. 10 soniyadan keyin siz yuzlab
+              materiallarni topasiz.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card Section with Beautiful Background -->
+      <div class="relative overflow-hidden mt-20">
+        <!-- Beautiful Background Decorations - Static (No Animations) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <!-- Static Gradient Orbs -->
+          <div
+            class="absolute top-10 right-20 w-96 h-96 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/12 rounded-full blur-3xl"
+            style="animation-delay: 0s"
+          ></div>
+          <div
+            class="absolute bottom-10 left-20 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/18 to-[#2563EB]/12 rounded-full blur-3xl"
+            style="animation-delay: 1s"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-br from-[#3B82F6]/15 to-[#2563EB]/10 rounded-full blur-3xl"
+            style="animation-delay: 2s; transform: translate(-50%, -50%)"
+          ></div>
+          <div
+            class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-[#2563EB]/12 to-[#1E3A8A]/8 rounded-full blur-2xl"
+            style="animation-delay: 0.5s"
+          ></div>
+          <div
+            class="absolute bottom-1/4 right-1/4 w-88 h-88 bg-gradient-to-br from-[#3B82F6]/14 to-[#2563EB]/9 rounded-full blur-3xl"
+            style="animation-delay: 1.5s"
+          ></div>
+          <div
+            class="absolute top-3/4 right-1/3 w-56 h-56 bg-gradient-to-br from-[#1E3A8A]/10 to-[#3B82F6]/7 rounded-full blur-2xl"
+            style="animation-delay: 2.5s"
+          ></div>
+
+          <!-- Mesh Gradient Pattern -->
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: radial-gradient(
+                  circle at 30% 40%,
+                  rgba(37, 99, 235, 0.06) 0%,
+                  transparent 50%
+                ),
+                radial-gradient(
+                  circle at 70% 60%,
+                  rgba(59, 130, 246, 0.06) 0%,
+                  transparent 50%
+                ),
+                radial-gradient(
+                  circle at 50% 50%,
+                  rgba(30, 58, 138, 0.04) 0%,
+                  transparent 50%
+                );
+            "
+          ></div>
+
+          <!-- Decorative Dots Pattern - Enhanced -->
+          <div
+            class="absolute inset-0 opacity-15"
+            style="
+              background-image: radial-gradient(
+                circle,
+                rgba(37, 99, 235, 0.3) 1px,
+                transparent 1px
+              );
+              background-size: 50px 50px;
+            "
+          ></div>
+
+          <!-- Grid Pattern Overlay -->
+          <div class="absolute inset-0 bg-grid-pattern opacity-15"></div>
+
+          <!-- Animated Wave Pattern -->
+          <div
+            class="absolute inset-0 opacity-5"
+            style="
+              background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(37, 99, 235, 0.1) 10px,
+                rgba(37, 99, 235, 0.1) 20px
+              );
+            "
+          ></div>
+
+          <!-- Floating Geometric Shapes - Enhanced -->
+          <div
+            class="absolute top-1/4 right-1/3 w-28 h-28 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45"
+            style="
+              box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+              animation-duration: 15s;
+            "
+          ></div>
+          <div
+            class="absolute bottom-1/3 left-1/4 w-24 h-24 border-2 border-[#3B82F6]/20 rounded-full"
+            style="box-shadow: 0 0 25px rgba(59, 130, 246, 0.3)"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/2 w-20 h-20 border-2 border-[#1E3A8A]/15 transform rotate-12"
+            style="
+              animation-duration: 20s;
+              animation-delay: 2s;
+              box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+              transform: translate(-50%, -50%);
+            "
+          ></div>
+          <div
+            class="absolute top-1/5 right-1/5 w-16 h-16 border-2 border-[#2563EB]/15 rounded-lg transform rotate-45"
+            style="
+              animation-duration: 8s;
+              animation-delay: 0.5s;
+              box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+            "
+          ></div>
+
+          <!-- Animated Lines - Enhanced with More Paths -->
+          <svg
+            class="absolute inset-0 w-full h-full opacity-12"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient
+                id="videoLineGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #2563eb; stop-opacity: 0.2"
+                />
+                <stop
+                  offset="50%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.3"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #2563eb; stop-opacity: 0.2"
+                />
+              </linearGradient>
+              <linearGradient
+                id="videoLineGradient2"
+                x1="0%"
+                y1="100%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.15"
+                />
+                <stop
+                  offset="50%"
+                  style="stop-color: #1e3a8a; stop-opacity: 0.25"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.15"
+                />
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,150 Q250,100 500,150 T1000,150 L1200,150"
+              stroke="url(#videoLineGradient)"
+              stroke-width="2"
+              fill="none"
+            />
+            <path
+              d="M0,350 Q300,300 600,350 T1200,350 L1400,350"
+              stroke="url(#videoLineGradient2)"
+              stroke-width="2"
+              fill="none"
+            />
+            <path
+              d="M0,250 Q400,200 800,250 T1600,250"
+              stroke="url(#videoLineGradient)"
+              stroke-width="1.5"
+              fill="none"
+            />
+            <path
+              d="M0,450 Q350,400 700,450 T1400,450"
+              stroke="url(#videoLineGradient2)"
+              stroke-width="1.5"
+              fill="none"
+            />
+          </svg>
+
+          <!-- Floating Particles - Removed for performance -->
+
+          <!-- Shimmer Effect -->
+          <div
+            class="absolute inset-0 opacity-3"
+            style="
+              background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                transparent 100%
+              );
+            "
+          ></div>
+        </div>
+
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+          <div
+            class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300 scroll-reveal"
+          >
+            <!-- Card Header - Kong.ai Style -->
+            <div
+              class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
+            >
+              <div class="flex items-center gap-4">
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-black text-[#02066F]">Video</h3>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div>
+              <div
+                class="aspect-video rounded-2xl overflow-hidden relative shadow-2xl border-2 border-[#E5E7EB] bg-black"
+              >
+                <iframe
+                  class="w-full h-full"
+                  src="https://www.youtube.com/embed/NNS5Piu-EII"
+                  title="MetOneX Demo Video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Demo Video Card -->
+
+        <!-- Benefits Section - Kong.ai Style -->
+        <div
+          class="relative bg-gradient-to-br mt-20 from-white via-[#F8FAFF] to-[#F0F4FF] py-20 overflow-hidden"
+        >
+          <!-- Beautiful Background Decorations - Enhanced -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Animated Gradient Orbs - More Orbs -->
+            <div
+              class="absolute top-10 right-20 w-96 h-96 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/12 rounded-full blur-3xl"
+              style="animation-delay: 0s"
+            ></div>
+            <div
+              class="absolute bottom-10 left-20 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/18 to-[#2563EB]/12 rounded-full blur-3xl"
+              style="animation-delay: 1s"
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-br from-[#3B82F6]/15 to-[#2563EB]/10 rounded-full blur-3xl"
+              style="animation-delay: 2s; transform: translate(-50%, -50%)"
+            ></div>
+            <div
+              class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-[#2563EB]/12 to-[#1E3A8A]/8 rounded-full blur-2xl"
+              style="animation-delay: 0.5s"
+            ></div>
+            <div
+              class="absolute bottom-1/4 right-1/4 w-88 h-88 bg-gradient-to-br from-[#3B82F6]/14 to-[#2563EB]/9 rounded-full blur-3xl"
+              style="animation-delay: 1.5s"
+            ></div>
+            <div
+              class="absolute top-3/4 right-1/3 w-56 h-56 bg-gradient-to-br from-[#1E3A8A]/10 to-[#3B82F6]/7 rounded-full blur-2xl"
+              style="animation-delay: 2.5s"
+            ></div>
+
+            <!-- Mesh Gradient Pattern -->
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: radial-gradient(
+                    circle at 20% 50%,
+                    rgba(37, 99, 235, 0.08) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 80% 80%,
+                    rgba(59, 130, 246, 0.08) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 40% 20%,
+                    rgba(30, 58, 138, 0.06) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
+
+            <!-- Decorative Dots Pattern -->
+            <div
+              class="absolute inset-0 opacity-20"
+              style="
+                background-image: radial-gradient(
+                  circle,
+                  rgba(37, 99, 235, 0.3) 1px,
+                  transparent 1px
+                );
+                background-size: 50px 50px;
+              "
+            ></div>
+
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+
+            <!-- Floating Geometric Shapes - Enhanced -->
+            <div
+              class="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-[#2563EB]/25 rounded-lg transform rotate-45"
+              style="
+                box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+                animation-duration: 15s;
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/4 left-1/4 w-24 h-24 border-2 border-[#3B82F6]/25 rounded-full"
+              style="box-shadow: 0 0 25px rgba(59, 130, 246, 0.3)"
+            ></div>
+            <div
+              class="absolute top-1/3 left-1/3 w-20 h-20 border-2 border-[#1E3A8A]/20 transform rotate-12"
+              style="box-shadow: 0 0 20px rgba(30, 58, 138, 0.3)"
+            ></div>
+            <div
+              class="absolute top-1/5 right-1/5 w-16 h-16 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45"
+              style="
+                animation-duration: 8s;
+                animation-delay: 0.5s;
+                box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/5 right-1/5 w-28 h-28 border-2 border-[#3B82F6]/20 rounded-full"
+              style="
+                animation-duration: 18s;
+                animation-delay: 1.5s;
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+              "
+            ></div>
+
+            <!-- Animated Lines - Enhanced -->
+            <svg
+              class="absolute inset-0 w-full h-full opacity-12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="benefitsLineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #2563eb; stop-opacity: 0.25"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.35"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #2563eb; stop-opacity: 0.25"
+                  />
+                </linearGradient>
+                <linearGradient
+                  id="benefitsLineGradient2"
+                  x1="0%"
+                  y1="100%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.2"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #1e3a8a; stop-opacity: 0.3"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.2"
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,200 Q300,150 600,200 T1200,200 L1400,200"
+                stroke="url(#benefitsLineGradient)"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M0,400 Q400,350 800,400 T1600,400 L1800,400"
+                stroke="url(#benefitsLineGradient2)"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M0,300 Q350,250 700,300 T1400,300"
+                stroke="url(#benefitsLineGradient)"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M0,500 Q450,450 900,500 T1800,500"
+                stroke="url(#benefitsLineGradient2)"
+                stroke-width="1.5"
+                fill="none"
+              />
+            </svg>
+
+            <!-- Floating Particles - Removed (Only in Banner) -->
+
+            <!-- Shimmer Effect -->
+            <div
+              class="absolute inset-0 opacity-3"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent 0%,
+                  rgba(255, 255, 255, 0.2) 50%,
+                  transparent 100%
+                );
+              "
+            ></div>
+
+            <!-- Animated Wave Pattern -->
+            <div
+              class="absolute inset-0 opacity-5"
+              style="
+                background: repeating-linear-gradient(
+                  45deg,
+                  transparent,
+                  transparent 10px,
+                  rgba(37, 99, 235, 0.1) 10px,
+                  rgba(37, 99, 235, 0.1) 20px
+                );
+              "
+            ></div>
+          </div>
+          <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+              <h2
+                class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#02066F] mb-6 leading-tight"
+              >
+                Eski usul va yangi AI usuli bilan xayrlashing
+              </h2>
+              <p
+                class="text-xl sm:text-2xl text-[#6B7280] max-w-4xl mx-auto leading-relaxed"
+              >
+                Qurilish materiallarini topish va yetkazib beruvchilar bilan
+                bog'lanish jarayoni endi o'zgardi. AI texnologiyasi bilan 30
+                daqiqada natija oling.
+              </p>
+            </div>
+
+            <!-- Comparison Section -->
+            <div class="grid md:grid-cols-2 gap-8 scroll-reveal">
+              <!-- Old Way -->
+              <div
+                class="bg-white rounded-3xl p-10 border-2 border-red-200 shadow-2xl hover:shadow-3xl transition-all duration-300"
+              >
+                <div class="flex items-center gap-4 mb-8">
+                  <div class="text-5xl">🔥</div>
+                  <h3 class="text-3xl font-black text-red-600">Eski Usul</h3>
+                </div>
+                <ul class="space-y-5 text-left mb-8">
+                  <li class="flex items-start gap-4">
+                    <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                    <span class="text-[#374151] text-lg font-medium"
+                      >Qimmat copywriter va dizaynerlarni yollash</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                    <span class="text-[#374151] text-lg font-medium"
+                      >Kunlar yoki haftalar kutish</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                    <span class="text-[#374151] text-lg font-medium"
+                      >Ko'p vaqt va mablag' sarflash</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                    <span class="text-[#374151] text-lg font-medium"
+                      >3-5 kun kutish vaqt</span
+                    >
+                  </li>
+                </ul>
+                <div class="pt-8 border-t-2 border-red-200">
+                  <p class="text-red-600 font-black text-xl">
+                    🔥 VAQT VA MABLAG' YO'QOTISH
+                  </p>
+                </div>
+              </div>
+
+              <!-- New Way -->
+              <div
+                class="bg-gradient-to-br from-[#02066F] to-[#1e40af] rounded-3xl p-10 text-white shadow-2xl transform hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
+              >
+                <div
+                  class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+                ></div>
+                <div class="relative z-10">
+                  <div class="flex items-center gap-4 mb-8">
+                    <div class="text-5xl">🤑</div>
+                    <h3 class="text-3xl font-black">MetOneX AI Usuli</h3>
+                  </div>
+                  <ul class="space-y-5 text-left mb-8">
+                    <li class="flex items-start gap-4">
+                      <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                        >✓</span
+                      >
+                      <span class="text-lg font-medium"
+                        >AI yordamida materiallarni topish</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-4">
+                      <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                        >✓</span
+                      >
+                      <span class="text-lg font-medium"
+                        >30 daqiqada natija olish</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-4">
+                      <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                        >✓</span
+                      >
+                      <span class="text-lg font-medium"
+                        >Vaqt va mablag'ni tejash</span
+                      >
+                    </li>
+                    <li class="flex items-start gap-4">
+                      <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                        >✓</span
+                      >
+                      <span class="text-lg font-medium"
+                        >Real vaqtda natijalar</span
+                      >
+                    </li>
+                  </ul>
+                  <div class="pt-8 border-t-2 border-white/20">
+                    <p class="font-black text-xl">
+                      🤑 REKORD NATIJALAR VA PROFIT
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Section - Kong.ai Style -->
+        <div
+          class="relative bg-gradient-to-br from-[#F0F4FF] via-white to-[#F8FAFF] py-20 overflow-hidden"
+        >
+          <!-- Beautiful Background Decorations - Enhanced -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Animated Gradient Circles - More Orbs -->
+            <div
+              class="absolute top-10 left-10 w-72 h-72 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/12 rounded-full blur-3xl banner-glow-pulse"
+              style="animation-delay: 0s"
+            ></div>
+            <div
+              class="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-tl from-[#1E3A8A]/18 to-[#2563EB]/12 rounded-full blur-3xl banner-glow-pulse"
+              style="animation-delay: 1.5s"
+            ></div>
+            <div
+              class="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-[#3B82F6]/15 to-[#2563EB]/10 rounded-full blur-3xl banner-glow-pulse"
+              style="animation-delay: 2.5s"
+            ></div>
+            <div
+              class="absolute top-1/4 right-1/3 w-56 h-56 bg-gradient-to-br from-[#2563EB]/12 to-[#1E3A8A]/8 rounded-full blur-2xl banner-glow-pulse"
+              style="animation-delay: 0.5s"
+            ></div>
+            <div
+              class="absolute bottom-1/4 left-1/3 w-88 h-88 bg-gradient-to-br from-[#3B82F6]/14 to-[#2563EB]/9 rounded-full blur-3xl banner-glow-pulse"
+              style="animation-delay: 1s"
+            ></div>
+            <div
+              class="absolute top-3/4 left-1/4 w-60 h-60 bg-gradient-to-br from-[#1E3A8A]/10 to-[#3B82F6]/7 rounded-full blur-2xl banner-glow-pulse"
+              style="animation-delay: 2s"
+            ></div>
+
+            <!-- Mesh Gradient Pattern -->
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: radial-gradient(
+                    circle at 20% 50%,
+                    rgba(37, 99, 235, 0.1) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 80% 80%,
+                    rgba(59, 130, 246, 0.1) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 40% 20%,
+                    rgba(30, 58, 138, 0.08) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
+
+            <!-- Decorative Dots Pattern -->
+            <div
+              class="absolute inset-0 opacity-25"
+              style="
+                background-image: radial-gradient(
+                  circle,
+                  rgba(37, 99, 235, 0.4) 1px,
+                  transparent 1px
+                );
+                background-size: 50px 50px;
+              "
+            ></div>
+
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-25"></div>
+
+            <!-- Floating Geometric Shapes - Enhanced -->
+            <div
+              class="absolute top-1/4 left-1/3 w-28 h-28 border-2 border-[#2563EB]/25 rounded-lg transform rotate-45 banner-shape-rotate"
+              style="
+                box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+                animation-duration: 15s;
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/3 right-1/4 w-32 h-32 border-2 border-[#3B82F6]/25 rounded-full animate-float"
+              style="
+                animation-duration: 11s;
+                animation-delay: 1.5s;
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+              "
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 w-20 h-20 border-2 border-[#1E3A8A]/20 transform rotate-12 banner-shape-rotate"
+              style="
+                animation-duration: 20s;
+                animation-delay: 2s;
+                box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+                transform: translate(-50%, -50%);
+              "
+            ></div>
+            <div
+              class="absolute top-1/5 right-1/5 w-16 h-16 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45"
+              style="
+                animation-duration: 8s;
+                animation-delay: 0.5s;
+                box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+              "
+            ></div>
+
+            <!-- Animated Lines - Enhanced -->
+            <svg
+              class="absolute inset-0 w-full h-full opacity-12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="statsLineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #2563eb; stop-opacity: 0.3"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.4"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #2563eb; stop-opacity: 0.3"
+                  />
+                </linearGradient>
+                <linearGradient
+                  id="statsLineGradient2"
+                  x1="0%"
+                  y1="100%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.25"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #1e3a8a; stop-opacity: 0.35"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.25"
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,150 Q250,100 500,150 T1000,150 L1200,150"
+                stroke="url(#statsLineGradient)"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M0,350 Q350,300 700,350 T1400,350 L1600,350"
+                stroke="url(#statsLineGradient2)"
+                stroke-width="2"
+                fill="none"
+                class="animate-float"
+                style="animation-duration: 10s; animation-delay: 1.5s"
+              />
+              <path
+                d="M0,250 Q400,200 800,250 T1600,250"
+                stroke="url(#statsLineGradient)"
+                stroke-width="1.5"
+                fill="none"
+              />
+            </svg>
+
+            <!-- Floating Particles - Removed (Only in Banner) -->
+
+            <!-- Shimmer Effect -->
+            <div
+              class="absolute inset-0 opacity-3"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent 0%,
+                  rgba(255, 255, 255, 0.2) 50%,
+                  transparent 100%
+                );
+              "
+            ></div>
+
+            <!-- Animated Wave Pattern -->
+            <div
+              class="absolute inset-0 opacity-5"
+              style="
+                background: repeating-linear-gradient(
+                  45deg,
+                  transparent,
+                  transparent 10px,
+                  rgba(37, 99, 235, 0.1) 10px,
+                  rgba(37, 99, 235, 0.1) 20px
+                );
+              "
+            ></div>
+          </div>
+          <div class="container mx-auto px-4 max-w-7xl">
+            <div class="text-center mb-12">
+              <h2
+                class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#02066F] mb-4"
+              >
+                MetOneX bilan nima olasiz?
+              </h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+              <div
+                class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center scroll-reveal"
+              >
+                <div
+                  class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
+                >
+                  <span class="counter-number" data-target="30">0</span>
+                </div>
+                <div class="text-2xl font-black text-[#374151] mb-2">
+                  Daqiqa
+                </div>
+                <div class="text-base text-[#6B7280] font-medium">
+                  Materiallarni topish vaqt
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
+              >
+                <div
+                  class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
+                >
+                  AI
+                </div>
+                <div class="text-2xl font-black text-[#374151] mb-2">
+                  Texnologiya
+                </div>
+                <div class="text-base text-[#6B7280] font-medium">
+                  GPT-4 va Machine Learning
+                </div>
+              </div>
+              <div
+                class="bg-white flex items-center justify-between flex-col rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
+              >
+                <div
+                  class="text-7xl sm:text-6xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
+                >
+                  Launched
+                </div>
+                <div>
+                  <div class="text-2xl font-black text-[#374151] mb-2">
+                    Holat
+                  </div>
+                  <div class="text-base text-[#6B7280] font-medium">
+                    Ishlayotgan versiya
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Section -->
+        <div
+          class="relative bg-gradient-to-br pb-16 pt-20 from-[#F8FAFF] via-white to-[#F0F4FF] overflow-hidden"
+        >
+          <!-- Beautiful Background Decorations -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Animated Gradient Orbs -->
+            <div
+              class="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-[#2563EB]/12 to-[#3B82F6]/6 rounded-full blur-3xl animate-pulse-slow"
+            ></div>
+            <div
+              class="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-[#1E3A8A]/10 to-[#2563EB]/6 rounded-full blur-3xl animate-pulse-slow"
+              style="animation-delay: 1.5s"
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-[#3B82F6]/8 to-[#2563EB]/5 rounded-full blur-3xl animate-pulse-slow"
+              style="animation-delay: 3s; transform: translate(-50%, -50%)"
+            ></div>
+
+            <!-- Mesh Gradient Pattern -->
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: radial-gradient(
+                    circle at 30% 40%,
+                    rgba(37, 99, 235, 0.08) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 70% 60%,
+                    rgba(59, 130, 246, 0.08) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 50% 50%,
+                    rgba(30, 58, 138, 0.06) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
+
+            <!-- Decorative Dots Pattern -->
+            <div
+              class="absolute inset-0 opacity-15"
+              style="
+                background-image: radial-gradient(
+                  circle,
+                  rgba(37, 99, 235, 0.25) 1px,
+                  transparent 1px
+                );
+                background-size: 60px 60px;
+              "
+            ></div>
+
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-15"></div>
+
+            <!-- Floating Geometric Shapes - Enhanced -->
+            <div
+              class="absolute top-1/4 right-1/4 w-36 h-36 border-2 border-[#2563EB]/25 rounded-lg transform rotate-45 banner-shape-rotate"
+              style="
+                box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+                animation-duration: 15s;
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/4 left-1/4 w-28 h-28 border-2 border-[#3B82F6]/25 rounded-full animate-float"
+              style="
+                animation-duration: 12s;
+                animation-delay: 2s;
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+              "
+            ></div>
+            <div
+              class="absolute top-1/3 left-1/3 w-24 h-24 border-2 border-[#1E3A8A]/20 transform rotate-12 banner-shape-rotate"
+              style="
+                animation-duration: 20s;
+                animation-delay: 1s;
+                box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+              "
+            ></div>
+            <div
+              class="absolute top-1/5 right-1/5 w-16 h-16 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45"
+              style="
+                animation-duration: 8s;
+                animation-delay: 0.5s;
+                box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/5 right-1/5 w-32 h-32 border-2 border-[#3B82F6]/20 rounded-full banner-shape-rotate"
+              style="
+                animation-duration: 18s;
+                animation-delay: 1.5s;
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+              "
+            ></div>
+
+            <!-- Animated Lines -->
+            <svg
+              class="absolute inset-0 w-full h-full opacity-8"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="contentLineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #2563eb; stop-opacity: 0.15"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.25"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #2563eb; stop-opacity: 0.15"
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,100 Q200,50 400,100 T800,100"
+                stroke="url(#contentLineGradient)"
+                stroke-width="2"
+                fill="none"
+                class="animate-float"
+              />
+              <path
+                d="M0,300 Q300,250 600,300 T1200,300"
+                stroke="url(#contentLineGradient)"
+                stroke-width="2"
+                fill="none"
+                class="animate-float"
+                style="animation-delay: 1.5s"
+              />
+              <path
+                d="M0,500 Q250,450 500,500 T1000,500"
+                stroke="url(#contentLineGradient)"
+                stroke-width="2"
+                fill="none"
+                class="animate-float"
+                style="animation-delay: 3s"
+              />
+            </svg>
+          </div>
+          <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            <div class="space-y-16">
+              <!-- Loyiha Tavsifi Card -->
+              <div
+                class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+              >
+                <!-- Card Header - Kong.ai Style -->
+                <div
+                  class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"
+                        ></path>
+                        <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-black text-[#02066F]">
+                        Loyiha Tavsifi
+                      </h3>
+                      <p class="text-[#6B7280] font-medium">
+                        Texnik va biznes ma'lumotlar
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Content -->
+                <div class="space-y-8">
+                  <!-- Videoda ko'rsatilgan funksiyalar -->
+                  <div class="scroll-reveal">
+                    <div class="flex items-center gap-4 mb-8">
+                      <div
+                        class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="32"
+                          height="32"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </div>
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                        Videoda ko'rsatilgan funksiyalar
+                      </h3>
+                    </div>
+                    <div
+                      class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                    >
+                      <div class="space-y-5">
+                        <div
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
+                        >
+                          <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="white"
+                              stroke-width="2.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                              AI yordamida qurilish materiallarini qidirish
+                            </p>
+                            <p
+                              class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                            >
+                              Real vaqtda materiallarni topish va narxlarni
+                              taqqoslash
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
+                        >
+                          <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="white"
+                              stroke-width="2.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                              Yetkazib beruvchilar bilan real vaqtda aloqa
+                            </p>
+                            <p
+                              class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                            >
+                              Avtomatik matnlashtirish va xabarlarni boshqarish
+                            </p>
+                          </div>
+                        </div>
+                        <div
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
+                        >
+                          <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="white"
+                              stroke-width="2.5"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                              Buyurtmalarni boshqarish va kuzatish
+                            </p>
+                            <p
+                              class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                            >
+                              Real vaqtda buyurtma holatini kuzatish va
+                              boshqarish
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Muammo va Yechim -->
+                  <div class="scroll-reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                      <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="28"
+                          height="28"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M12 2v20M2 12h20"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                        Muammo va Yechim
+                      </h3>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                      <div
+                        class="bg-gradient-to-br from-[#FEF2F2] to-white rounded-2xl p-8 border-2 border-l-4 border-l-[#DC2626] border-[#E5E7EB] shadow-xl hover:shadow-2xl transition-all duration-300"
+                      >
+                        <div class="flex items-center gap-3 mb-5">
+                          <div
+                            class="w-12 h-12 rounded-xl bg-[#DC2626] flex items-center justify-center"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="white"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <circle cx="12" cy="12" r="10"></circle>
+                              <line x1="12" y1="8" x2="12" y2="12"></line>
+                              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                          </div>
+                          <p class="text-xl font-black text-[#DC2626]">
+                            Muammo
+                          </p>
+                        </div>
+                        <p
+                          class="text-base text-[#374151] leading-relaxed font-medium"
+                        >
+                          Qurilish sohasida materiallar topish va yetkazib
+                          beruvchilar bilan bog'lanish 3-5 kun vaqt oladi. Bu
+                          esa loyihalarning kechikishiga va qo'shimcha
+                          xarajatlarga olib keladi.
+                        </p>
+                      </div>
+                      <div
+                        class="bg-gradient-to-br from-[#F0FDF4] to-white rounded-2xl p-8 border-2 border-l-4 border-l-[#16A34A] border-[#E5E7EB] shadow-xl hover:shadow-2xl transition-all duration-300"
+                      >
+                        <div class="flex items-center gap-3 mb-5">
+                          <div
+                            class="w-12 h-12 rounded-xl bg-[#16A34A] flex items-center justify-center"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="white"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          </div>
+                          <p class="text-xl font-black text-[#16A34A]">
+                            Yechim
+                          </p>
+                        </div>
+                        <p
+                          class="text-base text-[#374151] leading-relaxed font-medium"
+                        >
+                          MetOneX AI texnologiyasidan foydalanib, qurilish
+                          materiallarini topish va yetkazib beruvchilar bilan
+                          bog'lanish jarayonini 30 daqiqaga qisqartiradi. Bu esa
+                          vaqt va mablag'ni tejashga yordam beradi.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Texnologiyalar va AI Yechmlar -->
+                  <div class="scroll-reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                      <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="28"
+                          height="28"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                          <path d="M2 17l10 5 10-5"></path>
+                          <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                      </div>
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                        Texnologiyalar va AI Yechmlar
+                      </h3>
+                    </div>
+                    <div class="space-y-6">
+                      <div
+                        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4"
+                      >
+                        <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                        >
+                          <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                          >
+                            <span class="text-white font-black text-lg">R</span>
+                          </div>
+                          <p class="text-sm font-black text-[#02066F]">React</p>
+                        </div>
+                        <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                        >
+                          <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                          >
+                            <span class="text-white font-black text-lg"
+                              >TS</span
+                            >
+                          </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                            TypeScript
+                          </p>
+                        </div>
+                        <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                        >
+                          <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                          >
+                            <span class="text-white font-black text-lg"
+                              >TC</span
+                            >
+                          </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                            Tailwind CSS
+                          </p>
+                        </div>
+                        <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                        >
+                          <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                          >
+                            <span class="text-white font-black text-lg">N</span>
+                          </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                            Node.js
+                          </p>
+                        </div>
+                        <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                        >
+                          <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                          >
+                            <span class="text-white font-black text-lg"
+                              >PG</span
+                            >
+                          </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                            PostgreSQL
+                          </p>
+                        </div>
+                        <div
+                          class="tech-card bg-gradient-to-br from-[#EFF6FF] to-white rounded-xl p-6 border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300 text-center"
+                        >
+                          <div
+                            class="w-14 h-14 mx-auto mb-3 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center shadow-lg"
+                          >
+                            <span class="text-white font-black text-lg"
+                              >AI</span
+                            >
+                          </div>
+                          <p class="text-sm font-black text-[#02066F]">
+                            OpenAI API
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                      >
+                        <div class="flex items-start gap-4">
+                          <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="white"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                              <path d="M2 17l10 5 10-5"></path>
+                              <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-lg font-black text-[#02066F] mb-3">
+                              AI Integratsiyasi
+                            </p>
+                            <p
+                              class="text-base text-[#374151] leading-relaxed font-medium"
+                            >
+                              Platforma GPT-4 API yordamida foydalanuvchi
+                              so'rovlarini tahlil qiladi, materiallarni
+                              avtomatik qidiradi va eng yaxshi takliflarni
+                              tavsiya qiladi. Machine Learning modellari
+                              narxlarni bashorat qilish va yetkazib
+                              beruvchilarni baholash uchun ishlatiladi.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Loyiha Holati va Rejalar -->
+                  <div class="scroll-reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                      <div
+                        class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="28"
+                          height="28"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                          <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                      </div>
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                        Loyiha Holati va Rejalar
+                      </h3>
+                    </div>
+                    <div class="space-y-6">
+                      <div
+                        class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                      >
+                        <p class="text-lg font-black text-[#02066F] mb-6">
+                          Hozirgi holat:
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                          <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                            >Idea</span
+                          >
+                          <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                            >Prototype</span
+                          >
+
+                          <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                            >MVP</span
+                          >
+                          <span
+                            class="px-5 py-3 rounded-xl text-sm font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] text-white border-2 border-transparent shadow-lg"
+                            >Launched</span
+                          >
+                        </div>
+                      </div>
+                      <div
+                        class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                      >
+                        <p class="text-lg font-black text-[#02066F] mb-6">
+                          Keyingi qadamlar:
+                        </p>
+                        <ul class="space-y-4">
+                          <li
+                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                          >
+                            <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                            >
+                              <span class="text-white text-base font-black"
+                                >1</span
+                              >
+                            </div>
+                            <div class="flex-1">
+                              <p class="text-base font-bold text-[#374151]">
+                                Foydalanuvchilar sonini oshirish va marketing
+                                strategiyasini amalga oshirish
+                              </p>
+                            </div>
+                          </li>
+                          <li
+                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                          >
+                            <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                            >
+                              <span class="text-white text-base font-black"
+                                >2</span
+                              >
+                            </div>
+                            <div class="flex-1">
+                              <p class="text-base font-bold text-[#374151]">
+                                AI algoritmlarini yaxshilash va personalizatsiya
+                                funksiyalarini qo'shish
+                              </p>
+                            </div>
+                          </li>
+                          <li
+                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                          >
+                            <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                            >
+                              <span class="text-white text-base font-black"
+                                >3</span
+                              >
+                            </div>
+                            <div class="flex-1">
+                              <p class="text-base font-bold text-[#374151]">
+                                Mobil ilovani chiqarish va xalqaro bozorga
+                                chiqish
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-slot="card"
+                class="demo-card bg-white flex flex-col gap-6 rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+              >
+                <div
+                  data-slot="card-header"
+                  class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 pt-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"
+                ></div>
+                <div
+                  data-slot="card-content"
+                  class="px-6 [&amp;:last-child]:pb-6"
+                >
+                  <div
+                    class="bg-gradient-to-br from-[#02066F] via-[#1e40af] to-[#0f172a] rounded-2xl p-10 text-white relative overflow-hidden shadow-2xl"
+                  >
+                    <!-- Background decorative elements -->
+                    <div
+                      class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"
+                    ></div>
+                    <div
+                      class="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-2xl"
+                    ></div>
+
+                    <div class="relative z-10 text-center space-y-8">
+                      <!-- Icon -->
+                      <div
+                        class="w-24 h-24 mx-auto rounded-3xl bg-white/20 backdrop-blur-sm flex items-center justify-center icon-bounce shadow-2xl"
+                      >
+                        <div
+                          class="w-full h-full flex items-center justify-center"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="48"
+                            height="48"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-white"
+                          >
+                            <path
+                              d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                            ></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                          </svg>
+                        </div>
+                      </div>
+
+                      <!-- Title and Description -->
+                      <div>
+                        <h3 class="text-3xl font-black mb-3">
+                          Ishlayotgan Ilova
+                        </h3>
+                        <p
+                          class="text-white/90 text-lg max-w-lg mx-auto leading-relaxed"
+                        >
+                          MetOneX platformasini sinab ko'ring va barcha
+                          funksiyalarni o'zingiz tekshiring
+                        </p>
+                      </div>
+
+                      <!-- CTA Button -->
+                      <a
+                        href="https://metonex.uz/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-3 bg-white text-[#02066F] px-10 py-5 rounded-xl font-black text-xl hover:bg-[#F3F4F6] transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path
+                            d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                          ></path>
+                          <polyline points="15 3 21 3 21 9"></polyline>
+                          <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                        Ilovani Ochish
+                      </a>
+
+                      <!-- Credentials -->
+                      <div class="pt-8 border-t border-white/20">
+                        <p
+                          class="text-sm font-bold mb-5 text-white/90 uppercase tracking-wide"
+                        >
+                          Agar avtorizatsiya kerak bo'lsa:
+                        </p>
+                        <div
+                          class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-md mx-auto"
+                        >
+                          <div class="flex flex-col items-center gap-4">
+                            <div
+                              class="flex items-center gap-3 w-full justify-center"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-white/80"
+                              >
+                                <path
+                                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                ></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                              </svg>
+                              <span class="text-base text-white font-semibold"
+                                ><span class="text-white/70">Email:</span>
+                                demo@metonex.com</span
+                              >
+                            </div>
+                            <div
+                              class="flex items-center gap-3 w-full justify-center"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-white/80"
+                              >
+                                <rect
+                                  x="3"
+                                  y="11"
+                                  width="18"
+                                  height="11"
+                                  rx="2"
+                                  ry="2"
+                                ></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                              </svg>
+                              <span class="text-base text-white font-semibold"
+                                ><span class="text-white/70">Parol:</span>
+                                demo123</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Bonus Funksiyalar Card -->
+              <div
+                class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+              >
+                <!-- Card Header - Kong.ai Style -->
+                <div
+                  class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
+                >
+                  <div class="flex items-center gap-4">
+                    <div
+                      class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="white"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                        <path d="M18 17V9"></path>
+                        <path d="M13 17V5"></path>
+                        <path d="M8 17v-3"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 class="text-2xl font-black text-[#02066F]">
+                        API Funksiyalar
+                      </h3>
+                      <p class="text-[#6B7280] font-medium">
+                        Qo'shimcha ballar uchun
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Card Content -->
+                <div>
+                  <div
+                    dir="ltr"
+                    data-orientation="horizontal"
+                    data-slot="tabs"
+                    class="flex flex-col gap-2 w-full"
+                  >
+                    <div
+                      role="tablist"
+                      aria-orientation="horizontal"
+                      data-slot="tabs-list"
+                      class="bg-gradient-to-r from-[#F0F4FF] to-white h-12 items-center justify-center rounded-xl p-1 grid w-full grid-cols-1 border-2 border-[#E5E7EB]"
+                      tabindex="0"
+                      data-orientation="horizontal"
+                      style="outline: none"
+                    >
+                      <button
+                        type="button"
+                        class="text-center text-[#374151] inline-flex h-full flex-1 items-center justify-center rounded-lg px-4 py-2 text-base font-bold whitespace-nowrap transition-all duration-300 hover:bg-white/50 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-5 gap-2"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-code-xml size-4"
+                          aria-hidden="false"
+                        >
+                          <path d="m18 16 4-4-4-4"></path>
+                          <path d="m6 8-4 4 4 4"></path>
+                          <path d="m14.5 4-5 16"></path></svg
+                        >API Access
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex-1 outline-none space-y-4 mt-6">
+                    <div
+                      class="p-6 bg-gradient-to-br from-[#F0F4FF] to-white rounded-xl border-2 border-[#E5E7EB] shadow-sm"
+                    >
+                      <div class="flex items-start gap-3">
+                        <div
+                          class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <path d="m18 16 4-4-4-4"></path>
+                            <path d="m6 8-4 4 4 4"></path>
+                            <path d="m14.5 4-5 16"></path>
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                          <p class="text-base font-bold text-[#02066F] mb-2">
+                            API Access Funksiyasi
+                          </p>
+                          <p class="text-sm text-[#374151] leading-relaxed">
+                            Loyihangiz API'sini test qilish va integratsiya
+                            qilish imkoniyati. RESTful API yoki GraphQL
+                            ishlatishingiz mumkin.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white rounded-2xl p-8 border-2 border-transparent shadow-2xl"
+                    >
+                      <div class="space-y-6">
+                        <!-- Swagger URL Section -->
+                        <div>
+                          <h4
+                            class="text-xl font-black mb-4 flex items-center gap-2"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            >
+                              <path
+                                d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                              ></path>
+                              <polyline points="15 3 21 3 21 9"></polyline>
+                              <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                            Swagger API Documentation
+                          </h4>
+                          <div
+                            class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+                          >
+                            <div class="space-y-4 mt-4">
+                              <div>
+                                <label
+                                  class="block text-sm font-semibold mb-2 text-white/90"
+                                  >Swagger URL:</label
+                                >
+                                <div class="flex gap-2">
+                                  <input
+                                    type="text"
+                                    id="swagger-url"
+                                    placeholder="https://dev.metonex.uz/"
+                                    value="https://dev.metonex.uz/"
+                                    class="flex-1 px-4 py-3 rounded-lg bg-white/10 border-2 border-white/30 text-white placeholder-white/60 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                                  />
+                                  <a
+                                    href="https://dev.metonex.uz/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="bg-white text-[#02066F] px-6 py-3 rounded-lg font-bold hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 whitespace-nowrap"
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="18"
+                                      height="18"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    >
+                                      <path
+                                        d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                      ></path>
+                                      <polyline
+                                        points="15 3 21 3 21 9"
+                                      ></polyline>
+                                      <line
+                                        x1="10"
+                                        y1="14"
+                                        x2="21"
+                                        y2="3"
+                                      ></line>
+                                    </svg>
+                                    Ochish
+                                  </a>
+                                </div>
+                                <p class="text-xs text-white/70 mt-2">
+                                  API dokumentatsiyasini ko'rish va test qilish
+                                  uchun Swagger URL
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Section - Kong.ai Style -->
+        <footer
+          class="relative bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white py-12 mt-20 overflow-hidden"
+        >
+          <!-- Beautiful Background Decorations -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Animated Gradient Orbs -->
+            <div
+              class="absolute top-10 right-20 w-96 h-96 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/10 rounded-full blur-3xl animate-pulse-slow"
+            ></div>
+            <div
+              class="absolute bottom-10 left-20 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/15 to-[#2563EB]/10 rounded-full blur-3xl animate-pulse-slow"
+              style="animation-delay: 1s"
+            ></div>
+
+            <!-- Mesh Gradient Pattern -->
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: radial-gradient(
+                    circle at 30% 40%,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 70% 60%,
+                    rgba(255, 255, 255, 0.08) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
+
+            <!-- Decorative Dots Pattern -->
+            <div
+              class="absolute inset-0 opacity-20"
+              style="
+                background-image: radial-gradient(
+                  circle,
+                  rgba(255, 255, 255, 0.3) 1px,
+                  transparent 1px
+                );
+                background-size: 50px 50px;
+              "
+            ></div>
+
+            <!-- Floating Geometric Shapes -->
+            <div
+              class="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-white/20 rounded-lg transform rotate-45 animate-float"
+              style="animation-duration: 8s"
+            ></div>
+            <div
+              class="absolute bottom-1/4 left-1/4 w-24 h-24 border-2 border-white/20 rounded-full animate-float"
+              style="animation-duration: 10s; animation-delay: 1s"
+            ></div>
+          </div>
+          <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <!-- Brand Section -->
+              <div>
+                <h3 class="text-2xl font-black mb-4">MetOneX</h3>
+                <p class="text-white/80 text-sm leading-relaxed">
+                  AI yordamida qurilish materiallarini topish va yetkazib
+                  beruvchilar bilan bog'lanishni 30 daqiqaga qisqartiring.
+                </p>
+              </div>
+
+              <!-- Quick Links -->
+              <div>
+                <h4 class="text-lg font-bold mb-4">Tezkor Havolalar</h4>
+                <ul class="space-y-2">
+                  <li>
+                    <a
+                      href="index.html"
+                      class="text-white/80 hover:text-white transition-colors text-sm"
+                      >Bosh Sahifa</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="demo.html"
+                      class="text-white/80 hover:text-white transition-colors text-sm"
+                      >Demo</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-white/80 hover:text-white transition-colors text-sm"
+                      >Haqida</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Contact -->
+              <div>
+                <h4 class="text-lg font-bold mb-4">Bog'lanish</h4>
+                <ul class="space-y-2 text-sm text-white/80">
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      ></path>
+                      <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    demo@metonex.com
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                      ></path>
+                    </svg>
+                    +998 XX XXX XX XX
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+              class="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between"
+            >
+              <p class="text-white/60 text-sm">
+                © 2024 MetOneX. Barcha huquqlar himoyalangan.
+              </p>
+              <div class="flex items-center gap-4 mt-4 md:mt-0">
+                <a
+                  href="#"
+                  class="text-white/60 hover:text-white transition-colors text-sm"
+                  >Maxfiylik</a
+                >
+                <span class="text-white/40">|</span>
+                <a
+                  href="#"
+                  class="text-white/60 hover:text-white transition-colors text-sm"
+                  >Shartlar</a
+                >
+                <span class="text-white/40">|</span>
+                <a
+                  href="#"
+                  class="text-white/60 hover:text-white transition-colors text-sm"
+                  >Yordam</a
+                >
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div id="chatbot-modal" class="fixed inset-0 z-[9999] hidden">
+      <!-- Backdrop -->
+      <div
+        id="chatbot-backdrop"
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+      ></div>
+
+      <!-- Modal Content - Fixed on Right Side -->
+      <div
+        class="fixed top-0 right-0 h-full w-full md:w-[450px] lg:w-[500px] bg-gradient-to-br from-[#1E3A8A] via-[#2563EB] to-[#3B82F6] text-white shadow-2xl border-l-2 border-white/20 overflow-hidden flex flex-col transform transition-all duration-300 translate-x-full z-[10000]"
+        id="chatbot-modal-content"
+      >
+        <!-- Modal Header -->
+        <div
+          class="flex items-center justify-between p-6 border-b border-white/20 bg-white/5 backdrop-blur-sm"
+        >
+          <div class="flex items-center gap-4">
+            <div>
+              <h3 class="text-xl font-black">MetOneX AI Assistant</h3>
+              <div class="text-xs text-white/70 flex items-center gap-1 mt-1">
+                <span class="relative flex h-2 w-2">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                  ></span>
+                  <span
+                    class="relative inline-flex rounded-full h-2 w-2 bg-green-400"
+                  ></span>
+                </span>
+                Onlayn va tayyor
+              </div>
+            </div>
+          </div>
+          <button
+            id="chatbot-close-btn"
+            class="w-10 h-10 rounded-lg bg-white/10 hover:bg-white/20 border border-white/30 flex items-center justify-center transition-all duration-300 hover:scale-110"
+            aria-label="Yopish"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="flex-1 overflow-hidden flex flex-col">
+          <div dir="ltr" class="relative flex-1 p-6 overflow-hidden">
+            <style>
+              #chatbot-modal-messages-container {
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+              }
+              #chatbot-modal-messages-container::-webkit-scrollbar {
+                width: 6px;
+              }
+              #chatbot-modal-messages-container::-webkit-scrollbar-track {
+                background: transparent;
+              }
+              #chatbot-modal-messages-container::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 3px;
+              }
+              #chatbot-modal-messages-container::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(255, 255, 255, 0.5);
+              }
+            </style>
+            <div
+              id="chatbot-modal-messages-container"
+              class="h-full overflow-y-auto pr-2"
+            >
+              <div class="space-y-6" id="chatbot-modal-messages">
+                <!-- Welcome Message - Robot in Center -->
+                <div class="flex flex-col items-center gap-4">
+                  <!-- Large Robot Avatar in Center -->
+                  <div class="relative robot-avatar">
+                    <div class="w-40 h-48 relative flex flex-col items-center">
+                      <!-- Speech Bubble -->
+                      <div
+                        class="absolute -top-12 left-1/2 transform -translate-x-1/2 robot-speech-bubble"
+                      >
+                        <div
+                          class="bg-blue-500 text-white px-4 py-2 rounded-2xl shadow-xl relative"
+                        >
+                          <span class="text-sm font-bold">Salom! 👋</span>
+                          <!-- Speech bubble tail -->
+                          <div
+                            class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-blue-500"
+                          ></div>
+                        </div>
+                      </div>
+
+                      <!-- Robot Head - Large Round White Head -->
+                      <div
+                        class="w-28 h-28 rounded-full bg-white border-3 border-gray-300 flex items-center justify-center relative z-10 shadow-2xl"
+                      >
+                        <!-- Antenna -->
+                        <div
+                          class="absolute -top-4 left-1/2 transform -translate-x-1/2 flex gap-2"
+                        >
+                          <div class="w-2 h-6 bg-blue-500 rounded-full"></div>
+                          <div class="w-2 h-6 bg-blue-500 rounded-full"></div>
+                        </div>
+
+                        <!-- Robot Eyes - Large Blue Rectangular Eyes -->
+                        <div
+                          class="absolute top-8 left-1/2 transform -translate-x-1/2 flex gap-4"
+                        >
+                          <div
+                            class="w-6 h-8 bg-blue-400 rounded-lg shadow-lg"
+                          ></div>
+                          <div
+                            class="w-6 h-8 bg-blue-400 rounded-lg shadow-lg"
+                          ></div>
+                        </div>
+
+                        <!-- Robot Mouth - Wide Smiling Mouth -->
+                        <div
+                          class="robot-mouth absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 rounded-full"
+                        ></div>
+                      </div>
+
+                      <!-- Robot Body - Cylindrical White Body -->
+                      <div
+                        class="w-32 h-32 rounded-full bg-white border-3 border-gray-200 shadow-2xl relative -mt-4 flex items-center justify-center"
+                      >
+                        <!-- Blue Band at Base -->
+                        <div
+                          class="robot-glow-ring absolute bottom-0 w-full h-6 bg-blue-500 rounded-full opacity-90"
+                        ></div>
+
+                        <!-- Robot Hands - Raised Waving Hand -->
+                        <div class="absolute -left-6 top-10 robot-hand-left">
+                          <div
+                            class="w-8 h-16 bg-white rounded-full border-3 border-gray-200 shadow-xl"
+                          >
+                            <!-- Blue Shoulder -->
+                            <div
+                              class="absolute top-0 left-1/2 transform -translate-x-1/2 w-10 h-6 bg-blue-500 rounded-full"
+                            ></div>
+                            <!-- Blue Forearm -->
+                            <div
+                              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-500 rounded-full"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="absolute -right-6 top-10 robot-hand-right">
+                          <div
+                            class="w-8 h-16 bg-white rounded-full border-3 border-gray-200 shadow-xl"
+                          >
+                            <!-- Blue Shoulder -->
+                            <div
+                              class="absolute top-0 left-1/2 transform -translate-x-1/2 w-10 h-6 bg-blue-500 rounded-full"
+                            ></div>
+                            <!-- Blue Forearm -->
+                            <div
+                              class="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-500 rounded-full"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Hover Base -->
+                      <div
+                        class="absolute -bottom-2 w-36 h-4 bg-blue-500 rounded-full opacity-60 blur-md"
+                      ></div>
+                    </div>
+                  </div>
+
+                  <!-- Welcome Text Below Robot -->
+                  <div class="text-center px-4 mb-6">
+                    <div
+                      class="bg-white/20 backdrop-blur-sm rounded-2xl p-5 border-2 border-white/30 shadow-lg max-w-md mx-auto"
+                    >
+                      <p
+                        class="text-base leading-relaxed font-medium text-white mb-4"
+                      >
+                        Salom! 👋 Yordam kerakmi? Men MetOneX AI Assistant.
+                        Quyidagi savollardan birini tanlang yoki o'zingiz savol
+                        bering.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Questions - Beautiful Design -->
+          <div class="px-6 pb-6 border-t border-white/20 pt-6 bg-white/5">
+            <p
+              class="text-sm text-white/90 mb-4 font-bold uppercase tracking-wide"
+            >
+              Tezkor savollar:
+            </p>
+            <div class="space-y-3">
+              <button
+                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                data-question="Loyihangiz nima qiladi?"
+              >
+                <div
+                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <path d="M12 17h.01"></path>
+                  </svg>
+                </div>
+                <span class="flex-1">Loyihangiz nima qiladi?</span>
+              </button>
+              <button
+                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                data-question="Kimlar uchun mo'ljallangan?"
+              >
+                <div
+                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                </div>
+                <span class="flex-1">Kimlar uchun mo'ljallangan?</span>
+              </button>
+              <button
+                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                data-question="Qanday texnologiya ishlatilgan?"
+              >
+                <div
+                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                  </svg>
+                </div>
+                <span class="flex-1">Qanday texnologiya ishlatilgan?</span>
+              </button>
+              <button
+                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                data-question="Narx qanday?"
+              >
+                <div
+                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path
+                      d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                    ></path>
+                  </svg>
+                </div>
+                <span class="flex-1">Narx qanday?</span>
+              </button>
+              <button
+                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                data-question="Qanday ishlaydi?"
+              >
+                <div
+                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                  </svg>
+                </div>
+                <span class="flex-1">Qanday ishlaydi?</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Loading Screen
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          const loadingScreen = document.getElementById("loading-screen");
+          const mainContent = document.getElementById("main-content");
+
+          if (loadingScreen) {
+            loadingScreen.style.opacity = "0";
+            setTimeout(function () {
+              loadingScreen.style.display = "none";
+              if (mainContent) {
+                mainContent.style.display = "block";
+              }
+            }, 500);
+          } else if (mainContent) {
+            mainContent.style.display = "block";
+          }
+        }, 2500);
+      });
+
+      // Scroll Progress Bar - Optimized
+      function initScrollProgress() {
+        const progressBar = document.getElementById("scroll-progress");
+        if (!progressBar) return;
+
+        let ticking = false;
+        let lastScroll = 0;
+
+        function updateProgress() {
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          // Only update if scroll changed significantly
+          if (Math.abs(scrollTop - lastScroll) < 5) {
+            ticking = false;
+            return;
+          }
+
+          lastScroll = scrollTop;
+          const scrollPercent =
+            (scrollTop / (documentHeight - windowHeight)) * 100;
+          progressBar.style.width =
+            Math.min(100, Math.max(0, scrollPercent)) + "%";
+          ticking = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(updateProgress);
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+
+        // Throttled resize handler
+        let resizeTimeout;
+        window.addEventListener(
+          "resize",
+          () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(updateProgress, 100);
+          },
+          { passive: true }
+        );
+
+        updateProgress();
+      }
+
+      // Navbar Scroll Effect - Beautiful Design
+      function initNavbarScroll() {
+        const navbar = document.getElementById("navbar");
+        if (!navbar) return;
+
+        let lastScroll = 0;
+        let ticking = false;
+
+        let isScrolled = false;
+        let isHidden = false;
+
+        function handleScroll() {
+          const scrollY =
+            window.pageYOffset || document.documentElement.scrollTop;
+          const shouldBeScrolled = scrollY > 50;
+          const shouldBeHidden = scrollY > lastScroll && scrollY > 100;
+
+          // Only update if state changed
+          if (shouldBeScrolled !== isScrolled) {
+            isScrolled = shouldBeScrolled;
+            if (isScrolled) {
+              navbar.classList.add("scrolled");
+              navbar.style.boxShadow = "0 8px 32px rgba(37, 99, 235, 0.12)";
+              navbar.style.borderBottom = "1px solid rgba(37, 99, 235, 0.1)";
+            } else {
+              navbar.classList.remove("scrolled");
+              navbar.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.05)";
+              navbar.style.borderBottom = "1px solid rgba(0, 0, 0, 0.1)";
+            }
+          }
+
+          // Hide/show navbar on scroll - only update if changed
+          if (shouldBeHidden !== isHidden) {
+            isHidden = shouldBeHidden;
+            navbar.style.transform = isHidden
+              ? "translateY(-100%)"
+              : "translateY(0)";
+          }
+
+          lastScroll = scrollY;
+          ticking = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(handleScroll);
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+      }
+
+      // Custom Cursor - Beautiful Design
+      function initCustomCursor() {
+        // Check if mobile device
+        if (window.innerWidth <= 768) return;
+
+        const cursor = document.createElement("div");
+        cursor.className = "custom-cursor";
+        const cursorDot = document.createElement("div");
+        cursorDot.className = "custom-cursor-dot";
+        const cursorTrail = document.createElement("div");
+        cursorTrail.className = "custom-cursor-trail";
+
+        document.body.appendChild(cursor);
+        document.body.appendChild(cursorDot);
+        document.body.appendChild(cursorTrail);
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let dotX = 0;
+        let dotY = 0;
+        let trailX = 0;
+        let trailY = 0;
+
+        document.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        let isAnimating = false;
+        let rafId = null;
+
+        function animateCursor() {
+          if (!cursor || !cursorDot || !cursorTrail || !isAnimating) return;
+
+          // Use transform instead of left/top for better performance
+          const dx = mouseX - cursorX;
+          const dy = mouseY - cursorY;
+
+          // Only animate if movement is significant
+          if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+            isAnimating = false;
+            if (rafId) {
+              cancelAnimationFrame(rafId);
+              rafId = null;
+            }
+            return;
+          }
+
+          // Main cursor (smooth follow) - Use translate3d for GPU acceleration
+          cursorX += dx * 0.15;
+          cursorY += dy * 0.15;
+          cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+
+          // Dot cursor (faster follow)
+          dotX += (mouseX - dotX) * 0.3;
+          dotY += (mouseY - dotY) * 0.3;
+          cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+
+          // Trail cursor (slower follow)
+          trailX += (mouseX - trailX) * 0.05;
+          trailY += (mouseY - trailY) * 0.05;
+          cursorTrail.style.transform = `translate3d(${trailX}px, ${trailY}px, 0) translate(-50%, -50%)`;
+
+          rafId = requestAnimationFrame(animateCursor);
+        }
+
+        // Optimized mouse move handler - single event listener with throttling
+        let lastMouseMove = 0;
+        const throttleDelay = 16; // ~60fps
+        let mouseStopTimeout;
+
+        document.addEventListener(
+          "mousemove",
+          (e) => {
+            const now = performance.now();
+            if (now - lastMouseMove < throttleDelay) return;
+            lastMouseMove = now;
+
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (!isAnimating) {
+              isAnimating = true;
+              animateCursor();
+            }
+
+            // Reset stop timeout
+            clearTimeout(mouseStopTimeout);
+            mouseStopTimeout = setTimeout(() => {
+              isAnimating = false;
+              if (rafId) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+              }
+            }, 500);
+          },
+          { passive: true }
+        );
+
+        // Hover effects on interactive elements
+        const interactiveElements = document.querySelectorAll(
+          "a, button, .tech-icon-card, select, input, textarea, [role='button'], .demo-card, .tech-card"
+        );
+
+        interactiveElements.forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            if (cursor) cursor.classList.add("hover");
+            if (cursorDot) cursorDot.classList.add("hover");
+            if (cursorTrail) cursorTrail.classList.add("hover");
+          });
+
+          el.addEventListener("mouseleave", () => {
+            if (cursor) cursor.classList.remove("hover");
+            if (cursorDot) cursorDot.classList.remove("hover");
+            if (cursorTrail) cursorTrail.classList.remove("hover");
+          });
+        });
+
+        // Hide default cursor
+        document.body.style.cursor = "none";
+      }
+
+      // Scroll reveal animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".scroll-reveal").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Initialize all functions after DOM ready - Optimized
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          initScrollProgress();
+          initNavbarScroll();
+          initCustomCursor();
+        });
+      } else {
+        initScrollProgress();
+        initNavbarScroll();
+        initCustomCursor();
+      }
+
+      // Chatbot Modal Functionality
+      const chatbotModal = document.getElementById("chatbot-modal");
+      const chatbotToggleBtn = document.getElementById(
+        "open-chatbot-from-card"
+      );
+      const chatbotCloseBtn = document.getElementById("chatbot-close-btn");
+      const chatbotBackdrop = document.getElementById("chatbot-backdrop");
+      const chatbotModalContent = document.getElementById(
+        "chatbot-modal-content"
+      );
+      const chatbotModalMessages = document.getElementById(
+        "chatbot-modal-messages"
+      );
+      const chatbotModalQuestionButtons = document.querySelectorAll(
+        ".chatbot-modal-question-btn"
+      );
+      const openChatbotFromCard = document.getElementById(
+        "open-chatbot-from-card"
+      );
+
+      const chatbotResponses = {
+        "Loyihangiz nima qiladi?":
+          "MetOneX AI yordamida qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish muammosini hal qiladi. Platforma real vaqtda materiallarni topadi, narxlarni taqqoslaydi va eng yaxshi takliflarni tavsiya qiladi. 3-5 kunlik jarayonni 30 daqiqaga qisqartiradi.",
+        "Kimlar uchun mo'ljallangan?":
+          "MetOneX qurilish sohasida faoliyat yuritayotgan barcha uchun yaratilgan: quruvchilar, qurilish kompaniyalari, dizaynerlar va qurilish materiallarini qidirish muammosiga duch kelayotgan har qanday shaxs yoki tashkilot. Platforma B2B va B2C segmentlarida ishlaydi.",
+        "Qanday texnologiya ishlatilgan?":
+          "MetOneX zamonaviy texnologiyalar yig'indisidan foydalanadi: React.js va TypeScript frontend uchun, Node.js backend uchun, PostgreSQL ma'lumotlar bazasi, GPT-4 API AI funksiyalari uchun, va Machine Learning modellari narxlarni bashorat qilish va yetkazib beruvchilarni baholash uchun.",
+        "Narx qanday?":
+          "MetOneX platformasi foydalanish uchun to'liq bepul. Siz materiallarni qidirish, narxlarni taqqoslash va yetkazib beruvchilar bilan bog'lanish imkoniyatiga ega bo'lasiz. Faqat muvaffaqiyatli xaridlar uchun kichik komissiya olinadi. Hech qanday yashirin to'lovlar yo'q.",
+        "Qanday ishlaydi?":
+          "MetOneX ishlash jarayoni juda oddiy: 1) Material nomini yoki turini kiriting, 2) AI avtomatik ravishda barcha mavjud variantlarni topadi, 3) Narxlarni taqqoslang va eng yaxshi taklifni tanlang, 4) Yetkazib beruvchi bilan real vaqtda bog'laning, 5) Buyurtma qiling. Barchasi 30 daqiqada!",
+      };
+
+      function openChatbotModal() {
+        if (!chatbotModal) return;
+        chatbotModal.classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+
+        // Trigger animation
+        setTimeout(() => {
+          if (chatbotBackdrop) {
+            chatbotBackdrop.classList.remove("opacity-0");
+            chatbotBackdrop.classList.add("opacity-100");
+          }
+          if (chatbotModalContent) {
+            chatbotModalContent.classList.remove("translate-x-full");
+            chatbotModalContent.classList.add("translate-x-0");
+          }
+
+          // Scroll to top when opening
+          const container = document.getElementById(
+            "chatbot-modal-messages-container"
+          );
+          if (container) {
+            container.scrollTop = 0;
+          }
+        }, 10);
+      }
+
+      function closeChatbotModal() {
+        if (!chatbotModal) return;
+        if (chatbotBackdrop) {
+          chatbotBackdrop.classList.remove("opacity-100");
+          chatbotBackdrop.classList.add("opacity-0");
+        }
+        if (chatbotModalContent) {
+          chatbotModalContent.classList.remove("translate-x-0");
+          chatbotModalContent.classList.add("translate-x-full");
+        }
+
+        setTimeout(() => {
+          chatbotModal.classList.add("hidden");
+          document.body.style.overflow = "";
+        }, 300);
+      }
+
+      // Event listeners
+      if (chatbotToggleBtn) {
+        chatbotToggleBtn.addEventListener("click", openChatbotModal);
+      }
+
+      if (chatbotCloseBtn) {
+        chatbotCloseBtn.addEventListener("click", closeChatbotModal);
+      }
+
+      if (chatbotBackdrop) {
+        chatbotBackdrop.addEventListener("click", closeChatbotModal);
+      }
+
+      if (openChatbotFromCard) {
+        openChatbotFromCard.addEventListener("click", openChatbotModal);
+      }
+
+      // Close on Escape key
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "Escape" &&
+          chatbotModal &&
+          !chatbotModal.classList.contains("hidden")
+        ) {
+          closeChatbotModal();
+        }
+      });
+
+      function addChatMessage(message, isUser = false) {
+        if (!chatbotModalMessages) return;
+
+        const messageDiv = document.createElement("div");
+
+        if (isUser) {
+          // Hide welcome message when user sends first message
+          const welcomeMessage = chatbotModalMessages.querySelector(
+            ".flex.flex-col.items-center"
+          );
+          if (welcomeMessage) {
+            welcomeMessage.style.opacity = "0";
+            welcomeMessage.style.transform = "translateY(-20px)";
+            setTimeout(() => {
+              welcomeMessage.style.display = "none";
+            }, 300);
+          }
+
+          // User message at top
+          messageDiv.className = "flex justify-end mb-6";
+          messageDiv.innerHTML = `
+            <div class="p-4 rounded-xl max-w-[80%] bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 shadow-lg">
+              <p class="text-sm leading-relaxed font-medium">${message}</p>
+            </div>
+          `;
+        } else {
+          // Hide previous robot if exists
+          const previousRobots = chatbotModalMessages.querySelectorAll(
+            ".robot-response-container"
+          );
+          previousRobots.forEach((robot) => {
+            robot.classList.add("robot-fade-out");
+            setTimeout(() => {
+              robot.remove();
+            }, 500);
+          });
+
+          // Bot response - Simple and clean design like in the image
+          messageDiv.className = "flex justify-start mb-6";
+          messageDiv.innerHTML = `
+            <div class="flex items-start gap-3 max-w-[85%]">
+              <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                  <path d="M2 17l10 5 10-5"></path>
+                  <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                  </div>
+              <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border-2 border-white/30 shadow-lg">
+                <p class="text-sm leading-relaxed font-medium text-white">${message}</p>
+              </div>
+            </div>
+          `;
+        }
+
+        chatbotModalMessages.appendChild(messageDiv);
+
+        // Scroll to bottom smoothly
+        const container = document.getElementById(
+          "chatbot-modal-messages-container"
+        );
+        if (container) {
+          setTimeout(() => {
+            container.scrollTo({
+              top: container.scrollHeight,
+              behavior: "smooth",
+            });
+          }, 100);
+        }
+      }
+
+      // Add click handlers to question buttons
+      chatbotModalQuestionButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const question = this.getAttribute("data-question");
+          if (question && chatbotModalMessages) {
+            // Add user question
+            addChatMessage(question, true);
+
+            // Hide welcome message
+            const welcomeMessage = chatbotModalMessages.querySelector(
+              ".flex.flex-col.items-center"
+            );
+            if (welcomeMessage && welcomeMessage.style.display !== "none") {
+              welcomeMessage.style.opacity = "0";
+              welcomeMessage.style.transform = "translateY(-20px)";
+              setTimeout(() => {
+                welcomeMessage.style.display = "none";
+              }, 300);
+            }
+
+            // Add bot response after delay
+            setTimeout(() => {
+              const response =
+                chatbotResponses[question] ||
+                "Kechirasiz, men hali bunday savolga javob bera olmayman. Iltimos, quyidagi savollardan birini tanlang.";
+              addChatMessage(response, false);
+            }, 600);
+          }
+        });
+      });
+
+      // Tabs functionality
+      const tabTriggers = document.querySelectorAll('[role="tab"]');
+      const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+      tabTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", function () {
+          const targetId = this.getAttribute("aria-controls");
+
+          // Remove active state from all triggers
+          tabTriggers.forEach((t) => {
+            t.setAttribute("aria-selected", "false");
+            t.setAttribute("data-state", "inactive");
+          });
+
+          // Hide all panels
+          tabPanels.forEach((panel) => {
+            panel.setAttribute("hidden", "");
+            panel.setAttribute("data-state", "inactive");
+          });
+
+          // Activate clicked trigger
+          this.setAttribute("aria-selected", "true");
+          this.setAttribute("data-state", "active");
+
+          // Show target panel
+          const targetPanel = document.getElementById(targetId);
+          if (targetPanel) {
+            targetPanel.removeAttribute("hidden");
+            targetPanel.setAttribute("data-state", "active");
+          }
+        });
+      });
+
+      // API Test functionality
+      const apiTestBtn = document.getElementById("api-test-btn");
+      const apiQuestion = document.getElementById("api-question");
+      const apiResponse = document.getElementById("api-response");
+      const apiAnswer = document.getElementById("api-answer");
+
+      if (apiTestBtn && apiQuestion) {
+        apiTestBtn.addEventListener("click", async function () {
+          const question = apiQuestion.value.trim();
+          if (!question) {
+            alert("Iltimos, savol kiriting!");
+            return;
+          }
+
+          apiTestBtn.disabled = true;
+          const originalText = apiTestBtn.textContent;
+          apiTestBtn.textContent = "Yuklanmoqda...";
+
+          // Simulate API call with demo response
+          setTimeout(() => {
+            const demoResponses = {
+              materiallar:
+                "MetOneX platformasi qurilish materiallarini topish uchun AI texnologiyasidan foydalanadi. Materiallar ro'yxatini olish uchun GET /api/materials endpoint'idan foydalaning.",
+              narx: "Materiallar narxlarini olish uchun GET /api/materials/{id}/price endpoint'idan foydalaning. API real vaqtda narxlarni qaytaradi.",
+              "yetkazib beruvchi":
+                "Yetkazib beruvchilar ro'yxatini olish uchun GET /api/suppliers endpoint'idan foydalaning. Har bir yetkazib beruvchi haqida batafsil ma'lumot olasiz.",
+              buyurtma:
+                "Buyurtma yaratish uchun POST /api/orders endpoint'iga material ID va miqdorini yuboring.",
+            };
+
+            let responseText =
+              "MetOneX API yordamida siz qurilish materiallarini topish, narxlarni taqqoslash va buyurtmalar yaratish imkoniyatiga egasiz. API RESTful formatda ishlaydi va JSON formatida javob qaytaradi.";
+
+            const lowerQuestion = question.toLowerCase();
+            for (const [key, value] of Object.entries(demoResponses)) {
+              if (lowerQuestion.includes(key)) {
+                responseText = value;
+                break;
+              }
+            }
+
+            if (apiAnswer) {
+              apiAnswer.textContent = responseText;
+            }
+            if (apiResponse) {
+              apiResponse.classList.remove("hidden");
+            }
+
+            apiTestBtn.disabled = false;
+            apiTestBtn.textContent = originalText;
+          }, 1000);
+        });
+
+        // Enter key support
+        apiQuestion.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            apiTestBtn.click();
+          }
+        });
+      }
+    </script>
+
+    <!-- ========== IMPROVEMENTS - All New Features ========== -->
+
+    <!-- Scroll to Top Button -->
+    <button
+      class="scroll-to-top"
+      id="scrollToTop"
+      aria-label="Yuqoriga qaytish"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- All Improvements JavaScript -->
+    <script>
+      // ========== 1. Scroll to Top Button - Optimized ==========
+      (function () {
+        const scrollToTopBtn = document.getElementById("scrollToTop");
+        if (!scrollToTopBtn) return;
+
+        let ticking = false;
+        let isVisible = false;
+
+        function updateButton() {
+          const shouldShow = window.pageYOffset > 300;
+
+          if (shouldShow !== isVisible) {
+            isVisible = shouldShow;
+            if (isVisible) {
+              scrollToTopBtn.classList.add("show");
+            } else {
+              scrollToTopBtn.classList.remove("show");
+            }
+          }
+
+          ticking = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(updateButton);
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+
+        scrollToTopBtn.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      })();
+
+      // ========== 2. Toast Notifications ==========
+      function showToast(message, type = "info", duration = 3000) {
+        const container = document.getElementById("toastContainer");
+        const toast = document.createElement("div");
+        toast.className = `toast ${type}`;
+
+        const icons = {
+          success:
+            '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>',
+          error:
+            '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>',
+          info: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>',
+          warning:
+            '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>',
+        };
+
+        toast.innerHTML = `
+          <div style="color: ${
+            type === "success"
+              ? "#10b981"
+              : type === "error"
+              ? "#ef4444"
+              : type === "warning"
+              ? "#f59e0b"
+              : "#3b82f6"
+          }">
+            ${icons[type]}
+          </div>
+          <div style="flex: 1; color: #374151; font-weight: 500;">${message}</div>
+        `;
+
+        container.appendChild(toast);
+
+        setTimeout(() => {
+          toast.classList.add("hide");
+          setTimeout(() => toast.remove(), 300);
+        }, duration);
+      }
+
+      // Global function for toast
+      window.showToast = showToast;
+
+      // ========== 3. Number Counter Animation ==========
+      function animateCounter(element, target, duration = 2000) {
+        if (!element) return;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current).toLocaleString();
+          }
+        }, 16);
+      }
+
+      // Initialize counters on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter-number");
+        if (counters.length > 0) {
+          const counterObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                  const target = parseInt(
+                    entry.target.dataset.target || entry.target.textContent || 0
+                  );
+                  if (target > 0) {
+                    entry.target.dataset.animated = "true";
+                    animateCounter(entry.target, target);
+                  }
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          counters.forEach((counter) => counterObserver.observe(counter));
+        }
+
+        // ========== 4. Text Reveal on Scroll ==========
+        const textRevealElements = document.querySelectorAll(".text-reveal");
+        if (textRevealElements.length > 0) {
+          const textRevealObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("revealed");
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
+
+          textRevealElements.forEach((el) => textRevealObserver.observe(el));
+        }
+      });
+
+      // ========== 5. Parallax Effect - Optimized ==========
+      function initParallax() {
+        const parallaxElements = document.querySelectorAll(".parallax");
+        if (parallaxElements.length === 0) return;
+
+        let ticking = false;
+        let lastScroll = 0;
+
+        function updateParallax() {
+          const scrolled = window.pageYOffset;
+
+          // Only update if scroll changed significantly
+          if (Math.abs(scrolled - lastScroll) < 1) {
+            ticking = false;
+            return;
+          }
+
+          lastScroll = scrolled;
+
+          parallaxElements.forEach((element) => {
+            const speed = parseFloat(element.dataset.speed) || 0.5;
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+          });
+          ticking = false;
+        }
+
+        // Throttled scroll handler
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(updateParallax);
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+      }
+
+      // Initialize after DOM ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initParallax);
+      } else {
+        initParallax();
+      }
+
+      // ========== 6. Button Ripple Effect ==========
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".ripple").forEach((button) => {
+          button.addEventListener("click", function (e) {
+            const ripple = document.createElement("span");
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = size + "px";
+            ripple.style.left = x + "px";
+            ripple.style.top = y + "px";
+            ripple.classList.add("ripple-effect");
+
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+              if (ripple.parentNode) {
+                ripple.remove();
+              }
+            }, 600);
+          });
+        });
+      });
+
+      // ========== 7. Image Lazy Loading ==========
+      document.addEventListener("DOMContentLoaded", function () {
+        if ("IntersectionObserver" in window) {
+          const imageObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  if (img && img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute("data-src");
+                  }
+                  observer.unobserve(img);
+                }
+              });
+            }
+          );
+
+          document.querySelectorAll("img[data-src]").forEach((img) => {
+            imageObserver.observe(img);
+          });
+        }
+
+        // ========== 8. Form Validation Animations ==========
+        document.querySelectorAll(".form-input").forEach((input) => {
+          input.addEventListener("blur", function () {
+            if (this.value.trim() === "") {
+              this.classList.remove("valid");
+              this.classList.add("invalid");
+            } else {
+              this.classList.remove("invalid");
+              this.classList.add("valid");
+            }
+          });
+
+          input.addEventListener("input", function () {
+            if (this.value.trim() !== "") {
+              this.classList.remove("invalid");
+              this.classList.add("valid");
+            }
+          });
+        });
+
+        // ========== 9. Tooltip Initialization ==========
+        document.querySelectorAll("[data-tooltip]").forEach((element) => {
+          const tooltipText = element.dataset.tooltip;
+          if (tooltipText) {
+            const tooltip = document.createElement("span");
+            tooltip.className = "tooltip-text";
+            tooltip.textContent = tooltipText;
+            element.classList.add("tooltip");
+            element.appendChild(tooltip);
+          }
+        });
+
+        // ========== 10. Loading Button States ==========
+        document.querySelectorAll(".btn-loading-trigger").forEach((button) => {
+          button.addEventListener("click", function () {
+            this.classList.add("btn-loading");
+            this.disabled = true;
+
+            setTimeout(() => {
+              this.classList.remove("btn-loading");
+              this.disabled = false;
+            }, 2000);
+          });
+        });
+
+        // ========== 11. Smooth Anchor Scrolling ==========
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href && href !== "#" && href.length > 1) {
+              e.preventDefault();
+              const target = document.querySelector(href);
+              if (target) {
+                target.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }
+          });
+        });
+      });
+
+      // ========== 12. Demo Toast on Page Load ==========
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          if (typeof showToast === "function") {
+            showToast("Saytga xush kelibsiz! 🎉", "success", 3000);
+          }
+        }, 2000);
+      });
+
+      // ========== 13. Keyboard Navigation Support ==========
+      document.addEventListener("keydown", function (e) {
+        // ESC key to close modals
+        if (e.key === "Escape") {
+          const modals = document.querySelectorAll(
+            '.modal.show, [class*="modal"].show'
+          );
+          modals.forEach((modal) => {
+            modal.classList.remove("show");
+          });
+        }
+
+        // Arrow keys for navigation
+        if (e.key === "ArrowUp" && e.ctrlKey) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
+
+      // Wait for DOM to be ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          console.log("✨ All improvements loaded successfully!");
+        });
+      } else {
+        console.log("✨ All improvements loaded successfully!");
+      }
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
