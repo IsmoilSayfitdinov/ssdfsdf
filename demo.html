@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uz">
   <head>
@@ -1522,7 +1523,7 @@
           <div class="flex items-center justify-between">
             <a
               href="index.html"
-              class="inline-flex items-center text-[#374151] text-[20px] justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all hover:bg-[#F3F4F6] h-9 px-4 py-2 gap-2 text-[#374151] hover:text-[#02066F]"
+              class="inline-flex items-center text-[#374151] text-[20px] justify-center whitespace-nowrap rounded-md text-sm font-black transition-all hover:bg-[#F3F4F6] h-9 px-4 py-2 gap-2 text-[#374151] hover:text-[#02066F]"
             >
               MetOneX
             </a>
@@ -1538,9 +1539,9 @@
                 id="language-selector"
                 class="bg-white border-2 border-[#E5E7EB] rounded-lg px-4 py-2 text-sm font-medium text-[#374151] hover:border-[#2563EB] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/20 transition-all cursor-pointer"
               >
-                <option value="uz">🇺🇿 O'zbek</option>
-                <option value="ru">🇷🇺 Русский</option>
-                <option value="en">🇬🇧 English</option>
+                <option value="uz">O'zbek</option>
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
               </select>
             </div>
           </div>
@@ -1909,7 +1910,7 @@
           <!-- Animated Lines - Enhanced with More Paths -->
           <svg
             class="absolute inset-0 w-full h-full opacity-12"
-            xmlns="http://www.w3.org/2000/svg"
+                  xmlns="http://www.w3.org/2000/svg"
           >
             <defs>
               <linearGradient
@@ -1957,12 +1958,12 @@
               d="M0,150 Q250,100 500,150 T1000,150 L1200,150"
               stroke="url(#videoLineGradient)"
               stroke-width="2"
-              fill="none"
+                  fill="none"
             />
             <path
               d="M0,350 Q300,300 600,350 T1200,350 L1400,350"
               stroke="url(#videoLineGradient2)"
-              stroke-width="2"
+                  stroke-width="2"
               fill="none"
             />
             <path
@@ -1977,7 +1978,7 @@
               stroke-width="1.5"
               fill="none"
             />
-          </svg>
+                </svg>
 
           <!-- Floating Particles - Removed for performance -->
 
@@ -3929,7 +3930,7 @@
                 </li>
                 <li>
                   <a
-                    href="demo.html"
+                    href="demo"
                     class="text-white/80 hover:text-white transition-colors text-sm"
                     >Demo</a
                   >
@@ -4485,21 +4486,10 @@
         );
       }
 
-      // Custom Cursor - Beautiful Design
+      // Custom Cursor - Disabled (using classic cursor)
       function initCustomCursor() {
-        // Check if mobile device
-        if (window.innerWidth <= 768) return;
-
-        const cursor = document.createElement("div");
-        cursor.className = "custom-cursor";
-        const cursorDot = document.createElement("div");
-        cursorDot.className = "custom-cursor-dot";
-        const cursorTrail = document.createElement("div");
-        cursorTrail.className = "custom-cursor-trail";
-
-        document.body.appendChild(cursor);
-        document.body.appendChild(cursorDot);
-        document.body.appendChild(cursorTrail);
+        // Custom cursor disabled - using classic browser cursor
+        return;
 
         let mouseX = 0;
         let mouseY = 0;
@@ -4605,8 +4595,8 @@
           });
         });
 
-        // Hide default cursor
-        document.body.style.cursor = "none";
+        // Keep default cursor (custom cursor disabled)
+        // document.body.style.cursor = "none";
       }
 
       // Scroll reveal animations
@@ -4656,19 +4646,51 @@
         });
       }
 
+      // MetOneX Carousel Initialization - Infinite Loop
+      function initMetOneXCarousel() {
+        const carousel = document.querySelector(".metonex-carousel");
+        if (!carousel) return;
+
+        const track = carousel.querySelector(".carousel-track");
+        if (!track) return;
+
+        // Check if already initialized
+        if (track.dataset.initialized === "true") return;
+
+        // Clone slides for seamless infinite loop
+        const slides = Array.from(track.querySelectorAll(".carousel-slide"));
+        if (slides.length === 0) return;
+
+        // Duplicate all slides multiple times for seamless infinite loop
+        const totalSlides = slides.length;
+        for (let i = 0; i < totalSlides; i++) {
+          const clone = slides[i].cloneNode(true);
+          track.appendChild(clone);
+        }
+        
+        // Duplicate again for smoother loop
+        for (let i = 0; i < totalSlides; i++) {
+          const clone = slides[i].cloneNode(true);
+          track.appendChild(clone);
+        }
+
+        // Mark as initialized
+        track.dataset.initialized = "true";
+      }
+
       // Initialize all functions after DOM ready - Optimized
       if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", function () {
           initScrollProgress();
           initNavbarScroll();
-          initCustomCursor();
+          // initCustomCursor(); // Disabled - using classic cursor
           initMetOneXCarousel();
           initFAQ();
         });
       } else {
         initScrollProgress();
         initNavbarScroll();
-        initCustomCursor();
+        // initCustomCursor(); // Disabled - using classic cursor
         initMetOneXCarousel();
         initFAQ();
       }
@@ -4695,16 +4717,16 @@
 
       const chatbotResponses = {
         uz: {
-          "Loyihangiz nima qiladi?":
-            "MetOneX AI yordamida qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish muammosini hal qiladi. Platforma real vaqtda materiallarni topadi, narxlarni taqqoslaydi va eng yaxshi takliflarni tavsiya qiladi. 3-5 kunlik jarayonni 30 daqiqaga qisqartiradi.",
-          "Kimlar uchun mo'ljallangan?":
-            "MetOneX qurilish sohasida faoliyat yuritayotgan barcha uchun yaratilgan: quruvchilar, qurilish kompaniyalari, dizaynerlar va qurilish materiallarini qidirish muammosiga duch kelayotgan har qanday shaxs yoki tashkilot. Platforma B2B va B2C segmentlarida ishlaydi.",
-          "Qanday texnologiya ishlatilgan?":
-            "MetOneX zamonaviy texnologiyalar yig'indisidan foydalanadi: React.js va TypeScript frontend uchun, Node.js backend uchun, PostgreSQL ma'lumotlar bazasi, GPT-4 API AI funksiyalari uchun, va Machine Learning modellari narxlarni bashorat qilish va yetkazib beruvchilarni baholash uchun.",
-          "Narx qanday?":
-            "MetOneX platformasi foydalanish uchun to'liq bepul. Siz materiallarni qidirish, narxlarni taqqoslash va yetkazib beruvchilar bilan bog'lanish imkoniyatiga ega bo'lasiz. Faqat muvaffaqiyatli xaridlar uchun kichik komissiya olinadi. Hech qanday yashirin to'lovlar yo'q.",
-          "Qanday ishlaydi?":
-            "MetOneX ishlash jarayoni juda oddiy: 1) Material nomini yoki turini kiriting, 2) AI avtomatik ravishda barcha mavjud variantlarni topadi, 3) Narxlarni taqqoslang va eng yaxshi taklifni tanlang, 4) Yetkazib beruvchi bilan real vaqtda bog'laning, 5) Buyurtma qiling. Barchasi 30 daqiqada!",
+        "Loyihangiz nima qiladi?":
+          "MetOneX AI yordamida qurilish materiallarini topish va yetkazib beruvchilar bilan bog'lanish muammosini hal qiladi. Platforma real vaqtda materiallarni topadi, narxlarni taqqoslaydi va eng yaxshi takliflarni tavsiya qiladi. 3-5 kunlik jarayonni 30 daqiqaga qisqartiradi.",
+        "Kimlar uchun mo'ljallangan?":
+          "MetOneX qurilish sohasida faoliyat yuritayotgan barcha uchun yaratilgan: quruvchilar, qurilish kompaniyalari, dizaynerlar va qurilish materiallarini qidirish muammosiga duch kelayotgan har qanday shaxs yoki tashkilot. Platforma B2B va B2C segmentlarida ishlaydi.",
+        "Qanday texnologiya ishlatilgan?":
+          "MetOneX zamonaviy texnologiyalar yig'indisidan foydalanadi: React.js va TypeScript frontend uchun, Node.js backend uchun, PostgreSQL ma'lumotlar bazasi, GPT-4 API AI funksiyalari uchun, va Machine Learning modellari narxlarni bashorat qilish va yetkazib beruvchilarni baholash uchun.",
+        "Narx qanday?":
+          "MetOneX platformasi foydalanish uchun to'liq bepul. Siz materiallarni qidirish, narxlarni taqqoslash va yetkazib beruvchilar bilan bog'lanish imkoniyatiga ega bo'lasiz. Faqat muvaffaqiyatli xaridlar uchun kichik komissiya olinadi. Hech qanday yashirin to'lovlar yo'q.",
+        "Qanday ishlaydi?":
+          "MetOneX ishlash jarayoni juda oddiy: 1) Material nomini yoki turini kiriting, 2) AI avtomatik ravishda barcha mavjud variantlarni topadi, 3) Narxlarni taqqoslang va eng yaxshi taklifni tanlang, 4) Yetkazib beruvchi bilan real vaqtda bog'laning, 5) Buyurtma qiling. Barchasi 30 daqiqada!",
         },
         ru: {
           "Что делает ваш проект?":
