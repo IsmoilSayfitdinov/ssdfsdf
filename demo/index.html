@@ -28,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <link href="./output.css" rel="stylesheet" />
+    <link href="../output.css" rel="stylesheet" />
     <title>MetOneX - AI-Powered Construction Marketplace</title>
     <style>
       body {
@@ -1391,7 +1391,7 @@
         <div class="container mx-auto px-4 py-4">
           <div class="flex items-center justify-between">
             <a
-              href="index.html"
+              href="../index.html"
               class="inline-flex items-center text-[#374151] text-[20px] justify-center whitespace-nowrap rounded-md text-sm font-black transition-all hover:bg-[#F3F4F6] h-9 px-4 py-2 gap-2 text-[#374151] hover:text-[#02066F]"
             >
               MetOneX
@@ -2427,12 +2427,12 @@
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div
-                class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center scroll-reveal"
+                class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] text-center"
             >
               <div
                   class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
               >
-                  <span class="counter-number" data-target="30">0</span>
+                  30
               </div>
                 <div class="text-2xl font-black text-[#374151] mb-2">
                   Daqiqada
@@ -2442,7 +2442,7 @@
               </div>
             </div>
             <div
-              class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
+              class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] text-center"
             >
               <div
                   class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
@@ -3368,14 +3368,7 @@
 
               <!-- Card Content -->
               <div>
-                <div
-                  dir="ltr"
-                  data-orientation="horizontal"
-                  data-slot="tabs"
-                  class="flex flex-col gap-2 w-full"
-                >
-                 
-                </div>
+               
                 <div class="flex-1 outline-none space-y-4 mt-6">
                   <div
                     class="p-6 bg-gradient-to-br from-[#F0F4FF] to-white rounded-xl border-2 border-[#E5E7EB] shadow-sm"
@@ -3758,7 +3751,7 @@
               <ul class="space-y-2">
                 <li>
                   <a
-                    href="index.html"
+                    href="../index.html"
                     class="text-white/80 hover:text-white transition-colors text-sm"
                     >Bosh Sahifa</a
                   >
@@ -3832,41 +3825,22 @@
             <p class="text-white/60 text-sm">
               © 2024 MetOneX. Barcha huquqlar himoyalangan.
             </p>
-            <div class="flex items-center gap-4 mt-4 md:mt-0">
-              <a
-                href="#"
-                class="text-white/60 hover:text-white transition-colors text-sm"
-                >Maxfiylik</a
-              >
-              <span class="text-white/40">|</span>
-              <a
-                href="#"
-                class="text-white/60 hover:text-white transition-colors text-sm"
-                >Shartlar</a
-              >
-              <span class="text-white/40">|</span>
-              <a
-                href="#"
-                class="text-white/60 hover:text-white transition-colors text-sm"
-                >Yordam</a
-              >
-            </div>
+       
           </div>
         </div>
       </footer>
       </div>
     </div>
 
-    <div id="chatbot-modal" class="fixed inset-0 z-[9999] hidden">
-      <!-- Backdrop -->
+    <!-- Chatbot Dropdown Window - Fixed on Right Side -->
+    <div
+      id="chatbot-modal"
+      class="fixed bottom-24 right-10 w-[380px] h-[600px] z-[9999] hidden"
+      style="max-height: calc(100vh - 120px);"
+    >
+      <!-- Chat Window Content -->
       <div
-        id="chatbot-backdrop"
-        class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0"
-      ></div>
-
-      <!-- Modal Content - Fixed on Right Side -->
-      <div
-        class="fixed top-0 right-0 h-full w-full md:w-[450px] lg:w-[500px] bg-gradient-to-br from-[#1E3A8A] via-[#2563EB] to-[#3B82F6] text-white shadow-2xl border-l-2 border-white/20 overflow-hidden flex flex-col transform transition-all duration-300 translate-x-full z-[10000]"
+        class="w-full h-full bg-gradient-to-br from-[#1E3A8A] via-[#2563EB] to-[#3B82F6] text-white shadow-2xl rounded-2xl border-2 border-white/20 overflow-hidden flex flex-col transform transition-all duration-300 translate-y-full opacity-0"
         id="chatbot-modal-content"
       >
         <!-- Modal Header -->
@@ -4055,137 +4029,42 @@
           </div>
 
           <!-- Quick Questions - Beautiful Design -->
-          <div class="px-6 pb-6 border-t border-white/20 pt-6 bg-white/5">
+          <div class="px-4 pb-4 border-t border-white/20 pt-4 bg-white/5">
             <p
-              class="text-sm text-white/90 mb-4 font-bold uppercase tracking-wide"
+              class="text-xs text-white/90 mb-2 font-bold uppercase tracking-wide"
             >
               Tezkor savollar:
             </p>
-            <div class="space-y-3">
+            <div class="flex flex-wrap gap-2">
               <button
-                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
                 data-question="Loyihangiz nima qiladi?"
               >
-                <div
-                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10"></circle>
-                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                    <path d="M12 17h.01"></path>
-                  </svg>
-                </div>
-                <span class="flex-1">Loyihangiz nima qiladi?</span>
+                <span>Loyihangiz nima qiladi?</span>
               </button>
               <button
-                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
                 data-question="Kimlar uchun mo'ljallangan?"
               >
-                <div
-                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                  </svg>
-                </div>
-                <span class="flex-1">Kimlar uchun mo'ljallangan?</span>
+                <span>Kimlar uchun mo'ljallangan?</span>
               </button>
               <button
-                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
                 data-question="Qanday texnologiya ishlatilgan?"
               >
-                <div
-                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                    <path d="M2 17l10 5 10-5"></path>
-                    <path d="M2 12l10 5 10-5"></path>
-                  </svg>
-                </div>
-                <span class="flex-1">Qanday texnologiya ishlatilgan?</span>
+                <span>Qanday texnologiya ishlatilgan?</span>
               </button>
               <button
-                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
                 data-question="Narx qanday?"
               >
-                <div
-                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <line x1="12" y1="1" x2="12" y2="23"></line>
-                    <path
-                      d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
-                    ></path>
-                  </svg>
-                </div>
-                <span class="flex-1">Narx qanday?</span>
+                <span>Narx qanday?</span>
               </button>
               <button
-                class="chatbot-modal-question-btn w-full px-5 py-4 text-left bg-white/10 hover:bg-white/20 text-white rounded-xl border-2 border-white/30 transition-all font-semibold text-sm hover:border-white/50 hover:shadow-lg hover:scale-[1.02] flex items-center gap-3 group"
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
                 data-question="Qanday ishlaydi?"
               >
-                <div
-                  class="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                  </svg>
-                </div>
-                <span class="flex-1">Qanday ishlaydi?</span>
+                <span>Qanday ishlaydi?</span>
               </button>
             </div>
           </div>
@@ -4536,7 +4415,6 @@
         "open-chatbot-from-card"
       );
       const chatbotCloseBtn = document.getElementById("chatbot-close-btn");
-      const chatbotBackdrop = document.getElementById("chatbot-backdrop");
       const chatbotModalContent = document.getElementById(
         "chatbot-modal-content"
       );
@@ -4592,17 +4470,12 @@
       function openChatbotModal() {
         if (!chatbotModal) return;
         chatbotModal.classList.remove("hidden");
-        document.body.style.overflow = "hidden";
 
-        // Trigger animation
+        // Trigger animation - dropdown from bottom
         setTimeout(() => {
-          if (chatbotBackdrop) {
-          chatbotBackdrop.classList.remove("opacity-0");
-          chatbotBackdrop.classList.add("opacity-100");
-          }
           if (chatbotModalContent) {
-          chatbotModalContent.classList.remove("translate-x-full");
-          chatbotModalContent.classList.add("translate-x-0");
+            chatbotModalContent.classList.remove("translate-y-full", "opacity-0");
+            chatbotModalContent.classList.add("translate-y-0", "opacity-100");
           }
 
           // Scroll to top when opening
@@ -4617,18 +4490,13 @@
 
       function closeChatbotModal() {
         if (!chatbotModal) return;
-        if (chatbotBackdrop) {
-        chatbotBackdrop.classList.remove("opacity-100");
-        chatbotBackdrop.classList.add("opacity-0");
-        }
         if (chatbotModalContent) {
-        chatbotModalContent.classList.remove("translate-x-0");
-        chatbotModalContent.classList.add("translate-x-full");
+          chatbotModalContent.classList.remove("translate-y-0", "opacity-100");
+          chatbotModalContent.classList.add("translate-y-full", "opacity-0");
         }
 
         setTimeout(() => {
           chatbotModal.classList.add("hidden");
-          document.body.style.overflow = "";
         }, 300);
       }
 
@@ -4641,9 +4509,6 @@
         chatbotCloseBtn.addEventListener("click", closeChatbotModal);
       }
 
-      if (chatbotBackdrop) {
-        chatbotBackdrop.addEventListener("click", closeChatbotModal);
-      }
 
       if (openChatbotFromCard) {
         openChatbotFromCard.addEventListener("click", openChatbotModal);
@@ -5931,7 +5796,7 @@
           }
         });
 
-        document.querySelectorAll("a[href='index.html']").forEach((a) => {
+        document.querySelectorAll("a[href='../index.html']").forEach((a) => {
           if (a.textContent.includes("Bosh Sahifa") || a.textContent.includes("Главная") || a.textContent.includes("Home")) {
             a.textContent = t.home;
           }
@@ -6215,6 +6080,6 @@
       });
     </script>
 
-    <script src="app.js"></script>
+    <script src="../app.js"></script>
   </body>
 </html>

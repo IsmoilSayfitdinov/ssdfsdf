@@ -130,45 +130,6 @@ function initBannerBackgroundAnimations() {
     animatedContainer.appendChild(particle);
   }
 
-  // Qo'shimcha CSS animatsiyalar
-  const additionalStyle = document.createElement("style");
-  additionalStyle.textContent = `
-    @keyframes bannerBackgroundParticleMove {
-      0%, 100% {
-        transform: translate(0, 0) scale(1);
-        opacity: 0.08;
-      }
-      25% {
-        transform: translate(${30 + Math.random() * 40}px, ${
-    -30 + Math.random() * 40
-  }px) scale(${1.1 + Math.random() * 0.2});
-        opacity: 0.15;
-      }
-      50% {
-        transform: translate(${-20 + Math.random() * 40}px, ${
-    20 + Math.random() * 40
-  }px) scale(${0.9 + Math.random() * 0.2});
-        opacity: 0.12;
-      }
-      75% {
-        transform: translate(${20 + Math.random() * 40}px, ${
-    30 + Math.random() * 40
-  }px) scale(${1.05 + Math.random() * 0.2});
-        opacity: 0.18;
-      }
-    }
-    
-    .banner-background-particle {
-      will-change: transform, opacity;
-    }
-    
-    /* Scroll parallax effekt */
-    #home .absolute.inset-0 {
-      transition: transform 0.1s ease-out;
-    }
-  `;
-  document.head.appendChild(additionalStyle);
-
   // Scroll parallax effekt
   let lastScroll = 0;
   window.addEventListener(
