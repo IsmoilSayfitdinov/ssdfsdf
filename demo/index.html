@@ -2857,13 +2857,33 @@ Project Description            </div>
                             >
                           </div>
                           <div
-                            class="flex items-center gap-3 w-full justify-center"
+                            class="flex items-center gap-3 w-full justify-center flex-wrap"
                           >
-                            <span  id="download_file_demo" class="text-base cursor-pointer text-white font-semibold flex items-center gap-3"
-                              ><span class="text-white/70">Download Image:</span>
-                              <img width="30" height="30"  src="https://images.icon-icons.com/1674/PNG/512/download_111133.png" alt="a"></span
-                            >
-                        </div>
+                            <span class="text-white/70 text-sm mb-2 w-full text-center">Download Image:</span>
+                            <div class="flex gap-3">
+                              <button
+                                id="download_file_demo"
+                                class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg font-semibold text-sm transition-all duration-300 border border-white/30 hover:border-white/50 flex items-center gap-2"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                  <polyline points="7 10 12 15 17 10"></polyline>
+                                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download
+                              </button>
+                              <button
+                                id="view_image_demo"
+                                class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg font-semibold text-sm transition-all duration-300 border border-white/30 hover:border-white/50 flex items-center gap-2"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                  <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Image
+                              </button>
+                            </div>
+                          </div>
                       </div>
                     </div>
                     </div>
@@ -3476,6 +3496,74 @@ Project Description            </div>
                   opacity: 0;
                 }
               }
+              
+              /* Image Modal Styles */
+              .image-modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(8px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+              }
+              
+              .image-modal-overlay.show {
+                opacity: 1;
+                visibility: visible;
+              }
+              
+              .image-modal-content {
+                position: relative;
+                max-width: 90%;
+                max-height: 90vh;
+                background: white;
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+                transform: scale(0.8);
+                transition: transform 0.3s ease;
+              }
+              
+              .image-modal-overlay.show .image-modal-content {
+                transform: scale(1);
+              }
+              
+              .image-modal-close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 36px;
+                height: 36px;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 10;
+              }
+              
+              .image-modal-close:hover {
+                background: rgba(0, 0, 0, 0.7);
+                transform: rotate(90deg);
+              }
+              
+              .image-modal-img {
+                max-width: 100%;
+                max-height: 80vh;
+                border-radius: 8px;
+                display: block;
+                object-fit: contain;
+              }
             </style>
             <div
               id="chatbot-modal-messages-container"
@@ -3549,6 +3637,7 @@ Project Description            </div>
       </div>
     </div>
     <script>
+      // Download Image Button
       document.getElementById("download_file_demo").addEventListener("click", () => {
         // 🔥 SENING FILE MANZILINGNI SHU YERGA QOYASAN
         const fileUrl = "./../files/photo_2025-12-06_15-25-27.jpg"; // masalan: /files/myfile.pdf
@@ -3559,6 +3648,25 @@ Project Description            </div>
         link.href = fileUrl;
         link.download = customName;               // 👉 Shu nom bilan tushadi!
         link.click();
+      });
+      
+      // View Image Button
+      document.getElementById("view_image_demo").addEventListener("click", () => {
+        const fileUrl = "./../files/photo_2025-12-06_15-25-27.jpg";
+        
+        // Open image in modal
+        if (typeof window.openImageModal === 'function') {
+          window.openImageModal(fileUrl);
+        } else {
+          // Fallback if modal function not loaded yet
+          setTimeout(() => {
+            if (typeof window.openImageModal === 'function') {
+              window.openImageModal(fileUrl);
+            } else {
+              window.open(fileUrl, '_blank');
+            }
+          }, 100);
+        }
       });
       // Loading Screen
       window.addEventListener("load", function () {
@@ -4827,6 +4935,66 @@ Project Description            </div>
       } else {
         setTimeout(initTechStackSelect, 100);
       }
+    </script>
+    
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal-overlay">
+      <div class="image-modal-content">
+        <button class="image-modal-close" id="image-modal-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <img id="image-modal-img" class="image-modal-img" src="" alt="Image">
+      </div>
+    </div>
+    
+    <script>
+      // Image Modal Functions
+      const imageModal = document.getElementById("image-modal");
+      const imageModalImg = document.getElementById("image-modal-img");
+      const imageModalClose = document.getElementById("image-modal-close");
+      
+      function openImageModal(imageUrl) {
+        if (imageModal && imageModalImg) {
+          imageModalImg.src = imageUrl;
+          imageModal.classList.add("show");
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+      }
+      
+      function closeImageModal() {
+        if (imageModal) {
+          imageModal.classList.remove("show");
+          document.body.style.overflow = ""; // Restore scrolling
+        }
+      }
+      
+      // Make function globally available
+      window.openImageModal = openImageModal;
+      window.closeImageModal = closeImageModal;
+      
+      // Close modal on close button click
+      if (imageModalClose) {
+        imageModalClose.addEventListener("click", closeImageModal);
+      }
+      
+      // Close modal on overlay click
+      if (imageModal) {
+        imageModal.addEventListener("click", function(e) {
+          if (e.target === imageModal) {
+            closeImageModal();
+          }
+        });
+      }
+      
+      // Close modal on Escape key
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape" && imageModal && imageModal.classList.contains("show")) {
+          closeImageModal();
+        }
+      });
     </script>
   </body>
 </html>
