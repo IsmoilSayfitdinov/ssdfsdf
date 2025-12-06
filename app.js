@@ -952,10 +952,9 @@ function initTechStackSelect() {
 
       this.classList.add(
         "active",
-        "bg-gradient-to-r",
-        "from-[#02066F]",
-        "to-[#FF8C42]",
+        "bg-[#02066F]",
         "text-white",
+        "border-[#02066F]",
         "hover:shadow-[0_4px_12px_rgba(2,6,111,0.3)]"
       );
       this.classList.remove(
