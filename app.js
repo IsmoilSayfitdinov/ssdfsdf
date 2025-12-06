@@ -726,6 +726,26 @@ const techStackIcons = {
       icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
       color: "#3178C6",
     },
+    {
+      name: "Next Js",
+      icon: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/nextjs-dqhvgu9iwvacgwnwl8bs25.png/nextjs-ghnqttyc6ffbnqnn8xlrpj.png?_a=DATAg1AAZAA0",
+      color: "#3178C6",
+    },
+    {
+      name: "Zustand",
+      icon: "https://www.pedroalonso.net/blog/zustand-intro/zustand.png",
+      color: "#3178C6",
+    },
+    {
+      name: "Tanstack Query",
+      icon: "https://images.seeklogo.com/logo-png/43/3/react-query-logo-png_seeklogo-435663.png",
+      color: "#3178C6",
+    },
+    {
+      name: "Redux",
+      icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/redux-icon.png",
+      color: "#3178C6",
+    },
   ],
   backend: [
     {

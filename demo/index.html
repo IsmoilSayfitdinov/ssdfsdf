@@ -3474,26 +3474,81 @@ Project Description            </div>
                 }
               }
               
-              /* Typewriter Effect */
+              /* Typewriter Effect - Beautiful Smooth Animation */
               .typewriter-text {
+                display: inline-block;
+                letter-spacing: 0.01em;
+                word-spacing: 0.2em;
+                line-height: 1.6;
+                white-space: normal;
+              }
+              
+              .typewriter-char {
+                display: inline-block;
+                opacity: 0;
+                transform: translateY(8px) scale(0.95);
+                transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                will-change: transform, opacity;
+              }
+              
+              .typewriter-char.visible {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+              }
+              
+              /* Special handling for spaces */
+              .typewriter-char.space-char {
+                width: 0.3em;
+                min-width: 0.3em;
                 display: inline-block;
               }
               
               .typewriter-cursor {
                 display: inline-block;
-                width: 2px;
-                height: 14px;
-                background: rgba(255, 255, 255, 0.8);
-                margin-left: 2px;
-                animation: blink-cursor 1s infinite;
+                width: 2.5px;
+                height: 18px;
+                background: linear-gradient(to bottom, 
+                  rgba(255, 255, 255, 1) 0%,
+                  rgba(255, 255, 255, 0.95) 50%,
+                  rgba(255, 255, 255, 1) 100%);
+                margin-left: 4px;
+                vertical-align: middle;
+                animation: blink-cursor-smooth 1.2s infinite ease-in-out;
+                box-shadow: 
+                  0 0 8px rgba(255, 255, 255, 0.7),
+                  0 0 16px rgba(255, 255, 255, 0.4);
+                border-radius: 1px;
+                transition: all 0.2s ease;
               }
               
-              @keyframes blink-cursor {
-                0%, 50% {
+              @keyframes blink-cursor-smooth {
+                0%, 48% {
                   opacity: 1;
+                  transform: scaleY(1);
                 }
-                51%, 100% {
+                49%, 51% {
+                  opacity: 0.2;
+                  transform: scaleY(0.6);
+                }
+                52%, 100% {
+                  opacity: 1;
+                  transform: scaleY(1);
+                }
+              }
+              
+              /* Beautiful fade-in for message container */
+              .typewriter-text-container {
+                animation: messageFadeIn 0.3s ease-out;
+              }
+              
+              @keyframes messageFadeIn {
+                from {
                   opacity: 0;
+                  transform: translateY(10px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
                 }
               }
               
@@ -4159,39 +4214,177 @@ Project Description            </div>
         }
       }
       
-      // Function to add message with typewriter effect
+      // Function to add message with typewriter effect - Ultra smooth natural human-like typing
       function addMessageWithTypewriter(message, messageDiv, messageTextElement) {
         let index = 0;
-        const speed = 20; // Typing speed (milliseconds per character)
+        let lastWordEnd = 0;
+        
+        // Ultra smooth typing speeds (milliseconds per character) - Slower for beautiful animation
+        const baseSpeed = 50; // Base speed - slower for beautiful smooth animation
+        const fastSpeed = 35; // For spaces and easy characters
+        const slowSpeed = 70; // For complex characters
+        const verySlowSpeed = 100; // For numbers and special chars
+        
+        // Natural pauses - longer for better readability
+        const pauseAfterComma = 200;
+        const pauseAfterPeriod = 450;
+        const pauseAfterQuestion = 400;
+        const pauseAfterExclamation = 350;
+        const pauseAfterSemicolon = 250;
+        const pauseBetweenWords = 100; // Longer pause between words
+        
+        // Check if character is easy to type (common letters)
+        const easyChars = 'aeioulnrst';
+        const hardChars = 'qwxz';
+        const numbers = '0123456789';
+        
+        function getTypingSpeed(char, prevChar, nextChar) {
+          // Spaces - very fast
+          if (char === ' ') {
+            // Longer pause after punctuation
+            if (prevChar === '.' || prevChar === '!' || prevChar === '?') {
+              return pauseBetweenWords + 50;
+            }
+            return pauseBetweenWords;
+          }
+          
+          // Punctuation pauses
+          if (char === ',') return pauseAfterComma;
+          if (char === '.') return pauseAfterPeriod;
+          if (char === '?') return pauseAfterQuestion;
+          if (char === '!') return pauseAfterExclamation;
+          if (char === ';') return pauseAfterSemicolon;
+          if (char === ':') return pauseAfterComma;
+          
+          // Numbers are slower
+          if (numbers.includes(char.toLowerCase())) {
+            return verySlowSpeed + Math.random() * 20;
+          }
+          
+          // Hard characters are slower
+          if (hardChars.includes(char.toLowerCase())) {
+            return slowSpeed + Math.random() * 15;
+          }
+          
+          // Easy characters are faster but still smooth
+          if (easyChars.includes(char.toLowerCase())) {
+            return baseSpeed - 10 + Math.random() * 20;
+          }
+          
+          // Default with natural variation
+          // More variation for natural human feel (base speed ± 25ms)
+          const variation = (Math.random() * 50) - 25;
+          return baseSpeed + variation;
+        }
         
         function typeCharacter() {
           if (index < message.length) {
-            messageTextElement.textContent = message.substring(0, index + 1);
-            index++;
+            const currentChar = message[index];
+            const prevChar = index > 0 ? message[index - 1] : '';
+            const nextChar = index + 1 < message.length ? message[index + 1] : '';
             
-            // Scroll to bottom while typing
-            const container = document.getElementById("chatbot-modal-messages-container");
-            if (container) {
-              container.scrollTo({
-                top: container.scrollHeight,
-                behavior: "smooth",
-              });
+            // Create span for each character with beautiful animation
+            const charSpan = document.createElement('span');
+            charSpan.textContent = currentChar;
+            
+            // Special handling for spaces
+            if (currentChar === ' ') {
+              charSpan.className = 'typewriter-char space-char';
+              charSpan.style.width = '0.3em';
+              charSpan.style.minWidth = '0.3em';
+              charSpan.style.display = 'inline-block';
+            } else {
+              charSpan.className = 'typewriter-char';
             }
             
-            setTimeout(typeCharacter, speed);
+            charSpan.style.opacity = '0';
+            charSpan.style.transform = 'translateY(8px) scale(0.95)';
+            charSpan.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            
+            messageTextElement.appendChild(charSpan);
+            index++;
+            
+            // Animate character appearance smoothly with beautiful effect
+            setTimeout(() => {
+              requestAnimationFrame(() => {
+                charSpan.style.opacity = '1';
+                charSpan.style.transform = 'translateY(0) scale(1)';
+              });
+            }, 10);
+            
+            // Smooth gradual scroll - only when needed and very smooth
+            if (index % 6 === 0 || index === message.length - 1) {
+              const container = document.getElementById("chatbot-modal-messages-container");
+              if (container) {
+                const scrollHeight = container.scrollHeight;
+                const scrollTop = container.scrollTop;
+                const clientHeight = container.clientHeight;
+                const scrollBottom = scrollTop + clientHeight;
+                
+                // Only scroll if new content is below visible area
+                if (scrollHeight - scrollBottom > 30) {
+                  // Very smooth gradual scroll
+                  const targetScroll = scrollHeight - clientHeight;
+                  const currentScroll = scrollTop;
+                  const scrollDistance = targetScroll - currentScroll;
+                  
+                  if (scrollDistance > 0) {
+                    // Gradual smooth scroll - small steps for beautiful animation
+                    let stepCount = 0;
+                    const maxSteps = 15; // More steps = smoother
+                    const scrollStep = scrollDistance / maxSteps;
+                    
+                    const smoothScroll = () => {
+                      if (stepCount < maxSteps) {
+                        const newScroll = currentScroll + (scrollStep * stepCount);
+                        container.scrollTo({
+                          top: newScroll,
+                          behavior: "auto",
+                        });
+                        stepCount++;
+                        requestAnimationFrame(() => {
+                          setTimeout(smoothScroll, 20); // 20ms per step for smooth animation
+                        });
+                      } else {
+                        // Final scroll to exact position
+                        container.scrollTo({
+                          top: targetScroll,
+                          behavior: "auto",
+                        });
+                      }
+                    };
+                    
+                    requestAnimationFrame(smoothScroll);
+                  }
+                }
+              }
+            }
+            
+            // Get natural typing speed
+            const speed = getTypingSpeed(currentChar, prevChar, nextChar);
+            
+            // Use requestAnimationFrame for smoother animation
+            requestAnimationFrame(() => {
+              setTimeout(typeCharacter, Math.max(10, speed));
+            });
           } else {
-            // Remove cursor after typing is complete
+            // Smooth cursor fade out
             const cursor = messageTextElement.parentElement.querySelector('.typewriter-cursor');
             if (cursor) {
+              cursor.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              cursor.style.opacity = '0';
+              cursor.style.transform = 'scaleY(0)';
               setTimeout(() => {
                 cursor.remove();
-              }, 500);
+              }, 400);
             }
           }
         }
         
-        // Start typing
-        typeCharacter();
+        // Natural start delay
+        setTimeout(() => {
+          typeCharacter();
+        }, 80);
       }
 
       function addChatMessage(message, isUser = false) {
@@ -4234,15 +4427,15 @@ Project Description            </div>
             }, 500);
           });
 
-          // Bot response - Simple and clean design with typewriter effect
-          messageDiv.className = "flex justify-start mb-6";
+          // Bot response - Beautiful design with smooth typewriter effect
+          messageDiv.className = "flex justify-start mb-6 typewriter-text-container";
           messageDiv.innerHTML = `
             <div class="flex items-start gap-3 max-w-[85%]">
               <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0">
                   <img width="20" height="20" src="../Ресурс 1@4x.png"/>
                   </div>
               <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border-2 border-white/30 shadow-lg">
-                <p class="text-sm leading-relaxed font-medium text-white">
+                <p class="text-sm leading-relaxed font-medium text-white" style="word-spacing: 0.2em; white-space: normal;">
                   <span class="typewriter-text"></span>
                   <span class="typewriter-cursor"></span>
                 </p>
@@ -4809,9 +5002,41 @@ Project Description            </div>
       // Tech Stack Icons Data - Inline to ensure it works
       const techStackIcons = {
         frontend: [
-          { name: "React.js", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png", color: "#61DAFB" },
-          { name: "Tailwind CSS", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png", color: "#06B6D4" },
-          { name: "TypeScript", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png", color: "#3178C6" }
+          {
+            name: "React.js",
+            icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+            color: "#61DAFB",
+          },
+          {
+            name: "Tailwind CSS",
+            icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png",
+            color: "#06B6D4",
+          },
+          {
+            name: "TypeScript",
+            icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+            color: "#3178C6",
+          },
+          {
+            name: "Next Js",
+            icon: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/nextjs-dqhvgu9iwvacgwnwl8bs25.png/nextjs-ghnqttyc6ffbnqnn8xlrpj.png?_a=DATAg1AAZAA0",
+            color: "#3178C6",
+          },
+          {
+            name: "Zustand",
+            icon: "https://www.pedroalonso.net/blog/zustand-intro/zustand.png",
+            color: "#3178C6",
+          },
+          {
+            name: "Tanstack Query",
+            icon: "https://images.seeklogo.com/logo-png/43/3/react-query-logo-png_seeklogo-435663.png",
+            color: "#3178C6",
+          },
+          {
+            name: "Redux",
+            icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/redux-icon.png",
+            color: "#3178C6",
+          },
         ],
         backend: [
           { name: "Django", icon: "https://www.svgrepo.com/show/373554/django.svg", color: "#092E20" },
