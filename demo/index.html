@@ -3502,9 +3502,11 @@ Loyiha Tavsifi            </div>
         // 🔥 SENING FILE MANZILINGNI SHU YERGA QOYASAN
         const fileUrl = "./../files/photo_2025-12-06_15-25-27.jpg"; // masalan: /files/myfile.pdf
 
+        const customName = "Demo-test.jpg";    // 🔥 PC ga tushadigan Nomi
+
         const link = document.createElement("a");
         link.href = fileUrl;
-        link.download = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+        link.download = customName;               // 👉 Shu nom bilan tushadi!
         link.click();
       });
       // Loading Screen
