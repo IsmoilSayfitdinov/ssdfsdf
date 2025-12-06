@@ -1425,17 +1425,16 @@
             <h1
               class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[1.1] text-[#02066F]"
             >
-              Reduce finding construction materials and connecting with
-              suppliers to
-              <span class="highlight-text">30 minutes</span>
+              Stop Wasting Days of Phone Call Hell. Start Ordering in
+              <span class="highlight-text">30 Minute</span>
             </h1>
 
             <!-- Subtitle -->
             <p
               class="text-xl sm:text-2xl text-[#374151] max-w-4xl mx-auto leading-relaxed font-medium"
             >
-              Find construction materials and connect with suppliers using AI.
-              In 10 seconds, you'll find hundreds of materials.
+              Save $8,000-$12,000 per project. 
+              Get 20+ quotes. Pick the best. Order.
             </p>
           </div>
         </div>
@@ -3476,11 +3475,21 @@ Project Description            </div>
               
               /* Typewriter Effect - Beautiful Smooth Animation */
               .typewriter-text {
-                display: inline-block;
+                display: inline;
                 letter-spacing: 0.01em;
-                word-spacing: 0.2em;
+                word-spacing: 0.4em;
                 line-height: 1.6;
                 white-space: normal;
+                word-break: normal;
+                overflow-wrap: break-word;
+              }
+              
+              /* Word container - prevents word breaking */
+              .typewriter-word {
+                display: inline-block;
+                word-break: keep-all;
+                white-space: nowrap;
+                margin-right: 0.1em;
               }
               
               .typewriter-char {
@@ -3496,11 +3505,12 @@ Project Description            </div>
                 transform: translateY(0) scale(1);
               }
               
-              /* Special handling for spaces */
+              /* Special handling for spaces - make them visible and properly sized */
               .typewriter-char.space-char {
-                width: 0.3em;
-                min-width: 0.3em;
+                width: 0.5em;
+                min-width: 0.5em;
                 display: inline-block;
+                padding-right: 0.1em;
               }
               
               .typewriter-cursor {
@@ -4177,7 +4187,7 @@ Project Description            </div>
         const typingDiv = document.createElement("div");
         typingDiv.className = "flex justify-start mb-6 typing-indicator-container";
         typingDiv.innerHTML = `
-          <div class="flex items-start gap-3 max-w-[85%]">
+          <div class="flex items-start gap-3 max-w-[95%]">
             <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0">
                <img width="20" height="20" src="../Ресурс 1@4x.png"/>
             </div>
@@ -4217,7 +4227,7 @@ Project Description            </div>
       // Function to add message with typewriter effect - Ultra smooth natural human-like typing
       function addMessageWithTypewriter(message, messageDiv, messageTextElement) {
         let index = 0;
-        let lastWordEnd = 0;
+        let currentWordSpan = null; // Track current word span to prevent word breaking
         
         // Ultra smooth typing speeds (milliseconds per character) - Slower for beautiful animation
         const baseSpeed = 50; // Base speed - slower for beautiful smooth animation
@@ -4283,25 +4293,65 @@ Project Description            </div>
             const prevChar = index > 0 ? message[index - 1] : '';
             const nextChar = index + 1 < message.length ? message[index + 1] : '';
             
+            // Handle spaces - close current word and add space
+            if (currentChar === ' ') {
+              // Close current word span if exists
+              if (currentWordSpan) {
+                currentWordSpan = null;
+              }
+              
+              // Create space element
+              const spaceSpan = document.createElement('span');
+              spaceSpan.innerHTML = '&nbsp;';
+              spaceSpan.className = 'typewriter-char space-char';
+              spaceSpan.style.width = '0.5em';
+              spaceSpan.style.minWidth = '0.5em';
+              spaceSpan.style.display = 'inline-block';
+              spaceSpan.style.opacity = '0';
+              spaceSpan.style.transform = 'translateY(8px) scale(0.95)';
+              spaceSpan.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+              
+              messageTextElement.appendChild(spaceSpan);
+              index++;
+              
+              // Animate space appearance
+              setTimeout(() => {
+                requestAnimationFrame(() => {
+                  spaceSpan.style.opacity = '1';
+                  spaceSpan.style.transform = 'translateY(0) scale(1)';
+                });
+              }, 10);
+              
+              // Continue typing
+              const speed = getTypingSpeed(currentChar, prevChar, nextChar);
+              requestAnimationFrame(() => {
+                setTimeout(typeCharacter, Math.max(10, speed));
+              });
+              return;
+            }
+            
+            // Start new word span if needed (when starting a new word after space)
+            if (!currentWordSpan) {
+              currentWordSpan = document.createElement('span');
+              currentWordSpan.className = 'typewriter-word';
+              currentWordSpan.style.display = 'inline-block';
+              currentWordSpan.style.wordBreak = 'keep-all';
+              currentWordSpan.style.whiteSpace = 'nowrap';
+              messageTextElement.appendChild(currentWordSpan);
+            }
+            
             // Create span for each character with beautiful animation
             const charSpan = document.createElement('span');
             charSpan.textContent = currentChar;
-            
-            // Special handling for spaces
-            if (currentChar === ' ') {
-              charSpan.className = 'typewriter-char space-char';
-              charSpan.style.width = '0.3em';
-              charSpan.style.minWidth = '0.3em';
-              charSpan.style.display = 'inline-block';
-            } else {
-              charSpan.className = 'typewriter-char';
-            }
+            charSpan.className = 'typewriter-char';
+            charSpan.style.display = 'inline';
             
             charSpan.style.opacity = '0';
             charSpan.style.transform = 'translateY(8px) scale(0.95)';
             charSpan.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
             
-            messageTextElement.appendChild(charSpan);
+            // Add character to current word span (not directly to messageTextElement)
+            currentWordSpan.appendChild(charSpan);
             index++;
             
             // Animate character appearance smoothly with beautiful effect
@@ -4430,12 +4480,12 @@ Project Description            </div>
           // Bot response - Beautiful design with smooth typewriter effect
           messageDiv.className = "flex justify-start mb-6 typewriter-text-container";
           messageDiv.innerHTML = `
-            <div class="flex items-start gap-3 max-w-[85%]">
+            <div class="flex items-start gap-3 max-w-[95%]">
               <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0">
                   <img width="20" height="20" src="../Ресурс 1@4x.png"/>
                   </div>
               <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border-2 border-white/30 shadow-lg">
-                <p class="text-sm leading-relaxed font-medium text-white" style="word-spacing: 0.2em; white-space: normal;">
+                <p class="text-sm leading-relaxed font-medium text-white" style="word-spacing: 0.4em; white-space: normal;">
                   <span class="typewriter-text"></span>
                   <span class="typewriter-cursor"></span>
                 </p>
