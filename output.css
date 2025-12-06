@@ -533,6 +533,12 @@
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
   }
+  .mt-\[-20px\] {
+    margin-top: -20px;
+  }
+  .mt-\[-200px\] {
+    margin-top: -200px;
+  }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
   }
