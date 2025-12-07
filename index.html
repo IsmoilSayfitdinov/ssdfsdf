@@ -1,0 +1,3747 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI-powered construction marketplace connecting builders with verified suppliers in 30 minutes. Transform the $3.3 trillion construction market."
+    />
+    <meta
+      name="keywords"
+      content="construction, marketplace, AI, suppliers, builders, B2B, construction materials"
+    />
+    <meta name="author" content="MetOneX" />
+    <meta
+      property="og:title"
+      content="MetOneX - AI-Powered Construction Marketplace"
+    />
+    <meta
+      property="og:description"
+      content="AI-powered matching connects builders with verified suppliers in 30 minutes—not 3-5 days."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./output.css" rel="stylesheet" />
+    <title>MetOneX - AI-Powered Construction Marketplace</title>
+  </head>
+  <body>
+    <div class="min-h-screen bg-white">
+      <div
+        id="progress-bar"
+        class="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#02066F] to-[#FF8C42] origin-left z-50"
+        style="transform: scaleX(0); transform-origin: left"
+      ></div>
+
+      <!-- Navbar -->
+      <nav
+        id="navbar"
+        class="fixed top-0 backdrop-blur-3xl left-0 right-0 z-40 border-b border-[#E5E7EB]/50 transition-all duration-300 shadow-sm w-full max-h-[76px] h-full"
+      >
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6">
+          <div class="flex items-center justify-between h-16 sm:h-20">
+            <!-- Logo -->
+            <div class="flex items-center gap-2 sm:gap-3">
+              <a
+                href="#"
+                class="text-[16px] font-black sm:text-[20px] text-[#1F2937] hover:text-[#02066F] transition-colors duration-200"
+              >
+                MetOneX
+              </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-6 xl:gap-8">
+              <a
+                href="#home"
+                class="nav-link text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200 relative group"
+              >
+                Home
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#02066F] to-[#FF8C42] group-hover:w-full transition-all duration-300"
+                ></span>
+              </a>
+              <a
+                href="#problem"
+                class="nav-link text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200 relative group"
+              >
+                Problem
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#02066F] to-[#FF8C42] group-hover:w-full transition-all duration-300"
+                ></span>
+              </a>
+              <a
+                href="#solution"
+                class="nav-link text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200 relative group"
+              >
+                Solution
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#02066F] to-[#FF8C42] group-hover:w-full transition-all duration-300"
+                ></span>
+              </a>
+              <a
+                href="#team"
+                class="nav-link text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200 relative group"
+              >
+                Team
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#02066F] to-[#FF8C42] group-hover:w-full transition-all duration-300"
+                ></span>
+              </a>
+              <a
+                href="#contact"
+                class="nav-link text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200 relative group"
+              >
+                Contact
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#02066F] to-[#FF8C42] group-hover:w-full transition-all duration-300"
+                ></span>
+              </a>
+              <a
+                href="demo"
+                class="nav-link text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200 relative group"
+              >
+                Demo
+                <span
+                  class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-[#02066F] to-[#FF8C42] group-hover:w-full transition-all duration-300"
+                ></span>
+              </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+              id="mobile-menu-btn"
+              class="lg:hidden w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center text-[#1F2937] hover:bg-[#F3F4F6] active:bg-[#E5E7EB] rounded-lg transition-colors duration-200"
+            >
+              <svg
+                id="menu-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-menu"
+              >
+                <line x1="4" x2="20" y1="12" y2="12"></line>
+                <line x1="4" x2="20" y1="6" y2="6"></line>
+                <line x1="4" x2="20" y1="18" y2="18"></line>
+              </svg>
+              <svg
+                id="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-x hidden"
+              >
+                <path d="m18 6-12 12"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobile-menu"
+          class="lg:hidden hidden border-t border-[#E5E7EB] bg-white"
+        >
+          <div class="px-6 py-4 space-y-3">
+            <a
+              href="#home"
+              class="block py-2 text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200"
+              >Home</a
+            >
+            <a
+              href="#problem"
+              class="block py-2 text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200"
+              >Problem</a
+            >
+            <a
+              href="#solution"
+              class="block py-2 text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200"
+              >Solution</a
+            >
+            <a
+              href="#team"
+              class="block py-2 text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200"
+              >Team</a
+            >
+            <a
+              href="#contact"
+              class="block py-2 text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200"
+              >Contact</a
+            >
+            <a
+              href="/demo"
+              class="block py-2 text-[15px] font-medium text-[#374151] hover:text-[#02066F] transition-colors duration-200"
+              >Demo</a
+            >
+          </div>
+        </div>
+      </nav>
+
+      <section
+        id="home"
+        class="relative bg-gradient-to-br from-white via-[#FAFBFC] to-[#F3F4FF] pt-32 pb-16 px-6 overflow-hidden"
+      >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.08] pointer-events-none">
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: radial-gradient(
+                circle at 2px 2px,
+                #02066f 1px,
+                transparent 0
+              );
+              background-size: 40px 40px;
+              animation: patternMove 20s linear infinite;
+            "
+          ></div>
+        </div>
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <!-- Floating Particles -->
+          <div
+            class="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-[#02066F]/10 to-[#FF8C42]/10 rounded-full blur-3xl animate-float-particles"
+          ></div>
+          <div
+            class="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-[#FF8C42]/10 to-[#02066F]/10 rounded-full blur-3xl animate-float-particles-delayed"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/4 w-48 h-48 bg-gradient-to-br from-[#02066F]/8 to-[#FF8C42]/8 rounded-full blur-2xl animate-float-particles-slow"
+          ></div>
+          <div
+            class="absolute bottom-1/4 right-1/3 w-72 h-72 bg-gradient-to-br from-[#FF8C42]/8 to-[#02066F]/8 rounded-full blur-3xl animate-float-particles-delayed-2"
+          ></div>
+
+          <!-- Animated Gradient Orbs -->
+          <div class="absolute top-0 left-0 w-full h-full opacity-30">
+            <div
+              class="absolute top-1/4 left-1/2 w-[500px] h-[500px] bg-gradient-to-r from-[#02066F]/20 via-[#FF8C42]/20 to-[#02066F]/20 rounded-full blur-[100px] animate-gradient-orb"
+            ></div>
+            <div
+              class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-gradient-to-l from-[#FF8C42]/20 via-[#02066F]/20 to-[#FF8C42]/20 rounded-full blur-[80px] animate-gradient-orb-reverse"
+            ></div>
+          </div>
+
+          <!-- Animated Grid Lines -->
+          <div class="absolute inset-0 opacity-[0.05]">
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: linear-gradient(
+                    to right,
+                    #02066f 1px,
+                    transparent 1px
+                  ),
+                  linear-gradient(to bottom, #02066f 1px, transparent 1px);
+                background-size: 100px 100px;
+                animation: gridMove 30s linear infinite;
+              "
+            ></div>
+          </div>
+
+          <!-- Construction Crane - Right Side -->
+          <div
+            class="hidden lg:block absolute bottom-0 right-0 w-[300px] h-[400px] md:w-[250px] md:h-[350px] sm:w-[200px] sm:h-[300px] pointer-events-none z-5 opacity-30 md:opacity-25 sm:opacity-20 animate-crane-swing"
+          >
+            <svg
+              viewBox="0 0 300 400"
+              class="w-full h-full"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Crane Base -->
+              <rect
+                x="100"
+                y="350"
+                width="100"
+                height="50"
+                fill="#374151"
+                rx="5"
+              />
+              <rect
+                x="110"
+                y="340"
+                width="80"
+                height="20"
+                fill="#4B5563"
+                rx="3"
+              />
+
+              <!-- Crane Tower -->
+              <rect x="140" y="150" width="20" height="200" fill="#1F2937" />
+              <rect x="135" y="150" width="30" height="15" fill="#111827" />
+
+              <!-- Crane Arm (Horizontal) - Animated -->
+              <g class="crane-arm-group" style="transform-origin: 150px 165px">
+                <!-- Main Arm -->
+                <rect
+                  x="150"
+                  y="160"
+                  width="130"
+                  height="12"
+                  fill="#374151"
+                  rx="6"
+                />
+                <rect
+                  x="150"
+                  y="160"
+                  width="130"
+                  height="12"
+                  fill="#4B5563"
+                  rx="6"
+                  opacity="0.7"
+                />
+
+                <!-- Arm Support Cables -->
+                <line
+                  x1="150"
+                  y1="165"
+                  x2="220"
+                  y2="160"
+                  stroke="#6B7280"
+                  stroke-width="2"
+                  opacity="0.5"
+                />
+                <line
+                  x1="150"
+                  y1="170"
+                  x2="240"
+                  y2="160"
+                  stroke="#6B7280"
+                  stroke-width="2"
+                  opacity="0.5"
+                />
+
+                <!-- Counterweight -->
+                <rect
+                  x="150"
+                  y="155"
+                  width="40"
+                  height="20"
+                  fill="#FF8C42"
+                  rx="3"
+                />
+                <rect
+                  x="155"
+                  y="157"
+                  width="30"
+                  height="16"
+                  fill="#FF7A1F"
+                  rx="2"
+                />
+
+                <!-- Crane Hook and Cable - Animated -->
+                <g
+                  class="crane-hook-group"
+                  style="transform-origin: 270px 165px"
+                >
+                  <line
+                    x1="270"
+                    y1="165"
+                    x2="270"
+                    y2="230"
+                    stroke="#02066F"
+                    stroke-width="3"
+                    class="crane-cable"
+                  />
+                  <line
+                    x1="270"
+                    y1="165"
+                    x2="270"
+                    y2="230"
+                    stroke="#FF8C42"
+                    stroke-width="2"
+                    opacity="0.6"
+                    class="crane-cable"
+                  />
+
+                  <!-- Hook -->
+                  <path
+                    d="M 270 230 L 260 240 L 275 240 Z"
+                    fill="#1F2937"
+                    class="crane-hook-shape"
+                  />
+                  <path
+                    d="M 270 230 L 260 240 L 275 240 Z"
+                    fill="#374151"
+                    opacity="0.8"
+                    class="crane-hook-shape"
+                  />
+                  <circle
+                    cx="270"
+                    cy="235"
+                    r="3"
+                    fill="#FF8C42"
+                    class="crane-hook-shape"
+                  />
+                </g>
+              </g>
+
+              <!-- Crane Cabin -->
+              <rect
+                x="125"
+                y="150"
+                width="30"
+                height="25"
+                fill="#02066F"
+                rx="3"
+              />
+              <rect
+                x="128"
+                y="153"
+                width="24"
+                height="19"
+                fill="#1F2937"
+                rx="2"
+              />
+              <rect
+                x="135"
+                y="158"
+                width="10"
+                height="8"
+                fill="#FF8C42"
+                opacity="0.6"
+              />
+
+              <!-- Crane Wheels -->
+              <circle
+                cx="120"
+                cy="375"
+                r="12"
+                fill="#1F2937"
+                stroke="#374151"
+                stroke-width="2"
+              />
+              <circle cx="120" cy="375" r="8" fill="#4B5563" />
+              <circle
+                cx="180"
+                cy="375"
+                r="12"
+                fill="#1F2937"
+                stroke="#374151"
+                stroke-width="2"
+              />
+              <circle cx="180" cy="375" r="8" fill="#4B5563" />
+            </svg>
+          </div>
+
+          <!-- Excavator - Left Side -->
+          <div
+            class="hidden lg:block absolute bottom-0 left-0 w-[250px] h-[300px] md:w-[200px] md:h-[250px] sm:w-[150px] sm:h-[200px] pointer-events-none z-5 opacity-30 md:opacity-25 sm:opacity-20 animate-excavator-move"
+          >
+            <svg
+              viewBox="0 0 250 300"
+              class="w-full h-full"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Excavator Base -->
+              <rect
+                x="50"
+                y="200"
+                width="150"
+                height="50"
+                fill="#FF8C42"
+                rx="3"
+              />
+              <rect
+                x="60"
+                y="210"
+                width="130"
+                height="35"
+                fill="#FF7A1F"
+                rx="2"
+              />
+
+              <!-- Excavator Cabin -->
+              <rect
+                x="90"
+                y="150"
+                width="70"
+                height="60"
+                fill="#02066F"
+                rx="3"
+              />
+              <rect
+                x="95"
+                y="155"
+                width="60"
+                height="50"
+                fill="#1F2937"
+                rx="2"
+              />
+              <rect
+                x="110"
+                y="170"
+                width="30"
+                height="25"
+                fill="#374151"
+                opacity="0.6"
+                rx="2"
+              />
+
+              <!-- Excavator Arm -->
+              <g
+                class="excavator-arm-group"
+                style="transform-origin: 125px 150px"
+              >
+                <!-- Upper Arm -->
+                <line
+                  x1="125"
+                  y1="150"
+                  x2="180"
+                  y2="100"
+                  stroke="#374151"
+                  stroke-width="8"
+                  opacity="0.9"
+                />
+                <line
+                  x1="125"
+                  y1="150"
+                  x2="180"
+                  y2="100"
+                  stroke="#6B7280"
+                  stroke-width="6"
+                  opacity="0.7"
+                />
+
+                <!-- Lower Arm -->
+                <line
+                  x1="180"
+                  y1="100"
+                  x2="220"
+                  y2="50"
+                  stroke="#6B7280"
+                  stroke-width="6"
+                  opacity="0.9"
+                />
+                <line
+                  x1="180"
+                  y1="100"
+                  x2="220"
+                  y2="50"
+                  stroke="#9CA3AF"
+                  stroke-width="4"
+                  opacity="0.7"
+                />
+
+                <!-- Bucket -->
+                <path
+                  d="M 220 50 L 240 40 L 235 30 L 215 40 Z"
+                  fill="#1F2937"
+                  class="excavator-bucket"
+                />
+                <path
+                  d="M 220 50 L 240 40 L 235 30 L 215 40 Z"
+                  fill="#374151"
+                  opacity="0.8"
+                  class="excavator-bucket"
+                />
+                <rect
+                  x="225"
+                  y="35"
+                  width="10"
+                  height="8"
+                  fill="#FF8C42"
+                  opacity="0.6"
+                />
+              </g>
+
+              <!-- Excavator Tracks -->
+              <rect
+                x="40"
+                y="250"
+                width="170"
+                height="20"
+                fill="#1F2937"
+                rx="3"
+              />
+              <rect
+                x="45"
+                y="255"
+                width="160"
+                height="10"
+                fill="#374151"
+                rx="2"
+              />
+              <!-- Track Details -->
+              <rect
+                x="50"
+                y="257"
+                width="15"
+                height="6"
+                fill="#4B5563"
+                rx="1"
+              />
+              <rect
+                x="70"
+                y="257"
+                width="15"
+                height="6"
+                fill="#4B5563"
+                rx="1"
+              />
+              <rect
+                x="90"
+                y="257"
+                width="15"
+                height="6"
+                fill="#4B5563"
+                rx="1"
+              />
+              <rect
+                x="110"
+                y="257"
+                width="15"
+                height="6"
+                fill="#4B5563"
+                rx="1"
+              />
+              <rect
+                x="130"
+                y="257"
+                width="15"
+                height="6"
+                fill="#4B5563"
+                rx="1"
+              />
+              <rect
+                x="150"
+                y="257"
+                width="15"
+                height="6"
+                fill="#4B5563"
+                rx="1"
+              />
+              <rect
+                x="170"
+                y="257"
+                width="15"
+                height="6"
+                fill="#4B5563"
+                rx="1"
+              />
+              <rect
+                x="190"
+                y="257"
+                width="15"
+                height="6"
+                fill="#4B5563"
+                rx="1"
+              />
+            </svg>
+          </div>
+        </div>
+        <div class="max-w-[1200px] mx-auto relative z-10">
+          <div class="text-center mb-12" style="opacity: 1; transform: none">
+            <h1
+              class="text-[clamp(32px,4vw,64px)] leading-[1.2] tracking-[-1px] mb-3 text-[#1F2937] max-w-[900px] mx-auto md:text-[48px] sm:text-[36px]"
+              style="opacity: 1; transform: none"
+            >
+              $3.3 Trillion Construction Market. 90% Offline. MetOneX Brings It
+              Online.
+            </h1>
+            <p
+              class="text-[20px] text-[#6B7280] leading-[1.6] max-w-[720px] mx-auto md:text-[18px] sm:text-[16px]"
+              style="opacity: 1; transform: none"
+            >
+              AI-powered matching connects builders with verified suppliers in
+              30 minutes—not 3-5 days.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-5 mb-8 lg:grid-cols-2 sm:grid-cols-2"
+          >
+            <div
+              class="banner-card bg-[#FAFBFC] border-[2px] border-[#02066F] rounded-xl p-7 flex flex-col justify-center items-start gap-3 hover:bg-[#F3F4FF] hover:shadow-[0_0_12px_rgba(2,6,111,0.15)] transition-all duration-300 cursor-pointer group"
+              style="opacity: 0; transform: translateY(30px)"
+              data-delay="0"
+            >
+              <div class="banner-icon-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-clock w-12 h-12 text-[#02066F] banner-icon"
+                  aria-hidden="true"
+                >
+                  <path d="M12 6v6l4 2"></path>
+                  <circle cx="12" cy="12" r="10"></circle>
+                </svg>
+              </div>
+              <div
+                class="text-[40px] leading-[1.1] tracking-[-1px] text-[#02066F] banner-number"
+              >
+                3-6 days
+              </div>
+              <div
+                class="text-[14px] text-[#6B7280] leading-[1.4] max-w-[200px]"
+              >
+                Builders waste per order
+              </div>
+            </div>
+            <div
+              class="banner-card bg-[#FAFBFC] border-[2px] border-[#02066F] rounded-xl p-7 flex flex-col justify-center items-start gap-3 hover:bg-[#F3F4FF] hover:shadow-[0_0_12px_rgba(2,6,111,0.15)] transition-all duration-300 cursor-pointer group"
+              style="opacity: 0; transform: translateY(30px)"
+              data-delay="100"
+            >
+              <div class="banner-icon-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-dollar-sign w-12 h-12 text-[#02066F] banner-icon"
+                  aria-hidden="true"
+                >
+                  <line x1="12" x2="12" y1="2" y2="22"></line>
+                  <path
+                    d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                  ></path>
+                </svg>
+              </div>
+              <div
+                class="text-[40px] leading-[1.1] tracking-[-1px] text-[#02066F] banner-number"
+              >
+                12%
+              </div>
+              <div
+                class="text-[14px] text-[#6B7280] leading-[1.4] max-w-[200px]"
+              >
+                Project cost wasted
+              </div>
+            </div>
+            <div
+              class="banner-card bg-[#FAFBFC] border-[2px] border-[#02066F] rounded-xl p-7 flex flex-col justify-center items-start gap-3 hover:bg-[#F3F4FF] hover:shadow-[0_0_12px_rgba(2,6,111,0.15)] transition-all duration-300 cursor-pointer group"
+              style="opacity: 0; transform: translateY(30px)"
+              data-delay="200"
+            >
+              <div class="banner-icon-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-triangle-alert w-12 h-12 text-[#02066F] banner-icon"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                  ></path>
+                  <path d="M12 9v4"></path>
+                  <path d="M12 17h.01"></path>
+                </svg>
+              </div>
+              <div
+                class="text-[40px] leading-[1.1] tracking-[-1px] text-[#02066F] banner-number"
+              >
+                90%
+              </div>
+              <div
+                class="text-[14px] text-[#6B7280] leading-[1.4] max-w-[200px]"
+              >
+                Construction deals offline
+              </div>
+            </div>
+            <div
+              class="banner-card bg-[#FAFBFC] border-[2px] border-[#02066F] rounded-xl p-7 flex flex-col justify-center items-start gap-3 hover:bg-[#F3F4FF] hover:shadow-[0_0_12px_rgba(2,6,111,0.15)] transition-all duration-300 cursor-pointer group"
+              style="opacity: 0; transform: translateY(30px)"
+              data-delay="300"
+            >
+              <div class="banner-icon-wrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-credit-card w-12 h-12 text-[#02066F] banner-icon"
+                  aria-hidden="true"
+                >
+                  <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                  <line x1="2" x2="22" y1="10" y2="10"></line>
+                </svg>
+              </div>
+              <div
+                class="text-[40px] leading-[1.1] tracking-[-1px] text-[#02066F] banner-number"
+              >
+                60%
+              </div>
+              <div
+                class="text-[14px] text-[#6B7280] leading-[1.4] max-w-[200px]"
+              >
+                Suppliers face 30-90 day delays
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="relative bg-gradient-to-r from-[#FAFBFC] via-white to-[#FAFBFC] py-4 px-6 border-b border-[#E5E7EB] overflow-hidden"
+        style="opacity: 1; transform: none"
+      >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.06] pointer-events-none">
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #02066f 10px,
+                #02066f 11px
+              );
+              animation: patternMove 15s linear infinite;
+            "
+          ></div>
+        </div>
+        <div class="relative z-10">
+          <div class="max-w-[1200px] mx-auto text-center">
+            <p class="text-[14px] text-[#6B7280]">
+              Backed by research from:
+              <span class="text-[#1F2937]"
+                >McKinsey, PwC, Deloitte 2023-2024</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="relative bg-gradient-to-b from-[#FAFBFC] to-white py-20 px-6 overflow-hidden"
+      >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.07] pointer-events-none">
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: linear-gradient(
+                  30deg,
+                  #02066f 1px,
+                  transparent 1px
+                ),
+                linear-gradient(-30deg, #02066f 1px, transparent 1px);
+              background-size: 70px 70px;
+              animation: patternMoveDiagonal 35s linear infinite;
+            "
+          ></div>
+        </div>
+        <!-- Decorative Elements -->
+        <div
+          class="absolute top-0 left-10 w-72 h-72 bg-gradient-to-br from-[#FF8C42]/7 to-transparent rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 right-10 w-96 h-96 bg-gradient-to-tl from-[#02066F]/7 to-transparent rounded-full blur-3xl"
+        ></div>
+        <div class="max-w-[1200px] mx-auto relative z-10">
+          <div class="text-center mb-16" style="opacity: 1; transform: none">
+            <h2
+              class="text-[clamp(32px,4vw,64px)] leading-[1.3] tracking-[-0.5px] mb-6 text-[#1F2937] md:text-[36px] sm:text-[28px]"
+            >
+              Advisory Board Pipline — Top Founders and Experts
+            </h2>
+            <p
+              class="text-[16px] text-[#374151] leading-[1.6] max-w-[700px] mx-auto"
+            >
+              We're backed by founders fastest-growing construction tech
+              companies. These advisors have scaled similar marketplaces in
+              India and now guide MetOneX's strategy in Central Asia.
+            </p>
+          </div>
+          <div class="infinite-carousel advisory-board-carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <div
+                  class="bg-white rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center justify-between h-full relative"
+                >
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQE2HpodLRR_yw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1664372399413?e=1766016000&v=beta&t=58bAvG3iIJtVyRJeX-cg2lHZuTscn6v78_9GHlcsY5o"
+                        alt="Vikram Singh"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3
+                      class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
+                    >
+                      Vikram Singh
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
+                    >
+                      OfBusiness || Forbes 30U30 || FMS || Farmer
+                    </div>
+                    <div class="text-[14px] text-[#6B7280] mb-3">
+                      OfBusiness (India)
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      Scaled OfBusiness to $1B+ GMV with expertise in B2B
+                      fintech, procurement automation, and digital lending.
+                    </p>
+                    <ul class="text-left w-full space-y-1 mb-4">
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>$1B+ GMV scaled</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>B2B fintech expert</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>Supply chain financing</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/vikram-singh-a347b554/"
+                    class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 flex itecms-center justify-center gap-5"
+                  >
+                    <img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div
+                  class="bg-white rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center justify-between h-full relative"
+                >
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQHKKcjUml0McQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1694691031259?e=1766016000&v=beta&t=Ca30IPHohI7MUyDSPyuXbdIPU5dHkuVQ9q1fG538FB8"
+                        alt="Rahim Khan"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3
+                      class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
+                    >
+                      A Rahim khan
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
+                    >
+                      JSW One Platform Ltd | Supply Chain and Operations
+                      Generative AI
+                    </div>
+                    <div class="text-[14px] text-[#6B7280] mb-3">
+                      JSW One (India)
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      With over two years of experience as a Key Account
+                      Specialist at Bestseller India, I ensure timely and
+                      efficient delivery and payment reconciliation for the
+                      orders from the pan-India warehouse to the end partners.
+                    </p>
+                    <ul class="text-left w-full space-y-1 mb-4">
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>5,000+ suppliers managed</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>Real-time tracking expert</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>Delivery optimization</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/arahimkhan287/"
+                    class="text-[14px] flex items-center jufcenter gap-5 text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200"
+                  >
+                    <img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div
+                  class="bg-white rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center relative"
+                >
+                  <div
+                    class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
+                  >
+                    <img
+                      src="https://media.licdn.com/dms/image/v2/D4D03AQGsGRxkQQlC7A/profile-displayphoto-shrink_200_200/B4DZWjLrMaGkAY-/0/1742199502092?e=1766016000&v=beta&t=i5Sc48Vj10r_Ms68SKUpQgMe66Y22yUK_W3ml0Gi6IY"
+                      alt="Malay Harsha"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3
+                    class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
+                  >
+                    Malay Harsha
+                  </h3>
+                  <div
+                    class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
+                  >
+                    Advisory Board | Head of Marketing
+                  </div>
+                  <div class="text-[14px] text-[#6B7280] mb-3">
+                    JSW One (India)
+                  </div>
+                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                    A full-stack marketing leader with 18 years of experience in
+                    driving growth for SaaS and Technology businesses. I have
+                    led growth in the markets of South Asia, MENA, and APAC,
+                    driving Go-to-Market for Red Ocean as well as Blue ocean
+                    markets for SMB and Enterprises alike
+                  </p>
+                  <ul class="text-left w-full space-y-1 mb-4">
+                    <li
+                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                      style="opacity: 1; transform: none"
+                    >
+                      <span class="text-[#10B981] mr-2">✓</span
+                      ><span>18 years SaaS growth</span>
+                    </li>
+                    <li
+                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                      style="opacity: 1; transform: none"
+                    >
+                      <span class="text-[#10B981] mr-2">✓</span
+                      ><span>0→10K users in 2 years</span>
+                    </li>
+                    <li
+                      class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                      style="opacity: 1; transform: none"
+                    >
+                      <span class="text-[#10B981] mr-2">✓</span
+                      ><span>Marketplace flywheels</span>
+                    </li>
+                  </ul>
+                  <a
+                    href="https://www.linkedin.com/in/malay-harsha/"
+                    class="text-[14px] flex items-center justify-center gap-5 text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200"
+                  >
+                    <img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div
+                  class="bg-white rounded-2xl p-7 shadow-[0_4px_16px_rgba(2,6,111,0.08)] hover:shadow-[0_12px_32px_rgba(2,6,111,0.12)] transition-all duration-300 flex flex-col items-center text-center justify-between h-full relative"
+                >
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="w-[140px] h-[140px] rounded-full border-[4px] border-[#FF8C42] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQG7lZiIxoIbWg/profile-displayphoto-shrink_200_200/B4DZRBdyPQHYAY-/0/1736265116217?e=1766016000&v=beta&t=QpsxVd1jnQyP_ePHhbr5S_cIkTSOrlkH8OYK27Hs958"
+                        alt="Malay Harsha"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3
+                      class="text-[28px] leading-[1.2] text-[#1F2937] mb-1 pl-3"
+                    >
+                      Daniil Demitrov
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] uppercase tracking-[1px] mb-1"
+                    >
+                      Advisory Board | Head of Marketing
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      Head of Product Analytics at Fintech, 1+ billion market
+                      valuation | 7+ years in Data Analysis, Data Science and
+                      Research | Mentor, Educator
+                    </p>
+                    <ul class="text-left w-full space-y-1 mb-4">
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>18 years SaaS growth</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>0→10K users in 2 years</span>
+                      </li>
+                      <li
+                        class="text-[12px] text-[#6B7280] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="text-[#10B981] mr-2">✓</span
+                        ><span>Marketplace flywheels</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <a
+                    href="https://www.linkedin.com/in/daniil-demitrov/"
+                    class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 flex items-center justify-center gap-5"
+                  >
+                    <img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="problem"
+        class="relative bg-gradient-to-b from-white to-[#FAFBFC] py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
+      >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.09] pointer-events-none">
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: linear-gradient(
+                  45deg,
+                  #02066f 1px,
+                  transparent 1px
+                ),
+                linear-gradient(-45deg, #02066f 1px, transparent 1px);
+              background-size: 60px 60px;
+              background-position: 0 0, 30px 30px;
+              animation: patternMoveDiagonal 30s linear infinite;
+            "
+          ></div>
+        </div>
+        <!-- Animated Dots Pattern -->
+        <div class="absolute inset-0 opacity-[0.1] pointer-events-none">
+          <div
+            class="absolute inset-0 animated-dots-pattern"
+            style="
+              background-image: radial-gradient(
+                circle,
+                #02066f 1.5px,
+                transparent 1.5px
+              );
+              background-size: 40px 40px;
+            "
+          ></div>
+        </div>
+        <!-- Decorative Elements -->
+        <div
+          class="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-[#02066F]/5 to-transparent rounded-full blur-2xl"
+        ></div>
+        <div
+          class="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#FF8C42]/5 to-transparent rounded-full blur-2xl"
+        ></div>
+        <div class="max-w-[1200px] mx-auto relative z-10">
+          <div class="text-center mb-16" style="opacity: 1; transform: none">
+            <h2
+              class="text-[clamp(32px,4vw,64px)] leading-[1.3] tracking-[-0.5px] mb-6 text-[#1F2937] md:text-[36px] sm:text-[28px]"
+            >
+              The Problem — Global Construction on 1990s Tools
+            </h2>
+            <p
+              class="text-[16px] text-[#374151] leading-[1.6] max-w-[720px] mx-auto"
+            >
+              The $3.3 Trillion global construction market has 90% of
+              transactions still happening offline through phone calls,
+              WhatsApp, and Excel spreadsheets.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-5 mb-16 lg:grid-cols-4 sm:grid-cols-2"
+          >
+            <div style="opacity: 0; transform: scale(0.8)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-7 min-h-[200px] flex flex-col justify-between hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                style="transform: none"
+              >
+                <div>
+                  <div
+                    class="w-12 h-12 bg-[#FAFBFC] rounded-xl flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-clock w-8 h-8 text-[#02066F]"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 6v6l4 2"></path>
+                      <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                  </div>
+                  <div
+                    class="text-[40px] leading-[1.1] tracking-[-1px] text-[#02066F] mb-2"
+                    style="opacity: 1; transform: none"
+                  >
+                    3–6 days
+                  </div>
+                  <div class="text-[18px] text-[#1F2937] leading-[1.2] mb-3">
+                    Lost per order
+                  </div>
+                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-3">
+                    Builders lose 3–6 days and make 12+ phone calls for each
+                    material order.
+                  </p>
+                </div>
+                <p class="text-[12px] text-[#6B7280] italic">
+                  McKinsey Global Institute, 'Reinventing Construction' (2024)
+                </p>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: scale(0.8)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-7 min-h-[200px] flex flex-col justify-between hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+              >
+                <div>
+                  <div
+                    class="w-12 h-12 bg-[#FAFBFC] rounded-xl flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-dollar-sign w-8 h-8 text-[#02066F]"
+                      aria-hidden="true"
+                    >
+                      <line x1="12" x2="12" y1="2" y2="22"></line>
+                      <path
+                        d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="text-[40px] leading-[1.1] tracking-[-1px] text-[#02066F] mb-2"
+                    style="opacity: 1; transform: none"
+                  >
+                    12%
+                  </div>
+                  <div class="text-[18px] text-[#1F2937] leading-[1.2] mb-3">
+                    Of project cost
+                  </div>
+                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-3">
+                    Up to 12% of project costs are lost to manual pricing errors
+                    and miscommunication.
+                  </p>
+                </div>
+                <p class="text-[12px] text-[#6B7280] italic">
+                  PwC Global Construction Survey (2024)
+                </p>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: scale(0.8)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-7 min-h-[200px] flex flex-col justify-between hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                style="transform: none"
+              >
+                <div>
+                  <div
+                    class="w-12 h-12 bg-[#FAFBFC] rounded-xl flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-triangle-alert w-8 h-8 text-[#02066F]"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
+                  </div>
+                  <div
+                    class="text-[40px] leading-[1.1] tracking-[-1px] text-[#02066F] mb-2"
+                    style="opacity: 1; transform: none"
+                  >
+                    90%
+                  </div>
+                  <div class="text-[18px] text-[#1F2937] leading-[1.2] mb-3">
+                    Deals happen offline
+                  </div>
+                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-3">
+                    90% of B2B construction transactions happen with ZERO
+                    visibility or supplier verification.
+                  </p>
+                </div>
+                <p class="text-[12px] text-[#6B7280] italic">
+                  Deloitte 'Digital Construction Market Report' (2024)
+                </p>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: scale(0.8)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-7 min-h-[200px] flex flex-col justify-between hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+              >
+                <div>
+                  <div
+                    class="w-12 h-12 bg-[#FAFBFC] rounded-xl flex items-center justify-center mb-4"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-credit-card w-8 h-8 text-[#02066F]"
+                      aria-hidden="true"
+                    >
+                      <rect width="20" height="14" x="2" y="5" rx="2"></rect>
+                      <line x1="2" x2="22" y1="10" y2="10"></line>
+                    </svg>
+                  </div>
+                  <div
+                    class="text-[40px] leading-[1.1] tracking-[-1px] text-[#02066F] mb-2"
+                    style="opacity: 1; transform: none"
+                  >
+                    60%
+                  </div>
+                  <div class="text-[18px] text-[#1F2937] leading-[1.2] mb-3">
+                    Face payment delays
+                  </div>
+                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-3">
+                    60% of suppliers face 30–90 day payment delays, draining
+                    working capital and growth potential.
+                  </p>
+                </div>
+                <p class="text-[12px] text-[#6B7280] italic">
+                  PwC SME Financing Report (2024)
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#FAFBFC] rounded-xl p-10 mt-16"
+            style="opacity: 1; transform: none"
+          >
+            <h3 class="text-[32px] text-[#1F2937] mb-2 md:text-[24px]">
+              Market Opportunity
+            </h3>
+            <p class="text-[20px] text-[#6B7280] mb-8">Why Now?</p>
+            <div class="grid grid-cols-1 gap-8 mb-10 lg:grid-cols-3">
+              <div style="opacity: 0; transform: translateX(-60px)">
+                <div
+                  class="text-[48px] tracking-[-1px] text-[#02066F] leading-[1.1] mb-2"
+                >
+                  $3.3 Trillion
+                </div>
+                <div class="text-[16px] text-[#1F2937] mb-2">TAM (Global)</div>
+                <p class="text-[14px] text-[#374151] mb-1">
+                  90% of construction market is offline
+                </p>
+                <p class="text-[12px] text-[#6B7280] italic">
+                  McKinsey Global Institute (2024)
+                </p>
+              </div>
+              <div style="opacity: 0; transform: translateY(60px)">
+                <div
+                  class="text-[48px] tracking-[-1px] text-[#02066F] leading-[1.1] mb-2"
+                >
+                  $1.9 Trillion
+                </div>
+                <div class="text-[16px] text-[#1F2937] mb-2">
+                  SAM (MENA + Central Asia)
+                </div>
+                <p class="text-[14px] text-[#374151] mb-1">
+                  by 2030, growing 10% CAGR
+                </p>
+                <p class="text-[12px] text-[#6B7280] italic">
+                  PwC Middle East Construction 2030 Report (2023)
+                </p>
+              </div>
+              <div style="opacity: 0; transform: translateX(60px)">
+                <div
+                  class="text-[48px] tracking-[-1px] text-[#02066F] leading-[1.1] mb-2"
+                >
+                  $10.2 Billion
+                </div>
+                <div class="text-[16px] text-[#1F2937] mb-2">
+                  SOM (Uzbekistan)
+                </div>
+                <p class="text-[14px] text-[#374151] mb-1">
+                  MetOneX target: $1.5B GMV by 2027 (15% penetration)
+                </p>
+                <p class="text-[12px] text-[#6B7280] italic">
+                  Central Asian Market Analysis
+                </p>
+              </div>
+            </div>
+            <div
+              class="border-l-4 border-[#02066F] pl-6 bg-[#F0F8FF] p-6 rounded-lg"
+              style="opacity: 1; transform: none"
+            >
+              <h4 class="text-[24px] text-[#02066F] mb-2">
+                AI + Fintech Impact
+              </h4>
+              <div class="text-[28px] text-[#02066F] mb-2">
+                Can cut procurement costs by 8-12%
+              </div>
+              <p class="text-[16px] text-[#374151] mb-1">
+                And unlock over $300 Billion in global value creation.
+              </p>
+              <p class="text-[12px] text-[#6B7280] italic">
+                McKinsey &amp; Company, 'AI in Infrastructure &amp; Capital
+                Projects' (2023)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="solution"
+        class="relative bg-gradient-to-b from-[#FAFBFC] via-white to-[#F3F4FF] py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
+      >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.08] pointer-events-none">
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: repeating-linear-gradient(
+                  0deg,
+                  transparent,
+                  transparent 2px,
+                  #02066f 2px,
+                  #02066f 4px
+                ),
+                repeating-linear-gradient(
+                  90deg,
+                  transparent,
+                  transparent 2px,
+                  #02066f 2px,
+                  #02066f 4px
+                );
+              background-size: 50px 50px;
+              animation: patternMove 25s linear infinite;
+            "
+          ></div>
+        </div>
+        <!-- Animated Dots Pattern -->
+        <div class="absolute inset-0 opacity-[0.1] pointer-events-none">
+          <div
+            class="absolute inset-0 animated-dots-pattern"
+            style="background-size: 35px 35px"
+          ></div>
+        </div>
+        <!-- Decorative Elements -->
+        <div
+          class="absolute top-10 right-20 w-80 h-80 bg-gradient-to-br from-[#FF8C42]/8 to-[#02066F]/8 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-10 left-20 w-64 h-64 bg-gradient-to-tl from-[#02066F]/8 to-[#FF8C42]/8 rounded-full blur-3xl"
+        ></div>
+        <div class="max-w-[1200px] mx-auto relative z-10">
+          <div class="text-center mb-16" style="opacity: 1; transform: none">
+            <h2
+              class="text-[clamp(32px,4vw,64px)] leading-[1.3] tracking-[-0.5px] text-[#1F2937] md:text-[36px] sm:text-[28px]"
+            >
+              The Solution — 30 Minutes Instead of 3-5 Days
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 gap-10 mb-16 lg:grid-cols-2 lg:gap-8">
+            <div
+              class="bg-gradient-to-br from-[#FEE2E2] to-[#FED7D7] border-[3px] border-[#EF4444] rounded-2xl p-8 relative"
+              style="opacity: 1; transform: none"
+            >
+              <div
+                class="text-[48px] absolute top-4 right-4 opacity-80"
+                style="transform: rotate(-15deg)"
+              >
+                ❌
+              </div>
+              <h3 class="text-[24px] text-[#DC2626] mb-6">BEFORE MetOneX</h3>
+              <ul class="space-y-3 text-[14px] text-[#1F2937]">
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-x w-5 h-5 text-[#DC2626] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m15 9-6 6"></path>
+                    <path d="m9 9 6 6"></path></svg
+                  >Builder spends 3-5 days making 12+ phone calls
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-x w-5 h-5 text-[#DC2626] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m15 9-6 6"></path>
+                    <path d="m9 9 6 6"></path></svg
+                  >Sends 7 different Excel files to suppliers
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-x w-5 h-5 text-[#DC2626] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m15 9-6 6"></path>
+                    <path d="m9 9 6 6"></path></svg
+                  >No visibility into supplier credibility
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-x w-5 h-5 text-[#DC2626] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m15 9-6 6"></path>
+                    <path d="m9 9 6 6"></path></svg
+                  >Doesn't know when payment will happen
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-x w-5 h-5 text-[#DC2626] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m15 9-6 6"></path>
+                    <path d="m9 9 6 6"></path></svg
+                  >Risk of fraud, miscommunication, delays
+                </li>
+              </ul>
+            </div>
+            <div
+              class="flex items-center justify-center lg:hidden"
+              style="opacity: 0; transform: scale(0.5)"
+            >
+              <div style="transform: scale(1.04006)">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-arrow-right w-12 h-12 text-[#02066F]"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+            <div
+              class="bg-gradient-to-br from-[#DCFCE7] to-[#BBFBF1] border-[3px] border-[#10B981] rounded-2xl p-8 relative"
+              style="opacity: 1; transform: none"
+            >
+              <div
+                class="text-[48px] absolute top-4 right-4 opacity-80"
+                style="transform: rotate(15deg)"
+              >
+                ✅
+              </div>
+              <h3 class="text-[24px] text-[#047857] mb-6">AFTER MetOneX</h3>
+              <ul class="space-y-3 text-[14px] text-[#1F2937]">
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path></svg
+                  >Upload 1 BoQ document (that's it!)
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path></svg
+                  >AI extracts specs automatically
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path></svg
+                  >Verified suppliers notified in 10 minutes
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path></svg
+                  >AI finds best match by price + delivery + trust
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path></svg
+                  >Escrow payment secures transaction
+                </li>
+                <li
+                  class="flex items-start"
+                  style="opacity: 1; transform: none"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="m9 12 2 2 4-4"></path></svg
+                  ><span class="text-[16px] text-[#FF8C42]"
+                    >Procurement done in 30 minutes (90% faster!)</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-16" style="opacity: 1; transform: none">
+            <h3
+              class="text-[32px] text-[#1F2937] text-center mb-10 md:text-[24px]"
+            >
+              Three Core Value Propositions
+            </h3>
+            <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+              <div style="opacity: 0; transform: scale(0.8)">
+                <div
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                  style="transform: none"
+                >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-clock w-10 h-10 text-[#02066F] mb-4"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 6v6l4 2"></path>
+                      <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                  </div>
+                  <h4 class="text-[20px] text-[#1F2937] mb-3">SAVE TIME</h4>
+                  <div
+                    class="text-[28px] text-[#02066F] mb-3"
+                    style="opacity: 1; transform: none"
+                  >
+                    3-6 days → 30 minutes
+                  </div>
+                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-3">
+                    Cut procurement from 3-6 days to 30 minutes with AI BoQ
+                    matching.
+                  </p>
+                  <div class="text-[14px] text-[#10B981]" style="opacity: 1">
+                    ✓ 90% faster sourcing
+                  </div>
+                </div>
+              </div>
+              <div style="opacity: 0; transform: scale(0.8)">
+                <div
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-dollar-sign w-10 h-10 text-[#02066F] mb-4"
+                      aria-hidden="true"
+                    >
+                      <line x1="12" x2="12" y1="2" y2="22"></line>
+                      <path
+                        d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h4 class="text-[20px] text-[#1F2937] mb-3">EARN MORE</h4>
+                  <div
+                    class="text-[28px] text-[#02066F] mb-3"
+                    style="opacity: 1; transform: none"
+                  >
+                    +10-15% ROI
+                  </div>
+                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-3">
+                    Increase supplier ROI by 10-15% via instant payments and
+                    verified buyers.
+                  </p>
+                  <div class="text-[14px] text-[#10B981]" style="opacity: 1">
+                    ✓ Faster cash flow
+                  </div>
+                </div>
+              </div>
+              <div style="opacity: 0; transform: scale(0.8)">
+                <div
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                >
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-triangle-alert w-10 h-10 text-[#02066F] mb-4"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"
+                      ></path>
+                      <path d="M12 9v4"></path>
+                      <path d="M12 17h.01"></path>
+                    </svg>
+                  </div>
+                  <h4 class="text-[20px] text-[#1F2937] mb-3">BUILD TRUST</h4>
+                  <div
+                    class="text-[28px] text-[#02066F] mb-3"
+                    style="opacity: 1; transform: none"
+                  >
+                    95% verified
+                  </div>
+                  <p class="text-[14px] text-[#374151] leading-[1.6] mb-3">
+                    Every transaction is verified, scored, and protected by
+                    escrow fintech.
+                  </p>
+                  <div class="text-[14px] text-[#10B981]" style="opacity: 1">
+                    ✓ Zero fraud risk
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="relative bg-gradient-to-b from-white via-[#FAFBFC] to-[#F3F4FF] py-24 px-6 overflow-hidden"
+      >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.08] pointer-events-none">
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: repeating-conic-gradient(
+                from 0deg at 50% 50%,
+                transparent 0deg,
+                #02066f 1deg,
+                transparent 2deg,
+                transparent 20deg
+              );
+              background-size: 100px 100px;
+              animation: patternRotate 40s linear infinite;
+            "
+          ></div>
+        </div>
+        <!-- Decorative Elements -->
+        <div
+          class="absolute top-20 right-20 w-80 h-80 bg-gradient-to-bl from-[#02066F]/8 to-[#FF8C42]/8 rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-[#FF8C42]/8 to-[#02066F]/8 rounded-full blur-3xl"
+        ></div>
+        <div class="max-w-[1200px] mx-auto relative z-10">
+          <div
+            class="text-center bg- mb-20"
+            style="opacity: 1; transform: none"
+          >
+            <h2
+              class="text-[clamp(32px,4.5vw,64px)] leading-[1.3] tracking-[-0.5px] mb-4 text-[#1F2937] md:text-[36px] sm:text-[28px]"
+            >
+              MVP Results — Product-Market Fit in
+              <span class="text-[#FF8C42]">30 Days</span>
+            </h2>
+            <p class="text-[18px] text-[#6B7280]">
+              Real builders. Real transactions. Real traction.
+            </p>
+          </div>
+          <div
+            class="grid grid-cols-1 gap-6 mb-16 lg:grid-cols-4 sm:grid-cols-2"
+          >
+            <div style="opacity: 0; transform: scale(0.8)">
+              <div
+                class="bg-gradient-to-br from-[#FAFBFC] to-[#F3F4FF] rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:shadow-[0_12px_32px_rgba(2,6,111,0.15)] transition-all duration-300 cursor-pointer relative"
+                style="border: 3px solid rgb(2, 6, 111); transform: none"
+              >
+                <div
+                  class="text-[72px] leading-[1.1] tracking-[-1px] mb-2 md:text-[56px]"
+                  style="color: rgb(2, 6, 111); opacity: 1; transform: none"
+                >
+                  $75,000
+                </div>
+                <div class="text-[14px] text-[#1F2937] mb-2">
+                  Gross Merchandise Value
+                </div>
+                <p class="text-[12px] text-[#6B7280] italic mb-4">
+                  Already processed this month
+                </p>
+                <div
+                  class="text-[12px] text-white px-3 py-1 rounded-full mt-2"
+                  style="background-color: rgb(16, 185, 129); transform: none"
+                >
+                  ✓ Verified
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: scale(0.8)">
+              <div
+                class="bg-gradient-to-br from-[#FAFBFC] to-[#F3F4FF] rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:shadow-[0_12px_32px_rgba(2,6,111,0.15)] transition-all duration-300 cursor-pointer relative"
+                style="border: 3px solid rgb(255, 140, 66)"
+              >
+                <div
+                  class="text-[72px] leading-[1.1] tracking-[-1px] mb-2 md:text-[56px]"
+                  style="color: rgb(255, 140, 66); opacity: 1; transform: none"
+                >
+                  $11,700
+                </div>
+                <div class="text-[14px] text-[#1F2937] mb-2">
+                  Average Order Value
+                </div>
+                <p class="text-[12px] text-[#6B7280] italic mb-4">
+                  Per transaction (enterprise-scale deals)
+                </p>
+                <div
+                  class="text-[12px] text-white px-3 py-1 rounded-full mt-2"
+                  style="background-color: rgb(255, 140, 66); transform: none"
+                >
+                  📈 Growing 15% WoW
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: scale(0.8)">
+              <div
+                class="bg-gradient-to-br from-[#FAFBFC] to-[#F3F4FF] rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:shadow-[0_12px_32px_rgba(2,6,111,0.15)] transition-all duration-300 cursor-pointer relative"
+                style="border: 3px solid rgb(2, 6, 111)"
+              >
+                <div
+                  class="text-[72px] leading-[1.1] tracking-[-1px] mb-2 md:text-[56px]"
+                  style="color: rgb(2, 6, 111); opacity: 1; transform: none"
+                >
+                  7
+                </div>
+                <div class="text-[14px] text-[#1F2937] mb-2">
+                  Verified builders
+                </div>
+                <p class="text-[12px] text-[#6B7280] italic mb-4">
+                  Using MetOneX in production
+                </p>
+                <div
+                  class="text-[12px] text-white px-3 py-1 rounded-full mt-2"
+                  style="background-color: rgb(16, 185, 129); transform: none"
+                >
+                  ✓ Production
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: scale(0.8)">
+              <div
+                class="bg-gradient-to-br from-[#FAFBFC] to-[#F3F4FF] rounded-2xl p-10 flex flex-col items-center justify-center text-center hover:shadow-[0_12px_32px_rgba(2,6,111,0.15)] transition-all duration-300 cursor-pointer relative"
+                style="border: 3px solid rgb(2, 6, 111)"
+              >
+                <div
+                  class="text-[72px] leading-[1.1] tracking-[-1px] mb-2 md:text-[56px]"
+                  style="color: rgb(2, 6, 111); opacity: 1; transform: none"
+                >
+                  300+
+                </div>
+                <div class="text-[14px] text-[#1F2937] mb-2">
+                  Qualified leads
+                </div>
+                <p class="text-[12px] text-[#6B7280] italic mb-4">
+                  Waiting to onboard
+                </p>
+                <div class="w-full mt-4" style="opacity: 1">
+                  <div
+                    class="w-full h-1 bg-[#E5E7EB] rounded-full overflow-hidden"
+                  >
+                    <div
+                      class="h-full bg-gradient-to-r from-[#02066F] to-[#FF8C42] rounded-full"
+                      style="width: 20%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-[#F0F8FF] border-l-4 border-[#02066F] rounded-lg p-8 mb-8"
+            style="opacity: 1; transform: none"
+          >
+            <h3 class="text-[24px] text-[#02066F] mb-4">What This Proves</h3>
+            <ul class="space-y-2 text-[14px] text-[#1F2937]">
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path></svg
+                >Real builders are using MetOneX in production
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path></svg
+                >$11,700 AOV = serious B2B transactions (not toys)
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path></svg
+                >300+ pipeline = strong product-market fit signals
+              </li>
+              <li class="flex items-start">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-circle-check w-5 h-5 text-[#10B981] mr-2 flex-shrink-0 mt-0.5"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path></svg
+                >Built with real construction + fintech expertise
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-20 px-6 overflow-hidden">
+        <div class="max-w-[1200px] mx-auto">
+          <div class="text-center mb-16" style="opacity: 1; transform: none">
+            <h2
+              class="text-[clamp(32px,4vw,64px)] leading-[1.3] tracking-[-0.5px] text-[#1F2937] md:text-[36px] sm:text-[28px]"
+            >
+              AI &amp; ML Strategy — How We Build It
+            </h2>
+          </div>
+          <div class="space-y-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <div style="opacity: 0; transform: translateX(-60px)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex-1">
+                    <h3 class="text-[24px] text-[#02066F] mb-2">
+                      AI BoQ Reader
+                    </h3>
+                    <div class="text-[14px] text-[#1F2937] mb-4">
+                      OpenAI GPT-4 API
+                    </div>
+                    <ul class="space-y-2">
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Semantic document parsing from PDFs, Excel
+                          files</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Extracts quantities, materials, specifications
+                          automatically</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Handles 10+ material formats in Uzbek, Russian,
+                          English</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Accuracy: 87% in pilot (target: 95%)</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Impact: 95% reduction in manual data entry</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: translateX(60px)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                style="transform: none"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex-1">
+                    <h3 class="text-[24px] text-[#02066F] mb-2">
+                      ML Supplier Scoring System
+                    </h3>
+                    <div class="text-[14px] text-[#1F2937] mb-4">
+                      Custom TensorFlow Model
+                    </div>
+                    <ul class="space-y-2">
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Binary classification: Trustworthy vs. Risky
+                          suppliers</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Training dataset: 5,000+ supplier transaction
+                          records</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Features: Payment history, delivery reliability,
+                          ratings, fraud flags</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Metrics: 94% accuracy | 92% precision | 89%
+                          recall</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Prevents 90% of fraud cases in real-time</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: translateX(-60px)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                style="transform: none"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex-1">
+                    <h3 class="text-[24px] text-[#02066F] mb-2">
+                      Vector Search &amp; Matching
+                    </h3>
+                    <div class="text-[14px] text-[#1F2937] mb-4">
+                      Pinecone Vector Database
+                    </div>
+                    <ul class="space-y-2">
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Semantic supplier capabilities matching</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Finds best-fit suppliers by price + delivery +
+                          trust</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Real-time search across 50K+ suppliers</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Query latency: &lt;100ms</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Auto-recommends top 3 suppliers ranked by score</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: translateX(60px)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex-1">
+                    <h3 class="text-[24px] text-[#02066F] mb-2">
+                      Logistics &amp; ETA Tracking
+                    </h3>
+                    <div class="text-[14px] text-[#1F2937] mb-4">
+                      ML-Powered Delivery Prediction
+                    </div>
+                    <ul class="space-y-2">
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Integrates with local courier APIs</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Real-time GPS tracking</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >ML model predicts delivery dates with 92%
+                          accuracy</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Automatic alerts for delays</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Helps suppliers improve reliability over time</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 0; transform: translateX(-60px)">
+              <div
+                class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                style="transform: none"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="flex-1">
+                    <h3 class="text-[24px] text-[#02066F] mb-2">
+                      Fintech Payment Protection
+                    </h3>
+                    <div class="text-[14px] text-[#1F2937] mb-4">
+                      Smart Contracts + Escrow
+                    </div>
+                    <ul class="space-y-2">
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Escrow smart contracts secure payment until
+                          delivery</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span
+                          >Murabaha (Islamic finance) integration for working
+                          capital</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Prevents 60% of payment delay issues</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] leading-[1.6] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2 text-[#02066F]">•</span
+                        ><span>Partner banks: Agrobank, [others]</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-gradient-to-br from-[#FAFBFC] via-white to-[#F3F4FF] border-l-4 border-[#02066F] rounded-2xl p-8 mt-12 shadow-[0_4px_16px_rgba(2,6,111,0.08)]"
+            style="opacity: 1; transform: none"
+          >
+            <!-- Title -->
+            <h3
+              class="text-[clamp(32px, 4vw, 48px)] font-bold text-[#1F2937] mb-8 uppercase tracking-tight"
+            >
+              Complete Technology Stack
+            </h3>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap gap-3 mb-8">
+              <button
+                data-filter="all"
+                class="tech-filter-btn active bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:shadow-[0_4px_12px_rgba(2,6,111,0.3)] flex items-center gap-2"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                All
+              </button>
+              <button
+                data-filter="frontend"
+                class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+              >
+                Frontend
+              </button>
+              <button
+                data-filter="backend"
+                class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:text-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+              >
+                Backend
+              </button>
+              <button
+                data-filter="database"
+                class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:text-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+              >
+                Database
+              </button>
+              <button
+                data-filter="storage"
+                class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:text-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+              >
+                Storage
+              </button>
+
+              <button
+                data-filter="aiml"
+                class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:text-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+              >
+                AI/ML
+              </button>
+              <button
+                data-filter="fintech"
+                class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:text-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+              >
+                Fintech
+              </button>
+              <button
+                data-filter="logistics"
+                class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:text-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+              >
+                Logistics
+              </button>
+              <button
+                data-filter="infrastructure"
+                class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:text-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+              >
+                Infrastructure
+              </button>
+            </div>
+
+            <!-- Technology Icons Container -->
+            <div
+              id="tech-icons-container"
+              class="grid grid-cols-2 gap-6 md:grid-cols-5 sm:grid-cols-5"
+            >
+              <!-- Icons will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="team"
+        class="relative bg-gradient-to-b from-white via-[#FAFBFC] to-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 overflow-hidden"
+      >
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.06] pointer-events-none">
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: radial-gradient(
+                ellipse at center,
+                #02066f 1px,
+                transparent 1px
+              );
+              background-size: 80px 80px;
+              animation: patternMove 30s linear infinite;
+            "
+          ></div>
+        </div>
+        <!-- Animated Dots Pattern -->
+        <div class="absolute inset-0 opacity-[0.09] pointer-events-none">
+          <div
+            class="absolute inset-0 animated-dots-pattern"
+            style="
+              background-image: radial-gradient(
+                circle,
+                #02066f 2px,
+                transparent 2px
+              );
+              background-size: 45px 45px;
+            "
+          ></div>
+        </div>
+        <!-- Decorative Elements -->
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-[#02066F]/6 to-transparent rounded-full blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-[#FF8C42]/6 to-transparent rounded-full blur-3xl"
+        ></div>
+        <div class="max-w-[1200px] mx-auto relative z-10">
+          <div class="text-center mb-16" style="opacity: 1; transform: none">
+            <h2
+              class="text-[clamp(32px,4vw,64px)] leading-[1.3] tracking-[-0.5px] text-[#1F2937] md:text-[36px] sm:text-[28px]"
+            >
+              Meet Our Team
+            </h2>
+          </div>
+          <div class="infinite-carousel team-carousel">
+            <div class="carousel-track">
+              <div class="carousel-slide">
+                <div
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center h-full justify-between text-center"
+                >
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D5603AQHmhT_apNDFsQ/profile-displayphoto-scale_200_200/B56ZjRf2mRHkAY-/0/1755861447153?e=1766016000&v=beta&t=fnDw2o4o90kSSW-f4Zum0ecrMdBydCladSDNtPVjUo0"
+                        alt="Abdulaziz Olimov"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
+                      Abdulaziz Olimov
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]"
+                    >
+                      ML Engineer &amp; Team Lead
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      AI/ML specialist with expertise in building
+                      production-ready machine learning systems and leading
+                      technical teams.
+                    </p>
+                    <div class="text-[12px] text-[#6B7280]">
+                      Machine Learning, AI, Python, TensorFlow, Leadership
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/abdulazizolimov/"
+                    class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 mt-4 flex items-center justify-center gap-5"
+                    ><img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div
+                  class="bg-white h-full border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col items-center text-center justify-between"
+                >
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQEySOEECoChDg/profile-displayphoto-scale_200_200/B4DZmgu4MWJcAY-/0/1759338268107?e=1766016000&v=beta&t=5EtVJ9pgUYZ0PJjvkA4IEw0pURfrh9fRaqENKcAmF34"
+                        alt="Shohruh Bekmurodov"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
+                      Shohruh Bekmurodov
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]"
+                    >
+                      Backend Developer
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      Backend expert specializing in Django, REST APIs, and
+                      scalable server architecture for high-performance
+                      applications.
+                    </p>
+                    <div class="text-[12px] text-[#6B7280]">
+                      Django, Python, REST APIs, PostgreSQL, AWS
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/shohruh-bekmurodov/"
+                    class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 flex items-center jufcenter gap-5 mt-4"
+                    ><img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col h-full items-center justify-between text-center"
+                >
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://avatars.githubusercontent.com/u/132925394?v=4"
+                        alt="Ismoil Sayfitdinov"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
+                      Ismoil Sayfitdinov
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]"
+                    >
+                      Mobile &amp; Full-Stack Developer
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      3+ years building production mobile apps with React Native
+                      and React, UX implementation expertise.
+                    </p>
+                    <div class="text-[12px] text-[#6B7280]">
+                      React, React Native, TypeScript, Mobile Development, UX
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/ismoil-sayfitdinov-aba73a293/"
+                    class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 mt-4 flex items-center justify-center gap-5"
+                    ><img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex flex-col h-full items-center text-center"
+                >
+                  <div class="flex flex-col items-center text-center h-full">
+                    <div
+                      class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4E03AQETIfO7550Dgw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1678801728304?e=1766016000&v=beta&t=-GCJs4JImw775ZwOz5Kq8gwHra4FWCpmOLIMmiGyISk"
+                        alt="Mirsaid Mirkhujayev"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
+                      Mirsaid Mirkhujayev
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]"
+                    >
+                      Project Manager
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      Ex-CEO of Uzbekistan's largest consulting company with
+                      450+ member entrepreneur network.
+                    </p>
+                    <div class="text-[12px] text-[#6B7280]">
+                      Business Strategy, B2B Sales, Uzbekistan Market,
+                      Fundraising
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/mirsaid-mirkhujayev-a18a36268/"
+                    class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 mt-4 flex items-center jufcenter gap-5"
+                    ><img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex h-full flex-col items-center justify-between text-center"
+                >
+                  <div class="flex h-full flex-col items-center h-full">
+                    <div
+                      class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D5603AQGF-qQOiM_d-g/profile-displayphoto-shrink_200_200/B56ZX1m2ssHQAc-/0/1743582359549?e=1766016000&v=beta&t=L1_PIPcNCSR9nrOOFw5biLL3xEGBAoICwnz1QkGxVYM"
+                        alt="Aziza Sharopova"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
+                      Aziza Sharopova
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]"
+                    >
+                      Product Designer
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      UI/UX design specialist with 1+ year creating functional
+                      and beautiful interfaces for B2B products.
+                    </p>
+                    <div class="text-[12px] text-[#6B7280]">
+                      UI/UX Design, Figma, Product Design, User Research
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/aziza-sharopova-000341355/"
+                    class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 mt-4 flex itecenter jufcenter gap-5"
+                    ><img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+              <div class="carousel-slide">
+                <div
+                  class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-8 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300 flex h-full flex-col items-center justify-between text-center"
+                >
+                  <div class="flex h-full flex-col items-center h-full">
+                    <div
+                      class="w-[160px] h-[160px] rounded-full border-[3px] border-[#02066F] overflow-hidden mb-4"
+                    >
+                      <img
+                        src="https://media.licdn.com/dms/image/v2/D4D03AQG7w4ezgO0uMQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1663574510801?e=1766620800&v=beta&t=9iqH4Slabp_S1aEiF_loDteuWT6Cunh1mDqsh1srTNE"
+                        alt="Aziza Sharopova"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-[24px] leading-[1.2] text-[#1F2937] mb-1">
+                      Samandar Kuchkarov
+                    </h3>
+                    <div
+                      class="text-[14px] text-[#02066F] mb-4 tracking-[0.5px]"
+                    >
+                      Mobile Developer
+                    </div>
+                    <p class="text-[14px] text-[#374151] leading-[1.6] mb-4">
+                      Mobile developer with 2+ years of experience in creating
+                    </p>
+                    <div class="text-[12px] text-[#6B7280]">
+                      React Native, TypeScript, Mobile Development
+                    </div>
+                  </div>
+                  <a
+                    href="https://www.linkedin.com/in/samandar-kuchkarov-640181207/"
+                    class="text-[14px] text-[#02066F] bg-[#FAFBFC] border border-[#02066F] px-4 py-2 rounded-md hover:bg-[#02066F] hover:text-white transition-all duration-200 mt-4 flex itecenter jufcenter gap-5"
+                    ><img
+                      wdith="20"
+                      height="20"
+                      class="w-[25px]"
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1024px-LinkedIn_icon.svg.png"
+                    />
+                    Linkedin</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-20 px-6 overflow-hidden">
+        <div class="max-w-[1200px] mx-auto">
+          <div class="text-center mb-16" style="opacity: 1; transform: none">
+            <h2
+              class="text-[clamp(32px,4.5vw,64px)] leading-[1.3] tracking-[-0.5px] mb-4 text-[#1F2937] md:text-[36px] sm:text-[28px]"
+            >
+              Development Timeline
+            </h2>
+            <p class="text-[18px] text-[#6B7280]">
+              From MVP to Market Domination
+            </p>
+          </div>
+          <div class="space-y-0 max-w-[900px] mx-auto">
+            <div style="opacity: 1; transform: none">
+              <div class="relative flex gap-6">
+                <div class="flex flex-col items-center">
+                  <div class="flex-shrink-0">
+                    <div style="transform: none">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="#02066F"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-circle-check w-8 h-8 text-[#02066F]"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="m9 12 2 2 4-4"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="w-0.5 h-full mt-2"
+                    style="background: rgb(2, 6, 111); transform: none"
+                  ></div>
+                </div>
+                <div class="flex-1 pb-12" style="opacity: 1; transform: none">
+                  <div
+                    class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-6 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                    style="transform: none"
+                  >
+                    <h3 class="text-[18px] text-[#1F2937] mb-4">
+                      Q4 2025 — MVP Phase ✓
+                    </h3>
+                    <ul class="space-y-2 mb-4">
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(2, 6, 111)">✓</span
+                        ><span>Launch MVP (AI BoQ + Escrow payments)</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(2, 6, 111)">✓</span
+                        ><span
+                          >Onboard 20 verified builders &amp; 2 anchor
+                          suppliers</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(2, 6, 111)">✓</span
+                        ><span>Integrate with first partner bank</span>
+                      </li>
+                    </ul>
+                    <div
+                      class="text-[14px] mt-4 pt-4 border-t border-[#E5E7EB]"
+                      style="color: rgb(2, 6, 111)"
+                    >
+                      <strong>Achieved: </strong>$70K GMV | 5 customers | 300+
+                      pipeline
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 1; transform: none">
+              <div class="relative flex gap-6">
+                <div class="flex flex-col items-center">
+                  <div class="flex-shrink-0">
+                    <div style="animation: spin-reverse 5s linear infinite">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-loader-circle w-8 h-8 text-[#FF8C42]"
+                        aria-hidden="true"
+                      >
+                        <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="w-0.5 h-full mt-2"
+                    style="background: rgb(255, 140, 66); transform: none"
+                  ></div>
+                </div>
+                <div class="flex-1 pb-12" style="opacity: 1; transform: none">
+                  <div
+                    class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-6 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                    style="transform: none"
+                  >
+                    <h3 class="text-[18px] text-[#1F2937] mb-4">
+                      Q1 2026 — Expansion Phase 🔄
+                    </h3>
+                    <ul class="space-y-2 mb-4">
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(255, 140, 66)"
+                          >🔄</span
+                        ><span
+                          >Launch Supplier Scoring System (Champion Board)</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(255, 140, 66)"
+                          >🔄</span
+                        ><span>Add automated logistics &amp; ETA tracking</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(255, 140, 66)"
+                          >🔄</span
+                        ><span
+                          >Integrate Murabaha financing with bank partner</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(255, 140, 66)"
+                          >🔄</span
+                        ><span>Add nasiya (credit) payments for buyers</span>
+                      </li>
+                    </ul>
+                    <div
+                      class="text-[14px] mt-4 pt-4 border-t border-[#E5E7EB]"
+                      style="color: rgb(255, 140, 66)"
+                    >
+                      <strong>Target: </strong>$300K GMV | 50+ customers | 95%
+                      verified deals
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style="opacity: 1; transform: none">
+              <div class="relative flex gap-6">
+                <div class="flex flex-col items-center">
+                  <div class="flex-shrink-0">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-circle w-8 h-8 text-[#D1D5DB]"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1 pb-12" style="opacity: 1; transform: none">
+                  <div
+                    class="bg-white border-[2px] border-[#E5E7EB] rounded-2xl p-6 hover:shadow-[0_8px_16px_rgba(0,0,0,0.08)] hover:border-[#02066F] transition-all duration-300"
+                  >
+                    <h3 class="text-[18px] text-[#1F2937] mb-4">
+                      Q2 2026 — Scale Phase ➡️
+                    </h3>
+                    <ul class="space-y-2 mb-4">
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(209, 213, 219)"
+                          >➡️</span
+                        ><span
+                          >Reduce leakage ≤10%, optimize take rate → 2%</span
+                        >
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(209, 213, 219)"
+                          >➡️</span
+                        ><span>Onboard 100+ clients and 10+ suppliers</span>
+                      </li>
+                      <li
+                        class="text-[14px] text-[#374151] flex items-start"
+                        style="opacity: 1; transform: none"
+                      >
+                        <span class="mr-2" style="color: rgb(209, 213, 219)"
+                          >➡️</span
+                        ><span>Launch bank analytics dashboard</span>
+                      </li>
+                    </ul>
+                    <div
+                      class="text-[14px] mt-4 pt-4 border-t border-[#E5E7EB]"
+                      style="color: rgb(209, 213, 219)"
+                    >
+                      <strong>Goal: </strong>$1M+ GMV | NPS ≥40 | 100+ customers
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials Carousel Section -->
+
+      <section class="relative py-24 px-6 overflow-hidden">
+        <!-- TOP SOFT GRADIENT -->
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-white via-[#89a9f0] to-[#5e90fe] z-0"
+        ></div>
+
+        <!-- WAVE EFFECT -->
+        <div
+          class="absolute bottom-0 left-0 w-full h-[180px] opacity-[0.45] z-0 pointer-events-none"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="100%"
+            height="100%"
+            viewBox="0 0 1440 320"
+          >
+            <path fill="#dff1ff" fill-opacity="1" d=""></path>
+          </svg>
+        </div>
+
+        <div class="max-w-[1200px] mx-auto relative z-10">
+          <div class="grid grid-cols-1 gap-16 lg:grid-cols-1 lg:gap-12">
+            <div style="opacity: 1; transform: none">
+              <h2
+                class="text-[clamp(32px,4vw,64px)] font-black leading-[1.3] text-[#265bd1] mb-4 md:text-[36px] sm:text-[32px]"
+              >
+                Ready to Transform Construction Sourcing?
+              </h2>
+              <p
+                class="text-[18px] font-bold text-[#3f6cd1] mb-8 max-w-[500px]"
+              >
+                Join the builders and suppliers already using MetOneX.
+              </p>
+            </div>
+            <div class="space-y-6">
+              <a
+                href="tel:+998944190677"
+                class="flex items-center gap-4 group"
+                style="opacity: 1; transform: none"
+                ><div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-phone w-8 h-8 text-white"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-[14px] text-white">Phone</div>
+                  <div
+                    class="text-[14px] text-white/90 group-hover:text-[#FF8C42] transition-colors"
+                  >
+                    +998 94 419 06 77
+                  </div>
+                </div></a
+              ><a
+                href="mailto:info@metone.uz"
+                class="flex items-center gap-4 group"
+                style="opacity: 1; transform: none"
+                ><div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-mail w-8 h-8 text-white"
+                    aria-hidden="true"
+                  >
+                    <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-[14px] text-white">Email</div>
+                  <div
+                    class="text-[14px] text-white/90 group-hover:text-[#FF8C42] transition-colors"
+                  >
+                    info@metone.uz
+                  </div>
+                </div></a
+              ><a
+                href="https://t.me/AbdulazizAlimov"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 group"
+                style="opacity: 1; transform: none"
+                ><div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-message-circle w-8 h-8 text-white"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"
+                    ></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-[14px] text-white">Telegram</div>
+                  <div
+                    class="text-[14px] text-white/90 group-hover:text-[#FF8C42] transition-colors"
+                  >
+                    @AbdulazizAlimov
+                  </div>
+                </div></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-[#0F172A] py-5 px-6">
+        <div class="max-w-[1200px] mx-auto text-center">
+          <p class="text-[12px] text-white/50">© 2025 MetOneX</p>
+        </div>
+      </footer>
+    </div>
+    <style>
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes spin-reverse {
+        to {
+          transform: rotate(-360deg);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .tech-icon-card {
+        animation: fadeInUp 0.6s ease-out forwards;
+      }
+
+      /* Background Pattern Animations */
+      @keyframes patternMove {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 40px 40px;
+        }
+      }
+
+      @keyframes patternMoveDiagonal {
+        0% {
+          background-position: 0 0, 30px 30px;
+        }
+        100% {
+          background-position: 60px 60px, 90px 90px;
+        }
+      }
+
+      @keyframes patternRotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) translateX(0px);
+        }
+        33% {
+          transform: translateY(-20px) translateX(10px);
+        }
+        66% {
+          transform: translateY(10px) translateX(-10px);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.2;
+          transform: scale(1.1);
+        }
+      }
+
+      /* Custom Cursor - Only for desktop */
+      .custom-cursor {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #02066f;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transition: transform 0.1s ease;
+        mix-blend-mode: difference;
+        display: none;
+      }
+
+      .custom-cursor-dot {
+        width: 6px;
+        height: 6px;
+        background: #ff8c42;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 10000;
+        transition: transform 0.05s ease;
+        display: none;
+      }
+
+      .custom-cursor-trail {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(2, 6, 111, 0.3);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9998;
+        transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+        display: none;
+      }
+
+      /* Show cursor only on desktop */
+      @media (min-width: 769px) and (pointer: fine) {
+        .custom-cursor,
+        .custom-cursor-dot,
+        .custom-cursor-trail {
+          display: block;
+        }
+      }
+
+      /* Apply animations to background patterns */
+      section .absolute.inset-0[style*="background-image"] {
+        animation: patternMove 20s linear infinite;
+      }
+
+      #problem .absolute.inset-0[style*="background-image"] {
+        animation: patternMoveDiagonal 30s linear infinite;
+      }
+
+      #solution .absolute.inset-0[style*="background-image"] {
+        animation: patternMove 25s linear infinite;
+      }
+
+      /* Animate decorative circles */
+      section .absolute[style*="rounded-full"] {
+        animation: float 20s ease-in-out infinite;
+      }
+
+      #home .absolute[style*="rounded-full"]:first-of-type {
+        animation: float 15s ease-in-out infinite, pulse 4s ease-in-out infinite;
+      }
+
+      #home .absolute[style*="rounded-full"]:last-of-type {
+        animation: float 18s ease-in-out infinite, pulse 5s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+
+      /* Hero Section Animations */
+      @keyframes float-particles {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.6;
+        }
+        25% {
+          transform: translate(30px, -30px) scale(1.1);
+          opacity: 0.8;
+        }
+        50% {
+          transform: translate(-20px, 20px) scale(0.9);
+          opacity: 0.7;
+        }
+        75% {
+          transform: translate(20px, 30px) scale(1.05);
+          opacity: 0.9;
+        }
+      }
+
+      @keyframes float-particles-delayed {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.5;
+        }
+        33% {
+          transform: translate(-40px, 40px) scale(1.15);
+          opacity: 0.7;
+        }
+        66% {
+          transform: translate(40px, -20px) scale(0.85);
+          opacity: 0.6;
+        }
+      }
+
+      @keyframes float-particles-slow {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.4;
+        }
+        50% {
+          transform: translate(50px, -50px) scale(1.2);
+          opacity: 0.6;
+        }
+      }
+
+      @keyframes float-particles-delayed-2 {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.5;
+        }
+        25% {
+          transform: translate(-30px, -40px) scale(1.1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translate(30px, 20px) scale(0.9);
+          opacity: 0.6;
+        }
+        75% {
+          transform: translate(-20px, 30px) scale(1.05);
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes gradient-orb {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) rotate(180deg) scale(1.2);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        }
+      }
+
+      @keyframes gradient-orb-reverse {
+        0% {
+          transform: translate(-50%, -50%) rotate(360deg) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) rotate(180deg) scale(1.15);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        }
+      }
+
+      @keyframes gridMove {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 100px 100px;
+        }
+      }
+
+      .animate-float-particles {
+        animation: float-particles 20s ease-in-out infinite;
+      }
+
+      .animate-float-particles-delayed {
+        animation: float-particles-delayed 25s ease-in-out infinite;
+        animation-delay: 2s;
+      }
+
+      .animate-float-particles-slow {
+        animation: float-particles-slow 30s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+
+      .animate-float-particles-delayed-2 {
+        animation: float-particles-delayed-2 22s ease-in-out infinite;
+        animation-delay: 3s;
+      }
+
+      .animate-gradient-orb {
+        animation: gradient-orb 25s linear infinite;
+      }
+
+      .animate-gradient-orb-reverse {
+        animation: gradient-orb-reverse 30s linear infinite;
+      }
+
+      /* Animated Dots Pattern */
+      @keyframes dots-move {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 40px 40px;
+        }
+      }
+
+      @keyframes dots-move-reverse {
+        0% {
+          background-position: 40px 40px;
+        }
+        100% {
+          background-position: 0 0;
+        }
+      }
+
+      @keyframes dots-pulse {
+        0%,
+        100% {
+          opacity: 0.04;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.08;
+          transform: scale(1.1);
+        }
+      }
+
+      .animated-dots-pattern {
+        animation: dots-move 20s linear infinite,
+          dots-pulse 4s ease-in-out infinite;
+      }
+
+      #solution .animated-dots-pattern {
+        animation: dots-move-reverse 25s linear infinite,
+          dots-pulse 5s ease-in-out infinite;
+      }
+
+      #team .animated-dots-pattern {
+        animation: dots-move 30s linear infinite,
+          dots-pulse 6s ease-in-out infinite;
+      }
+
+      /* Crane and Excavator Animations */
+      @keyframes crane-swing {
+        0%,
+        100% {
+          transform: translateX(0) translateY(0) rotate(0deg);
+        }
+        25% {
+          transform: translateX(-10px) translateY(-5px) rotate(-1deg);
+        }
+        50% {
+          transform: translateX(0) translateY(-8px) rotate(0deg);
+        }
+        75% {
+          transform: translateX(10px) translateY(-5px) rotate(1deg);
+        }
+      }
+
+      @keyframes crane-arm-swing {
+        0%,
+        100% {
+          transform: rotate(-6deg);
+        }
+        50% {
+          transform: rotate(6deg);
+        }
+      }
+
+      @keyframes crane-hook-swing {
+        0%,
+        100% {
+          transform: translateX(0) translateY(0) rotate(0deg);
+        }
+        25% {
+          transform: translateX(-8px) translateY(10px) rotate(-4deg);
+        }
+        50% {
+          transform: translateX(0) translateY(20px) rotate(0deg);
+        }
+        75% {
+          transform: translateX(8px) translateY(10px) rotate(4deg);
+        }
+      }
+
+      @keyframes excavator-move {
+        0%,
+        100% {
+          transform: translateX(0) translateY(0);
+        }
+        25% {
+          transform: translateX(15px) translateY(-8px);
+        }
+        50% {
+          transform: translateX(0) translateY(-12px);
+        }
+        75% {
+          transform: translateX(-15px) translateY(-8px);
+        }
+      }
+
+      @keyframes excavator-arm-move {
+        0%,
+        100% {
+          transform: rotate(-5deg);
+        }
+        50% {
+          transform: rotate(5deg);
+        }
+      }
+
+      @keyframes excavator-bucket-move {
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-10px) rotate(-5deg);
+        }
+      }
+
+      .animate-crane-swing {
+        animation: crane-swing 8s ease-in-out infinite;
+      }
+
+      .crane-arm-group {
+        animation: crane-arm-swing 6s ease-in-out infinite;
+        animation-delay: 0.5s;
+      }
+
+      .crane-hook-group {
+        animation: crane-hook-swing 4s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+
+      .animate-excavator-move {
+        animation: excavator-move 10s ease-in-out infinite;
+      }
+
+      .excavator-arm-group {
+        animation: excavator-arm-move 5s ease-in-out infinite;
+        animation-delay: 0.5s;
+      }
+
+      .excavator-bucket {
+        animation: excavator-bucket-move 3s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+
+      /* Navbar scroll blur effect */
+    </style>
+
+    <script src="app.js"></script>
+  </body>
+</html>

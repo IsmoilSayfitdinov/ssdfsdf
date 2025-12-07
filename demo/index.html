@@ -1,0 +1,5318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AI-powered construction marketplace connecting builders with verified suppliers in 30 minutes. Transform the $3.3 trillion construction market."
+    />
+    <meta
+      name="keywords"
+      content="construction, marketplace, AI, suppliers, builders, B2B, construction materials"
+    />
+    <meta name="author" content="MetOneX" />
+    <meta
+      property="og:title"
+      content="MetOneX - AI-Powered Construction Marketplace"
+    />
+    <meta
+      property="og:description"
+      content="AI-powered matching connects builders with verified suppliers in 30 minutes—not 3-5 days."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../output.css" rel="stylesheet" />
+    <title>MetOneX - AI-Powered Construction Marketplace</title>
+    <style>
+      body {
+        font-family: "Arimo", sans-serif;
+      }
+
+      /* Performance Optimizations */
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* GPU Acceleration for Animations */
+      .animate-float,
+      .banner-shape-rotate,
+      .banner-glow-pulse,
+      .banner-particle,
+      .scroll-reveal {
+        will-change: transform, opacity;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+      }
+
+      /* Optimize Background Animations */
+      .banner-gradient-shift,
+      .gradient-animated {
+        will-change: background-position;
+      }
+
+      /* Reduce Repaints */
+      .demo-card,
+      .btn-gradient {
+        will-change: transform;
+      }
+
+      /* Grid Pattern Background */
+      .bg-grid-pattern {
+        background-image: linear-gradient(
+            to right,
+            rgba(2, 6, 111, 0.1) 1px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, rgba(2, 6, 111, 0.1) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      /* Animatsiyalar */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      @keyframes gradient-shift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+
+      /* MetOneX Carousel Styles */
+      .infinite-carousel {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+      
+      .carousel-track {
+        display: flex;
+        gap: 24px;
+        will-change: transform;
+        width: max-content;
+      }
+      
+      .carousel-slide {
+        flex: 0 0 auto;
+        min-width: 300px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      
+      .carousel-slide:hover {
+        transform: translateY(-5px);
+      }
+      
+      /* Infinite scroll animation - seamless loop */
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      
+      .metonex-carousel .carousel-track {
+        animation: scroll 20s linear infinite;
+      }
+      
+      /* Pause on hover */
+      .infinite-carousel:hover .carousel-track {
+        animation-play-state: paused;
+      }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .carousel-slide {
+          min-width: 280px;
+        }
+        .carousel-track {
+          gap: 16px;
+        }
+      }
+      
+      @media (max-width: 640px) {
+        .carousel-slide {
+          min-width: 250px;
+        }
+      }
+
+      /* FAQ Section Styles - Beautiful Modern Design */
+      .faq-item {
+        background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        border: 2px solid #e2e8f0;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .faq-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+        transform: scaleY(0);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .faq-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border-color: #2563eb;
+      }
+      
+      .faq-item.active {
+        border-color: #2563eb;
+        box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.15), 0 10px 10px -5px rgba(37, 99, 235, 0.1);
+      }
+      
+      .faq-item.active::before {
+        transform: scaleY(1);
+      }
+      
+      .faq-question {
+        position: relative;
+        z-index: 1;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .faq-question:hover {
+        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      }
+      
+      .faq-question span {
+        background: linear-gradient(135deg, #02066F 0%, #1e40af 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      
+      .faq-icon {
+        color: #2563eb;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        filter: drop-shadow(0 2px 4px rgba(37, 99, 235, 0.2));
+      }
+      
+      .faq-item.active .faq-icon {
+        transform: rotate(180deg);
+        color: #1d4ed8;
+      }
+      
+      .faq-answer {
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+        border-top: 1px solid #e2e8f0;
+      }
+      
+      .faq-item.active .faq-answer {
+        display: block;
+        animation: slideDownFade 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      
+      .faq-answer p {
+        color: #475569;
+        line-height: 1.8;
+        font-size: 1rem;
+      }
+      
+      @keyframes slideDownFade {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Loading Screen Animations - Professional Business Style */
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse-ring {
+        0% {
+          transform: translate(-50%, -50%) scale(0.8);
+          opacity: 1;
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.1);
+          opacity: 0.6;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      @keyframes float-up {
+        0% {
+          transform: translateY(0) scale(0.8);
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.8;
+        }
+        50% {
+          opacity: 1;
+          transform: translateY(-20px) scale(1);
+        }
+        100% {
+          transform: translateY(-50px) scale(0.6);
+          opacity: 0;
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+
+      @keyframes dots-bounce {
+        0%,
+        80%,
+        100% {
+          transform: scale(0);
+          opacity: 0.5;
+        }
+        40% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        border-top-color: white;
+        border-right-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: spin 0.8s linear infinite;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      .loading-pulse-ring {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border: 3px solid rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      .loading-pulse-ring:nth-child(1) {
+        width: 100px;
+        height: 100px;
+        animation-delay: 0s;
+      }
+
+      .loading-pulse-ring:nth-child(2) {
+        width: 140px;
+        height: 140px;
+        border-width: 2px;
+        animation-delay: 0.5s;
+      }
+
+      .loading-pulse-ring:nth-child(3) {
+        width: 180px;
+        height: 180px;
+        border-width: 2px;
+        animation-delay: 1s;
+      }
+
+      .loading-dot {
+        width: 12px;
+        height: 12px;
+        background: white;
+        border-radius: 50%;
+        display: inline-block;
+        animation: dots-bounce 1.4s ease-in-out infinite;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+
+      .loading-dot:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .loading-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .loading-dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      #loading-screen {
+        animation: fadeOut 0.5s ease-out forwards;
+        animation-delay: 2.5s;
+      }
+
+      #main-content {
+        animation: fadeInUp 0.5s ease-out forwards;
+      }
+
+      .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+      }
+
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .animate-pulse-slow {
+        animation: pulse 3s ease-in-out infinite;
+      }
+
+      .gradient-animated {
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+      }
+
+      /* Banner Beautiful Animations */
+      @keyframes float-up-down {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-30px) rotate(5deg);
+        }
+      }
+
+      @keyframes rotate-slow {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          opacity: 0.4;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.8;
+          transform: scale(1.1);
+        }
+      }
+
+      @keyframes shimmer-wave {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
+
+      @keyframes particles-float {
+        0% {
+          transform: translateY(0) translateX(0) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) translateX(50px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes gradient-rotate {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .banner-particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        border-radius: 50%;
+        animation: particles-float 15s linear infinite;
+        box-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+      }
+
+      .banner-shape-rotate {
+        animation: rotate-slow 20s linear infinite;
+      }
+
+      .banner-glow-pulse {
+        animation: pulse-glow 4s ease-in-out infinite;
+      }
+
+      .banner-gradient-shift {
+        background-size: 200% 200%;
+        /* Animation removed for performance */
+      }
+
+      /* ========== IMPROVEMENTS - All New Features ========== */
+
+      /* 1. Smooth Scroll Behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* 2. Scroll to Top Button */
+      .scroll-to-top {
+        position: fixed;
+        bottom: 150px;
+        right: 54px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, #1e3a8a, #2563eb, #3b82f6);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+      }
+
+      .scroll-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .scroll-to-top:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(37, 99, 235, 0.6);
+      }
+
+      /* 3. Toast Notifications */
+      .toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 10001;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .toast {
+        min-width: 300px;
+        padding: 16px 20px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: toastSlideIn 0.3s ease;
+        border-left: 4px solid;
+      }
+
+      .toast.success {
+        border-left-color: #10b981;
+      }
+
+      .toast.error {
+        border-left-color: #ef4444;
+      }
+
+      .toast.info {
+        border-left-color: #3b82f6;
+      }
+
+      .toast.warning {
+        border-left-color: #f59e0b;
+      }
+
+      @keyframes toastSlideIn {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes toastSlideOut {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+      }
+
+      .toast.hide {
+        animation: toastSlideOut 0.3s ease forwards;
+      }
+
+      /* 4. Skeleton Loaders */
+      .skeleton {
+        background: linear-gradient(
+          90deg,
+          #f0f0f0 25%,
+          #e0e0e0 50%,
+          #f0f0f0 75%
+        );
+        background-size: 200% 100%;
+        animation: skeleton-loading 1.5s ease-in-out infinite;
+        border-radius: 8px;
+      }
+
+      @keyframes skeleton-loading {
+        0% {
+          background-position: 200% 0;
+        }
+        100% {
+          background-position: -200% 0;
+        }
+      }
+
+      /* 5. Number Counter Animation */
+      .counter-number {
+        display: inline-block;
+        font-weight: 900;
+      }
+
+      /* 6. Glassmorphism Effect */
+      .glass {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      }
+
+      .glass-dark {
+        background: rgba(30, 58, 138, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(37, 99, 235, 0.2);
+      }
+
+      /* 7. Button Ripple Effect */
+      .ripple {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ripple::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .ripple:active::after {
+        width: 300px;
+        height: 300px;
+      }
+
+      /* 8. Form Animations */
+      .form-group {
+        position: relative;
+        margin-bottom: 24px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        background: white;
+      }
+
+      .form-input:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+      }
+
+      .form-label {
+        position: absolute;
+        left: 16px;
+        top: 12px;
+        color: #6b7280;
+        transition: all 0.3s ease;
+        pointer-events: none;
+        background: white;
+        padding: 0 4px;
+      }
+
+      .form-input:focus + .form-label,
+      .form-input:not(:placeholder-shown) + .form-label {
+        top: -10px;
+        left: 12px;
+        font-size: 12px;
+        color: #2563eb;
+        font-weight: 600;
+      }
+
+      /* 9. Image Zoom Effect */
+      .image-zoom {
+        overflow: hidden;
+        border-radius: 12px;
+      }
+
+      .image-zoom img {
+        transition: transform 0.5s ease;
+        will-change: transform;
+        transform: translateZ(0);
+      }
+
+      .image-zoom:hover img {
+        transform: scale(1.1) translateZ(0);
+      }
+
+      /* 10. Parallax Effect */
+      .parallax {
+        transform: translateZ(0);
+        will-change: transform;
+      }
+
+      /* 11. Text Typing Animation */
+      .typing-text {
+        overflow: hidden;
+        border-right: 2px solid;
+        white-space: nowrap;
+        animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: #2563eb;
+        }
+      }
+
+      /* 12. 3D Card Effects */
+      .card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        perspective: 1000px;
+      }
+
+      .card-3d:hover {
+        transform: rotateY(5deg) rotateX(5deg) translateY(-10px);
+      }
+
+      /* 13. Tooltip */
+      .tooltip {
+        position: relative;
+        display: inline-block;
+      }
+
+      .tooltip .tooltip-text {
+        visibility: hidden;
+        width: 200px;
+        background-color: #1e3a8a;
+        color: white;
+        text-align: center;
+        border-radius: 8px;
+        padding: 8px 12px;
+        position: absolute;
+        z-index: 1;
+        bottom: 125%;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 14px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .tooltip .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #1e3a8a transparent transparent transparent;
+      }
+
+      .tooltip:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* 14. Loading States */
+      .btn-loading {
+        position: relative;
+        pointer-events: none;
+        opacity: 0.7;
+      }
+
+      .btn-loading::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        margin-left: -8px;
+        margin-top: -8px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        border-top-color: transparent;
+        animation: spin 0.8s linear infinite;
+      }
+
+      /* 15. Text Reveal on Scroll */
+      .text-reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+      }
+
+      .text-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* 16. Dark Mode Support */
+      @media (prefers-color-scheme: dark) {
+        .dark-mode-auto {
+          background: #0f172a;
+          color: #f1f5f9;
+        }
+      }
+
+      /* 17. Reduced Motion Support */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* Card hover effects */
+      .demo-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .demo-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .demo-card:hover::before {
+        left: 100%;
+      }
+
+      .demo-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(2, 6, 111, 0.15);
+      }
+
+      /* Video container */
+      .video-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 1rem;
+      }
+      
+      /* Enhanced Video Player Styles */
+      #demo-video {
+        transition: transform 0.3s ease;
+      }
+      
+      #demo-video:hover {
+        transform: scale(1.01);
+      }
+
+      .video-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(2, 6, 111, 0.08) 0%,
+          rgba(30, 64, 175, 0.08) 50%,
+          rgba(2, 6, 111, 0.08) 100%
+        );
+        pointer-events: none;
+      }
+
+      /* Tech stack cards */
+      .tech-card {
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .tech-card:hover {
+        transform: translateY(-5px) scale(1.02);
+        border-color: #1e40af;
+        box-shadow: 0 8px 20px rgba(2, 6, 111, 0.15);
+      }
+
+      /* Chatbot messages */
+      .chat-message {
+        animation: fadeInUp 0.3s ease-out;
+      }
+
+      /* Robot Avatar Animations - Futuristic White Robot */
+      @keyframes robotFloat {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      @keyframes robotHandWave {
+        0%,
+        100% {
+          transform: rotate(0deg) translateY(0px);
+        }
+        25% {
+          transform: rotate(20deg) translateY(-3px);
+        }
+        50% {
+          transform: rotate(-15deg) translateY(-2px);
+        }
+        75% {
+          transform: rotate(10deg) translateY(-1px);
+        }
+      }
+
+      @keyframes robotMouth {
+        0%,
+        100% {
+          width: 24px;
+          height: 10px;
+          border-radius: 0 0 12px 12px;
+        }
+        50% {
+          width: 28px;
+          height: 14px;
+          border-radius: 0 0 14px 14px;
+        }
+      }
+
+      @keyframes robotWave {
+        0%,
+        100% {
+          transform: rotate(0deg) translateY(0px);
+        }
+        25% {
+          transform: rotate(25deg) translateY(-5px);
+        }
+        50% {
+          transform: rotate(-20deg) translateY(-3px);
+        }
+        75% {
+          transform: rotate(15deg) translateY(-2px);
+        }
+      }
+
+      @keyframes robotGlow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
+            0 0 40px rgba(59, 130, 246, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(59, 130, 246, 0.8),
+            0 0 60px rgba(59, 130, 246, 0.5);
+        }
+      }
+
+      .robot-avatar {
+        animation: robotFloat 3s ease-in-out infinite;
+      }
+
+      .robot-hand-left {
+        animation: robotHandWave 2s ease-in-out infinite;
+        transform-origin: top center;
+      }
+
+      .robot-hand-right {
+        animation: robotWave 2s ease-in-out infinite 0.5s;
+        transform-origin: top center;
+      }
+
+      .robot-speech-bubble {
+        animation: fadeInUp 0.5s ease-out;
+      }
+
+      @keyframes robotFadeOut {
+        from {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+        to {
+          opacity: 0;
+          transform: scale(0.8) translateY(-20px);
+        }
+      }
+
+      @keyframes robotFadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.8) translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      .robot-fade-out {
+        animation: robotFadeOut 0.5s ease-out forwards;
+      }
+
+      .robot-fade-in {
+        animation: robotFadeIn 0.6s ease-out forwards;
+      }
+
+      .robot-mouth {
+        animation: robotMouth 1.5s ease-in-out infinite;
+      }
+
+      .robot-speaking .robot-mouth {
+        animation: robotMouth 0.6s ease-in-out infinite;
+      }
+
+      .robot-glow-ring {
+        animation: robotGlow 2s ease-in-out infinite;
+      }
+
+      /* Scroll animations */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Icon animations */
+      .icon-bounce {
+        display: inline-block;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      /* Custom Cursor - Beautiful Design */
+      .custom-cursor {
+        width: 20px;
+        height: 20px;
+        border: 2px solid #2563eb;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%) translateZ(0);
+        transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+        mix-blend-mode: difference;
+        will-change: transform;
+        backface-visibility: hidden;
+        left: 0;
+        top: 0;
+      }
+
+      .custom-cursor-dot {
+        width: 6px;
+        height: 6px;
+        background: #3b82f6;
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%) translateZ(0);
+        transition: width 0.3s ease, height 0.3s ease, background 0.3s ease;
+        mix-blend-mode: difference;
+        will-change: transform;
+        backface-visibility: hidden;
+        left: 0;
+        top: 0;
+      }
+
+      .custom-cursor-trail {
+        width: 40px;
+        height: 40px;
+        border: 2px solid rgba(37, 99, 235, 0.3);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%) translateZ(0);
+        transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+        mix-blend-mode: difference;
+        will-change: transform;
+        backface-visibility: hidden;
+        left: 0;
+        top: 0;
+      }
+
+      .custom-cursor.hover {
+        width: 50px;
+        height: 50px;
+        border-color: #3b82f6;
+        background: rgba(59, 130, 246, 0.1);
+      }
+
+      .custom-cursor-dot.hover {
+        width: 8px;
+        height: 8px;
+        background: #2563eb;
+      }
+
+      .custom-cursor-trail.hover {
+        width: 60px;
+        height: 60px;
+        border-color: rgba(59, 130, 246, 0.5);
+      }
+
+      /* Highlight Text - 30 daqiqaga - Muhim Matn (o'lcham o'zgarmasdan) */
+      .highlight-text {
+        background: linear-gradient(
+          135deg,
+          #2563eb 0%,
+          #3b82f6 50%,
+          #1e3a8a 100%
+        );
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-weight: inherit;
+        position: relative;
+        display: inline-block;
+        animation: highlight-shimmer 2s linear infinite;
+        padding: 0 8px;
+      }
+
+      .highlight-text::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 12px);
+        height: calc(100% + 8px);
+        background: linear-gradient(
+          135deg,
+          rgba(37, 99, 235, 0.15),
+          rgba(59, 130, 246, 0.15)
+        );
+        border-radius: 12px;
+        z-index: -1;
+        filter: blur(10px);
+        animation: highlight-pulse 2s ease-in-out infinite;
+      }
+
+      .highlight-text::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% + 8px);
+        height: calc(100% + 4px);
+        border: 2px solid rgba(37, 99, 235, 0.3);
+        border-radius: 10px;
+        z-index: -2;
+        box-shadow: 0 0 15px rgba(37, 99, 235, 0.3),
+          inset 0 0 15px rgba(59, 130, 246, 0.15);
+        animation: highlight-border 3s ease-in-out infinite;
+      }
+
+      @keyframes highlight-shimmer {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @keyframes highlight-pulse {
+        0%,
+        100% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+
+      @keyframes highlight-border {
+        0%,
+        100% {
+          border-color: rgba(37, 99, 235, 0.3);
+          box-shadow: 0 0 15px rgba(37, 99, 235, 0.3),
+            inset 0 0 15px rgba(59, 130, 246, 0.15);
+        }
+        50% {
+          border-color: rgba(59, 130, 246, 0.5);
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.4),
+            inset 0 0 20px rgba(37, 99, 235, 0.25);
+        }
+      }
+
+      /* Scroll Progress Bar */
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(to right, #2563eb, #3b82f6, #1e3a8a);
+        z-index: 10000;
+        transition: width 0.1s ease;
+        box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+      }
+
+      /* Navbar Styles - Beautiful Design */
+      header {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+
+      header.scrolled {
+        background: rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+        border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+      }
+
+      /* Scroll Reveal Animations */
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: linear-gradient(to bottom, #f8faff, #ffffff);
+        border-left: 1px solid rgba(37, 99, 235, 0.1);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #2563eb, #3b82f6, #1e3a8a);
+        border-radius: 10px;
+        border: 2px solid #f8faff;
+        box-shadow: inset 0 0 6px rgba(37, 99, 235, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #3b82f6, #2563eb, #3b82f6);
+        box-shadow: inset 0 0 8px rgba(59, 130, 246, 0.5);
+        transform: scaleX(1.1);
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: #2563eb #f8faff;
+      }
+
+      /* Button hover effects - Professional Business Design */
+      .btn-gradient {
+        background: linear-gradient(
+          135deg,
+          #02066f 0%,
+          #1e40af 50%,
+          #02066f 100%
+        );
+        background-size: 200% 200%;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-gradient.ripple {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-gradient::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .btn-gradient:hover::before {
+        left: 100%;
+      }
+
+      .btn-gradient:hover {
+        background-position: right center;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(2, 6, 111, 0.3);
+      }
+
+      /* Badge styles - Professional Business Design */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        background: linear-gradient(
+          135deg,
+          #02066f 0%,
+          #1e40af 50%,
+          #02066f 100%
+        );
+        color: white;
+        box-shadow: 0 2px 8px rgba(2, 6, 111, 0.2);
+      }
+
+      /* Code block styling */
+      .code-block {
+        position: relative;
+        overflow-x: auto;
+      }
+
+      .code-block::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #02066f, #1e40af, #02066f);
+      }
+    </style>
+  </head>
+  <body>
+   
+    <!-- ChatBot Floating Button - Must be direct child of body, outside any transform containers -->
+    <div
+      id="open-chatbot-from-card"
+      class="fixed right-10 bottom-16 z-[9998] px-6 py-5 bg-gradient-to-r from-[#2563EB] to-[#3B82F6] text-white font-bold hover:shadow-lg transition-all duration-300 flex items-center rounded-full justify-center gap-2 shadow-2xl hover:scale-105 cursor-pointer"
+      aria-label="Open ChatBot"
+      style="box-shadow: 0 10px 40px rgba(37, 99, 235, 0.4)"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path
+          d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"
+        ></path>
+      </svg>
+    </div>
+    <div id="main-content">
+      <!-- Scroll Progress Bar -->
+      <div id="scroll-progress"></div>
+
+      <header
+        id="navbar"
+        class="border-b bg-white/90 backdrop-blur-xl sticky top-0 z-40 shadow-sm transition-all duration-300"
+      >
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between">
+            <div class="inline-flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-white  flex items-center justify-center overflow-hidden shadow-sm">
+                <img 
+                  src="../Ресурс 1@4x.png" 
+                  alt="Khorazmi AI" 
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <a
+                href="/"
+                class="inline-flex items-center text-[#374151] text-[20px] justify-center whitespace-nowrap rounded-md text-sm font-black transition-all hover:bg-[#F3F4F6] h-9 px-4 py-2 gap-2 text-[#374151] hover:text-[#02066F]"
+              >
+                MetOneX
+              </a>
+            </div>
+             <a
+              href="/"
+              class="inline-flex items-center text-[#374151] text-[20px] justify-center whitespace-nowrap rounded-md text-sm font-medium transition-all hover:bg-[#F3F4F6] h-9 px-4 py-2 gap-2 text-[#374151] hover:text-[#02066F]"
+            >
+              Back
+            </a>
+
+            </div>
+          
+          </div>
+
+      </header>
+
+      <!-- Hero Section - Kong.ai Style -->
+      <div
+        class="relative overflow-hidden bg-gradient-to-br from-[#F8FAFF] via-white to-[#F0F4FF] py-16 sm:py-24 banner-gradient-shift"
+       
+      >
+        
+        
+
+        <div class="container mx-auto px-4 max-w-7xl relative z-30">
+          <div class="text-center space-y-8 scroll-reveal">
+            <!-- Badge with Emoji -->
+
+            <!-- Main Title - Kong.ai Style -->
+            <h1
+              class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 leading-[1.1] text-[#02066F]"
+            >
+              Stop Wasting Days of Phone Call Hell. Start Ordering in
+              <span class="highlight-text">30 Minute</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p
+              class="text-xl sm:text-2xl text-[#374151] max-w-4xl mx-auto leading-relaxed font-medium"
+            >
+              Save $8,000-$12,000 per project. 
+              Get 20+ quotes. Pick the best. Order.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video Card Section with Beautiful Background -->
+      <div class="relative overflow-hidden  pt-20">
+        <!-- Beautiful Background Decorations - Static (No Animations) -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <!-- Static Gradient Orbs -->
+          <div
+            class="absolute top-10 right-20 w-96 h-96 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/12 rounded-full blur-3xl"
+            style="animation-delay: 0s"
+          ></div>
+          <div
+            class="absolute bottom-10 left-20 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/18 to-[#2563EB]/12 rounded-full blur-3xl"
+            style="animation-delay: 1s"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-br from-[#3B82F6]/15 to-[#2563EB]/10 rounded-full blur-3xl"
+            style="animation-delay: 2s; transform: translate(-50%, -50%)"
+          ></div>
+          <div
+            class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-[#2563EB]/12 to-[#1E3A8A]/8 rounded-full blur-2xl"
+            style="animation-delay: 0.5s"
+          ></div>
+          <div
+            class="absolute bottom-1/4 right-1/4 w-88 h-88 bg-gradient-to-br from-[#3B82F6]/14 to-[#2563EB]/9 rounded-full blur-3xl"
+            style="animation-delay: 1.5s"
+          ></div>
+          <div
+            class="absolute top-3/4 right-1/3 w-56 h-56 bg-gradient-to-br from-[#1E3A8A]/10 to-[#3B82F6]/7 rounded-full blur-2xl"
+            style="animation-delay: 2.5s"
+          ></div>
+
+          <!-- Mesh Gradient Pattern -->
+          <div
+            class="absolute inset-0"
+            style="
+              background-image: radial-gradient(
+                  circle at 30% 40%,
+                  rgba(37, 99, 235, 0.06) 0%,
+                  transparent 50%
+                ),
+                radial-gradient(
+                  circle at 70% 60%,
+                  rgba(59, 130, 246, 0.06) 0%,
+                  transparent 50%
+                ),
+                radial-gradient(
+                  circle at 50% 50%,
+                  rgba(30, 58, 138, 0.04) 0%,
+                  transparent 50%
+                );
+            "
+          ></div>
+
+          <!-- Decorative Dots Pattern - Enhanced -->
+          <div
+            class="absolute inset-0 opacity-15"
+            style="
+              background-image: radial-gradient(
+                circle,
+                rgba(37, 99, 235, 0.3) 1px,
+                transparent 1px
+              );
+              background-size: 50px 50px;
+            "
+          ></div>
+
+          <!-- Grid Pattern Overlay -->
+          <div class="absolute inset-0 bg-grid-pattern opacity-15"></div>
+
+          <!-- Animated Wave Pattern -->
+          <div
+            class="absolute inset-0 opacity-5"
+            style="
+              background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(37, 99, 235, 0.1) 10px,
+                rgba(37, 99, 235, 0.1) 20px
+              );
+            "
+          ></div>
+
+          <!-- Floating Geometric Shapes - Enhanced -->
+          <div
+            class="absolute top-1/4 right-1/3 w-28 h-28 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45"
+            style="
+              box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+              animation-duration: 15s;
+            "
+          ></div>
+          <div
+            class="absolute bottom-1/3 left-1/4 w-24 h-24 border-2 border-[#3B82F6]/20 rounded-full"
+            style="box-shadow: 0 0 25px rgba(59, 130, 246, 0.3)"
+          ></div>
+          <div
+            class="absolute top-1/2 left-1/2 w-20 h-20 border-2 border-[#1E3A8A]/15 transform rotate-12"
+            style="
+              animation-duration: 20s;
+              animation-delay: 2s;
+              box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+              transform: translate(-50%, -50%);
+            "
+          ></div>
+          <div
+            class="absolute top-1/5 right-1/5 w-16 h-16 border-2 border-[#2563EB]/15 rounded-lg transform rotate-45"
+            style="
+              animation-duration: 8s;
+              animation-delay: 0.5s;
+              box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+            "
+          ></div>
+
+          <!-- Animated Lines - Enhanced with More Paths -->
+          <svg
+            class="absolute inset-0 w-full h-full opacity-12"
+                  xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient
+                id="videoLineGradient"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #2563eb; stop-opacity: 0.2"
+                />
+                <stop
+                  offset="50%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.3"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #2563eb; stop-opacity: 0.2"
+                />
+              </linearGradient>
+              <linearGradient
+                id="videoLineGradient2"
+                x1="0%"
+                y1="100%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop
+                  offset="0%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.15"
+                />
+                <stop
+                  offset="50%"
+                  style="stop-color: #1e3a8a; stop-opacity: 0.25"
+                />
+                <stop
+                  offset="100%"
+                  style="stop-color: #3b82f6; stop-opacity: 0.15"
+                />
+              </linearGradient>
+            </defs>
+            <path
+              d="M0,150 Q250,100 500,150 T1000,150 L1200,150"
+              stroke="url(#videoLineGradient)"
+              stroke-width="2"
+                  fill="none"
+            />
+            <path
+              d="M0,350 Q300,300 600,350 T1200,350 L1400,350"
+              stroke="url(#videoLineGradient2)"
+                  stroke-width="2"
+              fill="none"
+            />
+            <path
+              d="M0,250 Q400,200 800,250 T1600,250"
+              stroke="url(#videoLineGradient)"
+              stroke-width="1.5"
+              fill="none"
+            />
+            <path
+              d="M0,450 Q350,400 700,450 T1400,450"
+              stroke="url(#videoLineGradient2)"
+              stroke-width="1.5"
+              fill="none"
+            />
+                </svg>
+
+          <!-- Floating Particles - Removed for performance -->
+
+          <!-- Shimmer Effect -->
+          <div
+            class="absolute inset-0 opacity-3"
+            style="
+              background: linear-gradient(
+                90deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                transparent 100%
+              );
+            "
+          ></div>
+        </div>
+
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+          <!-- Video Player Section - Kong.ai Style -->
+          <div class="relative scroll-reveal">
+            <!-- Video Container -->
+            <div class="relative aspect-video overflow-hidden bg-black rounded-2xl shadow-2xl border-2 border-white/20 group hover:border-white/40 transition-all duration-300">
+              <!-- YouTube Video -->
+              <iframe
+                id="demo-video"
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/kDCIVO_v3EA"
+                title="MetOneX Demo Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+              ></iframe>
+            </div>
+            
+            <!-- Video Progress Bar (like Kong.ai) -->
+             <div  class="w-full flex items-center justify-center mt-20 mb-20 cursor-pointer">
+                   <button 
+                     id="scroll-to-app-btn"
+                     onclick="scrollToWorkingApp()"
+                     class="bg-gradient-to-br from-[#2563EB] w-[350px] text-white h-[60px] to-[#3B82F6] font-bold rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                   >
+                     Get Started Now
+                   </button>              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Demo Video Card -->
+
+      <!-- Benefits Section - Kong.ai Style -->
+        <div
+          class="relative bg-gradient-to-br pt-20 from-white via-[#F8FAFF] to-[#F0F4FF] py-20 overflow-hidden"
+        >
+          <!-- Beautiful Background Decorations - Enhanced -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Animated Gradient Orbs - More Orbs -->
+            <div
+              class="absolute top-10 right-20 w-96 h-96 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/12 rounded-full blur-3xl"
+              style="animation-delay: 0s"
+            ></div>
+            <div
+              class="absolute bottom-10 left-20 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/18 to-[#2563EB]/12 rounded-full blur-3xl"
+              style="animation-delay: 1s"
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 w-72 h-72 bg-gradient-to-br from-[#3B82F6]/15 to-[#2563EB]/10 rounded-full blur-3xl"
+              style="animation-delay: 2s; transform: translate(-50%, -50%)"
+            ></div>
+            <div
+              class="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-[#2563EB]/12 to-[#1E3A8A]/8 rounded-full blur-2xl"
+              style="animation-delay: 0.5s"
+            ></div>
+            <div
+              class="absolute bottom-1/4 right-1/4 w-88 h-88 bg-gradient-to-br from-[#3B82F6]/14 to-[#2563EB]/9 rounded-full blur-3xl"
+              style="animation-delay: 1.5s"
+            ></div>
+            <div
+              class="absolute top-3/4 right-1/3 w-56 h-56 bg-gradient-to-br from-[#1E3A8A]/10 to-[#3B82F6]/7 rounded-full blur-2xl"
+              style="animation-delay: 2.5s"
+            ></div>
+
+            <!-- Mesh Gradient Pattern -->
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: radial-gradient(
+                    circle at 20% 50%,
+                    rgba(37, 99, 235, 0.08) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 80% 80%,
+                    rgba(59, 130, 246, 0.08) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 40% 20%,
+                    rgba(30, 58, 138, 0.06) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
+
+            <!-- Decorative Dots Pattern -->
+            <div
+              class="absolute inset-0 opacity-20"
+              style="
+                background-image: radial-gradient(
+                  circle,
+                  rgba(37, 99, 235, 0.3) 1px,
+                  transparent 1px
+                );
+                background-size: 50px 50px;
+              "
+            ></div>
+
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+
+            <!-- Floating Geometric Shapes - Enhanced -->
+            <div
+              class="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-[#2563EB]/25 rounded-lg transform rotate-45"
+              style="
+                box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+                animation-duration: 15s;
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/4 left-1/4 w-24 h-24 border-2 border-[#3B82F6]/25 rounded-full"
+              style="box-shadow: 0 0 25px rgba(59, 130, 246, 0.3)"
+            ></div>
+            <div
+              class="absolute top-1/3 left-1/3 w-20 h-20 border-2 border-[#1E3A8A]/20 transform rotate-12"
+              style="box-shadow: 0 0 20px rgba(30, 58, 138, 0.3)"
+            ></div>
+            <div
+              class="absolute top-1/5 right-1/5 w-16 h-16 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45"
+              style="
+                animation-duration: 8s;
+                animation-delay: 0.5s;
+                box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/5 right-1/5 w-28 h-28 border-2 border-[#3B82F6]/20 rounded-full"
+              style="
+                animation-duration: 18s;
+                animation-delay: 1.5s;
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+              "
+            ></div>
+
+            <!-- Animated Lines - Enhanced -->
+            <svg
+              class="absolute inset-0 w-full h-full opacity-12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="benefitsLineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #2563eb; stop-opacity: 0.25"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.35"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #2563eb; stop-opacity: 0.25"
+                  />
+                </linearGradient>
+                <linearGradient
+                  id="benefitsLineGradient2"
+                  x1="0%"
+                  y1="100%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.2"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #1e3a8a; stop-opacity: 0.3"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.2"
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,200 Q300,150 600,200 T1200,200 L1400,200"
+                stroke="url(#benefitsLineGradient)"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M0,400 Q400,350 800,400 T1600,400 L1800,400"
+                stroke="url(#benefitsLineGradient2)"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M0,300 Q350,250 700,300 T1400,300"
+                stroke="url(#benefitsLineGradient)"
+                stroke-width="1.5"
+                fill="none"
+              />
+              <path
+                d="M0,500 Q450,450 900,500 T1800,500"
+                stroke="url(#benefitsLineGradient2)"
+                stroke-width="1.5"
+                fill="none"
+              />
+            </svg>
+
+            <!-- Floating Particles - Removed (Only in Banner) -->
+
+            <!-- Shimmer Effect -->
+            <div
+              class="absolute inset-0 opacity-3"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent 0%,
+                  rgba(255, 255, 255, 0.2) 50%,
+                  transparent 100%
+                );
+              "
+            ></div>
+
+            <!-- Animated Wave Pattern -->
+            <div
+              class="absolute inset-0 opacity-5"
+              style="
+                background: repeating-linear-gradient(
+                  45deg,
+                  transparent,
+                  transparent 10px,
+                  rgba(37, 99, 235, 0.1) 10px,
+                  rgba(37, 99, 235, 0.1) 20px
+                );
+              "
+            ></div>
+          </div>
+          <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            <div class="text-center mb-16 scroll-reveal">
+              <h2
+                class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#02066F] mb-6 leading-tight"
+            >
+              Say Goodbye to the Old way vs Metone's New AI method
+            </h2>
+            <p
+              class="text-xl sm:text-2xl text-[#6B7280] max-w-4xl mx-auto leading-relaxed"
+            >
+              Same projects. Different outcome. Zero risk
+            </p>
+          </div>
+
+          <!-- Comparison Section -->
+            <div class="grid md:grid-cols-2 gap-8 scroll-reveal">
+            <!-- Old Way -->
+            <div
+              class="bg-white rounded-3xl p-10 border-2 border-red-200 shadow-2xl hover:shadow-3xl transition-all duration-300"
+            >
+              <div class="flex items-center gap-4 mb-8">
+                <h3 class="text-3xl font-black text-red-600">Before</h3>
+              </div>
+              <ul class="space-y-5 text-left mb-8">
+                <li class="flex items-start gap-4">
+                  <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                  <span class="text-[#374151] text-lg font-medium"
+                    >40 hours wasted per project</span
+                  >
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                  <span class="text-[#374151] text-lg font-medium"
+                    >$12,000 overspend</span
+                  >
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                  <span class="text-[#374151] text-lg font-medium"
+                    >30% project delays</span
+                  >
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="text-red-500 text-2xl mt-0.5">✗</span>
+                  <span class="text-[#374151] text-lg font-medium"
+                    > Team distracted</span
+                  >
+                </li>
+              </ul>
+              <div class="pt-8 border-t-2 border-red-200">
+                <p class="text-red-600 font-black text-xl">
+                    TIME AND MONEY LOSS
+                </p>
+              </div>
+            </div>
+
+            <!-- New Way -->
+            <div
+                class="bg-gradient-to-br from-[#02066F] to-[#1e40af] rounded-3xl p-10 text-white shadow-2xl transform hover:scale-[1.02] transition-all duration-300 relative overflow-hidden"
+            >
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"
+              ></div>
+              <div class="relative z-10">
+                <div class="flex items-center gap-4 mb-8">
+                  <h3 class="text-3xl font-black">AFTER</h3>
+                </div>
+                <ul class="space-y-5 text-left mb-8">
+                  <li class="flex items-start gap-4">
+                    <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                      >✓</span
+                    >
+                    <span class="text-lg font-medium"
+                      >30 minutes total time</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                      >✓</span
+                    >
+                    <span class="text-lg font-medium"
+                      >$8,000-$12,000 saved</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                      >✓</span
+                    >
+                    <span class="text-lg font-medium"
+                      >100% on-time delivery</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-4">
+                    <span class="text-green-300 text-2xl mt-0.5 font-bold"
+                      >✓</span
+                    >
+                    <span class="text-lg font-medium"
+                      >Team focused on building</span
+                    >
+                  </li>
+                </ul>
+                <div class="pt-8 border-t-2 border-white/20">
+                    <p class="font-black text-xl">RECORD RESULTS AND PROFIT</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Section - Kong.ai Style -->
+        <div
+          class="relative bg-gradient-to-br from-[#F0F4FF] via-white to-[#F8FAFF] py-20 overflow-hidden"
+        >
+          <!-- Beautiful Background Decorations - Enhanced -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Animated Gradient Circles - More Orbs -->
+            <div
+              class="absolute top-10 left-10 w-72 h-72 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/12 rounded-full blur-3xl banner-glow-pulse"
+              style="animation-delay: 0s"
+            ></div>
+            <div
+              class="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-tl from-[#1E3A8A]/18 to-[#2563EB]/12 rounded-full blur-3xl banner-glow-pulse"
+              style="animation-delay: 1.5s"
+            ></div>
+            <div
+              class="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-[#3B82F6]/15 to-[#2563EB]/10 rounded-full blur-3xl banner-glow-pulse"
+              style="animation-delay: 2.5s"
+            ></div>
+            <div
+              class="absolute top-1/4 right-1/3 w-56 h-56 bg-gradient-to-br from-[#2563EB]/12 to-[#1E3A8A]/8 rounded-full blur-2xl banner-glow-pulse"
+              style="animation-delay: 0.5s"
+            ></div>
+            <div
+              class="absolute bottom-1/4 left-1/3 w-88 h-88 bg-gradient-to-br from-[#3B82F6]/14 to-[#2563EB]/9 rounded-full blur-3xl banner-glow-pulse"
+              style="animation-delay: 1s"
+            ></div>
+            <div
+              class="absolute top-3/4 left-1/4 w-60 h-60 bg-gradient-to-br from-[#1E3A8A]/10 to-[#3B82F6]/7 rounded-full blur-2xl banner-glow-pulse"
+              style="animation-delay: 2s"
+            ></div>
+
+            <!-- Mesh Gradient Pattern -->
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: radial-gradient(
+                    circle at 20% 50%,
+                    rgba(37, 99, 235, 0.1) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 80% 80%,
+                    rgba(59, 130, 246, 0.1) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 40% 20%,
+                    rgba(30, 58, 138, 0.08) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
+
+            <!-- Decorative Dots Pattern -->
+            <div
+              class="absolute inset-0 opacity-25"
+              style="
+                background-image: radial-gradient(
+                  circle,
+                  rgba(37, 99, 235, 0.4) 1px,
+                  transparent 1px
+                );
+                background-size: 50px 50px;
+              "
+            ></div>
+
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-25"></div>
+
+            <!-- Floating Geometric Shapes - Enhanced -->
+            <div
+              class="absolute top-1/4 left-1/3 w-28 h-28 border-2 border-[#2563EB]/25 rounded-lg transform rotate-45 banner-shape-rotate"
+              style="
+                box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+                animation-duration: 15s;
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/3 right-1/4 w-32 h-32 border-2 border-[#3B82F6]/25 rounded-full animate-float"
+              style="
+                animation-duration: 11s;
+                animation-delay: 1.5s;
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+              "
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 w-20 h-20 border-2 border-[#1E3A8A]/20 transform rotate-12 banner-shape-rotate"
+              style="
+                animation-duration: 20s;
+                animation-delay: 2s;
+                box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+                transform: translate(-50%, -50%);
+              "
+            ></div>
+            <div
+              class="absolute top-1/5 right-1/5 w-16 h-16 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45"
+              style="
+                animation-duration: 8s;
+                animation-delay: 0.5s;
+                box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+              "
+            ></div>
+
+            <!-- Animated Lines - Enhanced -->
+            <svg
+              class="absolute inset-0 w-full h-full opacity-12"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="statsLineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #2563eb; stop-opacity: 0.3"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.4"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #2563eb; stop-opacity: 0.3"
+                  />
+                </linearGradient>
+                <linearGradient
+                  id="statsLineGradient2"
+                  x1="0%"
+                  y1="100%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.25"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #1e3a8a; stop-opacity: 0.35"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.25"
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,150 Q250,100 500,150 T1000,150 L1200,150"
+                stroke="url(#statsLineGradient)"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                d="M0,350 Q350,300 700,350 T1400,350 L1600,350"
+                stroke="url(#statsLineGradient2)"
+                stroke-width="2"
+                fill="none"
+                class="animate-float"
+                style="animation-duration: 10s; animation-delay: 1.5s"
+              />
+              <path
+                d="M0,250 Q400,200 800,250 T1600,250"
+                stroke="url(#statsLineGradient)"
+                stroke-width="1.5"
+                fill="none"
+              />
+            </svg>
+
+            <!-- Floating Particles - Removed (Only in Banner) -->
+
+            <!-- Shimmer Effect -->
+            <div
+              class="absolute inset-0 opacity-3"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent 0%,
+                  rgba(255, 255, 255, 0.2) 50%,
+                  transparent 100%
+                );
+              "
+            ></div>
+
+            <!-- Animated Wave Pattern -->
+            <div
+              class="absolute inset-0 opacity-5"
+              style="
+                background: repeating-linear-gradient(
+                  45deg,
+                  transparent,
+                  transparent 10px,
+                  rgba(37, 99, 235, 0.1) 10px,
+                  rgba(37, 99, 235, 0.1) 20px
+                );
+              "
+            ></div>
+          </div>
+        <div class="container mx-auto px-4 max-w-7xl">
+          <div class="text-center mb-12">
+            <h2
+                class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#02066F] mb-4"
+            >
+              We Built This Because We Were Tired of Waiting.
+              Now 6 Builders Are Too
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-8">
+            <div
+                class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] text-center"
+            >
+              <div
+                  class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
+              >
+                  30
+              </div>
+                <div class="text-2xl font-black text-[#374151] mb-2">
+                  Minutes
+                </div>
+              <div class="text-base text-[#6B7280] font-medium">
+                  Same job. New speed. Built in 3 weeks.
+              </div>
+            </div>
+            <div
+              class="bg-white rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] text-center"
+            >
+              <div
+                  class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
+              >
+                450+
+              </div>
+              <div class="text-2xl font-black text-[#374151] mb-2">
+                Builders decided already
+              </div>
+              <div class="text-base text-[#6B7280] font-medium">
+               Market's moving. Are you?
+              </div>
+            </div>
+            <div
+                class="bg-white flex items-center justify-between flex-col rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
+            >
+              <div
+                  class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
+              >
+               8000
+              </div>
+              <div>
+                  <div class="text-2xl font-black text-[#374151] mb-2">
+                    Dollars
+                  </div>
+              <div class="text-base text-[#6B7280] font-medium">
+                Saved by 7 builders Real money. Real orders
+              </div>
+              </div>
+            </div>
+            <div
+                class="bg-white flex items-center justify-between flex-col rounded-3xl p-10 shadow-2xl border-2 border-[#E5E7EB] hover:shadow-3xl transition-all duration-300 text-center"
+            >
+              <div
+                  class="text-7xl sm:text-8xl font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] bg-clip-text text-transparent mb-4"
+              >
+                3
+              </div>
+              <div>
+                  <div class="text-2xl font-black text-[#374151] mb-2">
+                     WEEKS
+                  </div>
+              <div class="text-base text-[#6B7280] font-medium">
+               Time wasted per project on supplier phone calls
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Section -->
+        <div
+          class="relative bg-gradient-to-br pb-16 pt-20 from-[#F8FAFF] via-white to-[#F0F4FF] overflow-hidden"
+        >
+          <!-- Beautiful Background Decorations -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Animated Gradient Orbs -->
+            <div
+              class="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-[#2563EB]/12 to-[#3B82F6]/6 rounded-full blur-3xl animate-pulse-slow"
+            ></div>
+            <div
+              class="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-[#1E3A8A]/10 to-[#2563EB]/6 rounded-full blur-3xl animate-pulse-slow"
+              style="animation-delay: 1.5s"
+            ></div>
+            <div
+              class="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-[#3B82F6]/8 to-[#2563EB]/5 rounded-full blur-3xl animate-pulse-slow"
+              style="animation-delay: 3s; transform: translate(-50%, -50%)"
+            ></div>
+
+            <!-- Mesh Gradient Pattern -->
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: radial-gradient(
+                    circle at 30% 40%,
+                    rgba(37, 99, 235, 0.08) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 70% 60%,
+                    rgba(59, 130, 246, 0.08) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 50% 50%,
+                    rgba(30, 58, 138, 0.06) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
+
+            <!-- Decorative Dots Pattern -->
+            <div
+              class="absolute inset-0 opacity-15"
+              style="
+                background-image: radial-gradient(
+                  circle,
+                  rgba(37, 99, 235, 0.25) 1px,
+                  transparent 1px
+                );
+                background-size: 60px 60px;
+              "
+            ></div>
+
+            <!-- Grid Pattern Overlay -->
+            <div class="absolute inset-0 bg-grid-pattern opacity-15"></div>
+
+            <!-- Floating Geometric Shapes - Enhanced -->
+            <div
+              class="absolute top-1/4 right-1/4 w-36 h-36 border-2 border-[#2563EB]/25 rounded-lg transform rotate-45 banner-shape-rotate"
+              style="
+                box-shadow: 0 0 30px rgba(37, 99, 235, 0.3);
+                animation-duration: 15s;
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/4 left-1/4 w-28 h-28 border-2 border-[#3B82F6]/25 rounded-full animate-float"
+              style="
+                animation-duration: 12s;
+                animation-delay: 2s;
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+              "
+            ></div>
+            <div
+              class="absolute top-1/3 left-1/3 w-24 h-24 border-2 border-[#1E3A8A]/20 transform rotate-12 banner-shape-rotate"
+              style="
+                animation-duration: 20s;
+                animation-delay: 1s;
+                box-shadow: 0 0 20px rgba(30, 58, 138, 0.3);
+              "
+            ></div>
+            <div
+              class="absolute top-1/5 right-1/5 w-16 h-16 border-2 border-[#2563EB]/20 rounded-lg transform rotate-45"
+              style="
+                animation-duration: 8s;
+                animation-delay: 0.5s;
+                box-shadow: 0 0 15px rgba(37, 99, 235, 0.25);
+              "
+            ></div>
+            <div
+              class="absolute bottom-1/5 right-1/5 w-32 h-32 border-2 border-[#3B82F6]/20 rounded-full banner-shape-rotate"
+              style="
+                animation-duration: 18s;
+                animation-delay: 1.5s;
+                box-shadow: 0 0 30px rgba(59, 130, 246, 0.25);
+              "
+            ></div>
+
+            <!-- Animated Lines -->
+            <svg
+              class="absolute inset-0 w-full h-full opacity-8"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <defs>
+                <linearGradient
+                  id="contentLineGradient"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="100%"
+                >
+                  <stop
+                    offset="0%"
+                    style="stop-color: #2563eb; stop-opacity: 0.15"
+                  />
+                  <stop
+                    offset="50%"
+                    style="stop-color: #3b82f6; stop-opacity: 0.25"
+                  />
+                  <stop
+                    offset="100%"
+                    style="stop-color: #2563eb; stop-opacity: 0.15"
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,100 Q200,50 400,100 T800,100"
+                stroke="url(#contentLineGradient)"
+                stroke-width="2"
+                fill="none"
+                class="animate-float"
+              />
+              <path
+                d="M0,300 Q300,250 600,300 T1200,300"
+                stroke="url(#contentLineGradient)"
+                stroke-width="2"
+                fill="none"
+                class="animate-float"
+                style="animation-delay: 1.5s"
+              />
+              <path
+                d="M0,500 Q250,450 500,500 T1000,500"
+                stroke="url(#contentLineGradient)"
+                stroke-width="2"
+                fill="none"
+                class="animate-float"
+                style="animation-delay: 3s"
+              />
+            </svg>
+          </div>
+          <div class="container mx-auto px-4 max-w-7xl relative z-10">
+          <div class="space-y-16">
+            <!-- Loyiha Tavsifi Card -->
+            <div
+              class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+            >
+              <!-- Card Header - Kong.ai Style -->
+              <div
+                class="flex items-center justify-between mb-8 pb-6 border-b-2 border-[#E5E7EB]"
+              >
+                <div class="flex items-center gap-4">
+               
+                  <div>
+                      <h3 class="text-2xl font-black text-[#02066F]">
+                      Project Description
+                    </h3>
+                
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card Content -->
+              <div class="space-y-8">
+                <!-- Videoda ko'rsatilgan funksiyalar -->
+                <div class="scroll-reveal">
+                  <div class="flex items-center gap-4 mb-8">
+                  
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                      Features Shown in Video
+                    </h3>
+                  </div>
+                  <div
+                    class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                  >
+                    <div class="space-y-5">
+                      <div
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
+                      >
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                            Search for construction materials using AI
+                          </p>
+                          <p
+                            class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                          >
+                            Find materials in real-time and compare
+                            prices
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
+                      >
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                            Real-time communication with suppliers
+                          </p>
+                          <p
+                            class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                          >
+                            Automatic texting and message management
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                          class="flex items-start gap-5 p-6 bg-gradient-to-br from-white to-[#F9FAFB] rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-xl transition-all duration-300"
+                      >
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 shadow-lg"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="white"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          >
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-[#02066F] font-black text-lg mb-2">
+                            Manage and track orders
+                          </p>
+                          <p
+                            class="text-[#6B7280] text-sm leading-relaxed font-medium"
+                          >
+                              Track and manage order status in real-time
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+               
+
+                <!-- Texnologiyalar va AI Yechmlar -->
+                   <div
+                    class="bg-gradient-to-br from-[#FAFBFC] via-white to-[#F3F4FF] border-l-4 border-[#02066F] rounded-2xl p-8 mt-12 shadow-[0_4px_16px_rgba(2,6,111,0.08)]"
+                    style="opacity: 1; transform: none"
+                  >
+                    <!-- Title -->
+                    <h3
+                      class="text-[clamp(32px, 4vw, 48px)] font-bold text-[#1F2937] mb-8 uppercase tracking-tight"
+                    >
+                      Complete Technology Stack
+                    </h3>
+
+                    <!-- Filter Buttons -->
+                    <div class="flex flex-wrap gap-3 mb-8">
+                      <button
+                        data-filter="frontend"
+                        class="tech-filter-btn active bg-[#02066F] text-white border-[#02066F] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F]  hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+                      >
+                        Frontend
+                      </button>
+                      <button
+                        data-filter="backend"
+                        class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F]  hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+                      >
+                        Backend
+                      </button>
+                      <button
+                        data-filter="database"
+                        class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+                      >
+                        Database
+                      </button>
+                      <button
+                        data-filter="storage"
+                        class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F]  hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+                      >
+                        Storage
+                      </button>
+
+                      <button
+                        data-filter="aiml"
+                        class="tech-filter-btn bg-white border-2 border-[#E5E7EB] text-[#374151] px-6 py-3 rounded-lg font-medium text-[14px] transition-all duration-300 hover:border-[#02066F] hover:shadow-[0_2px_8px_rgba(2,6,111,0.1)]"
+                      >
+                        AI/ML
+                      </button>
+                   
+                    </div>
+
+                    <!-- Technology Icons Container -->
+                    <div
+                      id="tech-icons-container"
+                      class="grid grid-cols-2 gap-6 md:grid-cols-5 sm:grid-cols-5"
+                    >
+                      <!-- Icons will be loaded here -->
+                    </div>
+                  </div>
+
+                <!-- Loyiha Holati va Rejalar -->
+                <div class="scroll-reveal">
+                  <div class="flex items-center gap-4 mb-6">
+               
+                      <h3 class="text-3xl font-black text-[#02066F]">
+                      Our 90-Day Target (We're Shipping This)
+                    </h3>
+                  </div>
+                  <div class="space-y-6">
+                    <div
+                      class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                    >
+                        <p class="text-lg font-black text-[#02066F] mb-6">
+                        Current Status:
+                      </p>
+                      <div class="flex flex-wrap gap-3">
+                        <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                          >Idea</span
+                        >
+                        <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                          >Prototype</span
+                        >
+
+                        <span
+                            class="px-5 py-3 rounded-xl text-sm font-bold bg-white border-2 border-[#E5E7EB] text-[#6B7280] hover:border-[#02066F] transition-colors"
+                          >MVP</span
+                        >
+                        <span
+                            class="px-5 py-3 rounded-xl text-sm font-black bg-gradient-to-r from-[#02066F] to-[#1e40af] text-white border-2 border-transparent shadow-lg"
+                          >Launched</span
+                        >
+                      </div>
+                    </div>
+                    <div
+                      class="bg-gradient-to-br from-[#F0F4FF] to-white rounded-2xl p-8 border-2 border-[#E5E7EB] shadow-xl"
+                    >
+                        <p class="text-lg font-black text-[#02066F] mb-6">
+                        Next Steps:
+                      </p>
+                      <ul class="space-y-4">
+                        <li
+                            class="flex items-center gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                        >
+                          <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                          >
+                            <span class="text-white text-base font-black"
+                              >1</span
+                            >
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-base font-bold text-[#374151]">
+                              50 Active Builders
+                            </p>
+                          </div>
+                        </li>
+                        <li
+                            class="flex items-center gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                        >
+                          <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                          >
+                            <span class="text-white text-base font-black"
+                              >2</span
+                            >
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-base font-bold text-[#374151]">
+                              3 New Suppliers
+                            </p>
+                          </div>
+                        </li>
+                        <li
+                            class="flex items-start gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                        >
+                          <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                          >
+                            <span class="text-white text-base font-black"
+                              >3</span
+                            >
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-base font-bold text-[#374151]">
+                                $2M in GMV
+                            </p>
+                          </div>
+                        </li>
+                        <li
+                            class="flex items-center gap-4 p-5 bg-white rounded-xl border-2 border-[#E5E7EB] hover:border-[#02066F] hover:shadow-lg transition-all duration-300"
+                        >
+                          <div
+                              class="w-10 h-10 rounded-full bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0 mt-0.5 shadow-lg"
+                          >
+                            <span class="text-white text-base font-black"
+                              >4</span
+                            >
+                          </div>
+                          <div class="flex-1">
+                            <p class="text-base font-bold text-[#374151]">
+                                1.5% Take Rate
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-slot="card"
+              class="demo-card bg-white flex flex-col gap-6 rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+            >
+             
+              <div
+                data-slot="card-content"
+                class="px-6 [&amp;:last-child]:pb-6"
+              >
+                    <!-- Title and Description -->
+                    <div id="working-app-section">
+                      <h3 class="text-3xl text-center font-black mb-3">
+                        Working Application
+                      </h3>
+                    
+                    </div>
+                <div
+                    class="bg-gradient-to-br from-[#02066F] mt-8 via-[#1e40af] to-[#0f172a] rounded-2xl p-10 text-white relative overflow-hidden shadow-2xl"
+                >
+                
+
+                  <div class="relative z-10 text-center space-y-8">
+                   
+
+                    <!-- Credentials -->
+                    <div class="pb-8 border-b border-white/20">
+                      <div
+                        class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 max-w-md mx-auto"
+                      >
+                        <div class="flex flex-col items-center gap-4">
+                          <div
+                            class="flex items-center gap-3 w-full justify-center"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="text-white/80"
+                            >
+                              <path
+                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                              ></path>
+                              <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span class="text-base text-white font-semibold"
+                              ><span class="text-white/70">phone:</span>
+                              +998944190677</span
+                            >
+                          </div>
+                          <div
+                            class="flex items-center gap-3 w-full justify-center"
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="20"
+                              height="20"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="text-white/80"
+                            >
+                              <rect
+                                x="3"
+                                y="11"
+                                width="18"
+                                height="11"
+                                rx="2"
+                                ry="2"
+                              ></rect>
+                              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span class="text-base text-white font-semibold"
+                              ><span class="text-white/70">Password:</span>
+                              testadmin</span
+                            >
+                          </div>
+                          <div
+                            class="flex items-center gap-3 w-full justify-center flex-wrap"
+                          >
+                            <span class="text-white/70 text-sm mb-2 w-full text-center">Download Image:</span>
+                            <div class="flex gap-3">
+                              <button
+                                id="download_file_demo"
+                                class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg font-semibold text-sm transition-all duration-300 border border-white/30 hover:border-white/50 flex items-center gap-2"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                  <polyline points="7 10 12 15 17 10"></polyline>
+                                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Download
+                              </button>
+                              <button
+                                id="view_image_demo"
+                                class="px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-lg font-semibold text-sm transition-all duration-300 border border-white/30 hover:border-white/50 flex items-center gap-2"
+                              >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                  <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                                View Image
+                              </button>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <a
+                      href="https://metonex.uz/login"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                        class="inline-flex items-center justify-center gap-3 bg-white text-[#02066F] px-10 py-5 rounded-xl font-black text-xl hover:bg-[#F3F4F6] transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 hover:scale-105"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                        ></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                      </svg>
+                      Open Application
+                    </a>
+
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Bonus Funksiyalar Card -->
+            <div
+              class="bg-white rounded-3xl shadow-2xl border-2 border-[#E5E7EB] p-10 hover:shadow-3xl transition-all duration-300"
+            >
+            
+
+              <!-- Card Content -->
+              <div>
+               
+                <div class="flex-1 outline-none space-y-4">
+                  <div
+                    class="p-6 bg-gradient-to-br from-[#F0F4FF] to-white rounded-xl border-2 border-[#E5E7EB] shadow-sm"
+                  >
+                    <div class="flex items-start gap-3">
+                      <div
+                          class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#02066F] to-[#1e40af] flex items-center justify-center flex-shrink-0"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path d="m18 16 4-4-4-4"></path>
+                          <path d="m6 8-4 4 4 4"></path>
+                          <path d="m14.5 4-5 16"></path>
+                        </svg>
+                      </div>
+                      <div class="flex-1">
+                          <p class="text-base font-bold text-[#02066F] mb-2">
+                          API Access Feature
+                        </p>
+                        <p class="text-sm text-[#374151] leading-relaxed">
+                            Test and integrate your project's API. You can
+                            use RESTful API or GraphQL.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                      class="bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white rounded-2xl border-2 border-transparent shadow-2xl"
+                  >
+                    <div class="space-y-6">
+                      <!-- Swagger URL Section -->
+                      <div>
+                   
+                        <div
+                          class="bg-white/10 backdrop-blur-sm rounded-xl  p-8 w-full  bg-black border border-white/20"
+                        >
+                          <div class="space-y-4 mt-4">
+                            <div>
+                              <div class="flex gap-2">
+                                <input
+                                  type="text"
+                                  id="swagger-url"
+                                  placeholder="https://dev.metonex.uz/"
+                                  value="https://dev.metonex.uz/"
+                                  class="flex-1 px-4 py-3 rounded-lg bg-white/10 border-2 border-white/30 text-white placeholder-white/60 focus:border-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                                />
+                                <a
+                                  href="https://dev.metonex.uz/"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                    class="bg-white text-[#02066F] px-6 py-3 rounded-lg font-bold hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 whitespace-nowrap"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  >
+                                    <path
+                                      d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                                    ></path>
+                                    <polyline
+                                      points="15 3 21 3 21 9"
+                                    ></polyline>
+                                      <line
+                                        x1="10"
+                                        y1="14"
+                                        x2="21"
+                                        y2="3"
+                                      ></line>
+                                  </svg>
+                                  Open
+                                </a>
+                              </div>
+                              <p class="text-xs text-white/70 mt-2">
+                                Swagger URL to view and test API
+                                documentation
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+
+      <!-- FAQ Section -->
+      <div class="relative bg-gradient-to-br from-white via-[#F8FAFF] to-[#F0F4FF] py-20 mt-20 overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+          <div class="absolute top-10 right-20 w-96 h-96 bg-gradient-to-br from-[#2563EB]/10 to-[#3B82F6]/5 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-10 left-20 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/8 to-[#2563EB]/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 max-w-4xl relative z-10">
+          <div class="text-center mb-16 scroll-reveal">
+            
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 bg-gradient-to-r from-[#02066F] via-[#1e40af] to-[#2563eb] bg-clip-text text-transparent">
+              Frequently Asked Questions
+            </h2>
+            <p class="text-xl text-[#64748b] max-w-2xl mx-auto leading-relaxed">
+              Frequently asked questions and answers about the MetOneX platform
+            </p>
+          </div>
+
+          <div class="space-y-5">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item rounded-2xl overflow-hidden">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between">
+                <span class="text-lg font-bold">How long does it really take?</span>
+                <svg class="faq-icon w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="leading-relaxed">
+                  30 minutes from start to order confirmation.
+   Upload materials (5 min) → Get quotes (10 min) → 
+   Compare & decide (5 min) → Order (10 min).
+   Beta users average: 28 minutes.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">How do you acquire suppliers?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  Direct outreach: Quality suppliers in each region
+   • Inbound: Suppliers coming to us (word of mouth)
+   • Partnerships: Biggest Construction companies
+   • Current: 50+ verified suppliers in the Pipeline
+   • Target: 30+ by day 160
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">What if suppliers don't deliver?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  100% guaranteed delivery or we replace materials at no cost.
+   This is backed by our platform.
+   Zero risk for builders.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">Is my project data private?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  100% yes. Your data is never shared without permission.
+   Enterprise-grade encryption. SOC 2 compliant.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">Why should I believe 450 builders are waiting?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  We have their contact info, emails, and pre-registration.
+   They signed up after seeing 6 beta users succeed.
+   Already getting 3-5 new signups daily (organic)
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">How did you get the first 6 builders?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                  Started with our networks in construction.
+   Built MVP in 3 weeks.
+   Showed working prototype.
+   Word of mouth = 450 more waiting.
+                </p>
+              </div>
+            </div>
+             <!-- FAQ Item 6 -->
+            <div class="faq-item bg-white rounded-2xl shadow-lg border-2 border-[#E5E7EB] overflow-hidden transition-all duration-300 hover:shadow-xl">
+              <button class="faq-question w-full px-8 py-6 text-left flex items-center justify-between hover:bg-[#F9FAFB] transition-colors">
+                <span class="text-lg font-bold text-[#02066F]">What's your business model?</span>
+                <svg class="faq-icon w-6 h-6 text-[#2563EB] transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div class="faq-answer hidden px-8 pb-6">
+                <p class="text-[#6B7280] leading-relaxed">
+                   REVENUE STREAMS:
+                  • Marketplace fee: 1.5% 
+                  • Logistics: 1% (delivery + tracking)
+                  • Fintech: 2.5% (payment processing)
+                  • AI PRO subscription: $99-499/month (optional)
+
+                  BLENDED TAKE RATE:
+                  • Short term: 2-3%
+                  • Long term: 4-5% (with full stack optimization
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Section - Kong.ai Style -->
+      <footer
+          class="relative bg-gradient-to-br from-[#02066F] to-[#1e40af] text-white py-12  overflow-hidden"
+        >
+          <!-- Beautiful Background Decorations -->
+          <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <!-- Animated Gradient Orbs -->
+            <div
+              class="absolute top-10 right-20 w-96 h-96 bg-gradient-to-br from-[#2563EB]/20 to-[#3B82F6]/10 rounded-full blur-3xl animate-pulse-slow"
+            ></div>
+            <div
+              class="absolute bottom-10 left-20 w-80 h-80 bg-gradient-to-br from-[#1E3A8A]/15 to-[#2563EB]/10 rounded-full blur-3xl animate-pulse-slow"
+              style="animation-delay: 1s"
+            ></div>
+
+            <!-- Mesh Gradient Pattern -->
+            <div
+              class="absolute inset-0"
+              style="
+                background-image: radial-gradient(
+                    circle at 30% 40%,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    transparent 50%
+                  ),
+                  radial-gradient(
+                    circle at 70% 60%,
+                    rgba(255, 255, 255, 0.08) 0%,
+                    transparent 50%
+                  );
+              "
+            ></div>
+
+            <!-- Decorative Dots Pattern -->
+            <div
+              class="absolute inset-0 opacity-20"
+              style="
+                background-image: radial-gradient(
+                  circle,
+                  rgba(255, 255, 255, 0.3) 1px,
+                  transparent 1px
+                );
+                background-size: 50px 50px;
+              "
+            ></div>
+
+            <!-- Floating Geometric Shapes -->
+            <div
+              class="absolute top-1/4 right-1/4 w-32 h-32 border-2 border-white/20 rounded-lg transform rotate-45 animate-float"
+              style="animation-duration: 8s"
+            ></div>
+            <div
+              class="absolute bottom-1/4 left-1/4 w-24 h-24 border-2 border-white/20 rounded-full animate-float"
+              style="animation-duration: 10s; animation-delay: 1s"
+            ></div>
+          </div>
+          <div class="container mx-auto px-4 max-w-7xl relative z-10">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Brand Section -->
+            <div>
+              <h3 class="text-2xl font-black mb-4">MetOneX</h3>
+              <p class="text-white/80 text-sm leading-relaxed">
+                Reduce finding construction materials and connecting with
+                suppliers to 30 minutes using AI.
+              </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+              <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="../index.html"
+                    class="text-white/80 hover:text-white transition-colors text-sm"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href=""
+                    class="text-white/80 hover:text-white transition-colors text-sm"
+                    >Demo</a
+                  >
+                </li>
+               
+              </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+              <h4 class="text-lg font-bold mb-4">Contact</h4>
+              <ul class="space-y-2 text-sm text-white/80">
+                <li class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  info@metone.uz
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                  +998 55 503 00 01
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Bottom Bar -->
+          <div
+            class="border-t border-white/20 mt-8 pt-8 flex flex-col md:flex-row items-center justify-between"
+          >
+            <p class="text-white/60 text-sm">
+              © 2025 MetOneX. All rights reserved.
+            </p>
+       
+          </div>
+        </div>
+      </footer>
+      </div>
+    </div>
+
+    <!-- Chatbot Dropdown Window - Fixed on Right Side -->
+    <div
+      id="chatbot-modal"
+      class="fixed bottom-24 right-10 w-[380px] h-[600px] z-[9999] hidden"
+      style="max-height: calc(100vh - 120px);"
+    >
+      <!-- Chat Window Content -->
+      <div
+        class="w-full h-full bg-gradient-to-br from-[#1E3A8A] via-[#2563EB] to-[#3B82F6] text-white shadow-2xl rounded-2xl border-2 border-white/20 overflow-hidden flex flex-col transform transition-all duration-300 translate-y-full opacity-0"
+        id="chatbot-modal-content"
+      >
+        <!-- Modal Header -->
+        <div
+          class="flex items-center justify-between p-2 border-b border-white/20 bg-white/5 backdrop-blur-sm"
+        >
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center overflow-hidden flex-shrink-0">
+              <img 
+                src="../Master_Khorezmi_Front_view,_clean_shaven,_looking_directly_at_viewer.png" 
+                alt="Khorazmi AI" 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-xl font-black">Khorazmi AI</h3>
+              <div class="text-xs text-white/70 flex items-center gap-1 mt-1">
+                <span class="relative flex h-2 w-2">
+                  <span
+                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                  ></span>
+                  <span
+                    class="relative inline-flex rounded-full h-2 w-2 bg-green-400"
+                  ></span>
+                </span>
+                Online
+              </div>
+            </div>
+          </div>
+          <button
+            id="chatbot-close-btn"
+            class="w-7 h-7 rounded-lg  bg-white/10 hover:bg-white/20 border border-white/30 flex items-center justify-center transition-all duration-300 hover:scale-110"
+            aria-label="Yopish"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="flex-1 overflow-hidden flex flex-col">
+          <div dir="ltr" class="relative flex-1 p-6 overflow-hidden">
+            <style>
+              #chatbot-modal-messages-container {
+                scrollbar-width: thin;
+                scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+              }
+              #chatbot-modal-messages-container::-webkit-scrollbar {
+                width: 6px;
+              }
+              #chatbot-modal-messages-container::-webkit-scrollbar-track {
+                background: transparent;
+              }
+              #chatbot-modal-messages-container::-webkit-scrollbar-thumb {
+                background-color: rgba(255, 255, 255, 0.3);
+                border-radius: 3px;
+              }
+              #chatbot-modal-messages-container::-webkit-scrollbar-thumb:hover {
+                background-color: rgba(255, 255, 255, 0.5);
+              }
+              
+              /* Typing Animation - Telegram/Instagram Style - Smaller */
+              .typing-indicator {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                padding: 4px 8px;
+              }
+              
+              .typing-dot {
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.7);
+                animation: typing-bounce 1.4s infinite ease-in-out;
+              }
+              
+              .typing-dot:nth-child(1) {
+                animation-delay: 0s;
+              }
+              
+              .typing-dot:nth-child(2) {
+                animation-delay: 0.2s;
+              }
+              
+              .typing-dot:nth-child(3) {
+                animation-delay: 0.4s;
+              }
+              
+              @keyframes typing-bounce {
+                0%, 60%, 100% {
+                  transform: translateY(0);
+                  opacity: 0.7;
+                }
+                30% {
+                  transform: translateY(-6px);
+                  opacity: 1;
+                }
+              }
+              
+              /* Typewriter Effect - Beautiful Smooth Animation */
+              .typewriter-text {
+                display: inline;
+                letter-spacing: 0.01em;
+                word-spacing: 0.4em;
+                line-height: 1.6;
+                white-space: normal;
+                word-break: normal;
+                overflow-wrap: break-word;
+              }
+              
+              /* Word container - prevents word breaking */
+              .typewriter-word {
+                display: inline-block;
+                word-break: keep-all;
+                white-space: nowrap;
+                margin-right: 0.1em;
+              }
+              
+              .typewriter-char {
+                display: inline-block;
+                opacity: 0;
+                transform: translateY(8px) scale(0.95);
+                transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+                will-change: transform, opacity;
+              }
+              
+              .typewriter-char.visible {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+              }
+              
+              /* Special handling for spaces - make them visible and properly sized */
+              .typewriter-char.space-char {
+                width: 0.5em;
+                min-width: 0.5em;
+                display: inline-block;
+                padding-right: 0.1em;
+              }
+              
+              .typewriter-cursor {
+                display: inline-block;
+                width: 2.5px;
+                height: 18px;
+                background: linear-gradient(to bottom, 
+                  rgba(255, 255, 255, 1) 0%,
+                  rgba(255, 255, 255, 0.95) 50%,
+                  rgba(255, 255, 255, 1) 100%);
+                margin-left: 4px;
+                vertical-align: middle;
+                animation: blink-cursor-smooth 1.2s infinite ease-in-out;
+                box-shadow: 
+                  0 0 8px rgba(255, 255, 255, 0.7),
+                  0 0 16px rgba(255, 255, 255, 0.4);
+                border-radius: 1px;
+                transition: all 0.2s ease;
+              }
+              
+              @keyframes blink-cursor-smooth {
+                0%, 48% {
+                  opacity: 1;
+                  transform: scaleY(1);
+                }
+                49%, 51% {
+                  opacity: 0.2;
+                  transform: scaleY(0.6);
+                }
+                52%, 100% {
+                  opacity: 1;
+                  transform: scaleY(1);
+                }
+              }
+              
+              /* Beautiful fade-in for message container */
+              .typewriter-text-container {
+                animation: messageFadeIn 0.3s ease-out;
+              }
+              
+              @keyframes messageFadeIn {
+                from {
+                  opacity: 0;
+                  transform: translateY(10px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+              
+              /* Image Modal Styles */
+              .image-modal-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.8);
+                backdrop-filter: blur(8px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 10000;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+              }
+              
+              .image-modal-overlay.show {
+                opacity: 1;
+                visibility: visible;
+              }
+              
+              .image-modal-content {
+                position: relative;
+                max-width: 90%;
+                max-height: 90vh;
+                background: white;
+                border-radius: 12px;
+                padding: 20px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+                transform: scale(0.8);
+                transition: transform 0.3s ease;
+              }
+              
+              .image-modal-overlay.show .image-modal-content {
+                transform: scale(1);
+              }
+              
+              .image-modal-close {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 36px;
+                height: 36px;
+                background: rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                z-index: 10;
+              }
+              
+              .image-modal-close:hover {
+                background: rgba(0, 0, 0, 0.7);
+                transform: rotate(90deg);
+              }
+              
+              .image-modal-img {
+                max-width: 100%;
+                max-height: 80vh;
+                border-radius: 8px;
+                display: block;
+                object-fit: contain;
+              }
+            </style>
+            <div
+              id="chatbot-modal-messages-container"
+              class="h-full overflow-y-auto pr-2"
+            >
+              <div class="space-y-6" id="chatbot-modal-messages">
+                <!-- Welcome Message - Robot in Center -->
+                <div class="flex flex-col items-center gap-4">
+                  <!-- Robot Avatar -->
+                  <div class="w-24 h-24 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 shadow-lg flex items-center justify-center overflow-hidden">
+                    <img 
+                      src="../Master_Khorezmi_Front_view,_clean_shaven,_looking_directly_at_viewer.png" 
+                      alt="Mr. Khorezmi" 
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <!-- Welcome Text Below Robot -->
+                  <div class="text-center px-4 mb-6">
+                    <div
+                      class="bg-white/20 backdrop-blur-sm rounded-2xl p-5 border-2 border-white/30 shadow-lg max-w-md mx-auto"
+                    >
+                    <p
+                        class="text-base leading-relaxed font-medium text-white mb-4"
+                    >
+                        Hey, I'm Khorazmi.  
+                        Named after Al-Khwarizmi, who invented algebra and algorithms 1000+ years ago in Khwarezm (modern-day Uzbekistan).
+
+                        He solved complex problems through systematic methods.
+                        I do the same for construction sourcing.
+
+                        Ready to solve your sourcing problem the algorithmic way?
+                    </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Questions - Beautiful Design -->
+          <div class="px-4 pb-4 border-t border-white/20 pt-4 bg-white/5">
+            <p
+              class="text-xs text-white/90 mb-2 font-bold uppercase tracking-wide"
+            >
+              Quick Questions:
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <button
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
+                data-question="Why should I trust you with my sourcing?"
+              >
+                <span>Why should I trust you with my sourcing?</span>
+              </button>
+              <button
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
+                data-question="How does this actually work?"
+              >
+                <span>How does this actually work?</span>
+              </button>
+              <button
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
+                data-question="What about partnerships and scale?"
+              >
+                <span>What about partnerships and scale?</span>
+              </button>
+              <button
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
+                data-question="Why not just use my existing suppliers?"
+              >
+                <span>Why not just use my existing suppliers?</span>
+              </button>
+              <button
+                class="chatbot-modal-question-btn px-3 py-2 text-left bg-white/10 hover:bg-white/20 text-white rounded-lg border border-white/30 transition-all font-medium text-xs hover:border-white/50 hover:shadow-md flex items-center gap-2 group whitespace-nowrap"
+                data-question="What's your real competitive advantage?"
+              >
+                <span>What's your real competitive advantage?</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Download Image Button
+      document.getElementById("download_file_demo").addEventListener("click", () => {
+        // 🔥 SENING FILE MANZILINGNI SHU YERGA QOYASAN
+        const fileUrl = "./../files/photo_2025-12-06_15-25-27.jpg"; // masalan: /files/myfile.pdf
+
+        const customName = "Demo-test.jpg";    // 🔥 PC ga tushadigan Nomi
+
+        const link = document.createElement("a");
+        link.href = fileUrl;
+        link.download = customName;               // 👉 Shu nom bilan tushadi!
+        link.click();
+      });
+      
+      // View Image Button
+      document.getElementById("view_image_demo").addEventListener("click", () => {
+        const fileUrl = "./../files/photo_2025-12-06_15-25-27.jpg";
+        
+        // Open image in modal
+        if (typeof window.openImageModal === 'function') {
+          window.openImageModal(fileUrl);
+        } else {
+          // Fallback if modal function not loaded yet
+          setTimeout(() => {
+            if (typeof window.openImageModal === 'function') {
+              window.openImageModal(fileUrl);
+            } else {
+              window.open(fileUrl, '_blank');
+            }
+          }, 100);
+        }
+      });
+      // Loading Screen
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          const loadingScreen = document.getElementById("loading-screen");
+          const mainContent = document.getElementById("main-content");
+
+          if (loadingScreen) {
+            loadingScreen.style.opacity = "0";
+            setTimeout(function () {
+              loadingScreen.style.display = "none";
+              if (mainContent) {
+                mainContent.style.display = "block";
+              }
+            }, 500);
+          } else if (mainContent) {
+            mainContent.style.display = "block";
+          }
+        }, 2500);
+      });
+
+      // Scroll Progress Bar - Optimized
+      function initScrollProgress() {
+        const progressBar = document.getElementById("scroll-progress");
+        if (!progressBar) return;
+
+        let ticking = false;
+        let lastScroll = 0;
+
+        function updateProgress() {
+          const windowHeight = window.innerHeight;
+          const documentHeight = document.documentElement.scrollHeight;
+          const scrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          // Only update if scroll changed significantly
+          if (Math.abs(scrollTop - lastScroll) < 5) {
+            ticking = false;
+            return;
+          }
+
+          lastScroll = scrollTop;
+          const scrollPercent =
+            (scrollTop / (documentHeight - windowHeight)) * 100;
+          progressBar.style.width =
+            Math.min(100, Math.max(0, scrollPercent)) + "%";
+          ticking = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(updateProgress);
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+
+        // Throttled resize handler
+        let resizeTimeout;
+        window.addEventListener(
+          "resize",
+          () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(updateProgress, 100);
+          },
+          { passive: true }
+        );
+
+        updateProgress();
+      }
+
+      // Navbar Scroll Effect - Beautiful Design
+      function initNavbarScroll() {
+        const navbar = document.getElementById("navbar");
+        if (!navbar) return;
+
+        let lastScroll = 0;
+        let ticking = false;
+
+        let isScrolled = false;
+        let isHidden = false;
+
+        function handleScroll() {
+          const scrollY =
+            window.pageYOffset || document.documentElement.scrollTop;
+          const shouldBeScrolled = scrollY > 50;
+          const shouldBeHidden = scrollY > lastScroll && scrollY > 100;
+
+          // Only update if state changed
+          if (shouldBeScrolled !== isScrolled) {
+            isScrolled = shouldBeScrolled;
+            if (isScrolled) {
+              navbar.classList.add("scrolled");
+              navbar.style.boxShadow = "0 8px 32px rgba(37, 99, 235, 0.12)";
+              navbar.style.borderBottom = "1px solid rgba(37, 99, 235, 0.1)";
+            } else {
+              navbar.classList.remove("scrolled");
+              navbar.style.boxShadow = "0 1px 3px rgba(0, 0, 0, 0.05)";
+              navbar.style.borderBottom = "1px solid rgba(0, 0, 0, 0.1)";
+            }
+          }
+
+          // Hide/show navbar on scroll - only update if changed
+          if (shouldBeHidden !== isHidden) {
+            isHidden = shouldBeHidden;
+            navbar.style.transform = isHidden
+              ? "translateY(-100%)"
+              : "translateY(0)";
+          }
+
+          lastScroll = scrollY;
+          ticking = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(handleScroll);
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+      }
+
+      // Custom Cursor - Disabled (using classic cursor)
+      function initCustomCursor() {
+        // Custom cursor disabled - using classic browser cursor
+        return;
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let dotX = 0;
+        let dotY = 0;
+        let trailX = 0;
+        let trailY = 0;
+
+        document.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        let isAnimating = false;
+        let rafId = null;
+
+        function animateCursor() {
+          if (!cursor || !cursorDot || !cursorTrail || !isAnimating) return;
+
+          // Use transform instead of left/top for better performance
+          const dx = mouseX - cursorX;
+          const dy = mouseY - cursorY;
+
+          // Only animate if movement is significant
+          if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+            isAnimating = false;
+            if (rafId) {
+              cancelAnimationFrame(rafId);
+              rafId = null;
+            }
+            return;
+          }
+
+          // Main cursor (smooth follow) - Use translate3d for GPU acceleration
+          cursorX += dx * 0.15;
+          cursorY += dy * 0.15;
+          cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+
+          // Dot cursor (faster follow)
+          dotX += (mouseX - dotX) * 0.3;
+          dotY += (mouseY - dotY) * 0.3;
+          cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
+
+          // Trail cursor (slower follow)
+          trailX += (mouseX - trailX) * 0.05;
+          trailY += (mouseY - trailY) * 0.05;
+          cursorTrail.style.transform = `translate3d(${trailX}px, ${trailY}px, 0) translate(-50%, -50%)`;
+
+          rafId = requestAnimationFrame(animateCursor);
+        }
+
+        // Optimized mouse move handler - single event listener with throttling
+        let lastMouseMove = 0;
+        const throttleDelay = 16; // ~60fps
+        let mouseStopTimeout;
+
+        document.addEventListener(
+          "mousemove",
+          (e) => {
+            const now = performance.now();
+            if (now - lastMouseMove < throttleDelay) return;
+            lastMouseMove = now;
+
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (!isAnimating) {
+              isAnimating = true;
+              animateCursor();
+            }
+
+            // Reset stop timeout
+            clearTimeout(mouseStopTimeout);
+            mouseStopTimeout = setTimeout(() => {
+              isAnimating = false;
+              if (rafId) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+              }
+            }, 500);
+          },
+          { passive: true }
+        );
+
+        // Hover effects on interactive elements
+        const interactiveElements = document.querySelectorAll(
+          "a, button, .tech-icon-card, select, input, textarea, [role='button'], .demo-card, .tech-card"
+        );
+
+        interactiveElements.forEach((el) => {
+          el.addEventListener("mouseenter", () => {
+            if (cursor) cursor.classList.add("hover");
+            if (cursorDot) cursorDot.classList.add("hover");
+            if (cursorTrail) cursorTrail.classList.add("hover");
+          });
+
+          el.addEventListener("mouseleave", () => {
+            if (cursor) cursor.classList.remove("hover");
+            if (cursorDot) cursorDot.classList.remove("hover");
+            if (cursorTrail) cursorTrail.classList.remove("hover");
+          });
+        });
+
+        // Keep default cursor (custom cursor disabled)
+        // document.body.style.cursor = "none";
+      }
+
+      // Scroll reveal animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".scroll-reveal").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // FAQ Accordion Functionality
+      function initFAQ() {
+        document.querySelectorAll(".faq-question").forEach((question) => {
+          question.addEventListener("click", function () {
+            const faqItem = this.closest(".faq-item");
+            const isActive = faqItem.classList.contains("active");
+            
+            // Close all FAQ items
+            document.querySelectorAll(".faq-item").forEach((item) => {
+              item.classList.remove("active");
+              const answer = item.querySelector(".faq-answer");
+              if (answer) {
+                answer.classList.add("hidden");
+              }
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+              faqItem.classList.add("active");
+              const answer = faqItem.querySelector(".faq-answer");
+              if (answer) {
+                answer.classList.remove("hidden");
+              }
+            }
+          });
+        });
+      }
+
+      // MetOneX Carousel Initialization - Infinite Loop
+      function initMetOneXCarousel() {
+        const carousel = document.querySelector(".metonex-carousel");
+        if (!carousel) return;
+
+        const track = carousel.querySelector(".carousel-track");
+        if (!track) return;
+
+        // Check if already initialized
+        if (track.dataset.initialized === "true") return;
+
+        // Clone slides for seamless infinite loop
+        const slides = Array.from(track.querySelectorAll(".carousel-slide"));
+        if (slides.length === 0) return;
+
+        // Duplicate all slides multiple times for seamless infinite loop
+        const totalSlides = slides.length;
+        for (let i = 0; i < totalSlides; i++) {
+          const clone = slides[i].cloneNode(true);
+          track.appendChild(clone);
+        }
+        
+        // Duplicate again for smoother loop
+        for (let i = 0; i < totalSlides; i++) {
+          const clone = slides[i].cloneNode(true);
+          track.appendChild(clone);
+        }
+
+        // Mark as initialized
+        track.dataset.initialized = "true";
+      }
+
+      // Initialize all functions after DOM ready - Optimized
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          initScrollProgress();
+          initNavbarScroll();
+          // initCustomCursor(); // Disabled - using classic cursor
+          initMetOneXCarousel();
+          initFAQ();
+          // Initialize tech stack filter after app.js is loaded
+          setTimeout(() => {
+            if (typeof initTechStackSelect === 'function') {
+              initTechStackSelect();
+            }
+          }, 100);
+        });
+      } else {
+        initScrollProgress();
+        initNavbarScroll();
+        // initCustomCursor(); // Disabled - using classic cursor
+        initMetOneXCarousel();
+        initFAQ();
+        // Initialize tech stack filter after app.js is loaded
+        setTimeout(() => {
+          if (typeof initTechStackSelect === 'function') {
+            initTechStackSelect();
+          }
+        }, 100);
+      }
+
+      // Chatbot Modal Functionality
+      const chatbotModal = document.getElementById("chatbot-modal");
+      const chatbotToggleBtn = document.getElementById(
+        "open-chatbot-from-card"
+      );
+      const chatbotCloseBtn = document.getElementById("chatbot-close-btn");
+      const chatbotModalContent = document.getElementById(
+        "chatbot-modal-content"
+      );
+      const chatbotModalMessages = document.getElementById(
+        "chatbot-modal-messages"
+      );
+      const chatbotModalQuestionButtons = document.querySelectorAll(
+        ".chatbot-modal-question-btn"
+      );
+      const openChatbotFromCard = document.getElementById(
+        "open-chatbot-from-card"
+      );
+
+      const chatbotResponses = {
+        en: {
+          "Why should I trust you with my sourcing?":
+            "Because MetoneX is built by Metone—Uzbekistan's biggest steel distributor.\n\n13 years in business.\n3,000+ construction clients.\nLargest steel network in the country.\n\nWe didn't theorize this problem. We LIVED it for 13 years.\n\nNow we're solving it with MetoneX:\n• 6 builders tested it → $50K saved in 12 days\n• 100% reorder rate → Proof it works\n• 450 waiting → Market validation\n\nYou're not trusting a startup. You're trusting the market leader who's innovating their own industry.",
+          "How does this actually work?":
+            "Three steps. 30 minutes total.\n   Step 1: Upload materials (5 min) → Step 2: Get 20-50 quotes \n   (10 min) → Step 3: Order best deal (15 min).",
+          "What about partnerships and scale?":
+            "Big names in pipeline. Not chasing them yet. \n   We're focused on building product first.\n   \n   Plan: 90 days → 50 active builders → $2M GMV → \n   Then partnerships from strength, not desperation",
+          "Why not just use my existing suppliers?":
+            "Keep them, for now)). MetoneX adds options. \n   More suppliers = better prices for you.\n   You control who you order from.",
+          "What's your real competitive advantage?":
+            "We're not a startup competing with distributors.\nWe ARE the biggest distributor building the platform.\n\n1. NETWORK (13 years, 300+ suppliers)\n   Competitors need 10+ years to build what we have today.\n\n2. TRUST (3,000+ existing clients)\n   Builders already know Metone. MetoneX = trusted extension.",
+        },
+      };
+
+      function openChatbotModal() {
+        if (!chatbotModal) return;
+        chatbotModal.classList.remove("hidden");
+
+        // Trigger animation - dropdown from bottom
+        setTimeout(() => {
+          if (chatbotModalContent) {
+            chatbotModalContent.classList.remove("translate-y-full", "opacity-0");
+            chatbotModalContent.classList.add("translate-y-0", "opacity-100");
+          }
+
+          // Scroll to top when opening
+          const container = document.getElementById(
+            "chatbot-modal-messages-container"
+          );
+          if (container) {
+            container.scrollTop = 0;
+          }
+        }, 10);
+      }
+
+      function closeChatbotModal() {
+        if (!chatbotModal) return;
+        if (chatbotModalContent) {
+          chatbotModalContent.classList.remove("translate-y-0", "opacity-100");
+          chatbotModalContent.classList.add("translate-y-full", "opacity-0");
+        }
+
+        setTimeout(() => {
+          chatbotModal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Event listeners
+      if (chatbotToggleBtn) {
+        chatbotToggleBtn.addEventListener("click", openChatbotModal);
+      }
+
+      if (chatbotCloseBtn) {
+        chatbotCloseBtn.addEventListener("click", closeChatbotModal);
+      }
+
+
+      if (openChatbotFromCard) {
+        openChatbotFromCard.addEventListener("click", openChatbotModal);
+      }
+
+      // Close on Escape key
+      document.addEventListener("keydown", (e) => {
+        if (
+          e.key === "Escape" &&
+          chatbotModal &&
+          !chatbotModal.classList.contains("hidden")
+        ) {
+          closeChatbotModal();
+        }
+      });
+
+      // Function to show typing indicator
+      function showTypingIndicator() {
+        if (!chatbotModalMessages) return;
+        
+        // Remove any existing typing indicator
+        const existingTyping = chatbotModalMessages.querySelector('.typing-indicator-container');
+        if (existingTyping) {
+          existingTyping.remove();
+        }
+        
+        const typingDiv = document.createElement("div");
+        typingDiv.className = "flex justify-start mb-6 typing-indicator-container";
+        typingDiv.innerHTML = `
+          <div class="flex items-start gap-3 max-w-[95%]">
+            <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+               <img width="32" height="32" src="../Master_Khorezmi_Front_view,_clean_shaven,_looking_directly_at_viewer.png" class="w-full h-full object-cover"/>
+            </div>
+            <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border-2 border-white/30 shadow-lg">
+              <div class="typing-indicator">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        chatbotModalMessages.appendChild(typingDiv);
+        
+        // Scroll to bottom
+        const container = document.getElementById("chatbot-modal-messages-container");
+        if (container) {
+          setTimeout(() => {
+            container.scrollTo({
+              top: container.scrollHeight,
+              behavior: "smooth",
+            });
+          }, 100);
+        }
+      }
+      
+      // Function to hide typing indicator
+      function hideTypingIndicator() {
+        if (!chatbotModalMessages) return;
+        const typingIndicator = chatbotModalMessages.querySelector('.typing-indicator-container');
+        if (typingIndicator) {
+          typingIndicator.remove();
+        }
+      }
+      
+      // Function to add message with typewriter effect - Ultra smooth natural human-like typing
+      function addMessageWithTypewriter(message, messageDiv, messageTextElement) {
+        let index = 0;
+        let currentWordSpan = null; // Track current word span to prevent word breaking
+        
+        // Ultra smooth typing speeds (milliseconds per character) - Slower for beautiful animation
+        const baseSpeed = 50; // Base speed - slower for beautiful smooth animation
+        const fastSpeed = 35; // For spaces and easy characters
+        const slowSpeed = 70; // For complex characters
+        const verySlowSpeed = 100; // For numbers and special chars
+        
+        // Natural pauses - longer for better readability
+        const pauseAfterComma = 200;
+        const pauseAfterPeriod = 450;
+        const pauseAfterQuestion = 400;
+        const pauseAfterExclamation = 350;
+        const pauseAfterSemicolon = 250;
+        const pauseBetweenWords = 100; // Longer pause between words
+        
+        // Check if character is easy to type (common letters)
+        const easyChars = 'aeioulnrst';
+        const hardChars = 'qwxz';
+        const numbers = '0123456789';
+        
+        function getTypingSpeed(char, prevChar, nextChar) {
+          // Spaces - very fast
+          if (char === ' ') {
+            // Longer pause after punctuation
+            if (prevChar === '.' || prevChar === '!' || prevChar === '?') {
+              return pauseBetweenWords + 50;
+            }
+            return pauseBetweenWords;
+          }
+          
+          // Punctuation pauses
+          if (char === ',') return pauseAfterComma;
+          if (char === '.') return pauseAfterPeriod;
+          if (char === '?') return pauseAfterQuestion;
+          if (char === '!') return pauseAfterExclamation;
+          if (char === ';') return pauseAfterSemicolon;
+          if (char === ':') return pauseAfterComma;
+          
+          // Numbers are slower
+          if (numbers.includes(char.toLowerCase())) {
+            return verySlowSpeed + Math.random() * 20;
+          }
+          
+          // Hard characters are slower
+          if (hardChars.includes(char.toLowerCase())) {
+            return slowSpeed + Math.random() * 15;
+          }
+          
+          // Easy characters are faster but still smooth
+          if (easyChars.includes(char.toLowerCase())) {
+            return baseSpeed - 10 + Math.random() * 20;
+          }
+          
+          // Default with natural variation
+          // More variation for natural human feel (base speed ± 25ms)
+          const variation = (Math.random() * 50) - 25;
+          return baseSpeed + variation;
+        }
+        
+        function typeCharacter() {
+          if (index < message.length) {
+            const currentChar = message[index];
+            const prevChar = index > 0 ? message[index - 1] : '';
+            const nextChar = index + 1 < message.length ? message[index + 1] : '';
+            
+            // Handle spaces - close current word and add space
+            if (currentChar === ' ') {
+              // Close current word span if exists
+              if (currentWordSpan) {
+                currentWordSpan = null;
+              }
+              
+              // Create space element
+              const spaceSpan = document.createElement('span');
+              spaceSpan.innerHTML = '&nbsp;';
+              spaceSpan.className = 'typewriter-char space-char';
+              spaceSpan.style.width = '0.5em';
+              spaceSpan.style.minWidth = '0.5em';
+              spaceSpan.style.display = 'inline-block';
+              spaceSpan.style.opacity = '0';
+              spaceSpan.style.transform = 'translateY(8px) scale(0.95)';
+              spaceSpan.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+              
+              messageTextElement.appendChild(spaceSpan);
+              index++;
+              
+              // Animate space appearance
+              setTimeout(() => {
+                requestAnimationFrame(() => {
+                  spaceSpan.style.opacity = '1';
+                  spaceSpan.style.transform = 'translateY(0) scale(1)';
+                });
+              }, 10);
+              
+              // Continue typing
+              const speed = getTypingSpeed(currentChar, prevChar, nextChar);
+              requestAnimationFrame(() => {
+                setTimeout(typeCharacter, Math.max(10, speed));
+              });
+              return;
+            }
+            
+            // Start new word span if needed (when starting a new word after space)
+            if (!currentWordSpan) {
+              currentWordSpan = document.createElement('span');
+              currentWordSpan.className = 'typewriter-word';
+              currentWordSpan.style.display = 'inline-block';
+              currentWordSpan.style.wordBreak = 'keep-all';
+              currentWordSpan.style.whiteSpace = 'nowrap';
+              messageTextElement.appendChild(currentWordSpan);
+            }
+            
+            // Create span for each character with beautiful animation
+            const charSpan = document.createElement('span');
+            charSpan.textContent = currentChar;
+            charSpan.className = 'typewriter-char';
+            charSpan.style.display = 'inline';
+            
+            charSpan.style.opacity = '0';
+            charSpan.style.transform = 'translateY(8px) scale(0.95)';
+            charSpan.style.transition = 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            
+            // Add character to current word span (not directly to messageTextElement)
+            currentWordSpan.appendChild(charSpan);
+            index++;
+            
+            // Animate character appearance smoothly with beautiful effect
+            setTimeout(() => {
+              requestAnimationFrame(() => {
+                charSpan.style.opacity = '1';
+                charSpan.style.transform = 'translateY(0) scale(1)';
+              });
+            }, 10);
+            
+            // Smooth gradual scroll - only when needed and very smooth
+            if (index % 6 === 0 || index === message.length - 1) {
+              const container = document.getElementById("chatbot-modal-messages-container");
+              if (container) {
+                const scrollHeight = container.scrollHeight;
+                const scrollTop = container.scrollTop;
+                const clientHeight = container.clientHeight;
+                const scrollBottom = scrollTop + clientHeight;
+                
+                // Only scroll if new content is below visible area
+                if (scrollHeight - scrollBottom > 30) {
+                  // Very smooth gradual scroll
+                  const targetScroll = scrollHeight - clientHeight;
+                  const currentScroll = scrollTop;
+                  const scrollDistance = targetScroll - currentScroll;
+                  
+                  if (scrollDistance > 0) {
+                    // Gradual smooth scroll - small steps for beautiful animation
+                    let stepCount = 0;
+                    const maxSteps = 15; // More steps = smoother
+                    const scrollStep = scrollDistance / maxSteps;
+                    
+                    const smoothScroll = () => {
+                      if (stepCount < maxSteps) {
+                        const newScroll = currentScroll + (scrollStep * stepCount);
+                        container.scrollTo({
+                          top: newScroll,
+                          behavior: "auto",
+                        });
+                        stepCount++;
+                        requestAnimationFrame(() => {
+                          setTimeout(smoothScroll, 20); // 20ms per step for smooth animation
+                        });
+                      } else {
+                        // Final scroll to exact position
+                        container.scrollTo({
+                          top: targetScroll,
+                          behavior: "auto",
+                        });
+                      }
+                    };
+                    
+                    requestAnimationFrame(smoothScroll);
+                  }
+                }
+              }
+            }
+            
+            // Get natural typing speed
+            const speed = getTypingSpeed(currentChar, prevChar, nextChar);
+            
+            // Use requestAnimationFrame for smoother animation
+            requestAnimationFrame(() => {
+              setTimeout(typeCharacter, Math.max(10, speed));
+            });
+          } else {
+            // Smooth cursor fade out
+            const cursor = messageTextElement.parentElement.querySelector('.typewriter-cursor');
+            if (cursor) {
+              cursor.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+              cursor.style.opacity = '0';
+              cursor.style.transform = 'scaleY(0)';
+              setTimeout(() => {
+                cursor.remove();
+              }, 400);
+            }
+          }
+        }
+        
+        // Natural start delay
+        setTimeout(() => {
+          typeCharacter();
+        }, 80);
+      }
+
+      function addChatMessage(message, isUser = false) {
+        if (!chatbotModalMessages) return;
+
+        const messageDiv = document.createElement("div");
+
+        if (isUser) {
+          // Hide welcome message when user sends first message
+          const welcomeMessage = chatbotModalMessages.querySelector(
+            ".flex.flex-col.items-center"
+          );
+          if (welcomeMessage) {
+            welcomeMessage.style.opacity = "0";
+            welcomeMessage.style.transform = "translateY(-20px)";
+            setTimeout(() => {
+              welcomeMessage.style.display = "none";
+            }, 300);
+          }
+
+          // User message at top
+          messageDiv.className = "flex justify-end mb-6";
+          messageDiv.innerHTML = `
+            <div class="p-4 rounded-xl max-w-[80%] bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 shadow-lg">
+              <p class="text-sm leading-relaxed font-medium">${message}</p>
+            </div>
+          `;
+        } else {
+          // Hide typing indicator first
+          hideTypingIndicator();
+          
+          // Hide previous robot if exists
+          const previousRobots = chatbotModalMessages.querySelectorAll(
+            ".robot-response-container"
+          );
+          previousRobots.forEach((robot) => {
+            robot.classList.add("robot-fade-out");
+            setTimeout(() => {
+              robot.remove();
+            }, 500);
+          });
+
+          // Bot response - Beautiful design with smooth typewriter effect
+          messageDiv.className = "flex justify-start mb-6 typewriter-text-container";
+          messageDiv.innerHTML = `
+            <div class="flex items-start gap-3 max-w-[95%]">
+              <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img width="32" height="32" src="../Master_Khorezmi_Front_view,_clean_shaven,_looking_directly_at_viewer.png" class="w-full h-full object-cover"/>
+                  </div>
+              <div class="bg-white/20 backdrop-blur-sm rounded-2xl p-4 border-2 border-white/30 shadow-lg">
+                <p class="text-sm leading-relaxed font-medium text-white" style="word-spacing: 0.4em; white-space: normal;">
+                  <span class="typewriter-text"></span>
+                  <span class="typewriter-cursor"></span>
+                </p>
+              </div>
+            </div>
+          `;
+        }
+
+        chatbotModalMessages.appendChild(messageDiv);
+
+        // If bot message, add typewriter effect
+        if (!isUser) {
+          const messageTextElement = messageDiv.querySelector('.typewriter-text');
+          if (messageTextElement) {
+            addMessageWithTypewriter(message, messageDiv, messageTextElement);
+          }
+        } else {
+          // Scroll to bottom smoothly for user messages
+          const container = document.getElementById(
+            "chatbot-modal-messages-container"
+          );
+          if (container) {
+            setTimeout(() => {
+              container.scrollTo({
+                top: container.scrollHeight,
+                behavior: "smooth",
+              });
+            }, 100);
+          }
+        }
+      }
+
+      // Add click handlers to question buttons
+      chatbotModalQuestionButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          const question = this.getAttribute("data-question");
+          if (question && chatbotModalMessages) {
+            // Add user question
+            addChatMessage(question, true);
+
+            // Hide welcome message
+            const welcomeMessage = chatbotModalMessages.querySelector(
+              ".flex.flex-col.items-center"
+            );
+            if (welcomeMessage && welcomeMessage.style.display !== "none") {
+              welcomeMessage.style.opacity = "0";
+              welcomeMessage.style.transform = "translateY(-20px)";
+              setTimeout(() => {
+                welcomeMessage.style.display = "none";
+              }, 300);
+            }
+
+            // Show typing indicator
+            showTypingIndicator();
+            
+            // Add bot response after delay (simulate typing time)
+            setTimeout(() => {
+              const responses = chatbotResponses["en"];
+              const defaultResponse = "Sorry, I can't answer this question yet. Please choose one of the questions below.";
+              const response = responses[question] || defaultResponse;
+              
+              // Hide typing indicator and show response
+              hideTypingIndicator();
+              addChatMessage(response, false);
+            }, 1500); // Increased delay to show typing animation
+          }
+        });
+      });
+
+      // Tabs functionality
+      const tabTriggers = document.querySelectorAll('[role="tab"]');
+      const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+      tabTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", function () {
+          const targetId = this.getAttribute("aria-controls");
+
+          // Remove active state from all triggers
+          tabTriggers.forEach((t) => {
+            t.setAttribute("aria-selected", "false");
+            t.setAttribute("data-state", "inactive");
+          });
+
+          // Hide all panels
+          tabPanels.forEach((panel) => {
+            panel.setAttribute("hidden", "");
+            panel.setAttribute("data-state", "inactive");
+          });
+
+          // Activate clicked trigger
+          this.setAttribute("aria-selected", "true");
+          this.setAttribute("data-state", "active");
+
+          // Show target panel
+          const targetPanel = document.getElementById(targetId);
+          if (targetPanel) {
+            targetPanel.removeAttribute("hidden");
+            targetPanel.setAttribute("data-state", "active");
+          }
+        });
+      });
+
+      // API Test functionality
+      const apiTestBtn = document.getElementById("api-test-btn");
+      const apiQuestion = document.getElementById("api-question");
+      const apiResponse = document.getElementById("api-response");
+      const apiAnswer = document.getElementById("api-answer");
+
+      if (apiTestBtn && apiQuestion) {
+        apiTestBtn.addEventListener("click", async function () {
+          const question = apiQuestion.value.trim();
+          if (!question) {
+            alert("Please enter a question!");
+            return;
+          }
+
+          apiTestBtn.disabled = true;
+          const originalText = apiTestBtn.textContent;
+          apiTestBtn.textContent = "Loading...";
+
+          // Simulate API call with demo response
+          setTimeout(() => {
+            const demoResponses = {
+              materiallar:
+                "MetOneX platform uses AI technology to find construction materials. Use GET /api/materials endpoint to get the list of materials.",
+              narx: "Use GET /api/materials/{id}/price endpoint to get material prices. The API returns prices in real-time.",
+              "yetkazib beruvchi":
+                "Use GET /api/suppliers endpoint to get the list of suppliers. You will get detailed information about each supplier.",
+              buyurtma:
+                "Send material ID and quantity to POST /api/orders endpoint to create an order.",
+            };
+
+            let responseText =
+              "With MetOneX API, you can find construction materials, compare prices and create orders. The API works in RESTful format and returns responses in JSON format.";
+
+            const lowerQuestion = question.toLowerCase();
+            for (const [key, value] of Object.entries(demoResponses)) {
+              if (lowerQuestion.includes(key)) {
+                responseText = value;
+                break;
+              }
+            }
+
+            if (apiAnswer) {
+              apiAnswer.textContent = responseText;
+            }
+            if (apiResponse) {
+              apiResponse.classList.remove("hidden");
+            }
+
+            apiTestBtn.disabled = false;
+            apiTestBtn.textContent = originalText;
+          }, 1000);
+        });
+
+        // Enter key support
+        apiQuestion.addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            apiTestBtn.click();
+          }
+        });
+      }
+    </script>
+
+    <!-- ========== IMPROVEMENTS - All New Features ========== -->
+
+    <!-- Scroll to Top Button -->
+    <button
+      class="scroll-to-top"
+      id="scrollToTop"
+      aria-label="Back to top"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </button>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toastContainer"></div>
+    <script src="../app.js"></script>
+
+    <!-- All Improvements JavaScript -->
+    <script>
+      // ========== 1. Scroll to Top Button - Optimized ==========
+      (function () {
+        const scrollToTopBtn = document.getElementById("scrollToTop");
+        if (!scrollToTopBtn) return;
+
+        let ticking = false;
+        let isVisible = false;
+
+        function updateButton() {
+          const shouldShow = window.pageYOffset > 300;
+
+          if (shouldShow !== isVisible) {
+            isVisible = shouldShow;
+            if (isVisible) {
+              scrollToTopBtn.classList.add("show");
+            } else {
+              scrollToTopBtn.classList.remove("show");
+            }
+          }
+
+          ticking = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(updateButton);
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+
+        scrollToTopBtn.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      })();
+
+      // ========== 2. Toast Notifications ==========
+      function showToast(message, type = "info", duration = 3000) {
+        const container = document.getElementById("toastContainer");
+        const toast = document.createElement("div");
+        toast.className = `toast ${type}`;
+
+        const icons = {
+          success:
+            '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>',
+          error:
+            '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>',
+          info: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>',
+          warning:
+            '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>',
+        };
+
+        toast.innerHTML = `
+          <div style="color: ${
+            type === "success"
+              ? "#10b981"
+              : type === "error"
+              ? "#ef4444"
+              : type === "warning"
+              ? "#f59e0b"
+              : "#3b82f6"
+          }">
+            ${icons[type]}
+          </div>
+          <div style="flex: 1; color: #374151; font-weight: 500;">${message}</div>
+        `;
+
+        container.appendChild(toast);
+
+        setTimeout(() => {
+          toast.classList.add("hide");
+          setTimeout(() => toast.remove(), 300);
+        }, duration);
+      }
+
+      // Global function for toast
+      window.showToast = showToast;
+
+      // ========== 3. Number Counter Animation ==========
+      function animateCounter(element, target, duration = 2000) {
+        if (!element) return;
+        const start = 0;
+        const increment = target / (duration / 16);
+        let current = start;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            element.textContent = target.toLocaleString();
+            clearInterval(timer);
+          } else {
+            element.textContent = Math.floor(current).toLocaleString();
+          }
+        }, 16);
+      }
+
+      // Initialize counters on scroll
+      document.addEventListener("DOMContentLoaded", function () {
+        const counters = document.querySelectorAll(".counter-number");
+        if (counters.length > 0) {
+          const counterObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !entry.target.dataset.animated) {
+                  const target = parseInt(
+                    entry.target.dataset.target || entry.target.textContent || 0
+                  );
+                  if (target > 0) {
+                    entry.target.dataset.animated = "true";
+                    animateCounter(entry.target, target);
+                  }
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          counters.forEach((counter) => counterObserver.observe(counter));
+        }
+
+        // ========== 4. Text Reveal on Scroll ==========
+        const textRevealElements = document.querySelectorAll(".text-reveal");
+        if (textRevealElements.length > 0) {
+          const textRevealObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("revealed");
+                }
+              });
+            },
+            { threshold: 0.1 }
+          );
+
+          textRevealElements.forEach((el) => textRevealObserver.observe(el));
+        }
+      });
+
+      // ========== 5. Parallax Effect - Optimized ==========
+      function initParallax() {
+        const parallaxElements = document.querySelectorAll(".parallax");
+        if (parallaxElements.length === 0) return;
+
+        let ticking = false;
+        let lastScroll = 0;
+
+        function updateParallax() {
+          const scrolled = window.pageYOffset;
+
+          // Only update if scroll changed significantly
+          if (Math.abs(scrolled - lastScroll) < 1) {
+            ticking = false;
+            return;
+          }
+
+          lastScroll = scrolled;
+
+          parallaxElements.forEach((element) => {
+            const speed = parseFloat(element.dataset.speed) || 0.5;
+            const yPos = -(scrolled * speed);
+            element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+          });
+          ticking = false;
+        }
+
+        // Throttled scroll handler
+        window.addEventListener(
+          "scroll",
+          () => {
+            if (!ticking) {
+              window.requestAnimationFrame(updateParallax);
+              ticking = true;
+            }
+          },
+          { passive: true }
+        );
+      }
+
+      // Initialize after DOM ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initParallax);
+      } else {
+        initParallax();
+      }
+
+      // ========== 6. Button Ripple Effect ==========
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".ripple").forEach((button) => {
+          button.addEventListener("click", function (e) {
+            const ripple = document.createElement("span");
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = size + "px";
+            ripple.style.left = x + "px";
+            ripple.style.top = y + "px";
+            ripple.classList.add("ripple-effect");
+
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+              if (ripple.parentNode) {
+                ripple.remove();
+              }
+            }, 600);
+          });
+        });
+      });
+
+      // ========== 7. Image Lazy Loading ==========
+      document.addEventListener("DOMContentLoaded", function () {
+        if ("IntersectionObserver" in window) {
+          const imageObserver = new IntersectionObserver(
+            (entries, observer) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const img = entry.target;
+                  if (img && img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.removeAttribute("data-src");
+                  }
+                  observer.unobserve(img);
+                }
+              });
+            }
+          );
+
+          document.querySelectorAll("img[data-src]").forEach((img) => {
+            imageObserver.observe(img);
+          });
+        }
+
+        // ========== 8. Form Validation Animations ==========
+        document.querySelectorAll(".form-input").forEach((input) => {
+          input.addEventListener("blur", function () {
+            if (this.value.trim() === "") {
+              this.classList.remove("valid");
+              this.classList.add("invalid");
+            } else {
+              this.classList.remove("invalid");
+              this.classList.add("valid");
+            }
+          });
+
+          input.addEventListener("input", function () {
+            if (this.value.trim() !== "") {
+              this.classList.remove("invalid");
+              this.classList.add("valid");
+            }
+          });
+        });
+
+        // ========== 9. Tooltip Initialization ==========
+        document.querySelectorAll("[data-tooltip]").forEach((element) => {
+          const tooltipText = element.dataset.tooltip;
+          if (tooltipText) {
+            const tooltip = document.createElement("span");
+            tooltip.className = "tooltip-text";
+            tooltip.textContent = tooltipText;
+            element.classList.add("tooltip");
+            element.appendChild(tooltip);
+          }
+        });
+
+        // ========== 10. Loading Button States ==========
+        document.querySelectorAll(".btn-loading-trigger").forEach((button) => {
+          button.addEventListener("click", function () {
+            this.classList.add("btn-loading");
+            this.disabled = true;
+
+            setTimeout(() => {
+              this.classList.remove("btn-loading");
+              this.disabled = false;
+            }, 2000);
+          });
+        });
+
+        // ========== 11. Smooth Anchor Scrolling ==========
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            const href = this.getAttribute("href");
+            if (href && href !== "#" && href.length > 1) {
+              e.preventDefault();
+              const target = document.querySelector(href);
+              if (target) {
+                target.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+              }
+            }
+          });
+        });
+      });
+
+      // ========== 12. Demo Toast on Page Load ==========
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          if (typeof showToast === "function") {
+            showToast("Welcome to the site! 🎉", "success", 3000);
+          }
+        }, 2000);
+      });
+
+      // ========== 13. Keyboard Navigation Support ==========
+      document.addEventListener("keydown", function (e) {
+        // ESC key to close modals
+        if (e.key === "Escape") {
+          const modals = document.querySelectorAll(
+            '.modal.show, [class*="modal"].show'
+          );
+          modals.forEach((modal) => {
+            modal.classList.remove("show");
+          });
+        }
+
+        // Arrow keys for navigation
+        if (e.key === "ArrowUp" && e.ctrlKey) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      });
+
+      // Wait for DOM to be ready
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          console.log("✨ All improvements loaded successfully!");
+        });
+      } else {
+        console.log("✨ All improvements loaded successfully!");
+      }
+
+      // ========== 14. Language Translation System ==========
+      // Translation system removed - English only
+      
+      // Scroll to Working Application section
+      function scrollToWorkingApp() {
+        const appSection = document.getElementById("working-app-section");
+        if (appSection) {
+          appSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          // Fallback: Find by text content
+          const allH3 = document.querySelectorAll("h3.text-3xl.font-black");
+          allH3.forEach((h3) => {
+            const text = h3.textContent.trim();
+            if (text.includes("Working Application")) {
+              h3.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          });
+        }
+      }
+        
+        // Add click handler for scroll button
+      window.addEventListener("load", function () {
+        const scrollBtn = document.getElementById("scroll-to-app-btn");
+        if (scrollBtn) {
+          scrollBtn.addEventListener("click", scrollToWorkingApp);
+        }
+      });
+    </script>
+
+    <script>
+      // Tech Stack Icons Data - Inline to ensure it works
+      const techStackIcons = {
+        frontend: [
+          {
+            name: "React.js",
+            icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1150px-React-icon.svg.png",
+            color: "#61DAFB",
+          },
+          {
+            name: "Tailwind CSS",
+            icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2560px-Tailwind_CSS_Logo.svg.png",
+            color: "#06B6D4",
+          },
+          {
+            name: "TypeScript",
+            icon: "https://cdn-icons-png.flaticon.com/512/5968/5968381.png",
+            color: "#3178C6",
+          },
+          {
+            name: "Next Js",
+            icon: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/nextjs-dqhvgu9iwvacgwnwl8bs25.png/nextjs-ghnqttyc6ffbnqnn8xlrpj.png?_a=DATAg1AAZAA0",
+            color: "#3178C6",
+          },
+          {
+            name: "Zustand",
+            icon: "https://www.pedroalonso.net/blog/zustand-intro/zustand.png",
+            color: "#3178C6",
+          },
+          {
+            name: "Tanstack Query",
+            icon: "https://images.seeklogo.com/logo-png/43/3/react-query-logo-png_seeklogo-435663.png",
+            color: "#3178C6",
+          },
+          {
+            name: "Redux",
+            icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/redux-icon.png",
+            color: "#3178C6",
+          },
+        ],
+        backend: [
+          { name: "Django", icon: "https://www.svgrepo.com/show/373554/django.svg", color: "#092E20" },
+          { name: "Django REST", icon: "https://media2.dev.to/dynamic/image/width=1280,height=720,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fpdlelneo05ui6m4l1cqj.png ", color: "#092E20" },
+          { name: "Python", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2048px-Python-logo-notext.svg.png", color: "#3776AB" }
+        ],
+        database: [
+          { name: "PostgreSQL", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png", color: "#336791" },
+          { name: "Redis", icon: "https://images.icon-icons.com/2415/PNG/512/redis_original_wordmark_logo_icon_146369.png", color: "#DC382D" }
+        ],
+        storage: [
+          { name: "AWS S3", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png", color: "#FF9900" },
+          { name: "MinIO", icon: "https://images.seeklogo.com/logo-png/34/1/minio-logo-png_seeklogo-340054.png", color: "#FF9900" }
+        ],
+        aiml: [
+          { name: "GPT-4 API", icon: "https://vukrosic.gallerycdn.vsassets.io/extensions/vukrosic/all-in-one-ai-interface/0.0.6/1684273672176/Microsoft.VisualStudio.Services.Icons.Default", color: "#10A37F" },
+          { name: "TensorFlow", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/449px-Tensorflow_logo.svg.png", color: "#FF6F00" },
+          { name: "scikit-learn", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/2560px-Scikit_learn_logo_small.svg.png", color: "#F7931E" }
+        ],
+        fintech: [
+          { name: "Escrow API", icon: "https://cdn-icons-png.flaticon.com/512/14597/14597072.png", color: "#10B981" },
+          { name: "Islomiy Nasiya", icon: "https://png.pngtree.com/png-vector/20250905/ourmid/pngtree-stylized-3d-dollar-sign-icon-in-glossy-green-with-metallic-highlights-png-image_17370346.webp", color: "#10B981" }
+        ],
+        logistics: [
+          { name: "Courier APIs", icon: "https://cdn-icons-png.flaticon.com/512/9815/9815930.png", color: "#FF8C42" }
+        ],
+        infrastructure: [
+          { name: "AWS S3", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png", color: "#FF9900" },
+          { name: "Docker", icon: "https://cdn-icons-png.flaticon.com/512/919/919853.png", color: "#2496ED" }
+        ]
+      };
+
+      function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16) } : null;
+      }
+
+      function initTechStackSelect() {
+        const filterButtons = document.querySelectorAll(".tech-filter-btn");
+        const container = document.getElementById("tech-icons-container");
+        if (!filterButtons.length || !container) {
+          console.log("Tech stack elements not found");
+          return;
+        }
+
+        const allTechnologies = [];
+        Object.keys(techStackIcons).forEach((category) => {
+          techStackIcons[category].forEach((tech) => {
+            allTechnologies.push({ ...tech, category });
+          });
+        });
+
+        function renderTechnologies(filter = "all") {
+          const filtered = filter === "all" ? allTechnologies : allTechnologies.filter((tech) => tech.category === filter);
+          container.innerHTML = filtered.map((tech, index) => {
+            const techColor = tech.color || "#10B981";
+            const rgbColor = hexToRgb(techColor);
+            const rgbaColor = rgbColor ? `rgba(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b}, 0.2)` : "rgba(16, 185, 129, 0.2)";
+            const rgbaShadow = rgbColor ? `rgba(${rgbColor.r}, ${rgbColor.g}, ${rgbColor.b}, 0.3)` : "rgba(16, 185, 129, 0.3)";
+            return `<div class="tech-icon-card bg-white border-2 border-[#E5E7EB] rounded-xl p-6 transition-all duration-500 flex flex-col items-center justify-center text-center group cursor-pointer transform hover:-translate-y-2" data-category="${tech.category}" data-tech-color="${techColor}" data-rgba-shadow="${rgbaShadow}" style="animation-delay: ${index * 0.05}s; opacity: 0; border-color: ${techColor}40;"><div class="relative mb-4"><div class="absolute inset-0 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100" style="background: ${rgbaColor};"></div><div class="relative text-5xl group-hover:scale-125 transition-transform duration-500 group-hover:rotate-6" style="filter: drop-shadow(0 0 12px ${techColor}CC);">${tech.icon.startsWith("http") || tech.icon.startsWith("https") || tech.icon.startsWith("/") ? `<img src="${tech.icon}" alt="${tech.name}" class="w-12 h-12 object-contain" />` : tech.icon}</div></div><div class="text-[14px] font-bold transition-colors duration-300 uppercase" style="color: ${techColor};">${tech.name}</div><div class="mt-2 text-[11px] text-[#6B7280] opacity-0 group-hover:opacity-100 transition-opacity duration-300">${tech.category.charAt(0).toUpperCase() + tech.category.slice(1)}</div></div>`;
+          }).join("");
+
+          const cards = container.querySelectorAll(".tech-icon-card");
+          cards.forEach((card) => {
+            const techColor = card.getAttribute("data-tech-color");
+            const rgbaShadow = card.getAttribute("data-rgba-shadow");
+            card.addEventListener("mouseenter", function () {
+              this.style.borderColor = techColor;
+              this.style.boxShadow = `0 8px 24px ${rgbaShadow}`;
+            });
+            card.addEventListener("mouseleave", function () {
+              this.style.borderColor = `${techColor}40`;
+              this.style.boxShadow = "none";
+            });
+          });
+
+          setTimeout(() => {
+            cards.forEach((card) => {
+              card.style.opacity = "1";
+              card.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out";
+              card.style.transform = "translateY(0)";
+            });
+          }, 50);
+        }
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            const filter = this.getAttribute("data-filter");
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("active", "bg-[#02066F]", "text-white", "border-[#02066F]");
+              btn.classList.add("bg-white", "border-2", "border-[#E5E7EB]", "text-[#374151]");
+            });
+            this.classList.add("active", "bg-[#02066F]", "text-white", "border-[#02066F]");
+            this.classList.remove("bg-white", "border-2", "border-[#E5E7EB]", "text-[#374151]");
+            renderTechnologies(filter);
+          });
+        });
+
+        // Set first button (Main/Frontend) as active by default
+        const firstButton = filterButtons[0];
+        if (firstButton) {
+          firstButton.classList.add("active", "bg-[#02066F]", "text-white", "border-[#02066F]");
+          firstButton.classList.remove("bg-white", "border-2", "border-[#E5E7EB]", "text-[#374151]");
+        }
+
+        renderTechnologies("frontend");
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(initTechStackSelect, 100);
+        });
+      } else {
+        setTimeout(initTechStackSelect, 100);
+      }
+    </script>
+    
+    <!-- Image Modal -->
+    <div id="image-modal" class="image-modal-overlay">
+      <div class="image-modal-content">
+        <button class="image-modal-close" id="image-modal-close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <img id="image-modal-img" class="image-modal-img" src="" alt="Image">
+      </div>
+    </div>
+    
+    <script>
+      // Image Modal Functions
+      const imageModal = document.getElementById("image-modal");
+      const imageModalImg = document.getElementById("image-modal-img");
+      const imageModalClose = document.getElementById("image-modal-close");
+      
+      function openImageModal(imageUrl) {
+        if (imageModal && imageModalImg) {
+          imageModalImg.src = imageUrl;
+          imageModal.classList.add("show");
+          document.body.style.overflow = "hidden"; // Prevent background scrolling
+        }
+      }
+      
+      function closeImageModal() {
+        if (imageModal) {
+          imageModal.classList.remove("show");
+          document.body.style.overflow = ""; // Restore scrolling
+        }
+      }
+      
+      // Make function globally available
+      window.openImageModal = openImageModal;
+      window.closeImageModal = closeImageModal;
+      
+      // Close modal on close button click
+      if (imageModalClose) {
+        imageModalClose.addEventListener("click", closeImageModal);
+      }
+      
+      // Close modal on overlay click
+      if (imageModal) {
+        imageModal.addEventListener("click", function(e) {
+          if (e.target === imageModal) {
+            closeImageModal();
+          }
+        });
+      }
+      
+      // Close modal on Escape key
+      document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape" && imageModal && imageModal.classList.contains("show")) {
+          closeImageModal();
+        }
+      });
+    </script>
+  </body>
+</html>

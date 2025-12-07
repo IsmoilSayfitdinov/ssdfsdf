@@ -1,0 +1,9 @@
+# Rewrite rules for /demo and /demohtml to demo.html
+RewriteEngine On
+
+# Redirect /demohtml to /demo (permanent redirect)
+RewriteRule ^demohtml$ /demo [R=301,L]
+
+# Rewrite /demo to demo.html
+RewriteRule ^demo$ demo.html [L]
+

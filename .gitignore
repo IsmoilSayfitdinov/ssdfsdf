@@ -1,0 +1,12 @@
+node_modules/
+
+# Video files
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Large media files
+*.mp4
+IMG_3520_2.mp4
